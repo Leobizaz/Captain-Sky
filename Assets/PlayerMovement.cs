@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public CinemachineDollyCart dolly;
     public Transform cameraParent;
     public GameObject cursor;
+    private bool esquerda = false;
+    private bool direita = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +28,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Mouse X");
-        float y = Input.GetAxis("Mouse Y");
+        float x = Input.GetAxis("Horizontal");
+        float y = -Input.GetAxis("Vertical");
 
         MovimentoLocal(x, y, horizontalSpeed);
-        RotationLook(x, y, lookSpeed);
-        Inclinada(modelo.transform, x, 45, 0.1f);
+            RotationLook(x, y, 1, lookSpeed);
+            Inclinada(modelo.transform, x, 45, 0.1f);
+        
 
         if (Input.GetButtonDown("Fire3"))
             Boost(true);
@@ -44,6 +47,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonUp("Fire1"))
             Break(false);
+
+        if (Input.GetButtonDown("Left"))
+            esquerda = true;
+
+        if (Input.GetButtonUp("Left"))
+            esquerda = false;
+
+        if (Input.GetButtonDown("Right"))
+            direita = true;
+
+        if (Input.GetButtonUp("Right"))
+            direita = false;
 
     }
 
@@ -65,17 +80,22 @@ public class PlayerMovement : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 
-    void RotationLook(float x, float y, float speed)
+    void RotationLook(float x, float y, float z, float speed)
     {
         aimTarget.parent.position = Vector3.zero;
-        aimTarget.localPosition = new Vector3(x, y, 1);
+        aimTarget.localPosition = new Vector3(x, y, z);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(aimTarget.position), Mathf.Deg2Rad * speed * Time.deltaTime);
     }
 
     void Inclinada(Transform target, float eixo, float limite, float lerpTime)
     {
         Vector3 targetEulerAngles = target.localEulerAngles;
+        if(esquerda == false && direita == false)
         target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
+        else if(esquerda == true)
+            target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z + 10f, -eixo * limite, lerpTime));
+        else if (direita == true)
+            target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z - 10f, -eixo * limite, lerpTime));
     }
 
     void SetSpeed(float x)
@@ -113,4 +133,5 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireSphere(aimTarget.position, 0.5f);
         Gizmos.DrawSphere(aimTarget.position, 0.15f);
     }
+
 }
