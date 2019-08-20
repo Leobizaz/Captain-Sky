@@ -18,11 +18,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject cursor;
     private bool esquerda = false;
     private bool direita = false;
+    public ParticleSystem shoot;
+
 
     // Start is called before the first frame update
     void Start()
     {
         SetSpeed(progressionSpeed);
+        shoot.Stop();
     }
 
     // Update is called once per frame
@@ -42,13 +45,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Fire3"))
             Boost(false);
 
+        if (Input.GetButtonDown("Fire2"))
+            shoot.Play();
+
+        if (Input.GetButtonUp("Fire2"))
+            shoot.Stop();
+
         if (Input.GetButtonDown("Fire1"))
             Break(true);
 
         if (Input.GetButtonUp("Fire1"))
             Break(false);
 
-        if (Input.GetButtonDown("Left"))
+        if (Input.GetButtonDown("Left") )
             esquerda = true;
 
         if (Input.GetButtonUp("Left"))
