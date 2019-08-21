@@ -32,6 +32,14 @@ public class PlayerOpenMovement : MonoBehaviour
 
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Boundary" && !manobra)
+        {
+            ManobraVoltar();
+        }
+    }
+
     void Movement()
     {
 
