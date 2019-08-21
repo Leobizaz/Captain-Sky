@@ -35,9 +35,10 @@ public class PlayerMovement : MonoBehaviour
         float y = -Input.GetAxis("Vertical");
 
         MovimentoLocal(x, y, horizontalSpeed);
-            RotationLook(x, y, 1, lookSpeed);
+            //RotationLook(x, y, 1, lookSpeed);
             Inclinada(modelo.transform, x, 45, 0.1f);
-        
+        InclinadaPraCima(modelo.transform, y, 45, 0.1f);
+
 
         if (Input.GetButtonDown("Fire3"))
             Boost(true);
@@ -105,6 +106,17 @@ public class PlayerMovement : MonoBehaviour
             target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z + 10f, -eixo * limite, lerpTime));
         else if (direita == true)
             target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z - 10f, -eixo * limite, lerpTime));
+    }
+
+    void InclinadaPraCima(Transform target, float eixo, float limite, float lerpTime)
+    {
+        Vector3 targetEulerAngles = target.localEulerAngles;
+        if (esquerda == false && direita == false)
+            target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
+        else if (esquerda == true)
+            target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
+        else if (direita == true)
+            target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
     }
 
     void SetSpeed(float x)
