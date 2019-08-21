@@ -3767,6 +3767,21 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Scale.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 488627905307473587, guid: b8ff4fddd01550541863bebeafd80b61,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488627905307473587, guid: b8ff4fddd01550541863bebeafd80b61,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488627905307473587, guid: b8ff4fddd01550541863bebeafd80b61,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 55135124917387206, guid: b8ff4fddd01550541863bebeafd80b61, type: 3}
     - {fileID: 55135125225459086, guid: b8ff4fddd01550541863bebeafd80b61, type: 3}

@@ -19,13 +19,15 @@ public class PlayerMovement : MonoBehaviour
     private bool esquerda = false;
     private bool direita = false;
     public ParticleSystem shoot;
+    public ParticleSystem shoot2;
 
 
     // Start is called before the first frame update
     void Start()
     {
         SetSpeed(progressionSpeed);
-        shoot.Stop();
+       // shoot2.Stop();
+       // shoot.Stop();
     }
 
     // Update is called once per frame
@@ -33,12 +35,13 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float y = -Input.GetAxis("Vertical");
-
+        Debug.Log(Input.GetAxis("Fire2Axis"));
         MovimentoLocal(x, y, horizontalSpeed);
             //RotationLook(x, y, 1, lookSpeed);
-            Inclinada(modelo.transform, x, 45, 0.1f);
+        Inclinada(modelo.transform, x, 45, 0.1f);
         InclinadaPraCima(modelo.transform, y, 45, 0.1f);
 
+        float tiro = Input.GetAxis("Fire2Axis");
 
         if (Input.GetButtonDown("Fire3"))
             Boost(true);
@@ -46,11 +49,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Fire3"))
             Boost(false);
 
-        if (Input.GetButtonDown("Fire2"))
+        if (tiro == 0)
+        {
+            Debug.Log("CU");
+            shoot2.Play();
             shoot.Play();
-
-        if (Input.GetButtonUp("Fire2"))
+        }/*
+        else
+        {
+            Debug.Log("ZAO");
             shoot.Stop();
+            shoot2.Stop();
+        }*/
 
         if (Input.GetButtonDown("Fire1"))
             Break(true);
