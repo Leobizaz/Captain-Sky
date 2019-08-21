@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingBird : MonoBehaviour
+public class BirdForward : MonoBehaviour
 {
-    float horizontalSpeed;
+    float fwdSpeed;
     float verticalSpeed;
     float amplitude;
 
@@ -15,14 +15,14 @@ public class MovingBird : MonoBehaviour
     void Start()
     {
         tempPosition = transform.position;
-         horizontalSpeed = Random.Range(-1f, 1f) ;
-         verticalSpeed = Random.Range(1f, 3f);
-         amplitude = Random.Range(0.1f, 0.4f);
+        fwdSpeed = Random.Range(-1f, 1f);
+        verticalSpeed = Random.Range(1f, 3f);
+        amplitude = Random.Range(0.1f, 0.4f);
     }
 
     void FixedUpdate()
     {
-        tempPosition.x += 0.5f * horizontalSpeed;
+        tempPosition.z += 0.5f * fwdSpeed;
         tempPosition.y += Mathf.Sin(Time.fixedTime * Mathf.PI + verticalSpeed) * amplitude;
         transform.position = tempPosition;
         Object.Destroy(this.gameObject, 10.0f);
@@ -33,7 +33,7 @@ public class MovingBird : MonoBehaviour
         Debug.Log("COLIDIU");
         if (other.tag == "Shoot")
         {
-            Instantiate(explosion,tempPosition, transform.rotation);
+            Instantiate(explosion, tempPosition, transform.rotation);
             Destroy(this.gameObject);
         }
     }
