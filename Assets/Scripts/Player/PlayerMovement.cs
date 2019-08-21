@@ -147,6 +147,23 @@ public class PlayerMovement : MonoBehaviour
         SetCameraZoom(zoom, .4f);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Boost")
+        {
+            Debug.Log("Boost ON");
+            SetSpeed(progressionSpeed + 20f);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Boost")
+        {
+            Debug.Log("Boost OFF");
+            SetSpeed(progressionSpeed);
+        }
+    }
 
     private void OnDrawGizmos()
     {

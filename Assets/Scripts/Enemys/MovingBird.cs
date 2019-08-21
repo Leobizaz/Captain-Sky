@@ -27,9 +27,10 @@ public class MovingBird : MonoBehaviour
         Object.Destroy(this.gameObject, 10.0f);
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnParticleCollision(GameObject other)
     {
-        if(col.gameObject.tag == "Shoot")
+        Debug.Log("COLIDIU");
+        if (other.tag == "Shoot")
         {
             Destroy(this.gameObject);
         }

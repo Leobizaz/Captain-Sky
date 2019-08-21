@@ -7,6 +7,7 @@ TagManager:
   - Boundary
   - Enemy
   - Shoot
+  - Boost
   layers:
   - Default
   - TransparentFX
