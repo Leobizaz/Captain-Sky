@@ -13,11 +13,12 @@ public class CameraOpenMovement : MonoBehaviour
 
     void Update()
     {
-        vectorinput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        float x = Input.GetAxis("Horizontal");
+        float y = -Input.GetAxis("Vertical");
 
         Vector3 vectorot = new Vector3(vectorinput.y, vectorinput.x, -vectorinput.x);
 
-        transform.localRotation = Quaternion.Euler(vectorot * 2);
+        transform.localRotation = Quaternion.Euler(vectorot);
 
     }
 
