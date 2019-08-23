@@ -7,7 +7,10 @@ using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+     private bool pressedOnce;
+     private float time;
+     private float timerLength;
+    private bool isBoosting;
     public float horizontalSpeed = 10;
     public float progressionSpeed = 6;
     public float lookSpeed = 5f;
@@ -28,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
         SetSpeed(progressionSpeed);
        // shoot2.Stop();
        // shoot.Stop();
+         pressedOnce = false;
+         time = 0;
+         timerLength = 0.3f;
     }
 
     // Update is called once per frame
@@ -35,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float y = -Input.GetAxis("Vertical");
-        Debug.Log(Input.GetAxis("Fire2Axis"));
+       // Debug.Log(Input.GetAxis("Fire2Axis"));
         MovimentoLocal(x, y, horizontalSpeed);
             //RotationLook(x, y, 1, lookSpeed);
         Inclinada(modelo.transform, x, 45, 0.1f);
@@ -43,15 +49,15 @@ public class PlayerMovement : MonoBehaviour
 
         float tiro = Input.GetAxis("Fire2Axis");
 
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3") && !isBoosting)
             Boost(true);
 
-        if (Input.GetButtonUp("Fire3"))
+        if (Input.GetButtonUp("Fire3") && !isBoosting)
             Boost(false);
 
         if (tiro == 0)
         {
-            Debug.Log("CU");
+          //  Debug.Log("CU");
             shoot2.Play();
             shoot.Play();
         }/*
@@ -69,16 +75,58 @@ public class PlayerMovement : MonoBehaviour
             Break(false);
 
         if (Input.GetButtonDown("Left") )
+        {
             esquerda = true;
+            
+             if(!pressedOnce)
+             {
+             pressedOnce = true;
+             time = Time.time;
+             }
+ 
+             else
+             {
+                BarrelRoll(1);
+                Debug.Log("Roll");
+             }
+        }
 
         if (Input.GetButtonUp("Left"))
             esquerda = false;
 
         if (Input.GetButtonDown("Right"))
-            direita = true;
+        {
+             direita = true;
+             if(!pressedOnce)
+             {
+             pressedOnce = true;
+             time = Time.time;
+             }
+ 
+             else
+             {
+                BarrelRoll(-1);
+                Debug.Log("Roll");
+             }
+        }
 
+        if(pressedOnce)
+         {
+             if(Time.time - time > timerLength)
+             {
+                 pressedOnce = false;
+             }
+ 
+             time += Time.deltaTime *0f;
+         }
+         
         if (Input.GetButtonUp("Right"))
+        {
+           // pressedOnce = true;
             direita = false;
+        }
+
+        
 
     }
 
@@ -111,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 targetEulerAngles = target.localEulerAngles;
         if(esquerda == false && direita == false)
-        target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
+        target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, 0, .1f), Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
         //target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, +eixo * limite, lerpTime), Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
         else if (esquerda == true)
             target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, +eixo * limite, lerpTime), Mathf.LerpAngle(targetEulerAngles.z + 10f, -0.01f * limite, lerpTime));
@@ -153,8 +201,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float speed = state ? progressionSpeed * 2 : progressionSpeed;
         float zoom = state ? -7 : 0;
-
-        DOVirtual.Float(dolly.m_Speed, speed, .15f, SetSpeed);
+        SetSpeed(speed);
+        //DOVirtual.Float(dolly.m_Speed, speed, .15f, SetSpeed);
         SetCameraZoom(zoom, .4f);
     }
 
@@ -162,8 +210,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.tag == "Boost")
         {
+            isBoosting = true;
             Debug.Log("Boost ON");
-            SetSpeed(progressionSpeed + 20f);
+            Boost(false);
+            SetSpeed(progressionSpeed + 75f);
         }
     }
 
@@ -171,7 +221,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.tag == "Boost")
         {
+            isBoosting = false;
             Debug.Log("Boost OFF");
+            //Boost(false);
             SetSpeed(progressionSpeed);
         }
     }
@@ -181,6 +233,12 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(aimTarget.position, 0.5f);
         Gizmos.DrawSphere(aimTarget.position, 0.15f);
+    }
+
+    void BarrelRoll(float lado)
+    { 
+        modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
+        transform.DOLocalMove(new Vector3(-lado * 6, 0, 0), 0.7f).SetEase(Ease.OutSine);
     }
 
 }

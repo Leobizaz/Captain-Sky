@@ -16,6 +16,7 @@ public class PlayerOpenMovement : MonoBehaviour
     float manobra_x;
     float manobra_y;
     float manobra_z;
+    float rotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,10 @@ public class PlayerOpenMovement : MonoBehaviour
     {
 
         if (!manobra)
-            vectorinput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        {
+            vectorinput = new Vector3(Input.GetAxis("HorizontalAxis"), Input.GetAxis("VerticalAxis") + Input.GetAxis("Vertical"), 0);
+            rotation = Input.GetAxis("Horizontal");
+        }
         else
             vectorinput = new Vector3(manobra_x, manobra_y, manobra_z);
 
@@ -57,9 +61,11 @@ public class PlayerOpenMovement : MonoBehaviour
 
 
         transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed);
+        Quaternion rot = Quaternion.Euler(new Vector3(0, rotation, 0));
         Quaternion yawRot = Quaternion.Euler(new Vector3(vectorinput.y * yawSpeed, 0, 0));
         Quaternion rollRot = Quaternion.Euler(new Vector3(0, 0, -vectorinput.x * rollSpeed));
-        transform.localRotation = transform.localRotation * yawRot * rollRot;
+        
+        transform.localRotation = transform.localRotation * rot * yawRot * rollRot;
     }
 
     void HorizontalLean(Transform target, float axis, float leanLimit, float lerpTime)

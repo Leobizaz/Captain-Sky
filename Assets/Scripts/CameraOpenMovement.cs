@@ -18,7 +18,7 @@ public class CameraOpenMovement : MonoBehaviour
 
         Vector3 vectorot = new Vector3(vectorinput.y, vectorinput.x, -vectorinput.x);
 
-        transform.localRotation = Quaternion.Euler(vectorot);
+        transform.localRotation = Quaternion.Euler(vectorot * 2);
 
     }
 
