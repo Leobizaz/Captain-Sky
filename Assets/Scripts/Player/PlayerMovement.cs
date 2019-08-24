@@ -23,24 +23,42 @@ public class PlayerMovement : MonoBehaviour
     private bool direita = false;
     public ParticleSystem shoot;
     public ParticleSystem shoot2;
+    public bool playerActive;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerActive = false;
         SetSpeed(progressionSpeed);
        // shoot2.Stop();
        // shoot.Stop();
          pressedOnce = false;
          time = 0;
          timerLength = 0.3f;
+        Invoke("EnablePlayer", 7f);
+    }
+
+    void EnablePlayer()
+    {
+        playerActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = -Input.GetAxis("Vertical");
+        float x;
+        float y;
+        if (playerActive)
+        {
+            x = Input.GetAxis("Horizontal");
+            y = -Input.GetAxis("Vertical");
+        }
+        else
+        {
+            x = 0;
+            y = 0;
+        }
        // Debug.Log(Input.GetAxis("Fire2Axis"));
         MovimentoLocal(x, y, horizontalSpeed);
             //RotationLook(x, y, 1, lookSpeed);
@@ -133,7 +151,8 @@ public class PlayerMovement : MonoBehaviour
     void MovimentoLocal(float x, float y, float speed)
     {
         transform.localPosition += new Vector3(x, y, 0) * speed * Time.deltaTime;
-        ClampPosition();
+        if(playerActive)
+            ClampPosition();
     }
 
     void ClampPosition()

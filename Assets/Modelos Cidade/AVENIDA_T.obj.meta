@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e267f9b5c20613438ca6c131b451fb5
+guid: 84ad0790f366ad444aef25670db5771d
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: dca56fc71922a564cae1367c5bd7cdb3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: dca56fc71922a564cae1367c5bd7cdb3, type: 2}
+      name: pCube5Mat
+    second: {fileID: 2100000, guid: d9d6a966788fd3443b96567b1f90efb5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -91,7 +86,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
