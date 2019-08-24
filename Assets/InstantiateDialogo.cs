@@ -24,6 +24,7 @@ public class InstantiateDialogo : MonoBehaviour
         {
             GameObject dialogocfg = Instantiate(dialogo) as GameObject;
             dialogocfg.transform.SetParent(canvas.transform, false);
+            //dialogocfg.GetComponent<RectTransform>().localPosition
             SpawnAnimation cfg = dialogocfg.GetComponent<SpawnAnimation>();
             cfg.lifeTime = lifeTime;
             cfg.icone.sprite = icone;
