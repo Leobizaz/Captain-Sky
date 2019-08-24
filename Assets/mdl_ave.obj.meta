@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 31776241bf260f1458ffbf9a3f5aa3f9
+guid: b80f596cc3ce6ea41b8f19be299e6a58
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,57 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Enemy_1_Driver_glass_visor
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Driver_mohawk
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Driver_skin
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Gunner1_gun
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Gunner1_mohawk
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Gunner1_skin
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Gunner_gun
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Gunner_mohawk
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Gunner_skin
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Wings_wings
-    second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Wings_wings_connection
+      name: Enemy_1_Driver_DRIVER1Mat
     second: {fileID: 2100000, guid: 793970c63103fd243842d576a04acccc, type: 2}
   materials:
     importMaterials: 1
@@ -89,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 25
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -136,7 +86,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 25
+    globalScale: 0.1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

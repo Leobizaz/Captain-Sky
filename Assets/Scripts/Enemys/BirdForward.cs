@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BirdForward : MonoBehaviour
 {
-    float fwdSpeed;
+    public float fwdSpeed;
+    public float lifeTime;
     float verticalSpeed;
     float amplitude;
 
@@ -25,7 +26,7 @@ public class BirdForward : MonoBehaviour
         tempPosition.z += 0.5f * fwdSpeed;
         tempPosition.y += Mathf.Sin(Time.fixedTime * Mathf.PI + verticalSpeed) * amplitude;
         transform.position = tempPosition;
-        Object.Destroy(this.gameObject, 10.0f);
+        Object.Destroy(this.gameObject, lifeTime);
     }
 
     private void OnParticleCollision(GameObject other)

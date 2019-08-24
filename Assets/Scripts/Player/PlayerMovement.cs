@@ -75,23 +75,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (tiro == 0)
         {
-          //  Debug.Log("CU");
             shoot2.Play();
             shoot.Play();
-        }/*
-        else
-        {
-            Debug.Log("ZAO");
-            shoot.Stop();
-            shoot2.Stop();
-        }*/
-
-        if (Input.GetButtonDown("Fire1"))
+        }
+        /*
+        if (Input.GetAxisRaw("Fire1Axis") != 0)
             Break(true);
 
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetAxisRaw("Fire1Axis") == 0)
             Break(false);
-
+        */
         if (Input.GetButtonDown("Left") )
         {
             esquerda = true;
@@ -212,7 +205,7 @@ public class PlayerMovement : MonoBehaviour
         float speed = state ? progressionSpeed / 3 : progressionSpeed;
         float zoom = state ? 3 : 0;
 
-        DOVirtual.Float(dolly.m_Speed, speed, .15f, SetSpeed);
+        SetSpeed(speed);
         SetCameraZoom(zoom, .4f);
     }
 
