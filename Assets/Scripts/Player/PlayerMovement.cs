@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerActive = false;
+        //playerActive = false;
         SetSpeed(progressionSpeed);
        // shoot2.Stop();
        // shoot.Stop();
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Fire3") && !isBoosting)
             Boost(false);
 
-        if (tiro == 0)
+        if (tiro == 0 || Input.GetButton("Fire1"))
         {
             shoot2.Play();
             shoot.Play();

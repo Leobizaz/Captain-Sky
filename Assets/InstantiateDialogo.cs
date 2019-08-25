@@ -13,6 +13,8 @@ public class InstantiateDialogo : MonoBehaviour
     public string texto;
     AudioSource audio;
 
+    public static bool dialogoPlaying;
+
     private void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -24,7 +26,13 @@ public class InstantiateDialogo : MonoBehaviour
         {
             GameObject dialogocfg = Instantiate(dialogo) as GameObject;
             dialogocfg.transform.SetParent(canvas.transform, false);
-            //dialogocfg.GetComponent<RectTransform>().localPosition
+            if (dialogoPlaying)
+            {
+                RectTransform rt = dialogocfg.GetComponent<RectTransform>();
+                rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 458f, 458f);
+                rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 352f, 352f);
+
+            }
             SpawnAnimation cfg = dialogocfg.GetComponent<SpawnAnimation>();
             cfg.lifeTime = lifeTime;
             cfg.icone.sprite = icone;

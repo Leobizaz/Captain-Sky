@@ -17,6 +17,7 @@ public class SpawnAnimation : MonoBehaviour
 
     void Start()
     {
+        InstantiateDialogo.dialogoPlaying = true;
         anim = GetComponent<Animator>();
         Invoke("Die", lifeTime);
         nome.text = name;
@@ -27,6 +28,7 @@ public class SpawnAnimation : MonoBehaviour
     {
         anim.Play("PopOut");
         Invoke("RIP", 1f);
+        InstantiateDialogo.dialogoPlaying = false;
     }
 
     void RIP()
