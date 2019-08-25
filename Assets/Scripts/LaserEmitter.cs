@@ -26,11 +26,13 @@ public class LaserEmitter : MonoBehaviour
         {
             receiver.transform.LookAt(gameObject.transform);
             receiver.transform.position = hit.point;
+            Debug.Log(hit.collider.gameObject.name);
         }
         else
         {
-            receiver.transform.position = new Vector3(receiver.transform.position.x, receiver.transform.position.y, laserDistance);
-            receiver.transform.LookAt(gameObject.transform);
+            
+            //receiver.transform.localRotation = transform.localRotation;
+            receiver.transform.localPosition = this.gameObject.transform.TransformDirection(Vector3.forward * laserDistance);
         }
     }
 }

@@ -24,11 +24,13 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem shoot;
     public ParticleSystem shoot2;
     public bool playerActive;
+    AudioSource audioSource;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         //playerActive = false;
         SetSpeed(progressionSpeed);
        // shoot2.Stop();
@@ -75,8 +77,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (tiro == 0 || Input.GetButton("Fire1"))
         {
+            audioSource.Stop();
             shoot2.Play();
             shoot.Play();
+        }
+        else
+        {
+            if (!audioSource.isPlaying)
+                audioSource.Play();
         }
         /*
         if (Input.GetAxisRaw("Fire1Axis") != 0)
@@ -236,7 +244,10 @@ public class PlayerMovement : MonoBehaviour
             isBoosting = false;
             Debug.Log("Boost OFF");
             //Boost(false);
-            SetSpeed(progressionSpeed);
+            //SetSpeed(progressionSpeed);
+            float currentSpeed = dolly.m_Speed;
+            DOVirtual.Float(currentSpeed, progressionSpeed, 2f, SetSpeed);
+
         }
     }
 

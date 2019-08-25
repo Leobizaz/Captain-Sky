@@ -23,7 +23,7 @@ public class BirdForward : MonoBehaviour
 
     void FixedUpdate()
     {
-        tempPosition.z += 0.5f * fwdSpeed;
+        tempPosition.x += 0.5f * fwdSpeed;
         tempPosition.y += Mathf.Sin(Time.fixedTime * Mathf.PI + verticalSpeed) * amplitude;
         transform.position = tempPosition;
         Object.Destroy(this.gameObject, lifeTime);
