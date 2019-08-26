@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
 {
      private bool pressedOnce;
      private float time;
-
      public float sensibilidade;
      private float timerLength;
     private bool isBoosting;
@@ -67,23 +66,29 @@ public class PlayerMovement : MonoBehaviour
         }
        // Debug.Log(Input.GetAxis("Fire2Axis"));
         MovimentoLocal(x, y, horizontalSpeed);
-            //RotationLook(x, y, 1, lookSpeed);
+            RotationLook(x, y);
         Inclinada(modelo.transform, x, 45, 0.1f);
-        InclinadaPraCima(modelo.transform, y, 45, 0.1f);
+        InclinadaPraCima(modelo.transform, y, 25, 0.1f);
 
-        Vector3 Direction = new Vector3(x, y, 1f)* sensibilidade;
+        Vector3 Direction = new Vector3(x, y, 1f) ;
 
-         transform.rotation = Quaternion.RotateTowards (transform.rotation,Quaternion.LookRotation (Direction),Mathf.Deg2Rad * 40f);
+        if(!isBoosting)
+         transform.rotation = Quaternion.RotateTowards (transform.rotation,Quaternion.LookRotation (Direction),Mathf.Deg2Rad * 50f * sensibilidade);
 
-        float tiro = Input.GetAxis("Fire2Axis");
+        float tiro = Input.GetAxis("Shoot");
 
-        if (Input.GetButtonDown("Fire3") && !isBoosting)
+        if (Input.GetButtonDown("Boost") && !isBoosting)
+        {
             Boost(true);
+        }
 
-        if (Input.GetButtonUp("Fire3") && !isBoosting)
+        if (Input.GetButtonUp("Boost") && !isBoosting)
+        {
             Boost(false);
+        }
+            
 
-        if (tiro == 0 || Input.GetButton("Fire1"))
+        if (tiro == 0 || Input.GetButtonDown("Shoot"))
         {
             audioSource.Stop();
             shoot2.Play();
@@ -94,12 +99,13 @@ public class PlayerMovement : MonoBehaviour
             if (!audioSource.isPlaying)
                 audioSource.Play();
         }
-        /*
-        if (Input.GetAxisRaw("Fire1Axis") != 0)
+        
+        if (Input.GetAxisRaw("Break") != 0)
             Break(true);
-
-        if (Input.GetAxisRaw("Fire1Axis") == 0)
+/*
+        if (Input.GetAxisRaw("Break") == 0)
             Break(false);
+            
         */
         if (Input.GetButtonDown("Left") )
         {
@@ -114,7 +120,6 @@ public class PlayerMovement : MonoBehaviour
              else
              {
                 BarrelRoll(1);
-                Debug.Log("Roll");
              }
         }
 
@@ -133,7 +138,6 @@ public class PlayerMovement : MonoBehaviour
              else
              {
                 BarrelRoll(-1);
-                Debug.Log("Roll");
              }
         }
 
@@ -176,13 +180,13 @@ public class PlayerMovement : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 
-    void RotationLook(float x, float y, float z, float speed)
+    void RotationLook(float x, float y)
     {
-        aimTarget.parent.position = Vector3.zero;
-        aimTarget.localPosition = new Vector3(x, y, z);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(aimTarget.position), Mathf.Deg2Rad * speed * Time.deltaTime);
+        aimTarget.transform.localPosition += new Vector3(x, 0, 8f) * Time.deltaTime;
+        aimTarget.transform.localPosition += new Vector3(0, y, 8f) * Time.deltaTime;
+        aimTarget.transform.localPosition = new Vector3(Mathf.Clamp(aimTarget.transform.localPosition.x, -10f, 10f), Mathf.Clamp(aimTarget.transform.localPosition.y, -6f, 6f),8f);
     }
-
+    
     void Inclinada(Transform target, float eixo, float limite, float lerpTime)
     {
         Vector3 targetEulerAngles = target.localEulerAngles;
@@ -272,6 +276,7 @@ public class PlayerMovement : MonoBehaviour
     { 
         modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
         transform.DOLocalMove(new Vector3(-lado * 6, 0, 0), 0.7f).SetEase(Ease.OutSine);
+        aimTarget.transform.localPosition = new Vector3(0, 0, 8f) * Time.deltaTime;
     }
 
 }
