@@ -219,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Boost(bool state)
     {
-        float speed = state ? progressionSpeed * 2 : progressionSpeed;
+        float speed = state ? progressionSpeed * 1.5f : progressionSpeed;
         float zoom = state ? -7 : 0;
         SetSpeed(speed);
         //DOVirtual.Float(dolly.m_Speed, speed, .15f, SetSpeed);
@@ -233,7 +233,9 @@ public class PlayerMovement : MonoBehaviour
             isBoosting = true;
             Debug.Log("Boost ON");
             Boost(false);
-            SetSpeed(progressionSpeed + 75f);
+            //SetSpeed(progressionSpeed + 75f);
+            float currentSpeed = dolly.m_Speed;
+            DOVirtual.Float(currentSpeed, progressionSpeed +75f, 2f, SetSpeed);
         }
     }
 
