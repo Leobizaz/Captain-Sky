@@ -9,16 +9,18 @@ public class PlayerMovement : MonoBehaviour
 {
      private bool pressedOnce;
      private float time;
+
+     public float sensibilidade;
      private float timerLength;
     private bool isBoosting;
-    public float horizontalSpeed = 10;
+    public float horizontalSpeed = 7;
     public float progressionSpeed = 6;
     public float lookSpeed = 5f;
     public GameObject modelo;
     public Transform aimTarget;
     public CinemachineDollyCart dolly;
     public Transform cameraParent;
-    public GameObject cursor;
+   // public GameObject cursor;
     private bool esquerda = false;
     private bool direita = false;
     public ParticleSystem shoot;
@@ -51,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float x;
         float y;
+
+
         if (playerActive)
         {
             x = Input.GetAxis("Horizontal");
@@ -66,6 +70,10 @@ public class PlayerMovement : MonoBehaviour
             //RotationLook(x, y, 1, lookSpeed);
         Inclinada(modelo.transform, x, 45, 0.1f);
         InclinadaPraCima(modelo.transform, y, 45, 0.1f);
+
+        Vector3 Direction = new Vector3(x, y, 1f)* sensibilidade;
+
+         transform.rotation = Quaternion.RotateTowards (transform.rotation,Quaternion.LookRotation (Direction),Mathf.Deg2Rad * 40f);
 
         float tiro = Input.GetAxis("Fire2Axis");
 
@@ -179,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 targetEulerAngles = target.localEulerAngles;
         if(esquerda == false && direita == false)
-        target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, 0, .1f), Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
+        target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, 1f, .1f), Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
         //target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, +eixo * limite, lerpTime), Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
         else if (esquerda == true)
             target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, +eixo * limite, lerpTime), Mathf.LerpAngle(targetEulerAngles.z + 10f, -0.01f * limite, lerpTime));

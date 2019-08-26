@@ -32,7 +32,7 @@ public class LaserEmitter : MonoBehaviour
         {
             
             //receiver.transform.localRotation = transform.localRotation;
-            receiver.transform.localPosition = this.gameObject.transform.TransformDirection(Vector3.forward * laserDistance);
+            receiver.transform.localPosition = this.gameObject.transform.TransformDirection(0, 0, laserDistance);
         }
     }
 }
