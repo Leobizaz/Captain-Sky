@@ -64,16 +64,16 @@ public class PlayerMovement : MonoBehaviour
             x = 0;
             y = 0;
         }
-       // Debug.Log(Input.GetAxis("Fire2Axis"));
+        // Debug.Log(Input.GetAxis("Fire2Axis"));
         MovimentoLocal(x, y, horizontalSpeed);
-            RotationLook(x, y);
+        RotationLook(x, y);
         Inclinada(modelo.transform, x, 45, 0.1f);
         InclinadaPraCima(modelo.transform, y, 25, 0.1f);
 
         Vector3 Direction = new Vector3(x, y, 1f) ;
 
-        if(!isBoosting)
-         transform.rotation = Quaternion.RotateTowards (transform.rotation,Quaternion.LookRotation (Direction),Mathf.Deg2Rad * 50f * sensibilidade);
+        //if(!isBoosting)
+         transform.localRotation = Quaternion.RotateTowards (transform.localRotation,Quaternion.LookRotation (Direction),Mathf.Deg2Rad * 50f * sensibilidade);
 
         float tiro = Input.GetAxis("Shoot");
 
@@ -86,7 +86,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Boost(false);
         }
-            
+        if(playerActive)
+            ClampPosition();
 
         if (tiro == 0 || Input.GetButtonDown("Shoot"))
         {
@@ -157,15 +158,11 @@ public class PlayerMovement : MonoBehaviour
             direita = false;
         }
 
-        
-
     }
 
     void MovimentoLocal(float x, float y, float speed)
     {
         transform.localPosition += new Vector3(x, y, 0) * speed * Time.deltaTime;
-        if(playerActive)
-            ClampPosition();
     }
 
     void ClampPosition()
@@ -274,9 +271,18 @@ public class PlayerMovement : MonoBehaviour
 
     void BarrelRoll(float lado)
     { 
-        modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
-        transform.DOLocalMove(new Vector3(-lado * 6, 0, 0), 0.7f).SetEase(Ease.OutSine);
-        aimTarget.transform.localPosition = new Vector3(0, 0, 8f) * Time.deltaTime;
+        if(lado == -1 && transform.localPosition.x < 7)
+        {
+            modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
+            transform.DOLocalMove(new Vector3(transform.localPosition.x + (-lado * 6), transform.localPosition.y, 0), 0.7f);//.SetEase(Ease.OutSine);
+            aimTarget.transform.localPosition = new Vector3(0, 0, 8f) * Time.deltaTime;
+        }
+        if(lado == 1 && transform.localPosition.x > -7)
+        {
+            modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
+            transform.DOLocalMove(new Vector3(transform.localPosition.x + (-lado * 6), transform.localPosition.y, 0), 0.7f);//.SetEase(Ease.OutSine);
+            aimTarget.transform.localPosition = new Vector3(0, 0, 8f) * Time.deltaTime;
+        }
     }
 
 }
