@@ -15,8 +15,8 @@ public class BirdForward : MonoBehaviour
     {
         tempPosition = transform.localPosition;
         fwdSpeed = Random.Range(-1f, 1f);
-        verticalSpeed = Random.Range(0.1f, 0.2f);
-        amplitude = Random.Range(-0.01f, 0.02f);
+        verticalSpeed = Random.Range(0.01f, 0.1f);
+        amplitude = Random.Range(-0.01f, 0.01f);
     }
 
     void FixedUpdate()
@@ -24,6 +24,6 @@ public class BirdForward : MonoBehaviour
         tempPosition.x += 0.005f * fwdSpeed;
         tempPosition.y += Mathf.Sin(Time.fixedTime * Mathf.PI + verticalSpeed) * amplitude;
         transform.localPosition = tempPosition;
-        Object.Destroy(this.gameObject, lifeTime);
+        //Object.Destroy(this.gameObject, lifeTime);
     }
 }

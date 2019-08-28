@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Took a hit");
             hittable = false;
             Invoke("HitCooldown", invincibilityTime);
-            currentHealth = currentHealth - 10f;
+            currentHealth = currentHealth - 5f;
         }
     }
 

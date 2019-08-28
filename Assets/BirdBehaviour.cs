@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BirdBehaviour : MonoBehaviour
 {
@@ -11,11 +12,24 @@ public class BirdBehaviour : MonoBehaviour
     public GameObject explosionFX;
     public ParticleSystem gun1;
     public ParticleSystem gun2;
+    public GameObject model;
+    private BoxCollider col;
 
+    public AudioClip[] audios;
+    public AudioClip explosionSFX;
+    AudioSource audio;
+
+    Rigidbody rb;
+    bool died;
+    public GameObject smoke;
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<BoxCollider>();
         currentHealth = maxHealth;
         Invoke("Spawn", spawnTime);
+        col.enabled = false;
     }
 
     void Spawn()
@@ -23,6 +37,7 @@ public class BirdBehaviour : MonoBehaviour
         spawned = true;
         gun1.Play();
         gun2.Play();
+        col.enabled = true;
         //Invoke("StartShooting", Random.Range(0.1f, 2f));
     }
 
@@ -64,7 +79,26 @@ public class BirdBehaviour : MonoBehaviour
 
     void Death()
     {
-        Instantiate(explosionFX, transform.localPosition, transform.rotation);
+        if (!died)
+        {
+            Instantiate(explosionFX, model.transform.position, model.transform.localRotation);
+            audio.pitch = Random.Range(0.8f, 1.2f);
+            audio.PlayOneShot(explosionSFX);
+        }
+        rb.isKinematic = false;
+        smoke.SetActive(true);
+
+        died = true;
+        rb.useGravity = true;
+        gun1.Stop();
+        gun2.Stop();
+        GetComponent<BirdForward>().enabled = false;
+        model.transform.DOLocalRotate(new Vector3(360, 0, 0), 10f, RotateMode.LocalAxisAdd);
+        Invoke("Despawn", 10f);
+    }
+
+    void Despawn()
+    {
         Destroy(this.gameObject);
     }
 
@@ -74,7 +108,19 @@ public class BirdBehaviour : MonoBehaviour
         if (other.tag == "Shoot" && spawned)
         {
             //play hit fx
+            audio.pitch = 1f;
+            audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
+
+
             currentHealth = currentHealth - 10f;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DespawnWall"))
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -100,6 +100,7 @@ public class Pause : MonoBehaviour
 
     public void Retry()
     {
+        PlayerHealth.dead = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

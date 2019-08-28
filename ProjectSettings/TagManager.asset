@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Shoot
   - Boost
+  - DespawnWall
   layers:
   - Default
   - TransparentFX
