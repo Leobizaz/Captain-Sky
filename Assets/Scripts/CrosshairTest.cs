@@ -8,7 +8,7 @@ public class CrosshairTest : MonoBehaviour
     public GameObject WorldObject;
 
     //this is the ui element
-   // public RectTransform UI_Element;
+    public RectTransform UI_Element;
 
     //first you need the RectTransform component of your canvas
     RectTransform CanvasRect;
@@ -29,6 +29,6 @@ public class CrosshairTest : MonoBehaviour
         ((ViewportPosition.y * CanvasRect.sizeDelta.y) - (CanvasRect.sizeDelta.y * 0.5f)));
 
         //now you can set the position of the ui element
-        //UI_Element.anchoredPosition = WorldObject_ScreenPosition;
+        UI_Element.anchoredPosition = WorldObject_ScreenPosition;
     }
 }

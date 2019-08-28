@@ -11,8 +11,6 @@ public class BirdForward : MonoBehaviour
 
     private Vector3 tempPosition;
 
-    public GameObject explosion;
-
     void Start()
     {
         tempPosition = transform.localPosition;
@@ -27,15 +25,5 @@ public class BirdForward : MonoBehaviour
         tempPosition.y += Mathf.Sin(Time.fixedTime * Mathf.PI + verticalSpeed) * amplitude;
         transform.localPosition = tempPosition;
         Object.Destroy(this.gameObject, lifeTime);
-    }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        Debug.Log("COLIDIU");
-        if (other.tag == "Shoot")
-        {
-            Instantiate(explosion, tempPosition, transform.rotation);
-            Destroy(this.gameObject);
-        }
     }
 }

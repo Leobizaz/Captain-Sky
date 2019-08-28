@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             float y;
 
 
-            if (playerActive)
+            if (playerActive && !PlayerHealth.dead)
             {
                 if (Pause.controleInvertido)
                 {

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     public GameObject pauseScreen;
+    public GameObject gameOverScreen;
+    public GameObject tentarNovamente;
     public PlayerOpenMovement playerOpenMovement;
     public PlayerMovement playerMovement;
     private AudioSource[] allAudioSources;
@@ -82,10 +85,22 @@ public class Pause : MonoBehaviour
         onOptions = true;
         eventSys.SetSelectedGameObject(ToggleControleInvertido.gameObject);
     }
+
+    public void LoadGameOverMenu()
+    {
+        gameOverScreen.SetActive(true);
+        eventSys.SetSelectedGameObject(tentarNovamente);
+    }
+
     public void LoadMenu()
     {
         onOptions = false;
         eventSys.SetSelectedGameObject(pauseScreenContinuar);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
