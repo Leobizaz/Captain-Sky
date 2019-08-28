@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 Direction = new Vector3(x, y, 1f);
 
             //if(!isBoosting)
-            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.LookRotation(Direction), Mathf.Deg2Rad * 50f * sensibilidade);
+            //transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.LookRotation(Direction), Mathf.Deg2Rad * 50f * sensibilidade);
 
             float tiro = Input.GetAxis("Shoot");
 
@@ -198,6 +198,7 @@ public class PlayerMovement : MonoBehaviour
     
     void Inclinada(Transform target, float eixo, float limite, float lerpTime)
     {
+        /* old
         Vector3 targetEulerAngles = target.localEulerAngles;
         if(esquerda == false && direita == false)
         target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, 1f, .1f), Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
@@ -206,6 +207,18 @@ public class PlayerMovement : MonoBehaviour
             target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, +eixo * limite, lerpTime), Mathf.LerpAngle(targetEulerAngles.z + 10f, -0.01f * limite, lerpTime));
         else if (direita == true)
             target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, +eixo * limite, lerpTime), Mathf.LerpAngle(targetEulerAngles.z - 10f, -0.01f * limite, lerpTime));
+            */
+
+        Vector3 targetEulerAngles = target.localEulerAngles;
+        if (esquerda == false && direita == false)
+            target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
+        //target.localEulerAngles = new Vector3(targetEulerAngles.x, Mathf.LerpAngle(targetEulerAngles.y, +eixo * limite, lerpTime), Mathf.LerpAngle(targetEulerAngles.z, -eixo * limite, lerpTime));
+        else if (esquerda == true)
+            target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z + 10f, -0.01f * limite, lerpTime));
+        else if (direita == true)
+            target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z - 10f, -0.01f * limite, lerpTime));
+        
+
     }
 
     void InclinadaPraCima(Transform target, float eixo, float limite, float lerpTime)
