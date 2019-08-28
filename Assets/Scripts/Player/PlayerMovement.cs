@@ -50,114 +50,126 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x;
-        float y;
-
-
-        if (playerActive)
+        if (!Pause.paused)
         {
-            x = Input.GetAxis("Horizontal");
-            y = -Input.GetAxis("Vertical");
+            float x;
+            float y;
+
+
+            if (playerActive)
+            {
+                if (Pause.controleInvertido)
+                {
+                    x = Input.GetAxis("Horizontal");
+                    y = -Input.GetAxis("Vertical");
+                }
+                else
+                {
+                    x = Input.GetAxis("Horizontal");
+                    y = Input.GetAxis("Vertical");
+                }
+            }
+            else
+            {
+                x = 0;
+                y = 0;
+            }
+            // Debug.Log(Input.GetAxis("Fire2Axis"));
+
+            MovimentoLocal(x, y, horizontalSpeed);
+            RotationLook(x, y);
+
+            Inclinada(modelo.transform, x, 25, 0.1f);
+            InclinadaPraCima(modelo.transform, y, 25, 0.1f);
+
+            Vector3 Direction = new Vector3(x, y, 1f);
+
+            //if(!isBoosting)
+            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.LookRotation(Direction), Mathf.Deg2Rad * 50f * sensibilidade);
+
+            float tiro = Input.GetAxis("Shoot");
+
+            if (Input.GetButtonDown("Boost") && !isBoosting)
+            {
+                Boost(true);
+            }
+
+            if (Input.GetButtonUp("Boost") && !isBoosting)
+            {
+                Boost(false);
+            }
+            if (playerActive)
+                ClampPosition();
+
+            if (tiro == 0 || Input.GetButtonDown("Shoot"))
+            {
+                audioSource.Stop();
+                shoot2.Play();
+                shoot.Play();
+            }
+            else
+            {
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
+            }
+
+            if (Input.GetAxisRaw("Break") != 0)
+                Break(true);
+            /*
+                    if (Input.GetAxisRaw("Break") == 0)
+                        Break(false);
+
+                    */
+            if (Input.GetButtonDown("Left"))
+            {
+                esquerda = true;
+
+                if (!pressedOnce)
+                {
+                    pressedOnce = true;
+                    time = Time.time;
+                }
+
+                else
+                {
+                    BarrelRoll(1);
+                }
+            }
+
+            if (Input.GetButtonUp("Left"))
+                esquerda = false;
+
+            if (Input.GetButtonDown("Right"))
+            {
+                direita = true;
+                if (!pressedOnce)
+                {
+                    pressedOnce = true;
+                    time = Time.time;
+                }
+
+                else
+                {
+                    BarrelRoll(-1);
+                }
+            }
+
+            if (pressedOnce)
+            {
+                if (Time.time - time > timerLength)
+                {
+                    pressedOnce = false;
+                }
+
+                time += Time.deltaTime * 0f;
+            }
+
+            if (Input.GetButtonUp("Right"))
+            {
+                // pressedOnce = true;
+                direita = false;
+            }
         }
-        else
-        {
-            x = 0;
-            y = 0;
-        }
-        // Debug.Log(Input.GetAxis("Fire2Axis"));
-        MovimentoLocal(x, y, horizontalSpeed);
-        RotationLook(x, y);
-        Inclinada(modelo.transform, x, 45, 0.1f);
-        InclinadaPraCima(modelo.transform, y, 25, 0.1f);
-
-        Vector3 Direction = new Vector3(x, y, 1f) ;
-
-        //if(!isBoosting)
-         transform.localRotation = Quaternion.RotateTowards (transform.localRotation,Quaternion.LookRotation (Direction),Mathf.Deg2Rad * 50f * sensibilidade);
-
-        float tiro = Input.GetAxis("Shoot");
-
-        if (Input.GetButtonDown("Boost") && !isBoosting)
-        {
-            Boost(true);
-        }
-
-        if (Input.GetButtonUp("Boost") && !isBoosting)
-        {
-            Boost(false);
-        }
-        if(playerActive)
-            ClampPosition();
-
-        if (tiro == 0 || Input.GetButtonDown("Shoot"))
-        {
-            audioSource.Stop();
-            shoot2.Play();
-            shoot.Play();
-        }
-        else
-        {
-            if (!audioSource.isPlaying)
-                audioSource.Play();
-        }
-        
-        if (Input.GetAxisRaw("Break") != 0)
-            Break(true);
-/*
-        if (Input.GetAxisRaw("Break") == 0)
-            Break(false);
-            
-        */
-        if (Input.GetButtonDown("Left") )
-        {
-            esquerda = true;
-            
-             if(!pressedOnce)
-             {
-             pressedOnce = true;
-             time = Time.time;
-             }
- 
-             else
-             {
-                BarrelRoll(1);
-             }
-        }
-
-        if (Input.GetButtonUp("Left"))
-            esquerda = false;
-
-        if (Input.GetButtonDown("Right"))
-        {
-             direita = true;
-             if(!pressedOnce)
-             {
-             pressedOnce = true;
-             time = Time.time;
-             }
- 
-             else
-             {
-                BarrelRoll(-1);
-             }
-        }
-
-        if(pressedOnce)
-         {
-             if(Time.time - time > timerLength)
-             {
-                 pressedOnce = false;
-             }
- 
-             time += Time.deltaTime *0f;
-         }
-         
-        if (Input.GetButtonUp("Right"))
-        {
-           // pressedOnce = true;
-            direita = false;
-        }
-
     }
 
     void MovimentoLocal(float x, float y, float speed)
