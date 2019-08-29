@@ -10,6 +10,10 @@ public class ScoreSystem : MonoBehaviour
     public Text scoreDisplay;
     public static float currentScore;
     float displayedScore;
+    private void Start()
+    {
+        UpdateScore();
+    }
 
     void Update()
     {

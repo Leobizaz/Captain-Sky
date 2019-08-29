@@ -81,7 +81,7 @@ public class BirdBehaviour : MonoBehaviour
     {
         if (!died)
         {
-            ScoreSystem.currentScore += 100f;
+            ScoreSystem.currentScore += 1000f;
             GameObject.Find("Game Manager").GetComponent<ScoreSystem>().UpdateScore();
             Instantiate(explosionFX, model.transform.position, model.transform.localRotation);
             audio.pitch = Random.Range(0.8f, 1.2f);

@@ -11,19 +11,27 @@ public class PlayerHealth : MonoBehaviour
     public float invincibilityTime;
     public Pause pauseScreen;
     public static bool dead;
-
+    public ParticleSystem collectVidaFX;
     public Image HPBar;
     bool hittable;
+    bool once;
 
     private void Start()
     {
-        hittable = true;
         currentHealth = maxHealth;
+        Invoke("GetHittable", 2f);
+    }
+
+    void GetHittable()
+    {
+        hittable = true;
     }
 
     private void Update()
     {
-        if (currentHealth <= 0 && !dead)
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+
+        if (currentHealth <= 0 && !dead && hittable)
         {
             Death();
         }
@@ -44,6 +52,25 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickupVida") && !once)
+        {
+            once = true;
+            Debug.Log("PEGO");
+            Destroy(other.gameObject);
+            //spawnfx
+            Instantiate(collectVidaFX, other.transform.position, Quaternion.identity);
+            currentHealth = currentHealth + 25f;
+            Invoke("ResetPickupCooldown", 1f);
+        }
+    }
+
+    void ResetPickupCooldown()
+    {
+        once = false;
+    }
+
     void HitCooldown()
     {
         hittable = true;
@@ -52,7 +79,7 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHPSlider()
     {
         //HPBar.DOValue((currentHealth / 100), 0.5f);
-        HPBar.DOFillAmount((currentHealth / 100), 0.5f);
+        HPBar.DOFillAmount((currentHealth / 100), 1.0f);
     }
 
     void Death()
@@ -65,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
 
     void OpenDeathMenu()
     {
+        hittable = false;
         pauseScreen.LoadGameOverMenu();
     }
 }
