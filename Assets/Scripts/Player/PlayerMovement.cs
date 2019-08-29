@@ -55,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
             float x;
             float y;
 
+            if (PlayerHealth.dead == true)
+                playerActive = false;
 
             if (playerActive && !PlayerHealth.dead)
             {
