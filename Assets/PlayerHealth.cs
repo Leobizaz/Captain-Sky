@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public Pause pauseScreen;
     public static bool dead;
 
-    public Slider HPBar;
+    public Image HPBar;
     bool hittable;
 
     private void Start()
@@ -51,7 +51,8 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHPSlider()
     {
-        HPBar.DOValue((currentHealth / 100), 0.5f);
+        //HPBar.DOValue((currentHealth / 100), 0.5f);
+        HPBar.DOFillAmount((currentHealth / 100), 0.5f);
     }
 
     void Death()

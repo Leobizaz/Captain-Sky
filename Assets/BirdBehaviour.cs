@@ -48,7 +48,7 @@ public class BirdBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (currentHealth <= 0) Death();
+        if (currentHealth <= 0 && spawned) Death();
 
 
 
@@ -81,6 +81,8 @@ public class BirdBehaviour : MonoBehaviour
     {
         if (!died)
         {
+            ScoreSystem.currentScore += 100f;
+            GameObject.Find("Game Manager").GetComponent<ScoreSystem>().UpdateScore();
             Instantiate(explosionFX, model.transform.position, model.transform.localRotation);
             audio.pitch = Random.Range(0.8f, 1.2f);
             audio.PlayOneShot(explosionSFX);
