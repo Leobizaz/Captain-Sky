@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject explosionFX;
     public AudioSource audio;
     public AudioClip[] audios;
+    public GameObject playerMesh;
 
     private void Start()
     {
@@ -97,10 +98,10 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player has been killed");
         dead = true;
-        transform.DOLocalRotate(new Vector3(180, 0, 90), 7f, RotateMode.LocalAxisAdd);
-        transform.DOLocalMoveY(-28,5, true);
+        playerMesh.transform.DOLocalRotate(new Vector3(90, 0, 90), 7f, RotateMode.LocalAxisAdd);
+        playerMesh.transform.DOLocalMoveY(-45f,3.5f, true);
         Instantiate(explosionFX, transform.position, transform.localRotation);
-        Invoke("OpenDeathMenu", 4f);
+        Invoke("OpenDeathMenu", 3.6f);
     }
 
     void OpenDeathMenu()
