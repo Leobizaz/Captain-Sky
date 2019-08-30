@@ -11,6 +11,7 @@ public class InstantiateDialogo : MonoBehaviour
     public Sprite icone;
     public string nome;
     public string texto;
+    bool tocou;
     AudioSource audio;
 
     public static bool dialogoPlaying;
@@ -22,8 +23,9 @@ public class InstantiateDialogo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !tocou)
         {
+            tocou = true;
             GameObject dialogocfg = Instantiate(dialogo) as GameObject;
             dialogocfg.transform.SetParent(canvas.transform, false);
             if (dialogoPlaying)

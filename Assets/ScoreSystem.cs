@@ -7,7 +7,8 @@ using DG.Tweening;
 
 public class ScoreSystem : MonoBehaviour
 {
-    public Text scoreDisplay;
+    public Text scoreHUDisplay;
+
     public static float currentScore;
     float displayedScore;
     private void Start()
@@ -24,6 +25,6 @@ public class ScoreSystem : MonoBehaviour
 
     public void UpdateScore()
     {
-        scoreDisplay.DOText(displayedScore.ToString(), 1f, true, ScrambleMode.Numerals);
+        scoreHUDisplay.DOText(displayedScore.ToString(), 1f, true, ScrambleMode.Numerals);
     }
 }

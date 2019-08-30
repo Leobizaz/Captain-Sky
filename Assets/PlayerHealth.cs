@@ -50,12 +50,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.CompareTag("Enemy") && hittable)
+        if (other.CompareTag("Enemy") && hittable && !Pause.victory)
         {
             Debug.Log("Took a hit");
             audio.pitch = 1f;
             audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
-            transform.DOShakePosition(0.27f,1.4f,16,10,false,false);
+            //transform.DOShakePosition(0.27f,1.4f,16,10,false,false);
             transform.DOShakeRotation(0.25f, 1f, 10, 10, false);
             hittable = false;
             Invoke("HitCooldown", invincibilityTime);

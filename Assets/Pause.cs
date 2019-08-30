@@ -15,6 +15,7 @@ public class Pause : MonoBehaviour
     private AudioSource[] allAudioSources;
     public Toggle ToggleControleInvertido;
     public static bool paused;
+    public static bool victory;
     public static bool controleInvertido;
     public EventSystem eventSys;
     public GameObject pauseScreenContinuar;

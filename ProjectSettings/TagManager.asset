@@ -10,6 +10,7 @@ TagManager:
   - Boost
   - DespawnWall
   - PickupVida
+  - DeadEnemy
   layers:
   - Default
   - TransparentFX

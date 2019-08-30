@@ -86,6 +86,7 @@ public class BirdBehaviour : MonoBehaviour
             Instantiate(explosionFX, model.transform.position, model.transform.localRotation);
             audio.pitch = Random.Range(0.8f, 1.2f);
             audio.PlayOneShot(explosionSFX);
+            gameObject.tag = "DeadEnemy";
         }
         rb.isKinematic = false;
         smoke.SetActive(true);
@@ -110,7 +111,7 @@ public class BirdBehaviour : MonoBehaviour
         if (other.tag == "Shoot" && spawned)
         {
             //play hit fx
-            audio.pitch = 1f;
+            audio.pitch = 0.7f;
             audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
 
 

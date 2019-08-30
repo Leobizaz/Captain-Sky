@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Pause.paused)
+        if (!Pause.paused && !Pause.victory)
         {
             float x;
             float y;
