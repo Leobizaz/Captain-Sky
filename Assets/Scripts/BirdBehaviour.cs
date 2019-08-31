@@ -14,7 +14,7 @@ public class BirdBehaviour : MonoBehaviour
     public ParticleSystem gun2;
     public GameObject model;
     private BoxCollider col;
-
+    public bool dontshoot;
     public AudioClip[] audios;
     public AudioClip explosionSFX;
     AudioSource audio;
@@ -35,8 +35,11 @@ public class BirdBehaviour : MonoBehaviour
     void Spawn()
     {
         spawned = true;
-        gun1.Play();
-        gun2.Play();
+        if (!dontshoot)
+        {
+            gun1.Play();
+            gun2.Play();
+        }
         col.enabled = true;
         //Invoke("StartShooting", Random.Range(0.1f, 2f));
     }

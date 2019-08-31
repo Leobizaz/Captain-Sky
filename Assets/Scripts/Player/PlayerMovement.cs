@@ -24,13 +24,21 @@ public class PlayerMovement : MonoBehaviour
     private bool direita = false;
     public ParticleSystem shoot;
     public ParticleSystem shoot2;
+    public CinemachineVirtualCamera thirdPersonCamera;
+    public GameObject firstPersonCamera;
+    public Camera boundaryCamera;
+    public CinemachineBrain cinemachineBrain;
     public bool playerActive;
+    bool firstPerson;
     AudioSource audioSource;
+    Sequence mySequence;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        mySequence = DOTween.Sequence();
+        firstPerson = false;
         audioSource = GetComponent<AudioSource>();
         //playerActive = false;
         SetSpeed(progressionSpeed);
@@ -58,6 +66,21 @@ public class PlayerMovement : MonoBehaviour
             if (PlayerHealth.dead == true)
                 playerActive = false;
 
+            if (playerActive && Input.GetButtonDown("Boost"))
+            {
+                firstPerson = !firstPerson;
+
+                if (firstPerson)
+                {
+                    firstPersonCamera.SetActive(true);
+                }
+                else
+                {
+                    firstPersonCamera.SetActive(false);
+                }
+            }
+
+
             if (playerActive && !PlayerHealth.dead)
             {
                 if (Pause.controleInvertido)
@@ -75,6 +98,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 x = 0;
                 y = 0;
+            }
+
+            if (x == 0 && y == 0)
+            {
+                Invoke("ResetMira", 0.5f);
+            }
+            else
+            {
+                CancelInvoke("ResetMira");
+                mySequence.Kill();
             }
             // Debug.Log(Input.GetAxis("Fire2Axis"));
 
@@ -116,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (Input.GetAxisRaw("Break") != 0)
-                Break(true);
+                //Break(true);
             /*
                     if (Input.GetAxisRaw("Break") == 0)
                         Break(false);
@@ -182,14 +215,14 @@ public class PlayerMovement : MonoBehaviour
 
     void ClampPosition()
     {
-        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        Vector3 pos = boundaryCamera.WorldToViewportPoint(transform.position);
 
         //Boundary em relação a camera
 
         pos.x = Mathf.Clamp(pos.x, 0.1f, 0.9f);
         pos.y = Mathf.Clamp(pos.y, 0.1f, 0.9f);
 
-        transform.position = Camera.main.ViewportToWorldPoint(pos);
+        transform.position = boundaryCamera.ViewportToWorldPoint(pos);
     }
 
     void RotationLook(float x, float y)
@@ -197,6 +230,12 @@ public class PlayerMovement : MonoBehaviour
         aimTarget.transform.localPosition += new Vector3(x, 0, 8f) * Time.deltaTime;
         aimTarget.transform.localPosition += new Vector3(0, y, 8f) * Time.deltaTime;
         aimTarget.transform.localPosition = new Vector3(Mathf.Clamp(aimTarget.transform.localPosition.x, -10f, 10f), Mathf.Clamp(aimTarget.transform.localPosition.y, -6f, 6f),8f);
+    }
+
+    void ResetMira()
+    {
+        if(!mySequence.IsPlaying())
+            mySequence.Append(aimTarget.DOLocalMove(new Vector3(0, 0, 8f), 0.7f));
     }
     
     void Inclinada(Transform target, float eixo, float limite, float lerpTime)
