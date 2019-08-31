@@ -26,7 +26,10 @@ public class Pause : MonoBehaviour
 
     void Awake()
     {
-
+        ComunicadorAdam.active = false;
+        ComunicadorJack.active = false;
+        ComunicadorCharlie.active = false;
+        ComunicadorMarcus.active = false;
     }
 
     void Update()

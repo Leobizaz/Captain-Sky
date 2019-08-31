@@ -22,10 +22,21 @@ public class SpawnAnimation : MonoBehaviour
         Invoke("Die", lifeTime);
         nome.text = name;
         mensagem.text = text;
+
+        if (name == "Jack") ComunicadorJack.active = true;
+        if (name == "Marcus") ComunicadorMarcus.active = true;
+        if (name == "Adam") ComunicadorAdam.active = true;
+        if (name == "Charlie") ComunicadorCharlie.active = true;
+
     }
 
     void Die()
     {
+        if (name == "Jack") ComunicadorJack.active = false;
+        if (name == "Marcus") ComunicadorMarcus.active = false;
+        if (name == "Adam") ComunicadorAdam.active = false;
+        if (name == "Charlie") ComunicadorCharlie.active = false;
+
         anim.Play("PopOut");
         Invoke("RIP", 1f);
         InstantiateDialogo.dialogoPlaying = false;

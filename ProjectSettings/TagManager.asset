@@ -11,6 +11,7 @@ TagManager:
   - DespawnWall
   - PickupVida
   - DeadEnemy
+  - AllyTrigger
   layers:
   - Default
   - TransparentFX

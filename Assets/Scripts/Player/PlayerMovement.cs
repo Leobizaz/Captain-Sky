@@ -93,12 +93,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Boost") && !isBoosting)
             {
-                Boost(true);
+                //Boost(true);
             }
 
             if (Input.GetButtonUp("Boost") && !isBoosting)
             {
-                Boost(false);
+                //Boost(false);
             }
             if (playerActive)
                 ClampPosition();
