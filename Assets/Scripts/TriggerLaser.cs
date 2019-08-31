@@ -20,7 +20,8 @@ public class TriggerLaser : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            laserEmitter.SetActive(true);
+            if(laserEmitter.gameObject != null)
+                laserEmitter.SetActive(true);
         }
     }
 }
