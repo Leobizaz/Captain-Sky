@@ -190,6 +190,9 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
+            if (Input.GetButtonUp("Right") || Input.GetButtonUp("Right2"))
+                direita = false;
+
             if (pressedOnce)
             {
                 if (Time.time - time > timerLength)

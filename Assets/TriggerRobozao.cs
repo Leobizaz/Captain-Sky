@@ -6,7 +6,12 @@ public class TriggerRobozao : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            RobozaoFlyAway.Begone = true;
+            Invoke("FlyAway", 8f);
         }
+    }
+
+    void FlyAway()
+    {
+        RobozaoFlyAway.Begone = true;
     }
 }
