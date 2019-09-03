@@ -46,7 +46,7 @@ public class PlayerOpenMovement : MonoBehaviour
 
         if (!manobra)
         {
-            vectorinput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
+            vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
             rotation = Input.GetAxis("Horizontal");
         }
         else

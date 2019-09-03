@@ -16,12 +16,12 @@ public class EmissorPlayer : MonoBehaviour
     {
         transform.LookAt(mira.transform);
         if (Input.GetButton("Right") || Input.GetButton("Right"))
-            gira.transform.eulerAngles = new Vector3(0, 0, -90);
+            gira.transform.localEulerAngles = new Vector3(0, 0, -90);
         else
         if (Input.GetButton("Left") || Input.GetButton("Left2"))
-            gira.transform.eulerAngles = new Vector3(0, 0, 90);
+            gira.transform.localEulerAngles = new Vector3(0, 0, 90);
         else
-            gira.transform.eulerAngles = new Vector3(0, 0, 0);
+            gira.transform.localEulerAngles = new Vector3(0, 0, 0);
     }
 
 }

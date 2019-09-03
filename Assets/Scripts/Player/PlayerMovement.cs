@@ -19,9 +19,13 @@ public class PlayerMovement : MonoBehaviour
     public Transform aimTarget;
     public CinemachineDollyCart dolly;
     public Transform cameraParent;
+    public GameObject radarIMG;
+    public GameObject oculosHUD;
+
    // public GameObject cursor;
     private bool esquerda = false;
     private bool direita = false;
+    public bool podeAtirar;
     public ParticleSystem shoot;
     public ParticleSystem shoot2;
     public CinemachineVirtualCamera thirdPersonCamera;
@@ -37,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        podeAtirar = true;
         mySequence = DOTween.Sequence();
         firstPerson = false;
         audioSource = GetComponent<AudioSource>();
@@ -66,16 +71,21 @@ public class PlayerMovement : MonoBehaviour
             if (PlayerHealth.dead == true)
                 playerActive = false;
 
-            if (playerActive && Input.GetButtonDown("Boost"))
+            if (playerActive && Input.GetButtonDown("P.O.V"))
             {
                 firstPerson = !firstPerson;
 
                 if (firstPerson)
                 {
+                    oculosHUD.SetActive(true);
                     firstPersonCamera.SetActive(true);
+                    radarIMG.SetActive(false);
+                    aimTarget.transform.localPosition = new Vector3(0,0,0);
                 }
                 else
                 {
+                    oculosHUD.SetActive(false);
+                    radarIMG.SetActive(true);
                     firstPersonCamera.SetActive(false);
                 }
             }
@@ -112,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
             // Debug.Log(Input.GetAxis("Fire2Axis"));
 
             MovimentoLocal(x, y, horizontalSpeed);
+            
+            if (!firstPerson)
             RotationLook(x, y);
 
             Inclinada(modelo.transform, x, 25, 0.1f);
@@ -124,28 +136,36 @@ public class PlayerMovement : MonoBehaviour
 
             float tiro = Input.GetAxis("Shoot");
 
-            if (Input.GetButtonDown("Boost") && !isBoosting)
+            if (Input.GetButtonDown("P.O.V") && !isBoosting)
             {
                 //Boost(true);
             }
 
-            if (Input.GetButtonUp("Boost") && !isBoosting)
+            if (Input.GetButtonUp("P.O.V") && !isBoosting)
             {
                 //Boost(false);
             }
             if (playerActive)
                 ClampPosition();
 
-            if (tiro == 0 || Input.GetButtonDown("Shoot"))
+            if (podeAtirar)
             {
-                audioSource.Stop();
-                shoot2.Play();
-                shoot.Play();
+                if (tiro == 0 || Input.GetButtonDown("Shoot"))
+                {
+                    audioSource.Stop();
+                    shoot2.Play();
+                    shoot.Play();
+                }
+                else
+                {
+                    if (!audioSource.isPlaying)
+                        audioSource.Play();
+                }
             }
             else
             {
-                if (!audioSource.isPlaying)
-                    audioSource.Play();
+                shoot.Stop();
+                shoot2.Stop();
             }
 
             if (Input.GetAxisRaw("Break") != 0)
@@ -192,6 +212,16 @@ public class PlayerMovement : MonoBehaviour
             
             if (Input.GetButtonUp("Left") || Input.GetButtonUp("Left2"))
                 esquerda = false;
+
+            if (pressedOnce)
+            {
+                if (Time.time - time > timerLength)
+                {
+                    pressedOnce = false;
+                }
+
+                time += Time.deltaTime * 0f;
+            }
 
         }
     }
