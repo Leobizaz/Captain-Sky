@@ -5,15 +5,23 @@ using UnityEngine;
 public class EmissorPlayer : MonoBehaviour
 {
     public GameObject mira;
-    // Start is called before the first frame update
+    public GameObject gira;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.LookAt(mira.transform);
+        if (Input.GetButton("Right") || Input.GetButton("Right"))
+            gira.transform.eulerAngles = new Vector3(0, 0, -90);
+        else
+        if (Input.GetButton("Left") || Input.GetButton("Left2"))
+            gira.transform.eulerAngles = new Vector3(0, 0, 90);
+        else
+            gira.transform.eulerAngles = new Vector3(0, 0, 0);
     }
+
 }

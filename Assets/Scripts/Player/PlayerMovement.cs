@@ -149,35 +149,14 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (Input.GetAxisRaw("Break") != 0)
-                //Break(true);
-            /*
-                    if (Input.GetAxisRaw("Break") == 0)
-                        Break(false);
-
-                    */
-            if (Input.GetButtonDown("Left") || Input.GetButtonDown("Left2"))
             {
-                esquerda = true;
-
-                if (!pressedOnce)
-                {
-                    pressedOnce = true;
-                    time = Time.time;
-                }
-
-                else
-                {
-                    BarrelRoll(1);
-                }
+                //pau no cu do break
             }
-            
-            if (Input.GetButtonUp("Left") || Input.GetButtonUp("Left2"))
-                esquerda = false;
-                
 
             if (Input.GetButtonDown("Right") || Input.GetButtonDown("Right2"))
             {
                 direita = true;
+                Debug.Log("Direita caralho");
                 if (!pressedOnce)
                 {
                     pressedOnce = true;
@@ -193,21 +172,27 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonUp("Right") || Input.GetButtonUp("Right2"))
                 direita = false;
 
-            if (pressedOnce)
+            ///////////////////////////////////////
+
+            if (Input.GetButtonDown("Left") || Input.GetButtonDown("Left2") || Input.GetKeyDown(KeyCode.B))
             {
-                if (Time.time - time > timerLength)
+                esquerda = true;
+                Debug.Log("Esquerda caralho");
+                if (!pressedOnce)
                 {
-                    pressedOnce = false;
+                    pressedOnce = true;
+                    time = Time.time;
                 }
 
-                time += Time.deltaTime * 0f;
+                else
+                {
+                    BarrelRoll(1);
+                }
             }
+            
+            if (Input.GetButtonUp("Left") || Input.GetButtonUp("Left2"))
+                esquerda = false;
 
-            if (Input.GetButtonUp("Right") || Input.GetButtonUp("Right2"))
-            {
-                // pressedOnce = true;
-                direita = false;
-            }
         }
     }
 
@@ -341,13 +326,13 @@ public class PlayerMovement : MonoBehaviour
 
     void BarrelRoll(float lado)
     { 
-        if(lado == -1 && transform.localPosition.x < 7)
+        if(lado == -1 && transform.localPosition.x < 20)
         {
             modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
             transform.DOLocalMove(new Vector3(transform.localPosition.x + (-lado * 10), transform.localPosition.y, 0), 0.7f);//.SetEase(Ease.OutSine);
             aimTarget.transform.localPosition = new Vector3(0, 0, 8f) * Time.deltaTime;
         }
-        if(lado == 1 && transform.localPosition.x > -7)
+        if(lado == 1 && transform.localPosition.x > -20)
         {
             modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
             transform.DOLocalMove(new Vector3(transform.localPosition.x + (-lado * 10), transform.localPosition.y, 0), 0.7f);//.SetEase(Ease.OutSine);
