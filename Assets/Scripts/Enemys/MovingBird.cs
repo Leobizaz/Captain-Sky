@@ -34,6 +34,7 @@ public class MovingBird : MonoBehaviour
         if (other.tag == "Shoot")
         {
             Instantiate(explosion,tempPosition, transform.rotation);
+            ScoreSystem.enemysKill += 1;
             Destroy(this.gameObject);
         }
     }

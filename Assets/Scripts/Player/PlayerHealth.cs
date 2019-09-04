@@ -23,14 +23,13 @@ public class PlayerHealth : MonoBehaviour
     public GameObject playerMesh;
 
     public Image Feedback;
-    private Animation anim;
-
+    public Image FeedbackLife;
+    //public GameObject Tiros;
 
     private void Start()
     {
         currentHealth = maxHealth;
         Invoke("GetHittable", 2f);
-        anim = Feedback.GetComponent<Animation>();
        // audio = GetComponent<AudioSource>();
     }
 
@@ -62,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Took a hit");
             audio.pitch = 1f;
-            anim.Play();
+            Feedback.gameObject.SetActive(true);
             Feedback.DOColor(Red,0.1f);
             audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
             //transform.DOShakePosition(0.27f,1.4f,16,10,false,false);
@@ -81,6 +80,8 @@ public class PlayerHealth : MonoBehaviour
         {
             once = true;
             Debug.Log("PEGO");
+            FeedbackLife.gameObject.SetActive(true);
+            FeedbackLife.DOColor(Green, 0.1f);
             Destroy(other.gameObject);
             //spawnfx
             Instantiate(collectVidaFX, other.transform.position, Quaternion.identity);
@@ -109,6 +110,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player has been killed");
         dead = true;
+        //colocar o instantiate do tiro em posiçoes aleatórias
         playerMesh.transform.DOLocalRotate(new Vector3(90, 0, 90), 7f, RotateMode.LocalAxisAdd);
         playerMesh.transform.DOLocalMoveY(-45f,3.5f, true);
         Instantiate(explosionFX, transform.position, transform.localRotation);

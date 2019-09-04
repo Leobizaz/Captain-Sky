@@ -11,17 +11,20 @@ public class VictoryScreenController : MonoBehaviour
     public Text inimigosDisplay;
     public Text tempoDisplay;
     public Text scoreFinalDisplay;
+    public Text BonusDisplay;
     public GameObject obrigado;
-
+    public AudioSource aud;
 
     void Start()
     {
-        missaoconcluida.DOText("Missão Concluída", 2f, true, ScrambleMode.Uppercase);
-        Invoke("UpdateScore", 4f);
-        Invoke("UpdateInimigos", 6f);
-        Invoke("UpdateTempo", 8f);
-        Invoke("UpdateScoreFinal", 10f);
-        Invoke("Obrigado", 14f);
+        aud.Play();
+        missaoconcluida.DOText("Missão Concluída", 3.5f, true, ScrambleMode.Uppercase);
+        Invoke("UpdateScore", 6f);
+        Invoke("UpdateInimigos", 8f);
+        Invoke("UpdateTempo", 10f);
+        Invoke("UpdateBonus", 13f);
+        Invoke("UpdateScoreFinal", 15f);
+        Invoke("Obrigado", 18f);
     }
 
     void Update()
@@ -36,12 +39,16 @@ public class VictoryScreenController : MonoBehaviour
 
     void UpdateInimigos()
     {
-        inimigosDisplay.DOText("5/13", 1.5f, true, ScrambleMode.Numerals);
+        inimigosDisplay.DOText("13", 1.5f, true, ScrambleMode.Numerals);
     }
 
     void UpdateTempo()
     {
-        tempoDisplay.DOText("1m37s", 1.5f, true, ScrambleMode.Numerals);
+        tempoDisplay.DOText("1:37", 1.5f, true, ScrambleMode.Numerals);
+    }
+    void UpdateBonus()
+    {
+        BonusDisplay.DOText("MAMA AQUI", 1.5f, true, ScrambleMode.Numerals);
     }
 
     void UpdateScoreFinal()
