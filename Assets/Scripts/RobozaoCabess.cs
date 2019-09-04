@@ -12,6 +12,9 @@ public class RobozaoCabess : MonoBehaviour
     public GameObject fumaça;
     public Material newMaterial;
     public Renderer rend;
+    public GameObject light;
+    public GameObject spark;
+    bool died;
 
     private void Start()
     {
@@ -20,7 +23,7 @@ public class RobozaoCabess : MonoBehaviour
 
     private void Update()
     {
-        if(health <= 0)
+        if(health <= 0 && !died)
         {
             GetKilled();
         }
@@ -36,6 +39,9 @@ public class RobozaoCabess : MonoBehaviour
 
     void GetKilled()
     {
+        died = true;
+        spark.SetActive(true);
+        light.SetActive(false);
         fumaça.SetActive(true);
         mainRobo.cabessa_destroy = true;
         if(laser.gameObject != null)
