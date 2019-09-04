@@ -5118,7 +5118,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7014895255006285099}
-  m_Layer: 10
+  - component: {fileID: 6864935680036131092}
+  - component: {fileID: 416724436174678039}
+  m_Layer: 0
   m_Name: Modelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5141,6 +5143,31 @@ Transform:
   m_Father: {fileID: 7014895255227804383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6864935680036131092
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014895255006285098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &416724436174678039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014895255006285098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3779d4f2c973a4c9984de912e12ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7014895255227804382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,7 +5184,7 @@ GameObject:
   - component: {fileID: 1670777030045182545}
   - component: {fileID: 4247162333047886752}
   m_Layer: 10
-  m_Name: Inimigo_AveFWD
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5170,7 +5197,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7014895255227804382}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5180,7 +5207,7 @@ Transform:
   - {fileID: 4682866214052598888}
   m_Father: {fileID: 7014895253521353931}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
 --- !u!114 &7014895255227804386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5237,7 +5264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cd860b7e969fe4e8bd993de34d7dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 90
+  maxHealth: 30
   currentHealth: 0
   spawnTime: 0
   explosionFX: {fileID: 3521517111240187432, guid: 62212727496e2804fa12b0175a1a436f,
@@ -5245,11 +5272,13 @@ MonoBehaviour:
   gun1: {fileID: 8653091000006136617}
   gun2: {fileID: 7403325118493853403}
   model: {fileID: 7014895255006285098}
+  dontshoot: 0
   audios:
   - {fileID: 8300000, guid: 1f477c39608c406438d7503cbac16862, type: 3}
   - {fileID: 8300000, guid: b37296110de8c2643817beab19bd148f, type: 3}
   - {fileID: 8300000, guid: ccb8104edc7b2f144aee74a2be89bf85, type: 3}
   explosionSFX: {fileID: 8300000, guid: b0c27b7d4867bf446aabb8eeb2e038ea, type: 3}
+  cantGoDownOrLeftOrRight: 0
   smoke: {fileID: 2005203619588864961}
 --- !u!54 &1670777030045182545
 Rigidbody:

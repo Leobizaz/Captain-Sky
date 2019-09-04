@@ -17,6 +17,8 @@ public class BirdBehaviour : MonoBehaviour
     public bool dontshoot;
     public AudioClip[] audios;
     public AudioClip explosionSFX;
+    bool tooClose;
+    public bool cantGoDownOrLeftOrRight;
     AudioSource audio;
 
     Rigidbody rb;
@@ -52,7 +54,6 @@ public class BirdBehaviour : MonoBehaviour
     private void Update()
     {
         if (currentHealth <= 0 && spawned) Death();
-
 
 
     }
@@ -103,7 +104,7 @@ public class BirdBehaviour : MonoBehaviour
         Invoke("Despawn", 10f);
     }
 
-    void Despawn()
+    public void Despawn()
     {
         Destroy(this.gameObject);
     }
@@ -126,7 +127,7 @@ public class BirdBehaviour : MonoBehaviour
     {
         if (other.CompareTag("DespawnWall"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
