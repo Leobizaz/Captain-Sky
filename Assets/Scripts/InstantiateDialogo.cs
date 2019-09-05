@@ -29,7 +29,7 @@ public class InstantiateDialogo : MonoBehaviour
             GameObject dialogocfg = Instantiate(dialogo) as GameObject;
             dialogocfg.transform.SetParent(canvas.transform, false);
             dialogocfg.name = "Dialogo";
-            if (MoveDialogo.move) dialogocfg.GetComponent<RectTransform>().localScale = new Vector2(0.1f, 0.1f);
+            
             if (dialogoPlaying)
             {
                 RectTransform rt = dialogocfg.GetComponent<RectTransform>();

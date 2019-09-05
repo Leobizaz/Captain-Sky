@@ -28,6 +28,7 @@ public class MoveDialogo : MonoBehaviour
         if (ComunicadorAdam.active) WorldObject = adam;
         else if (ComunicadorCharlie.active) WorldObject = charlie;
         else if (ComunicadorMarcus.active) WorldObject = marcus;
+        else if (ComunicadorJack.active) WorldObject = jack;
         else
         {
             WorldObject = null;
@@ -38,7 +39,8 @@ public class MoveDialogo : MonoBehaviour
         {
             if (WorldObject == null) return;
             if (UI_Element == null) return;
-            Vector3 newPos = new Vector3(WorldObject.transform.position.x, WorldObject.transform.position.y - 4, WorldObject.transform.position.z);
+            Vector3 newPos = new Vector3(WorldObject.transform.position.x, WorldObject.transform.position.y - 7, WorldObject.transform.position.z);
+            if(ComunicadorJack.active) newPos = new Vector3(WorldObject.transform.position.x, WorldObject.transform.position.y - 3, WorldObject.transform.position.z);
             Vector2 ViewportPosition = Camera.main.WorldToViewportPoint(newPos);
             Vector2 WorldObject_ScreenPosition = new Vector2(
             ((ViewportPosition.x * CanvasRect.sizeDelta.x) - (CanvasRect.sizeDelta.x * 0.5f)),

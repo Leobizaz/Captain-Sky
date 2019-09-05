@@ -16,23 +16,27 @@ public class LaserEmitter : MonoBehaviour
     void Update()
     {
 
-        laserbeam.SetPosition(0, gameObject.transform.position);
-        laserbeam.SetPosition(1, receiver.transform.position);
+        laserbeam.SetPosition(0, gameObject.transform.localPosition);
+        laserbeam.SetPosition(1, receiver.transform.localPosition);
 
         int layermask = 1 << 9;
         layermask = ~layermask;
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, laserDistance, layermask))
+        if(Physics.Raycast(transform.localPosition, this.transform.forward, out hit, laserDistance, layermask))
         {
             receiver.transform.LookAt(gameObject.transform);
-            receiver.transform.position = hit.point;
+            receiver.transform.localPosition = hit.point;
             Debug.Log(hit.collider.gameObject.name);
         }
         else
         {
-            
+            //var localDirection = transform.rotation * Vector3.forward;
+           
+            var localDirection = this.transform.forward;
+
+
             //receiver.transform.localRotation = transform.localRotation;
-            receiver.transform.localPosition = this.gameObject.transform.TransformDirection(0, 0, laserDistance);
+            receiver.transform.localPosition = this.gameObject.transform.localPosition + (localDirection * laserDistance);
         }
     }
 }

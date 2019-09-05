@@ -42,16 +42,16 @@ public class NaveEvade : MonoBehaviour
                         break;
                     case 2:
                         //up
-                        parent.transform.DOLocalRotate(new Vector3(parent.transform.localRotation.x, parent.transform.localRotation.y, -30), 2f);
+                        parent.transform.DOLocalRotate(new Vector3(parent.transform.localRotation.x, 180, -60), 2f);
                         parent.GetComponent<BirdForward>().fwdSpeed = 65f;
                         break;
                     case 3:
                         //down
-                        parent.transform.DOLocalRotate(new Vector3(parent.transform.localRotation.x, parent.transform.localRotation.y, 30), 2f);
+                        parent.transform.DOLocalRotate(new Vector3(parent.transform.localRotation.x, 180, 60), 2f);
                         parent.GetComponent<BirdForward>().fwdSpeed = 65f;
                         break;
                     default:
-                        parent.transform.DOLocalRotate(new Vector3(parent.transform.localRotation.x, parent.transform.localRotation.y, -30), 2f);
+                        parent.transform.DOLocalRotate(new Vector3(parent.transform.localRotation.x, 180, -60), 2f);
                         parent.GetComponent<BirdForward>().fwdSpeed = 65f;
                         break;
                 }
