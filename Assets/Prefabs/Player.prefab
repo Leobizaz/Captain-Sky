@@ -31238,6 +31238,9 @@ MonoBehaviour:
   aimTarget: {fileID: 1615338082}
   dolly: {fileID: 55135125055604968}
   cameraParent: {fileID: 55135124761264014}
+  radarIMG: {fileID: 0}
+  oculosHUD: {fileID: 0}
+  podeAtirar: 0
   shoot: {fileID: 55135125390245115}
   shoot2: {fileID: 55135125773830232}
   thirdPersonCamera: {fileID: 55135125344755335}
@@ -31491,6 +31494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e39c89173d58cf4b94edf67b26452e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Red: {r: 1, g: 0, b: 0, a: 1}
+  Green: {r: 0, g: 1, b: 0, a: 1}
   maxHealth: 100
   currentHealth: 100
   invincibilityTime: 0.5
@@ -31506,6 +31511,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b37296110de8c2643817beab19bd148f, type: 3}
   - {fileID: 8300000, guid: ccb8104edc7b2f144aee74a2be89bf85, type: 3}
   playerMesh: {fileID: 55135124828893920}
+  Feedback: {fileID: 0}
+  FeedbackLife: {fileID: 0}
 --- !u!1 &55135124828893920
 GameObject:
   m_ObjectHideFlags: 0
@@ -47273,11 +47280,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8552561451178082016, guid: c236afbdfab0bc84ca1c1ec84abd24ad,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cd4fd7666a6323e4cb36045caa5ac449, type: 2}
     - target: {fileID: -4216859302048453862, guid: c236afbdfab0bc84ca1c1ec84abd24ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47348,6 +47350,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.45451146
       objectReference: {fileID: 0}
+    - target: {fileID: -8552561451178082016, guid: c236afbdfab0bc84ca1c1ec84abd24ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd4fd7666a6323e4cb36045caa5ac449, type: 2}
     - target: {fileID: 6564536619046737561, guid: c236afbdfab0bc84ca1c1ec84abd24ad,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -47372,6 +47379,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tiro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920521850944185997, guid: 9fc7bb04b31bb5a4691cde9756b74806,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.44685733
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920521850944185997, guid: 9fc7bb04b31bb5a4691cde9756b74806,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5920521850944185999, guid: 9fc7bb04b31bb5a4691cde9756b74806,
         type: 3}
@@ -47427,16 +47444,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5920521850944185997, guid: 9fc7bb04b31bb5a4691cde9756b74806,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.y
-      value: 0.44685733
-      objectReference: {fileID: 0}
-    - target: {fileID: 5920521850944185997, guid: 9fc7bb04b31bb5a4691cde9756b74806,
-        type: 3}
-      propertyPath: CollisionModule.collisionMessages
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5920521850944185996, guid: 9fc7bb04b31bb5a4691cde9756b74806,
         type: 3}

@@ -68,6 +68,10 @@ public class PlayerMovement : MonoBehaviour
         {
             float x;
             float y;
+            float x2;
+            float y2;
+            y2 = Input.GetAxis("VerticalDireito");
+            x2 = Input.GetAxis("HorizontalDireito");
 
             if (PlayerHealth.dead == true)
                 playerActive = false;
@@ -78,10 +82,11 @@ public class PlayerMovement : MonoBehaviour
 
                 if (firstPerson)
                 {
+                    aimTarget.transform.localPosition = new Vector3(0f, 0, 8f);
                     oculosHUD.SetActive(true);
                     firstPersonCamera.SetActive(true);
                     radarIMG.SetActive(false);
-                    aimTarget.transform.localPosition = new Vector3(0,0,0);
+                   
                 }
                 else
                 {
@@ -111,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
                 y = 0;
             }
 
-            if (x == 0 && y == 0)
+            if (x == 0 && y == 0 && !firstPerson)
             {
                 Invoke("ResetMira", 0.5f);
             }
@@ -126,6 +131,8 @@ public class PlayerMovement : MonoBehaviour
             
             if (!firstPerson)
             RotationLook(x, y);
+            else
+            RotationLookFPS(x2, y2);
 
             Inclinada(modelo.transform, x, 25, Time.deltaTime * 3f);
             InclinadaPraCima(modelo.transform, y, 25, Time.deltaTime * 2f);
@@ -247,6 +254,12 @@ public class PlayerMovement : MonoBehaviour
         aimTarget.transform.localPosition += new Vector3(x, 0, 8f) * Time.deltaTime;
         aimTarget.transform.localPosition += new Vector3(0, y, 8f) * Time.deltaTime;
         aimTarget.transform.localPosition = new Vector3(Mathf.Clamp(aimTarget.transform.localPosition.x, -10f, 10f), Mathf.Clamp(aimTarget.transform.localPosition.y, -6f, 6f),8f);
+    }
+    void RotationLookFPS(float x, float y)
+    {
+        aimTarget.transform.localPosition +=( new Vector3(x, 0, 8f) * Time.deltaTime )* 6;
+        aimTarget.transform.localPosition +=( new Vector3(0, y, 8f) * Time.deltaTime) * 6;
+        aimTarget.transform.localPosition = new Vector3(Mathf.Clamp(aimTarget.transform.localPosition.x, -4.2f, 4.2f), Mathf.Clamp(aimTarget.transform.localPosition.y, -1f, 3f), 8f);
     }
 
     void ResetMira()
@@ -373,13 +386,13 @@ public class PlayerMovement : MonoBehaviour
         {
             modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
             transform.DOLocalMove(new Vector3(transform.localPosition.x + (-lado * 10), transform.localPosition.y, 0), 0.7f);//.SetEase(Ease.OutSine);
-            aimTarget.transform.localPosition = new Vector3(0, 0, 8f) * Time.deltaTime;
+            aimTarget.transform.localPosition = new Vector3(0, 0, 9f);
         }
         if(lado == 1 && transform.localPosition.x > -20)
         {
             modelo.transform.DOLocalRotate(new Vector3(0,0,360f * lado),0.6f, RotateMode.LocalAxisAdd );
             transform.DOLocalMove(new Vector3(transform.localPosition.x + (-lado * 10), transform.localPosition.y, 0), 0.7f);//.SetEase(Ease.OutSine);
-            aimTarget.transform.localPosition = new Vector3(0, 0, 8f) * Time.deltaTime;
+            aimTarget.transform.localPosition = new Vector3(0, 0, 9f);
         }
     }
 
