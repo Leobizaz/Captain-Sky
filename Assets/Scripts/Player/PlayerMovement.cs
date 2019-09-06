@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform cameraParent;
     public GameObject radarIMG;
     public GameObject oculosHUD;
+    bool briefCancel;
 
    // public GameObject cursor;
     private bool esquerda = false;
@@ -176,7 +177,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Right") || Input.GetButtonDown("Right2"))
             {
                 direita = true;
-                Debug.Log("Direita caralho");
                 if (!pressedOnce)
                 {
                     pressedOnce = true;
@@ -197,7 +197,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Left") || Input.GetButtonDown("Left2") || Input.GetKeyDown(KeyCode.B))
             {
                 esquerda = true;
-                Debug.Log("Esquerda caralho");
                 if (!pressedOnce)
                 {
                     pressedOnce = true;
@@ -324,18 +323,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.tag == "Boost")
         {
+            float speed = other.GetComponent<Boostzone>().Boost_speed;
             isBoosting = true;
             Debug.Log("Boost ON");
-            Boost(false);
+            //Boost(false);
             //SetSpeed(progressionSpeed + 75f);
             float currentSpeed = dolly.m_Speed;
-            DOVirtual.Float(currentSpeed, progressionSpeed +75f, 2f, SetSpeed);
+            float newSpeed = progressionSpeed + speed;
+            DOVirtual.Float(currentSpeed, newSpeed, 4f, SetSpeed).SetEase(Ease.InOutQuad);
+            briefCancel = true;
+            //Invoke("ResetBriefCancel", 3f);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Boost")
+        if(other.tag == "Boost" && !briefCancel)
         {
             isBoosting = false;
             Debug.Log("Boost OFF");
@@ -345,6 +348,16 @@ public class PlayerMovement : MonoBehaviour
             DOVirtual.Float(currentSpeed, progressionSpeed, 2f, SetSpeed);
 
         }
+        else
+        {
+            Debug.Log("Negado");
+        }
+    }
+
+    void ResetBriefCancel()
+    {
+        Debug.Log("Oh fuck it resetted");
+        briefCancel = false;
     }
 
     private void OnDrawGizmos()

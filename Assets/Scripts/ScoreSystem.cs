@@ -17,6 +17,7 @@ public class ScoreSystem : MonoBehaviour
     public static int enemysKill;
     float displayedScore;
     public GameObject TelaVitoria;
+    public string Tstring;
 
     private void Start()
     {
@@ -28,7 +29,7 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         scoreHUDisplay.text = "" + currentScore;
-        EnemyK.text = "" + enemysKill;
+        //EnemyK.text = "" + enemysKill;
         displayedScore = currentScore;
         //scoreDisplay.text = displayedScore.ToString();
         //UpdateScore();
@@ -38,9 +39,9 @@ public class ScoreSystem : MonoBehaviour
         }
         int sec = (int) (time % 60);
         int min = (int) (time / 60) % 60;
-        string Tstring = string.Format("{0:0}:{1:00}", min, sec);
+        Tstring = string.Format("{0:0}:{1:00}", min, sec);
 
-        Tempo.text = "" + Tstring;
+        //Tempo.text = "" + Tstring;
 
     }
 

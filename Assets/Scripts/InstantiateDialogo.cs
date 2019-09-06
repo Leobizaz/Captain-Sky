@@ -7,6 +7,7 @@ public class InstantiateDialogo : MonoBehaviour
 {
     public GameObject dialogo;
     public Canvas canvas;
+    public GameObject HUD;
     public float lifeTime;
     public Sprite icone;
     public string nome;
@@ -26,9 +27,12 @@ public class InstantiateDialogo : MonoBehaviour
         if (other.CompareTag("Player") && !tocou)
         {
             tocou = true;
-            GameObject dialogocfg = Instantiate(dialogo) as GameObject;
-            dialogocfg.transform.SetParent(canvas.transform, false);
+            GameObject dialogocfg = Instantiate(dialogo) as GameObject; 
+            dialogocfg.transform.SetParent(HUD.transform, false);
             dialogocfg.name = "Dialogo";
+            //int index = dialogocfg.transform.GetSiblingIndex();
+            dialogocfg.transform.SetAsFirstSibling();
+            //dialogocfg.transform.SetSiblingIndex(4);
             
             if (dialogoPlaying)
             {
@@ -45,5 +49,11 @@ public class InstantiateDialogo : MonoBehaviour
             audio.Play();
 
         }
+    }
+
+    public void MoveInHierarchy(int delta)
+    {
+        int index = transform.GetSiblingIndex();
+        transform.SetSiblingIndex(index + delta);
     }
 }

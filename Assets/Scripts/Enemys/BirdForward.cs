@@ -12,9 +12,9 @@ public class BirdForward : MonoBehaviour
     private Vector3 tempPosition;
 
     void Start()
-    {
+    {   
         tempPosition = transform.localPosition;
-        fwdSpeed = Random.Range(5, 15);
+        fwdSpeed = Random.Range(3, 7);
         verticalSpeed = Random.Range(0.01f, 0.1f);
         amplitude = Random.Range(-0.01f, 0.01f);
     }

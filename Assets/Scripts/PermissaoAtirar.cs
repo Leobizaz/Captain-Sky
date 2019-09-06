@@ -9,6 +9,7 @@ public class PermissaoAtirar : MonoBehaviour
         {
             Debug.Log("Passou por pode atirar");
             other.GetComponent<PlayerMovement>().podeAtirar = podeAtirar;
+            MoveDialogo.move = !podeAtirar;
         }
     }
 }

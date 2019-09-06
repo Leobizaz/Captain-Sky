@@ -15,6 +15,8 @@ public class VictoryScreenController : MonoBehaviour
     public GameObject obrigado;
     public AudioSource aud;
 
+    public ScoreSystem scoreSys;
+
     void Start()
     {
         aud.Play();
@@ -39,16 +41,16 @@ public class VictoryScreenController : MonoBehaviour
 
     void UpdateInimigos()
     {
-        inimigosDisplay.DOText("13", 1.5f, true, ScrambleMode.Numerals);
+        inimigosDisplay.DOText(ScoreSystem.enemysKill.ToString() + "/13", 1.5f, true, ScrambleMode.Numerals);
     }
 
     void UpdateTempo()
     {
-        tempoDisplay.DOText("1:37", 1.5f, true, ScrambleMode.Numerals);
+        tempoDisplay.DOText(scoreSys.Tstring, 1.5f, true, ScrambleMode.Numerals);
     }
     void UpdateBonus()
     {
-        BonusDisplay.DOText("MAMA AQUI", 1.5f, true, ScrambleMode.Numerals);
+        BonusDisplay.DOText("test", 1.5f, true, ScrambleMode.Numerals);
     }
 
     void UpdateScoreFinal()
