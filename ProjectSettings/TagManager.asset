@@ -12,6 +12,7 @@ TagManager:
   - PickupVida
   - DeadEnemy
   - AllyTrigger
+  - EnemyLaser
   layers:
   - Default
   - TransparentFX

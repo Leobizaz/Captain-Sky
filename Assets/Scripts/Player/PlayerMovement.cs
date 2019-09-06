@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera boundaryCamera;
     public CinemachineBrain cinemachineBrain;
     public bool playerActive;
-    bool firstPerson;
+    public static bool firstPerson;
     AudioSource audioSource;
     Sequence mySequence;
 
@@ -127,8 +127,8 @@ public class PlayerMovement : MonoBehaviour
             if (!firstPerson)
             RotationLook(x, y);
 
-            Inclinada(modelo.transform, x, 25, 0.1f);
-            InclinadaPraCima(modelo.transform, y, 25, 0.1f);
+            Inclinada(modelo.transform, x, 25, Time.deltaTime * 3f);
+            InclinadaPraCima(modelo.transform, y, 25, Time.deltaTime * 2f);
 
             Vector3 Direction = new Vector3(x, y, 1f);
 
@@ -332,7 +332,7 @@ public class PlayerMovement : MonoBehaviour
             float newSpeed = progressionSpeed + speed;
             DOVirtual.Float(currentSpeed, newSpeed, 4f, SetSpeed).SetEase(Ease.InOutQuad);
             briefCancel = true;
-            //Invoke("ResetBriefCancel", 3f);
+            Invoke("ResetBriefCancel", 2f);
         }
     }
 
@@ -350,7 +350,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("Negado");
+            //Debug.Log("Negado");
         }
     }
 

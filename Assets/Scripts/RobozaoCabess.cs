@@ -45,7 +45,7 @@ public class RobozaoCabess : MonoBehaviour
         fumaça.SetActive(true);
         mainRobo.cabessa_destroy = true;
         if(laser.gameObject != null)
-            laser.SetActive(false);
+            //laser.SetActive(false);
         //playsound destroy
         gameObject.tag = "DeadEnemy";
         rend.material = newMaterial;

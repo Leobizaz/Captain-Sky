@@ -91,6 +91,7 @@ public class BirdBehaviour : MonoBehaviour
             audio.pitch = Random.Range(0.8f, 1.2f);
             audio.PlayOneShot(explosionSFX);
             gameObject.tag = "DeadEnemy";
+            ScoreSystem.enemysKill++;
         }
         rb.isKinematic = false;
         smoke.SetActive(true);

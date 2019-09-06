@@ -41,7 +41,7 @@ public class VictoryScreenController : MonoBehaviour
 
     void UpdateInimigos()
     {
-        inimigosDisplay.DOText(ScoreSystem.enemysKill.ToString() + "/13", 1.5f, true, ScrambleMode.Numerals);
+        inimigosDisplay.DOText(ScoreSystem.enemysKill.ToString() + "/20", 1.5f, true, ScrambleMode.Numerals);
     }
 
     void UpdateTempo()
@@ -55,7 +55,7 @@ public class VictoryScreenController : MonoBehaviour
 
     void UpdateScoreFinal()
     {
-        scoreFinalDisplay.DOText((ScoreSystem.currentScore + 3000 + 10000).ToString(), 3f, true, ScrambleMode.Numerals);
+        scoreFinalDisplay.DOText((ScoreSystem.currentScore).ToString(), 3f, true, ScrambleMode.Numerals);
     }
     void Obrigado()
     {

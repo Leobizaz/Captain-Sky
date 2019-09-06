@@ -27,6 +27,10 @@ public class LaserEmitter : MonoBehaviour
             receiver.transform.LookAt(gameObject.transform);
             receiver.transform.localPosition = hit.point;
             Debug.Log(hit.collider.gameObject.name);
+            if(hit.collider.gameObject.tag == "Player")
+            {
+                hit.collider.gameObject.GetComponent<PlayerHealth>().GetHit(20);
+            }
         }
         else
         {
@@ -38,5 +42,10 @@ public class LaserEmitter : MonoBehaviour
             //receiver.transform.localRotation = transform.localRotation;
             receiver.transform.localPosition = this.gameObject.transform.localPosition + (localDirection * laserDistance);
         }
+    }
+
+    public void Kill()
+    {
+        Destroy(laserbeam.gameObject);
     }
 }

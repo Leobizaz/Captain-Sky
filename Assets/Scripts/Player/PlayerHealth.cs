@@ -52,13 +52,21 @@ public class PlayerHealth : MonoBehaviour
             Death();
         }
 
-        UpdateHPSlider();
+        //UpdateHPSlider();
     }
 
     private void OnParticleCollision(GameObject other)
     {
         if (other.CompareTag("Enemy") && hittable && !Pause.victory)
         {
+            GetHit(5);
+        }
+    }
+    
+
+    public void GetHit(float value)
+    {
+        if(hittable && !Pause.victory)
             Debug.Log("Took a hit");
             audio.pitch = 1f;
             Feedback.gameObject.SetActive(true);
@@ -68,8 +76,8 @@ public class PlayerHealth : MonoBehaviour
             transform.DOShakeRotation(0.25f, 1f, 10, 10, false);
             hittable = false;
             Invoke("HitCooldown", invincibilityTime);
-            currentHealth = currentHealth - 5f;
-        }
+            currentHealth = currentHealth - value;
+            UpdateHPSlider();
     }
 
 
@@ -87,11 +95,27 @@ public class PlayerHealth : MonoBehaviour
             Instantiate(collectVidaFX, other.transform.position, Quaternion.identity);
             currentHealth = currentHealth + 25f;
             Invoke("ResetPickupCooldown", 1f);
+            UpdateHPSlider();
+        }
+
+        if(other.gameObject.CompareTag("EnemyLaser") && hittable && !Pause.victory)
+        {
+            Debug.Log("Took a laser hit");
+            audio.pitch = 1f;
+            Feedback.gameObject.SetActive(true);
+            Feedback.DOColor(Red,0.1f);
+            audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
+            transform.DOShakeRotation(0.25f, 1f, 10, 10, false);
+            hittable = false;
+            Invoke("HitCooldown", invincibilityTime);
+            currentHealth = currentHealth - 20f;
+            UpdateHPSlider();
         }
     }
 
     void ResetPickupCooldown()
     {
+
         once = false;
     }
 
