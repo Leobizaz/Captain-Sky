@@ -7,6 +7,7 @@ public class LaserEmitter : MonoBehaviour
     public GameObject receiver;
     public LineRenderer laserbeam;
     public float laserDistance;
+    public GameObject impactParticle;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class LaserEmitter : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.localPosition, this.transform.forward, out hit, laserDistance, layermask))
         {
+            impactParticle.SetActive(true);
+            impactParticle.transform.position = hit.point;
             receiver.transform.LookAt(gameObject.transform);
             receiver.transform.localPosition = hit.point;
             Debug.Log(hit.collider.gameObject.name);
@@ -35,7 +38,7 @@ public class LaserEmitter : MonoBehaviour
         else
         {
             //var localDirection = transform.rotation * Vector3.forward;
-           
+            impactParticle.SetActive(false);
             var localDirection = this.transform.forward;
 
 
