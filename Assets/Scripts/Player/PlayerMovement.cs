@@ -134,8 +134,11 @@ public class PlayerMovement : MonoBehaviour
             else
             RotationLookFPS(x2, y2);
 
-            Inclinada(modelo.transform, x, 25, Time.deltaTime * 3f);
-            InclinadaPraCima(modelo.transform, y, 25, Time.deltaTime * 2f);
+            //Inclinada(modelo.transform, x, 25, Time.deltaTime * 3f);
+            //InclinadaPraCima(modelo.transform, y, 25, Time.deltaTime * 2f);
+
+            Inclinada(modelo.transform, x, 25, 0.1f);
+            InclinadaPraCima(modelo.transform, y, 25, 0.1f);
 
             Vector3 Direction = new Vector3(x, y, 1f);
 
