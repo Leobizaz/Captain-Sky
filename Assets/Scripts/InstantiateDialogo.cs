@@ -28,7 +28,7 @@ public class InstantiateDialogo : MonoBehaviour
         {
             tocou = true;
             GameObject dialogocfg = Instantiate(dialogo) as GameObject; 
-            dialogocfg.transform.SetParent(HUD.transform, false);
+            dialogocfg.transform.SetParent(canvas.transform, false);
             dialogocfg.name = "Dialogo";
             //int index = dialogocfg.transform.GetSiblingIndex();
             dialogocfg.transform.SetAsFirstSibling();

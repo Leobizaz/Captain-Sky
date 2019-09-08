@@ -29,7 +29,7 @@ public class LaserEmitter : MonoBehaviour
             impactParticle.transform.position = hit.point;
             receiver.transform.LookAt(gameObject.transform);
             receiver.transform.localPosition = hit.point;
-            Debug.Log(hit.collider.gameObject.name);
+            Debug.Log(hit.collider.gameObject.name + " por " + gameObject.name);
             if(hit.collider.gameObject.tag == "Player")
             {
                 hit.collider.gameObject.GetComponent<PlayerHealth>().GetHit(20);

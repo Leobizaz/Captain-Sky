@@ -18,7 +18,7 @@ public class RobozaoFlyAway : MonoBehaviour
         {
             sparks.SetActive(false);
             smokeTrail.SetActive(true);
-            transform.DOLocalMoveY(1000, 50f).SetEase(Ease.InOutQuad);
+            transform.DOLocalMoveY(1000, 50f);
         }
     }
 }

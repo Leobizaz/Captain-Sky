@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject radarIMG;
     public GameObject oculosHUD;
     bool briefCancel;
+    public bool canFirstPerson;
 
    // public GameObject cursor;
     private bool esquerda = false;
@@ -76,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             if (PlayerHealth.dead == true)
                 playerActive = false;
 
-            if (playerActive && Input.GetButtonDown("P.O.V"))
+            if (playerActive && Input.GetButtonDown("P.O.V") && canFirstPerson)
             {
                 firstPerson = !firstPerson;
 

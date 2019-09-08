@@ -20,7 +20,7 @@ public class AlliedAnimatorControl : MonoBehaviour
     {
         if (other.CompareTag("AllyTrigger") && !once)
         {
-            MoveDialogo.move = false;
+            //MoveDialogo.move = false;
             once = true;
             Dive();
         }
