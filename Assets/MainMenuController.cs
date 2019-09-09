@@ -39,6 +39,8 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject lastSelected;
 
+    public GameObject titulo;
+
     public string whichPanel;
 
     void Start()
