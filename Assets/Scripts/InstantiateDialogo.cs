@@ -12,6 +12,7 @@ public class InstantiateDialogo : MonoBehaviour
     public Sprite icone;
     public string nome;
     public string texto;
+    public bool italic;
     bool tocou;
     AudioSource audio;
 
@@ -46,6 +47,7 @@ public class InstantiateDialogo : MonoBehaviour
             cfg.icone.sprite = icone;
             cfg.name = nome;
             cfg.text = texto;
+            cfg.italic = italic;
             audio.Play();
 
         }

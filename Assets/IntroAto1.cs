@@ -13,7 +13,9 @@ public class IntroAto1 : MonoBehaviour
     public GameObject maincamera;
 
     public GameObject fadeBlack;
-
+    public GameObject dialogoKinect;
+    public GameObject dialogoKinect2;
+    public GameObject audiokinect;
     public VideoPlayer videoPlayer;
 
     void Start()
@@ -38,7 +40,20 @@ public class IntroAto1 : MonoBehaviour
         maincamera.GetComponent<PostProcessLayer>().enabled = true;
         //gameplay.SetActive(true);
         canvas.SetActive(true);
+        Invoke("PlayCantoria", 2f);
         //timeline.SetActive(true);
         //musica.SetActive(true);
+    }
+
+    void PlayCantoria()
+    {
+        audiokinect.SetActive(true);
+        dialogoKinect.SetActive(true);
+        Invoke("PlayCantoria2", 6.2f);
+    }
+
+    void PlayCantoria2()
+    {
+        dialogoKinect2.SetActive(true);
     }
 }
