@@ -12,12 +12,15 @@ public class RobozaoBrasso : MonoBehaviour
     public Material newMaterial;
     public Renderer rend;
     public GameObject sparkleFX;
+    public AudioClip[] audios;
+    AudioSource audio;
     public bool brassodireito;
     public Animator meshAnim;
     bool dead;
 
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
         health = maxHealth;
     }
 
@@ -33,6 +36,7 @@ public class RobozaoBrasso : MonoBehaviour
     {
         if (other.CompareTag("Shoot"))
         {
+            //audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
             health = health - 10f;
         }
     }

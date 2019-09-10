@@ -15,11 +15,15 @@ public class RobozaoCabess : MonoBehaviour
     public Renderer rend;
     public GameObject light;
     public GameObject spark;
+
+    public AudioClip[] audios;
+    AudioSource audio;
     bool died;
 
     private void Start()
     {
         health = maxHealth;
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -34,6 +38,7 @@ public class RobozaoCabess : MonoBehaviour
     {
         if (other.CompareTag("Shoot"))
         {
+            //audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
             health = health - 10f;
         }
     }
