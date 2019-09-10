@@ -15049,6 +15049,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7014895255006285099}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: d4507384b39a76a47babfe7e289964a2,
+        type: 3}
+      propertyPath: m_Name
+      value: ave_animada
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d4507384b39a76a47babfe7e289964a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4507384b39a76a47babfe7e289964a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15119,16 +15129,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: d4507384b39a76a47babfe7e289964a2,
-        type: 3}
-      propertyPath: m_Name
-      value: ave_animada
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: d4507384b39a76a47babfe7e289964a2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: d4507384b39a76a47babfe7e289964a2,
         type: 3}
       propertyPath: m_Avatar
@@ -15154,6 +15154,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7014895255006285099}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 7017cb15a1e944641b1639a713299c81,
+        type: 3}
+      propertyPath: m_Name
+      value: Cu de Galinhg
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7017cb15a1e944641b1639a713299c81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15224,11 +15229,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 7017cb15a1e944641b1639a713299c81,
+    - target: {fileID: -6057140222963153312, guid: 7017cb15a1e944641b1639a713299c81,
         type: 3}
-      propertyPath: m_Name
-      value: Cu de Galinhg
-      objectReference: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: aae6e64864553f84d9dad69ded5d447e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7017cb15a1e944641b1639a713299c81, type: 3}
 --- !u!137 &2085130136019512334 stripped
@@ -15250,6 +15255,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7014895255006285099}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: b80f596cc3ce6ea41b8f19be299e6a58,
+        type: 3}
+      propertyPath: m_Name
+      value: mdl_ave
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b80f596cc3ce6ea41b8f19be299e6a58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b80f596cc3ce6ea41b8f19be299e6a58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930347753775762426, guid: b80f596cc3ce6ea41b8f19be299e6a58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b80f596cc3ce6ea41b8f19be299e6a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15319,26 +15344,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: b80f596cc3ce6ea41b8f19be299e6a58,
-        type: 3}
-      propertyPath: m_Name
-      value: mdl_ave
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: b80f596cc3ce6ea41b8f19be299e6a58,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: b80f596cc3ce6ea41b8f19be299e6a58,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2930347753775762426, guid: b80f596cc3ce6ea41b8f19be299e6a58,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b80f596cc3ce6ea41b8f19be299e6a58, type: 3}

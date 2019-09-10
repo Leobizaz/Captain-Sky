@@ -8,10 +8,15 @@ public class RobozaoFlyAway : MonoBehaviour
     public static bool Prepare;
     public GameObject smokeTrail;
     public GameObject sparks;
+    public Animator meshAnim;
 
     private void Update()
     {
-        if (Prepare && !Begone) sparks.SetActive(true);
+        if (Prepare && !Begone)
+        {
+            meshAnim.Play("E2_Flight");
+            sparks.SetActive(true);
+        }
 
 
         if (Begone)

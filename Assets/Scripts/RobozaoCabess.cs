@@ -8,6 +8,7 @@ public class RobozaoCabess : MonoBehaviour
     public float health;
 
     public RobozaoHealth mainRobo;
+    public Animator meshAnim;
     public GameObject laser;
     public GameObject fumaça;
     public Material newMaterial;
@@ -40,6 +41,7 @@ public class RobozaoCabess : MonoBehaviour
     void GetKilled()
     {
         died = true;
+        meshAnim.Play("E2_HitCabess 0");
         spark.SetActive(true);
         light.SetActive(false);
         fumaça.SetActive(true);

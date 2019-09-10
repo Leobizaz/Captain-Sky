@@ -13,6 +13,7 @@ public class RobozaoBrasso : MonoBehaviour
     public Renderer rend;
     public GameObject sparkleFX;
     public bool brassodireito;
+    public Animator meshAnim;
     bool dead;
 
     private void Start()
@@ -39,6 +40,7 @@ public class RobozaoBrasso : MonoBehaviour
     void GetKilled()
     {
         dead = true;
+        meshAnim.Play("E2_Damage 0");
         sparkleFX.SetActive(true);
         fumaça.SetActive(true);
         if (brassodireito)

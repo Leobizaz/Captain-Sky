@@ -93,7 +93,7 @@ public class PlayerHealth : MonoBehaviour
             Destroy(other.gameObject);
             //spawnfx
             Instantiate(collectVidaFX, other.transform.position, Quaternion.identity);
-            currentHealth = currentHealth + 25f;
+            currentHealth = currentHealth + 50f;
             Invoke("ResetPickupCooldown", 1f);
             UpdateHPSlider();
         }

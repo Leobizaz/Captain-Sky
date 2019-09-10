@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool firstPerson;
     AudioSource audioSource;
     Sequence mySequence;
-
+    public GameObject modelooo;
 
     // Start is called before the first frame update
     void Start()
@@ -85,12 +85,14 @@ public class PlayerMovement : MonoBehaviour
                 {
                     aimTarget.transform.localPosition = new Vector3(0f, 0, 8f);
                     oculosHUD.SetActive(true);
+                    modelooo.SetActive(false);
                     firstPersonCamera.SetActive(true);
                     radarIMG.SetActive(false);
                    
                 }
                 else
                 {
+                    modelooo.SetActive(true);
                     oculosHUD.SetActive(false);
                     radarIMG.SetActive(true);
                     firstPersonCamera.SetActive(false);
