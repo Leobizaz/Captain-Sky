@@ -13,6 +13,7 @@ TagManager:
   - DeadEnemy
   - AllyTrigger
   - EnemyLaser
+  - Ally
   layers:
   - Default
   - TransparentFX

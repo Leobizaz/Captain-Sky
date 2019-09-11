@@ -20,6 +20,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_9BBF1FA3:
+        m_Texture: {fileID: 2800000, guid: 6f4730117aa16ab478ff8e27e2ce3eb2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C9C132AE:
+        m_Texture: {fileID: 2800000, guid: e9817ea4162d7a74fadc4fccc02920ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_ECF8967B:
+        m_Texture: {fileID: 2800000, guid: 2b377e4f6053bcf48a3d297ed6871349, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
