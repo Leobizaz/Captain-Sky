@@ -21,18 +21,26 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Water
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: -6465566751694194690, guid: ecfa81cfda5d2e742a93a9c4da699512,
+    type: 3}
+  m_ShaderKeywords: _SPECULARHIGHLIGHTS_OFF _SPECULAR_SETUP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_42A40986:
+        m_Texture: {fileID: 2800000, guid: f55490da063ecae4ea7fb7082b614a3b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6C152FD4:
+        m_Texture: {fileID: 2800000, guid: 2b0b1f4e2d4615b4f84b71683888bcc0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -41,8 +49,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DisplacementGuide:
+        m_Texture: {fileID: 2800000, guid: d8c1b8ad09719fd4a8c4558f76d319c3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamTexture:
+        m_Texture: {fileID: 2800000, guid: 19bf75c62c2fbd24b995e59b502a112b, type: 3}
+        m_Scale: {x: 0.06, y: 0.06}
+        m_Offset: {x: 0, y: 0}
+    - _GradientMap:
+        m_Texture: {fileID: 2800000, guid: a2202bbcf74611c478c72a6aefade4ee, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -53,6 +73,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTextureA:
+        m_Texture: {fileID: 2800000, guid: fea6e04a89b26a145ba91e53811989fd, type: 3}
+        m_Scale: {x: 0.02, y: 0.02}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTextureB:
+        m_Texture: {fileID: 2800000, guid: d8c1b8ad09719fd4a8c4558f76d319c3, type: 3}
+        m_Scale: {x: 0.01, y: 0.01}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -62,8 +90,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_14AE5FF: 0
+    - Vector1_4F411CB4: -2
+    - Vector1_582D1DF: 0.99
+    - Vector1_93E21C4F: 0.74
+    - Vector1_AD67A180: 3.91
+    - Vector1_B37974B3: 2.7
+    - Vector1_C3066F26: 0.3
+    - Vector1_C5050668: 1.25
+    - Vector1_C5B208A6: 0
+    - Vector1_DFD47F38: 0.15
+    - Vector1_E5921790: 7.51
+    - Vector1_ED940FA4: 0.654
     - _AlphaClip: 0
-    - _Blend: 0
+    - _Blend: 3
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
@@ -72,19 +112,40 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _MaxTessellationDistance: 100
     - _Metallic: 0
+    - _MinOffset: 0.117
     - _OcclusionStrength: 1
+    - _OffsetAmount: 0.011
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0
+    - _ShoreColorThreshold: 0.153
+    - _ShoreIntersectionThreshold: 0
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
+    - _SpecularHighlights: 0
     - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
+    - _Surface: 1
+    - _Tessellation: 20
+    - _TransparencyIntersectionThresholdMax: 0.4
+    - _TransparencyIntersectionThresholdMin: 0.6
+    - _VectorLength: 0.004
+    - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
+    - Color_30A7967D: {r: 0, g: 0.63621736, b: 0.8962264, a: 0}
+    - Color_45F3BCB1: {r: 0, g: 0.5604677, b: 0.7830188, a: 0.3372549}
+    - Color_47DC29DB: {r: 0.380429, g: 0.6267192, b: 0.7830189, a: 1}
+    - Vector2_7D77940: {r: 0.24, g: 0.02, b: 0, a: 0}
+    - Vector2_C51BAA84: {r: 0.08, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.033285867, g: 0.38534972, b: 0.6415094, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _DisplacementProperties: {r: 0, g: 0, b: 0, a: 0}
+    - _Emission: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamIntersectionProperties: {r: 2.66, g: 0.94, b: 0.64, a: 0.13}
+    - _FoamProperties: {r: 0, g: -0.1, b: 0.34, a: 0.38}
+    - _NoiseAProperties: {r: 0, g: 0.05, b: 0.63, a: -1.51}
+    - _NoiseBProperties: {r: 0, g: -0.02, b: 0.65, a: 0.54}
+    - _ShoreColor: {r: 0.20198467, g: 0.6236426, b: 0.8396226, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
