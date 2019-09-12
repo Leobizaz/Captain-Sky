@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject oculosHUD;
     bool briefCancel;
     public bool canFirstPerson;
+    public GameObject cockpit;
 
    // public GameObject cursor;
     private bool esquerda = false;
@@ -86,12 +87,14 @@ public class PlayerMovement : MonoBehaviour
                     aimTarget.transform.localPosition = new Vector3(0f, 0, 8f);
                     oculosHUD.SetActive(true);
                     modelooo.SetActive(false);
+                    cockpit.SetActive(true);
                     firstPersonCamera.SetActive(true);
                     radarIMG.SetActive(false);
                    
                 }
                 else
                 {
+                    cockpit.SetActive(false);
                     modelooo.SetActive(true);
                     oculosHUD.SetActive(false);
                     radarIMG.SetActive(true);
