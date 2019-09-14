@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Cloud
-  m_Shader: {fileID: -6465566751694194690, guid: 2b0fba8f6ccedf7409031cbcd39da8a6,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: a36cc12ffa578f645bd12f7118359146, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -62,9 +61,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_84DE909A: 49.27
-    - Vector1_E8251EA5: 3.02
-    - Vector1_EB1BECAD: 71.2
+    - Vector1_84DE909A: 3.26
+    - Vector1_E8251EA5: -13.47
+    - Vector1_EB1BECAD: 7.4
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -87,8 +86,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_17EA701F: {r: 1, g: 1, b: 1, a: 0}
-    - Color_A3015B98: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0}
+    - Color_17EA701F: {r: 1, g: 1, b: 1, a: 1}
+    - Color_A3015B98: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
