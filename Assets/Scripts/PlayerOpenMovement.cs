@@ -17,6 +17,11 @@ public class PlayerOpenMovement : MonoBehaviour
     float manobra_y;
     float manobra_z;
     float rotation;
+    public Animator anim;
+    public ParticleSystem shoot;
+    public ParticleSystem shoot2;
+    public AudioSource audioSource;
+    bool boost;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +30,41 @@ public class PlayerOpenMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetButtonDown("Boost"))
+            boost = true;
+        if (Input.GetButtonUp("Boost"))
+            boost = false;
+
         Movement();
         if (Input.GetKeyDown(KeyCode.F) && !manobra)
         {
             ManobraVoltar();
+        }
+        float tiro = Input.GetAxis("Shoot");
+
+        if (tiro == 0 || Input.GetButtonDown("Shoot"))
+        {
+            audioSource.Stop();
+            shoot2.Play();
+            shoot.Play();
+        }
+        else
+        {
+            if (!audioSource.isPlaying)
+                audioSource.Play();
+        }
+
+        if(boost == true)
+        {
+            forwardSpeed = 160;
+            Boost(boost);
+
+        }
+        if (boost == false)
+        {
+            SetCameraZoom(0f, .4f);
+            forwardSpeed = 90;
         }
 
     }
@@ -52,9 +88,22 @@ public class PlayerOpenMovement : MonoBehaviour
         else
             vectorinput = new Vector3(manobra_x, manobra_y, manobra_z);
 
+        if (Input.GetAxis("Horizontal") == 0 || Input.GetAxis("HorizontalDireito") == 0 || Input.GetAxis("Vertical") == 0)
+            anim.SetInteger("State", 0);
+
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("HorizontalDireito") > 0)
+            anim.SetInteger("State", 1);
+        if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("HorizontalDireito") < 0)
+            anim.SetInteger("State", 2);
+            if (Input.GetAxis("Vertical") > 0)
+                anim.SetInteger("State", 4);
+            if (Input.GetAxis("Vertical") < 0)
+                anim.SetInteger("State", 3);
+        
+
         //if (!manobra)
-       // {
-            HorizontalLean(playerMesh.transform, vectorinput.x, 40, .1f);
+        // {
+        HorizontalLean(playerMesh.transform, vectorinput.x, 40, .1f);
             VerticalLean(playerMesh.transform, -vectorinput.y, 15, .1f);
        // }
 
@@ -104,5 +153,11 @@ public class PlayerOpenMovement : MonoBehaviour
     void SetCameraZoom(float zoom, float duration)
     {
         cameraHolder.transform.DOLocalMove(new Vector3(0, 0, zoom), duration);
+    }
+    void Boost(bool state)
+    {
+        float zoom = state ? -7 : 0;
+        //DOVirtual.Float(dolly.m_Speed, speed, .15f, SetSpeed);
+        SetCameraZoom(zoom, .4f);
     }
 }

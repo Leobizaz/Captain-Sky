@@ -30,7 +30,7 @@ public class IntroAto1 : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Break") && !IsInvoking("SkipIntro"))
-            Invoke("SkipIntro", 4f);
+            Invoke("SkipIntro", 2f);
         if (Input.GetButtonUp("Break"))
             CancelInvoke("SkipIntro");
 

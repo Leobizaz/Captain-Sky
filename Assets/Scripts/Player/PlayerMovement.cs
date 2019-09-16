@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     bool briefCancel;
     public bool canFirstPerson;
     public GameObject cockpit;
+    public Animator anim;
 
    // public GameObject cursor;
     private bool esquerda = false;
@@ -125,13 +126,32 @@ public class PlayerMovement : MonoBehaviour
             if (x == 0 && y == 0 && !firstPerson)
             {
                 Invoke("ResetMira", 0.5f);
+                anim.SetInteger("State", 0);
             }
             else
             {
                 CancelInvoke("ResetMira");
                 mySequence.Kill();
             }
-            // Debug.Log(Input.GetAxis("Fire2Axis"));
+            if (x > 0)
+                anim.SetInteger("State", 1);
+            if (x < 0)
+                anim.SetInteger("State", 2);
+            if (Pause.controleInvertido == false)
+            {
+                if (y > 0)
+                    anim.SetInteger("State", 3);
+                if (y < 0)
+                    anim.SetInteger("State", 4);
+            }
+            if (Pause.controleInvertido == true)
+            {
+                if (y > 0)
+                    anim.SetInteger("State", 3);
+                if (y < 0)
+                    anim.SetInteger("State", 4);
+            }
+
 
             MovimentoLocal(x, y, horizontalSpeed);
             
