@@ -22,6 +22,7 @@ public class PlayerOpenMovement : MonoBehaviour
     public ParticleSystem shoot2;
     public AudioSource audioSource;
     bool boost;
+    public CameraFollow CMCamera1;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,16 +58,23 @@ public class PlayerOpenMovement : MonoBehaviour
 
         if(boost == true)
         {
-            forwardSpeed = 160;
+            float currentSpeed = forwardSpeed;
+            DOVirtual.Float(currentSpeed, 160, 1.5f, SetSpeed).SetEase(Ease.InOutQuad);
             Boost(boost);
 
         }
         if (boost == false)
         {
+            float currentSpeed = forwardSpeed;
             SetCameraZoom(0f, .4f);
-            forwardSpeed = 90;
+            DOVirtual.Float(currentSpeed, 90, 4f, SetSpeed).SetEase(Ease.InOutQuad);
         }
 
+    }
+
+    public void SetSpeed(float x)
+    {
+        forwardSpeed = x;
     }
 
     private void OnTriggerExit(Collider other)
@@ -82,27 +90,43 @@ public class PlayerOpenMovement : MonoBehaviour
 
         if (!manobra)
         {
-            vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
-            rotation = Input.GetAxis("Horizontal");
+            float currentVelocity = 0;
+            //vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
+            vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxis("HorizontalDireito"), ref currentVelocity, 0.03f);
+            vectorinput.y = Mathf.SmoothDamp(vectorinput.y, Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), ref currentVelocity, 0.03f);
+            rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal"), ref currentVelocity, 0.03f);
         }
         else
             vectorinput = new Vector3(manobra_x, manobra_y, manobra_z);
 
         if (Input.GetAxis("Horizontal") == 0 || Input.GetAxis("HorizontalDireito") == 0 || Input.GetAxis("Vertical") == 0)
+        {
+            CMCamera1.offset = new Vector3(0, 5, -12.68f);
             anim.SetInteger("State", 0);
+        }
 
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("HorizontalDireito") > 0)
             anim.SetInteger("State", 1);
         if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("HorizontalDireito") < 0)
             anim.SetInteger("State", 2);
-            if (Input.GetAxis("Vertical") > 0)
-                anim.SetInteger("State", 4);
-            if (Input.GetAxis("Vertical") < 0)
-                anim.SetInteger("State", 3);
-        
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            anim.SetInteger("State", 4);
+            cameraHolder.transform.DOLocalMoveY(-10, 4);
+            CMCamera1.offset = new Vector3(0, -5, -12.68f);
+        }
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            anim.SetInteger("State", 3);
+            cameraHolder.transform.DOLocalMoveY(10, 4);
+            CMCamera1.offset = new Vector3(0, 7, -12.68f);
+        }
+
+
 
         //if (!manobra)
         // {
+        HorizontalLean(playerMesh.transform, rotation, 40, .1f);
         HorizontalLean(playerMesh.transform, vectorinput.x, 40, .1f);
             VerticalLean(playerMesh.transform, -vectorinput.y, 15, .1f);
        // }
