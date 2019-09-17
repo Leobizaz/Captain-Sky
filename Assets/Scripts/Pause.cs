@@ -23,6 +23,7 @@ public class Pause : MonoBehaviour
 
     public GameObject menuOpcoes;
     public GameObject menuPause;
+    bool liberado;
 
     void Awake()
     {
@@ -34,8 +35,12 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Escape))
         {
+            liberado = false;
+            if(!IsInvoking("Libera"))
+            Invoke("Libera", 0.3f);
+
             paused = !paused;
             if (paused)
                 PauseGame();
@@ -51,7 +56,7 @@ public class Pause : MonoBehaviour
             controleInvertido = false;
         }
 
-        if (Input.GetButtonDown("Cancel") && !onOptions)
+        if ((Input.GetButtonDown("Cancel") && !onOptions) && liberado)
             UnPauseGame();
 
         if(onOptions && Input.GetButtonDown("Cancel"))
@@ -65,6 +70,10 @@ public class Pause : MonoBehaviour
 
     }
 
+    public void Libera()
+    {
+        liberado = true;
+    }
     public void PauseGame()
     {
         eventSys.SetSelectedGameObject(pauseScreenContinuar);

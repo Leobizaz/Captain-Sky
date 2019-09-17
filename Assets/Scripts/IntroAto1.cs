@@ -29,9 +29,9 @@ public class IntroAto1 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Break") && !IsInvoking("SkipIntro"))
+        if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro"))
             Invoke("SkipIntro", 2f);
-        if (Input.GetButtonUp("Break"))
+        if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space))
             CancelInvoke("SkipIntro");
 
 

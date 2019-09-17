@@ -389,7 +389,7 @@ public class PlayerMovement : MonoBehaviour
             Invoke("ResetBriefCancel", 2f);
         }
     }
-    /*
+    
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Boost" && !briefCancel)
@@ -407,7 +407,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("Negado");
         }
     }
-    */
+    
 
     void ResetBriefCancel()
     {
