@@ -36,6 +36,14 @@ public class PlayerOpenMovement : MonoBehaviour
             boost = true;
         if (Input.GetButtonUp("Boost"))
             boost = false;
+        if (Input.GetButtonDown("Back"))
+            cameraHolder.transform.Rotate(0,180,0, Space.Self);
+        if (Input.GetButtonUp("Back"))
+            cameraHolder.transform.Rotate(0, 0, 0, Space.Self);
+        if (Input.GetButtonUp("HorizontalDireito"))
+            vectorinput.x = 0;
+
+
 
         Movement();
         if (Input.GetKeyDown(KeyCode.F) && !manobra)
