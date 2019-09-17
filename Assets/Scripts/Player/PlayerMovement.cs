@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     AudioSource audioSource;
     Sequence mySequence;
     public GameObject modelooo;
+    public SpriteRenderer mira;
 
     // Start is called before the first frame update
     void Start()
@@ -91,10 +92,13 @@ public class PlayerMovement : MonoBehaviour
                     cockpit.SetActive(true);
                     firstPersonCamera.SetActive(true);
                     radarIMG.SetActive(false);
+                    mira.enabled = false;
+                    
                    
                 }
                 else
                 {
+                    mira.enabled = true;
                     cockpit.SetActive(false);
                     modelooo.SetActive(true);
                     oculosHUD.SetActive(false);
@@ -162,6 +166,14 @@ public class PlayerMovement : MonoBehaviour
 
             //Inclinada(modelo.transform, x, 25, Time.deltaTime * 3f);
             //InclinadaPraCima(modelo.transform, y, 25, Time.deltaTime * 2f);
+
+            if (firstPerson)
+            {
+                Inclinada(firstPersonCamera.transform, x, 25, 0.07f);
+                InclinadaPraCima(firstPersonCamera.transform, y, 10, 0.07f);
+                Inclinada(cockpit.transform, x, 15, 0.07f);
+                //InclinadaPraCima(cockpit.transform, y, 25, 0.07f);
+            }
 
             Inclinada(modelo.transform, x, 25, 0.1f);
             InclinadaPraCima(modelo.transform, y, 25, 0.1f);
