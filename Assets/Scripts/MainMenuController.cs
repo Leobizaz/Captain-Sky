@@ -205,4 +205,14 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void ButtonFase3()
+    {
+        fadeOut.SetActive(true);
+        Invoke("Fase3", 3f);
+    }
+
+    public void Fase3()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

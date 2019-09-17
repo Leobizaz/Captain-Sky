@@ -4,6 +4,7 @@
 using UnityEngine;
 using HWRcomponent;
 using System.Collections;
+using UnityEngine.UI;
 
 
 namespace HWRcomponent
@@ -102,6 +103,7 @@ public class RadarSystem : MonoBehaviour
 						if (navscale < 1) {
 							navscale = 1;
 						}
+						
 						GUI.DrawTexture (new Rect (pos.x - (navtexture.width / navscale) / 2, pos.y - (navtexture.height / navscale) / 2, navtexture.width / navscale, navtexture.height / navscale), navtexture);
 					}
 				}

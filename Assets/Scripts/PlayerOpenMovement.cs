@@ -58,23 +58,28 @@ public class PlayerOpenMovement : MonoBehaviour
 
         if(boost == true)
         {
-            float currentSpeed = forwardSpeed;
-            DOVirtual.Float(currentSpeed, 160, 1.5f, SetSpeed).SetEase(Ease.InOutQuad);
-            Boost(boost);
+            SetSpeed(forwardSpeed + 1);
+            //float currentSpeed = forwardSpeed;
+            //DOVirtual.Float(currentSpeed, 160, 1.5f, SetSpeed).SetEase(Ease.InOutQuad);
+            //Boost(boost);
 
         }
+        /*
         if (boost == false)
         {
             float currentSpeed = forwardSpeed;
             SetCameraZoom(0f, .4f);
             DOVirtual.Float(currentSpeed, 90, 4f, SetSpeed).SetEase(Ease.InOutQuad);
         }
+        */
 
     }
 
     public void SetSpeed(float x)
     {
+        SetCameraZoom(-(forwardSpeed / 12), 1.5f);
         forwardSpeed = x;
+        forwardSpeed = Mathf.Clamp(forwardSpeed, 30, 160);
     }
 
     private void OnTriggerExit(Collider other)
@@ -111,6 +116,7 @@ public class PlayerOpenMovement : MonoBehaviour
             anim.SetInteger("State", 2);
         if (Input.GetAxis("Vertical") > 0)
         {
+            SetSpeed(forwardSpeed + 1);
             //para baixo
             anim.SetInteger("State", 4);
             cameraHolder.transform.DOLocalMoveY(-10, 4);
@@ -118,6 +124,7 @@ public class PlayerOpenMovement : MonoBehaviour
         }
         if (Input.GetAxis("Vertical") < 0)
         {
+            SetSpeed(forwardSpeed - 1);
             //para cima
             anim.SetInteger("State", 3);
             cameraHolder.transform.DOLocalMoveY(10, 4);

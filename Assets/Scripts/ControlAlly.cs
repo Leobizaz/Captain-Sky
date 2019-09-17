@@ -91,7 +91,7 @@ public class ControlAlly : MonoBehaviour
             MovimentoLocal(x, y, horizontalSpeed);
             Inclinada(mesh.transform, -y, 25, 0.1f);
             InclinadaPraCima(mesh.transform, x, 25, 0.1f);
-
+            /*
             if (Input.GetButtonDown("Right") || Input.GetButtonDown("Right2"))
             {
                 direita = true;
@@ -139,6 +139,7 @@ public class ControlAlly : MonoBehaviour
 
                 time += Time.deltaTime * 0f;
             }
+            */
 
             ClampPosition();
 

@@ -6,7 +6,11 @@ public class TurnOffLight : MonoBehaviour
 {
     public bool on;
     bool once;
-
+    Color oldcolor;
+    void Start()
+    {
+        oldcolor = RenderSettings.fogColor;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (!once)
@@ -19,16 +23,16 @@ public class TurnOffLight : MonoBehaviour
                 {
                     //RenderSettings.fog = false;
                     RenderSettings.fogColor = new Color(0, 0, 0, 0);
-                    RenderSettings.fogStartDistance = 100;
-                    RenderSettings.fogEndDistance = 600;
+                    //RenderSettings.fogStartDistance = 100;
+                    //RenderSettings.fogEndDistance = 600;
                 }
                 else
                 {
-                    RenderSettings.fog = false;
-                    RenderSettings.fogColor = new Color(255, 255, 255, 255);
-                    RenderSettings.fogStartDistance = 1000;
-                    RenderSettings.fogEndDistance = 2800;
-                    RenderSettings.fog = true;
+                    //RenderSettings.fog = false;
+                    RenderSettings.fogColor = oldcolor;
+                    //RenderSettings.fogStartDistance = 1000;
+                    //RenderSettings.fogEndDistance = 2800;
+                    //RenderSettings.fog = true;
 
                 }
             }
