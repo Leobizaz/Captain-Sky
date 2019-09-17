@@ -111,12 +111,14 @@ public class PlayerOpenMovement : MonoBehaviour
             anim.SetInteger("State", 2);
         if (Input.GetAxis("Vertical") > 0)
         {
+            //para baixo
             anim.SetInteger("State", 4);
             cameraHolder.transform.DOLocalMoveY(-10, 4);
-            CMCamera1.offset = new Vector3(0, -5, -12.68f);
+            CMCamera1.offset = new Vector3(0, 5, -12.68f);
         }
         if (Input.GetAxis("Vertical") < 0)
         {
+            //para cima
             anim.SetInteger("State", 3);
             cameraHolder.transform.DOLocalMoveY(10, 4);
             CMCamera1.offset = new Vector3(0, 7, -12.68f);
