@@ -15,6 +15,7 @@ TagManager:
   - EnemyLaser
   - Ally
   - Hookable
+  - Setspeed
   layers:
   - Default
   - TransparentFX

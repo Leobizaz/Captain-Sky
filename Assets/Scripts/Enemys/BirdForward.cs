@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BirdForward : MonoBehaviour
 {
+    public float extraspeed;
     public float fwdSpeed;
     public float lifeTime;
     float verticalSpeed;
@@ -14,7 +15,7 @@ public class BirdForward : MonoBehaviour
     void Start()
     {   
         tempPosition = transform.localPosition;
-        fwdSpeed = Random.Range(3, 7);
+        fwdSpeed = Random.Range(3, 7) + extraspeed;
         verticalSpeed = Random.Range(0.01f, 0.1f);
         amplitude = Random.Range(-0.01f, 0.01f);
     }

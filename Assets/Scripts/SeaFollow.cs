@@ -13,6 +13,7 @@ public class SeaFollow : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, objectToFollow.transform.position.z - offsetZ);
+        transform.position = new Vector3(objectToFollow.transform.position.x, transform.position.y, objectToFollow.transform.position.z - offsetZ);
+        transform.localRotation = Quaternion.Euler(transform.rotation.x, objectToFollow.transform.rotation.y, transform.rotation.z);
     }
 }

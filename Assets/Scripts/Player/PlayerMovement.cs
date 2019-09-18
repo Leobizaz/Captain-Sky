@@ -388,6 +388,13 @@ public class PlayerMovement : MonoBehaviour
             briefCancel = true;
             Invoke("ResetBriefCancel", 2f);
         }
+        if(other.tag == "Setspeed")
+        {
+            float newspeed = other.GetComponent<Boostzone>().Boost_speed;
+            float currentspeed = dolly.m_Speed;
+            DOVirtual.Float(currentspeed, newspeed, 4f, SetSpeed).SetEase(Ease.InOutQuad);
+        }
+
     }
     
     private void OnTriggerExit(Collider other)
