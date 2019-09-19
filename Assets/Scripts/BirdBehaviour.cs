@@ -7,6 +7,7 @@ public class BirdBehaviour : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
+    public float fakeHealth;
     public float spawnTime;
     bool spawned;
     public GameObject explosionFX;
@@ -26,6 +27,7 @@ public class BirdBehaviour : MonoBehaviour
     public GameObject smoke;
     private void Start()
     {
+        fakeHealth = maxHealth;
         audio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<BoxCollider>();
@@ -53,8 +55,12 @@ public class BirdBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (currentHealth <= 0 && spawned) Death();
+        if (!died)
+        {
+            if (fakeHealth <= 0 && spawned) FakeDeath();
 
+            if (currentHealth <= 0 && spawned) Death();
+        }
 
     }
 
@@ -79,6 +85,23 @@ public class BirdBehaviour : MonoBehaviour
         }
     }
 
+    void FakeDeath()
+    {
+        Instantiate(explosionFX, model.transform.position, model.transform.localRotation);
+        audio.pitch = Random.Range(0.8f, 1.2f);
+        audio.PlayOneShot(explosionSFX);
+        gameObject.tag = "DeadEnemy";
+        rb.isKinematic = false;
+        smoke.SetActive(true);
+
+        died = true;
+        rb.useGravity = true;
+        gun1.Stop();
+        gun2.Stop();
+        GetComponent<BirdForward>().enabled = false;
+        model.transform.DOLocalRotate(new Vector3(360, 0, 0), 10f, RotateMode.LocalAxisAdd);
+        Invoke("Despawn", 10f);
+    }
 
 
     void Death()
@@ -112,7 +135,7 @@ public class BirdBehaviour : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("COLIDIU");
+        //Debug.Log("COLIDIU");
         if (other.tag == "Shoot" && spawned)
         {
             //play hit fx
@@ -121,6 +144,15 @@ public class BirdBehaviour : MonoBehaviour
 
 
             currentHealth = currentHealth - 10f;
+        }
+
+        if(other.tag == "Ally" && spawned)
+        {
+            audio.pitch = 0.7f;
+            audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
+
+
+            fakeHealth = fakeHealth - 10f;
         }
     }
 

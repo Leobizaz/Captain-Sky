@@ -5190,7 +5190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7014895255227804383
 Transform:
   m_ObjectHideFlags: 0
@@ -5269,6 +5269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 0
+  fakeHealth: 0
   spawnTime: 0
   explosionFX: {fileID: 3521517111240187432, guid: 62212727496e2804fa12b0175a1a436f,
     type: 3}
@@ -10309,6 +10310,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MDL_AveFINAL
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: a92bbc6213dd3f74d9d566ecc80ff38c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: aae6e64864553f84d9dad69ded5d447e, type: 2}
     - target: {fileID: -4216859302048453862, guid: a92bbc6213dd3f74d9d566ecc80ff38c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10379,11 +10385,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: a92bbc6213dd3f74d9d566ecc80ff38c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: aae6e64864553f84d9dad69ded5d447e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92bbc6213dd3f74d9d566ecc80ff38c, type: 3}
 --- !u!4 &2891100235864459748 stripped
@@ -10405,11 +10406,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7014895255227804383}
     m_Modifications:
-    - target: {fileID: 284348914911537505, guid: 84659c669115dff469846f4aa41a37eb,
-        type: 3}
-      propertyPath: m_Name
-      value: gun
-      objectReference: {fileID: 0}
     - target: {fileID: 284348914911537504, guid: 84659c669115dff469846f4aa41a37eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10464,6 +10460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284348914911537505, guid: 84659c669115dff469846f4aa41a37eb,
+        type: 3}
+      propertyPath: m_Name
+      value: gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84659c669115dff469846f4aa41a37eb, type: 3}

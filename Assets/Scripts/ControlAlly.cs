@@ -15,6 +15,15 @@ public class ControlAlly : MonoBehaviour
     public Camera boundaryCamera;
     public bool readyToMove;
 
+    public bool targetLocked;
+    public GameObject target;
+
+    public ParticleSystem gun1;
+    public ParticleSystem gun2;
+
+    public GameObject guns;
+
+
     bool isDoingRandomMovement;
 
     bool brakes;
@@ -24,29 +33,15 @@ public class ControlAlly : MonoBehaviour
     public float x;
     public float y;
 
+    float yVelocity;
+
     void Start()
     {
-
+        yVelocity = 0f;
     }
 
     void Update()
     {
-        //get inputs from player 
-        /*
-        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        {
-            if(!IsInvoking("GetReadyToMove"))
-                Invoke("GetReadyToMove", Random.Range(0.1f, 1f));
-            //GetReadyToMove();
-        }
-
-        if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-        {
-            //CancelInvoke("GetReadyToMove");
-            readyToMove = false;
-        }
-        */
-
         if (brakes)
         {
             x = Mathf.Lerp(x, 0, 1 * Time.deltaTime);
@@ -85,63 +80,40 @@ public class ControlAlly : MonoBehaviour
                 //y = 0;
             }
 
-            if(!isDoingRandomMovement && !movementCooldown)
+            if((!isDoingRandomMovement && !movementCooldown))
                 RandomMovement();
 
             MovimentoLocal(x, y, horizontalSpeed);
             Inclinada(mesh.transform, -y, 25, 0.1f);
             InclinadaPraCima(mesh.transform, x, 25, 0.1f);
-            /*
-            if (Input.GetButtonDown("Right") || Input.GetButtonDown("Right2"))
-            {
-                direita = true;
-                if (!pressedOnce)
-                {
-                    pressedOnce = true;
-                    time = Time.time;
-                }
-
-                else
-                {
-                    //BarrelRoll(-1);
-                }
-            }
-
-            if (Input.GetButtonUp("Right") || Input.GetButtonUp("Right2"))
-                direita = false;
-
-            ///////////////////////////////////////
-
-            if (Input.GetButtonDown("Left") || Input.GetButtonDown("Left2") || Input.GetKeyDown(KeyCode.B))
-            {
-                esquerda = true;
-                if (!pressedOnce)
-                {
-                    pressedOnce = true;
-                    time = Time.time;
-                }
-
-                else
-                {
-                    //BarrelRoll(1);
-                }
-            }
-
-            if (Input.GetButtonUp("Left") || Input.GetButtonUp("Left2"))
-                esquerda = false;
-
-            if (pressedOnce)
-            {
-                if (Time.time - time > timerLength)
-                {
-                    pressedOnce = false;
-                }
-
-                time += Time.deltaTime * 0f;
-            }
-            */
 
             ClampPosition();
+
+           
+
+
+            if(targetLocked && target != null)
+            {
+                /*
+                x = 0;
+                y = 0;
+                Vector3 newPos = new Vector3(0,0,0);
+
+                newPos.x = Mathf.SmoothDamp(transform.localPosition.x, target.transform.position.x, ref yVelocity, 0.05f);
+                newPos.y = Mathf.SmoothDamp(transform.localPosition.y, target.transform.position.y, ref yVelocity, 0.05f);
+                newPos.z = transform.localPosition.z;
+                transform.localPosition = newPos;
+                */
+                gun1.Play();
+                gun2.Play();
+                guns.transform.LookAt(target.transform.position);
+            }
+            else
+            {
+                //gun1.Stop();
+                //gun2.Stop();
+            }
+
 
         }
 
@@ -199,13 +171,42 @@ public class ControlAlly : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if (!targetLocked)
+            {
+                targetLocked = true;
+                target = other.gameObject;
+                //StopFakeInput();
+                Invoke("RefreshEnemy", 4f);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(target != null)
+        if(other.name == target.name)
+        {
+            RefreshEnemy();
+        }
+    }
+
+    void RefreshEnemy()
+    {
+        targetLocked = false;
+        target = null;
+    }
+
     public void StopFakeInput()
     {
         isDoingRandomMovement = false;
         brakes = true;
         movementCooldown = true;
         if (!IsInvoking("MovementCooldown"))
-        Invoke("MovementCooldown", Random.Range(1f, 3f));
+        Invoke("MovementCooldown", Random.Range(0.4f, 2f));
     }
 
     public void MovementCooldown()
@@ -215,30 +216,55 @@ public class ControlAlly : MonoBehaviour
 
     public void RandomMovement()
     {
+        bool doRandom = true;
         brakes = false;
         isDoingRandomMovement = true;
-        int random = Random.Range(0, 3);
-        switch (random)
+
+        if (transform.localPosition.y > 10)
+            y = Mathf.SmoothDamp(y, -1, ref yVelocity, 0.03f);
+
+        if (transform.localPosition.y < -10)
+            y = Mathf.SmoothDamp(y, 1, ref yVelocity, 0.03f);
+
+        if (transform.localPosition.x > 21)
+            x = Mathf.SmoothDamp(x, -1, ref yVelocity, 0.03f);
+
+        if (transform.localPosition.x < -21)
+            x = Mathf.SmoothDamp(x, 1, ref yVelocity, 0.03f);
+
+        if (doRandom)
         {
-            case 0:
-                x = 0;
-                y = 1;
-                break;
-            case 1:
-                x = 0;
-                y = -1;
-                break;
-            case 2:
-                x = 1;
-                y = 0;
-                break;
-            case 3:
-                x = -1;
-                y = 0;
-                break;
+            int random = Random.Range(0, 3);
+            switch (random)
+            {
+                case 0:
+                    x = Mathf.SmoothDamp(x, 0, ref yVelocity, 0.93f);
+                    y = Mathf.SmoothDamp(y, 1, ref yVelocity, 0.03f);
+                    if (transform.localPosition.y > 10)
+                        y = Mathf.SmoothDamp(y, -1, ref yVelocity, 0.03f);
+                    break;
+                case 1:
+                    x = Mathf.SmoothDamp(x, 0, ref yVelocity, 0.93f);
+                    y = Mathf.SmoothDamp(y, -1, ref yVelocity, 0.03f);
+                    if (transform.localPosition.y < -10)
+                        y = Mathf.SmoothDamp(y, 1, ref yVelocity, 0.03f);
+                    break;
+                case 2:
+                    x = Mathf.SmoothDamp(x, 1, ref yVelocity, 0.03f);
+                    y = Mathf.SmoothDamp(y, 0, ref yVelocity, 0.93f);
+                    if (transform.localPosition.x > 21)
+                        x = Mathf.SmoothDamp(x, -1, ref yVelocity, 0.03f);
+                    break;
+                case 3:
+                    x = Mathf.SmoothDamp(x, -1, ref yVelocity, 0.03f);
+                    y = Mathf.SmoothDamp(y, 0, ref yVelocity, 0.93f);
+                    if (transform.localPosition.x < -21)
+                        x = Mathf.SmoothDamp(x, 1, ref yVelocity, 0.03f);
+                    break;
+            }
         }
         if (!IsInvoking("StopFakeInput"))
-            Invoke("StopFakeInput", Random.Range(0.5f, 1f));
+            Invoke("StopFakeInput", Random.Range(0.5f, 3f));
 
     }
 
