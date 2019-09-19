@@ -14,6 +14,7 @@ public class EmissorPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
+
         transform.LookAt(mira.transform);
         if (Input.GetButton("Right") || Input.GetButton("Right"))
             gira.transform.localEulerAngles = new Vector3(0, 0, -90);
