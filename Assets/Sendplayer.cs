@@ -5,26 +5,25 @@ using Cinemachine;
 
 public class Sendplayer : MonoBehaviour
 {
-    public float ammount;
+    public float storedPos;
     bool once;
+    public CinemachineDollyCart playerDolly;
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if(!once)
         if (other.CompareTag("GameController"))
         {
-            if (!once)
-            {
-                once = true;
-
-                other.GetComponent<CinemachineDollyCart>().m_Position = other.GetComponent<CinemachineDollyCart>().m_Position - ammount;
-                Invoke("Reset", 2f);
-            }
+            once = true;
+            storedPos = other.GetComponent<CinemachineDollyCart>().m_Position;
         }
     }
 
-    private void Reset()
+    private void OnTriggerExit(Collider other) 
     {
-        once = false;
+        if(other.CompareTag("GameController"))
+        {
+            playerDolly.m_Position = storedPos;
+        }
     }
 }
