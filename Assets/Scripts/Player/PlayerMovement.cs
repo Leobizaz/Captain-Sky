@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
             y2 = Input.GetAxis("VerticalDireito");
             x2 = Input.GetAxis("HorizontalDireito");
 
+
             if (PlayerHealth.dead == true)
                 playerActive = false;
 
@@ -130,14 +131,19 @@ public class PlayerMovement : MonoBehaviour
             if (x == 0 && y == 0 && !firstPerson)
             {
                 Invoke("ResetMira", 0.5f);
-                anim.SetInteger("State", 0);
+              //  anim.SetInteger("State", 0);
             }
             else
             {
                 CancelInvoke("ResetMira");
                 mySequence.Kill();
             }
-            if (x > 0)
+
+            anim.SetFloat("xInput", x);
+            anim.SetFloat("yInput", y);
+
+
+            /*if (x > 0)
                 anim.SetInteger("State", 1);
             if (x < 0)
                 anim.SetInteger("State", 2);
@@ -155,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
                 if (y < 0)
                     anim.SetInteger("State", 4);
             }
+            */
 
 
             MovimentoLocal(x, y, horizontalSpeed);

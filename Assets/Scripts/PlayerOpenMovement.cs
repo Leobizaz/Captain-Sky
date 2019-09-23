@@ -31,6 +31,8 @@ public class PlayerOpenMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
         if (Input.GetButtonDown("Boost"))
             boost = true;
@@ -43,7 +45,8 @@ public class PlayerOpenMovement : MonoBehaviour
         if (Input.GetButtonUp("HorizontalDireito"))
             vectorinput.x = 0;
 
-
+        anim.SetFloat("xInput", x);
+        anim.SetFloat("yInput", y);
 
         Movement();
         if (Input.GetKeyDown(KeyCode.F) && !manobra)
@@ -115,18 +118,19 @@ public class PlayerOpenMovement : MonoBehaviour
         if (Input.GetAxis("Horizontal") == 0 || Input.GetAxis("HorizontalDireito") == 0 || Input.GetAxis("Vertical") == 0)
         {
             CMCamera1.offset = new Vector3(0, 5, -12.68f);
-            anim.SetInteger("State", 0);
+            //anim.SetInteger("State", 0);
         }
-
+/*
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("HorizontalDireito") > 0)
             anim.SetInteger("State", 1);
         if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("HorizontalDireito") < 0)
             anim.SetInteger("State", 2);
+            */
         if (Input.GetAxis("Vertical") > 0)
         {
             SetSpeed(forwardSpeed + 1);
             //para baixo
-            anim.SetInteger("State", 4);
+            //anim.SetInteger("State", 4);
             cameraHolder.transform.DOLocalMoveY(-10, 4);
             CMCamera1.offset = new Vector3(0, 5, -12.68f);
         }
@@ -134,7 +138,7 @@ public class PlayerOpenMovement : MonoBehaviour
         {
             SetSpeed(forwardSpeed - 1);
             //para cima
-            anim.SetInteger("State", 3);
+            //anim.SetInteger("State", 3);
             cameraHolder.transform.DOLocalMoveY(10, 4);
             CMCamera1.offset = new Vector3(0, 7, -12.68f);
         }
