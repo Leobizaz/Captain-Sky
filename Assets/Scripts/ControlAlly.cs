@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ControlAlly : MonoBehaviour
 {
@@ -107,12 +108,26 @@ public class ControlAlly : MonoBehaviour
                 gun1.Play();
                 gun2.Play();
                 guns.transform.LookAt(target.transform.position);
+
+                Vector3 localPos = transform.TransformPoint(transform.localPosition);
+                localPos.x = target.transform.position.x;
+                localPos.y = target.transform.position.y;
+
+                localPos = transform.InverseTransformPoint(localPos);
+                transform.localPosition = localPos;
+                //localPos.x = target.transform.InverseTransformPoint(target.transform.position).x;
+                //localPos.y = target.transform.InverseTransformPoint(target.transform.position).y;
+                //transform.localPosition = localPos;
+                //transform.localPosition = Vector3.MoveTowards(transform.localPosition, localPos, 1000);
             }
             else
             {
                 //gun1.Stop();
                 //gun2.Stop();
             }
+
+
+
 
 
         }
