@@ -9,11 +9,12 @@ public class InimigoRaia : MonoBehaviour
     public float speed;
     public GameObject player;
     public GameObject playerModel;
-    CinemachineDollyCart dollyCart;
+    public CinemachineDollyCart dollyCart;
     public GameObject mapSphere;
     public GameObject model;
     public GameObject olho;
     public GameObject laserbeamFX;
+    public ParticleSystem chargedBallFX;
     public LaserEmitter emitter;
 
     public float spawnTime;
@@ -44,7 +45,7 @@ public class InimigoRaia : MonoBehaviour
     {
         gameObject.tag = "Untagged";
         Invoke("Spawn", spawnTime);
-        dollyCart = GetComponent<CinemachineDollyCart>();
+        //dollyCart = GetComponent<CinemachineDollyCart>();
         player = GameObject.Find("Player");
         playerModel = player.transform.GetChild(3).gameObject;
         fakeHealth = maxHealth;
@@ -121,6 +122,7 @@ public class InimigoRaia : MonoBehaviour
 
     void FireLaser()
     {
+        chargedBallFX.Play();
         olho.GetComponent<BoxCollider>().enabled = true;
         chargingLaser = false;
         chargingFX.SetActive(false);
