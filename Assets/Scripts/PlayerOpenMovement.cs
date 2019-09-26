@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class PlayerOpenMovement : MonoBehaviour
 {
+    public RaycastHit hit;
     Vector3 vectorinput;
     public GameObject cameraHolder;
     public GameObject playerMesh;
@@ -26,11 +27,42 @@ public class PlayerOpenMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
     // Update is called once per frame
     void Update()
     {
+
+        int layerMask = 1 << 8;
+
+        layerMask = ~layerMask;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
+        {
+            forwardSpeed -= 0.95f;
+            if (forwardSpeed <= 5f)
+            {
+                forwardSpeed = 5f;
+            }
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.Log("Céu");
+
+        }
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
+        {
+            forwardSpeed += 1.45f;
+            if (forwardSpeed >= 180f)
+            {
+                forwardSpeed = 180f;
+            }
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.Log("Chaum");
+        }
+
+
+
+
 
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -129,7 +161,7 @@ public class PlayerOpenMovement : MonoBehaviour
             */
         if (Input.GetAxis("Vertical") > 0)
         {
-            SetSpeed(forwardSpeed + 1);
+            //SetSpeed(forwardSpeed + 1);
             //para baixo
             //anim.SetInteger("State", 4);
             cameraHolder.transform.DOLocalMoveY(-10, 4);
@@ -137,7 +169,7 @@ public class PlayerOpenMovement : MonoBehaviour
         }
         if (Input.GetAxis("Vertical") < 0)
         {
-            SetSpeed(forwardSpeed - 1);
+            //SetSpeed(forwardSpeed - 1);
             //para cima
             //anim.SetInteger("State", 3);
             cameraHolder.transform.DOLocalMoveY(10, 4);

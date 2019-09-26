@@ -16,6 +16,8 @@ TagManager:
   - Ally
   - Hookable
   - Setspeed
+  - Sky
+  - Ground
   layers:
   - Default
   - TransparentFX
