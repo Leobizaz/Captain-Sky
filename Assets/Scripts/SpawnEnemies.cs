@@ -20,7 +20,7 @@ public class SpawnEnemies : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        WaitForSeconds wait = new WaitForSeconds(Random.Range(0.3f, 1f));
+        WaitForSeconds wait = new WaitForSeconds(Random.Range(0.3f, 0.6f));
         if (instant) wait = new WaitForSeconds(0f);
         foreach (GameObject enemy in enemiesToSpawn)
         {

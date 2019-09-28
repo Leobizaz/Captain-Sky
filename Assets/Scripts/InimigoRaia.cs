@@ -15,6 +15,8 @@ public class InimigoRaia : MonoBehaviour
     public GameObject olho;
     public GameObject laserbeamFX;
     public ParticleSystem chargedBallFX;
+    public ParticleSystem laserParticles;
+    public ParticleSystem laserShockwaveFX;
     public LaserEmitter emitter;
 
     public float spawnTime;
@@ -26,6 +28,7 @@ public class InimigoRaia : MonoBehaviour
     public Vector3 lastPosition;
     public GameObject chargingFX;
     public GameObject explosionFX;
+    
 
     public AudioClip[] audios;
     public AudioClip explosionSFX;
@@ -123,6 +126,8 @@ public class InimigoRaia : MonoBehaviour
 
     void FireLaser()
     {
+        laserShockwaveFX.Play();
+        laserParticles.Play();
         chargedBallFX.Play();
         olho.GetComponent<BoxCollider>().enabled = true;
         chargingLaser = false;

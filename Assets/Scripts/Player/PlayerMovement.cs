@@ -176,7 +176,20 @@ public class PlayerMovement : MonoBehaviour
 
             if (firstPerson)
             {
+                /*
+                if(Input.GetAxis("Mouse X") > 0)
+                {
+                    firstPersonCamera.transform.DOLocalRotate(new Vector3(-6.832f, -22.065f, 0.879f), 3f);
+                }
+                else if(Input.GetAxis("Mouse X") < 0)
+                {
+                    firstPersonCamera.transform.DOLocalRotate(new Vector3(-6.832f, 22.065f, 0.879f), 3f);
+                }
+                */
+
+
                 Inclinada(firstPersonCamera.transform, x, 25, 0.07f);
+                if(y > 0)
                 InclinadaPraCima(firstPersonCamera.transform, y, 10, 0.07f);
                 Inclinada(cockpit.transform, x, 15, 0.07f);
                 //InclinadaPraCima(cockpit.transform, y, 25, 0.07f);
