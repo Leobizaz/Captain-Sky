@@ -24,6 +24,7 @@ public class PlayerOpenMovement : MonoBehaviour
     public AudioSource audioSource;
     bool boost;
     public CameraFollow CMCamera1;
+    public LayerMask layerMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +32,6 @@ public class PlayerOpenMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        int layerMask = 1 << 8;
-
-        layerMask = ~layerMask;
 
         RaycastHit hit;
 
@@ -159,6 +156,9 @@ public class PlayerOpenMovement : MonoBehaviour
         if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("HorizontalDireito") < 0)
             anim.SetInteger("State", 2);
             */
+
+        
+
         if (Input.GetAxis("Vertical") > 0)
         {
             //SetSpeed(forwardSpeed + 1);
@@ -174,6 +174,11 @@ public class PlayerOpenMovement : MonoBehaviour
             //anim.SetInteger("State", 3);
             cameraHolder.transform.DOLocalMoveY(10, 4);
             CMCamera1.offset = new Vector3(0, 7, -12.68f);
+        }
+        if(Input.GetAxis("Vertical") == 0)
+        {
+            cameraHolder.transform.DOLocalMoveY(5, 4);
+            CMCamera1.offset = new Vector3(0, 0, -12.68f);
         }
 
 

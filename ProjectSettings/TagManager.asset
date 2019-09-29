@@ -32,8 +32,8 @@ TagManager:
   - Inimigo
   - Particle Kill
   - Radar
-  - 
-  - 
+  - Terrain
+  - Sky&GroundRaycast
   - 
   - 
   - 
