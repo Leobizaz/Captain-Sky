@@ -7,41 +7,47 @@ using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
-     private bool pressedOnce;
-     private float time;
-     public float sensibilidade;
-     private float timerLength;
-    private bool isBoosting;
+    [Header("Controles")]
     public float horizontalSpeed = 7;
     public float progressionSpeed = 6;
     public float lookSpeed = 5f;
+    public float sensibilidade;
+    public bool canFirstPerson;
+    public bool podeAtirar;
+
+    [Header("Debug")]
+    public float ignora_isso;
+    public bool playerActive;
+    [SerializeField] public static bool firstPerson;
+    private bool pressedOnce;
+    private float time;
+    private float timerLength;
+    [SerializeField] private bool isBoosting;
+    [SerializeField] private bool esquerda = false;
+    [SerializeField] private bool direita = false;
+    bool briefCancel;
+
+    [Header("Referencias")]
     public GameObject modelo;
     public Transform aimTarget;
     public CinemachineDollyCart dolly;
     public Transform cameraParent;
+    public GameObject modelooo;
+    public SpriteRenderer mira;
     public GameObject radarIMG;
     public GameObject oculosHUD;
-    bool briefCancel;
-    public bool canFirstPerson;
     public GameObject cockpit;
     public Animator anim;
-
-   // public GameObject cursor;
-    private bool esquerda = false;
-    private bool direita = false;
-    public bool podeAtirar;
     public ParticleSystem shoot;
     public ParticleSystem shoot2;
     public CinemachineVirtualCamera thirdPersonCamera;
     public GameObject firstPersonCamera;
     public Camera boundaryCamera;
     public CinemachineBrain cinemachineBrain;
-    public bool playerActive;
-    public static bool firstPerson;
+
+
     AudioSource audioSource;
     Sequence mySequence;
-    public GameObject modelooo;
-    public SpriteRenderer mira;
 
     // Start is called before the first frame update
     void Start()

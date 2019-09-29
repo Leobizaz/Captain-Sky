@@ -1,35 +1,41 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+
 public class PlayerOpenMovement : MonoBehaviour
 {
-    public RaycastHit hit;
-    Vector3 vectorinput;
-    public GameObject cameraHolder;
-    public GameObject playerMesh;
+
+    [Header("Controles")]
     public float forwardSpeed = 10;
     public float rollSpeed = 2;
     public float yawSpeed = 1;
-    bool manobra;
+    [Space(5)]
+    public LayerMask layerMask;
+
+    [Header("Debug")]
+    public float ignora_isso;
+    public RaycastHit hit;
+    [SerializeField] Vector3 vectorinput;
+    [SerializeField] bool manobra;
     float storedSpeed;
     float manobra_x;
     float manobra_y;
     float manobra_z;
     float rotation;
+    [SerializeField] bool boost;
+
+    [Header("Referencias")]
+    public GameObject cameraHolder;
+    public GameObject playerMesh;
     public Animator anim;
     public ParticleSystem shoot;
     public ParticleSystem shoot2;
     public AudioSource audioSource;
-    bool boost;
     public CameraFollow CMCamera1;
-    public LayerMask layerMask;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-    // Update is called once per frame
+
     void Update()
     {
 
