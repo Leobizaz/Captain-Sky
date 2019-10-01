@@ -43,7 +43,7 @@ public class PlayerOpenMovement : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
         {
-            forwardSpeed -= 0.95f;
+            forwardSpeed -= 0.55f;
             if (forwardSpeed <= 5f)
             {
                 forwardSpeed = 5f;
@@ -54,7 +54,7 @@ public class PlayerOpenMovement : MonoBehaviour
         }
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
         {
-            forwardSpeed += 1.45f;
+            forwardSpeed += 1.13f;
             if (forwardSpeed >= 180f)
             {
                 forwardSpeed = 180f;
