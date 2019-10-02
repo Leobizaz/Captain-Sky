@@ -69,6 +69,23 @@ public class PlayerOpenMovement : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
+        float y2 = Input.GetAxis("VerticalDireito");
+
+        if(y2 > 0 && forwardSpeed <= 125)
+        {
+            SetCameraZoom(-6f, .4f);
+            forwardSpeed += 0.45f;
+        }
+
+        if (y2 < 0 && forwardSpeed >= 65)
+        {
+            SetCameraZoom(6f, .4f);
+            forwardSpeed -= 0.45f;
+        }
+        if(y2 == 0)
+        {
+            SetCameraZoom(0f, .4f);
+        }
 
         if (Input.GetButtonDown("Boost"))
             boost = true;
