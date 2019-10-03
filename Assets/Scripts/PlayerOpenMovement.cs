@@ -14,6 +14,7 @@ public class PlayerOpenMovement : MonoBehaviour
     public float yawSpeed = 1;
     [Space(5)]
     public LayerMask layerMask;
+    public LayerMask layerMask2;
 
     [Header("Debug")]
     public float ignora_isso;
@@ -29,6 +30,7 @@ public class PlayerOpenMovement : MonoBehaviour
     public bool crashed;
     [Header("Referencias")]
     public GameObject cameraHolder;
+    public PlayerCollision colisao;
     public GameObject playerMesh;
     public Animator anim;
     public ParticleSystem shoot;
@@ -38,13 +40,27 @@ public class PlayerOpenMovement : MonoBehaviour
 
     void Update()
     {
-        
+        if (yawSpeed <= 0.5f)
+        {
+            yawSpeed = 0.5f;
+        }
+
+        if (yawSpeed >= 2)
+        {
+            yawSpeed = 2;
+        }
+
+
         RaycastHit hit;
         if (!crashed)
         {
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
             {
                 forwardSpeed -= 0.55f;
+                yawSpeed += 0.0155f;
+
+
+
                 if (forwardSpeed <= 5f)
                 {
                     forwardSpeed = 5f;
@@ -56,6 +72,8 @@ public class PlayerOpenMovement : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
             {
                 forwardSpeed += 1.13f;
+                yawSpeed -= 0.0055f;
+
                 if (forwardSpeed >= 180f)
                 {
                     forwardSpeed = 180f;
@@ -64,6 +82,14 @@ public class PlayerOpenMovement : MonoBehaviour
                 Debug.Log("Chaum");
             }
 
+            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200f, layerMask2) || Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 25f, layerMask2))
+            {
+                colisao.dangerous = true;
+            }
+            else
+            {
+                colisao.dangerous = false;
+            }
 
 
 
@@ -76,12 +102,14 @@ public class PlayerOpenMovement : MonoBehaviour
             {
                 SetCameraZoom(-6f, .4f);
                 forwardSpeed += 0.45f;
+                yawSpeed -= 0.0055f;
             }
 
             if (y2 < 0 && forwardSpeed >= 65)
             {
                 SetCameraZoom(6f, .4f);
                 forwardSpeed -= 0.45f;
+                yawSpeed += 0.0075f;
             }
             if (y2 == 0)
             {

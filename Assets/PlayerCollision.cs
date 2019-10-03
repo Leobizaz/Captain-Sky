@@ -7,12 +7,16 @@ public class PlayerCollision : MonoBehaviour
     GameObject parent;
     bool crashed;
     bool crashou;
+    public bool dangerous;
     Vector3 crashPosition;
     public GameObject debug_aviao;
     public Animator fade;
+    public GameObject modelo;
 
     float savedSpeed;
     float oldSpeed;
+
+    public LayerMask layerMask;
 
     Quaternion savedRotation;
     Quaternion oldRotation;
@@ -33,9 +37,10 @@ public class PlayerCollision : MonoBehaviour
         debug_aviao.transform.position = oldPosition;
         debug_aviao.transform.rotation = oldRotation;
 
-        if(crashPosition != Vector3.zero)
+
+        if (crashPosition != Vector3.zero)
         {
-            if(Vector3.Distance(crashPosition, parent.transform.position) > 200)
+            if(Vector3.Distance(crashPosition, parent.transform.position) > 400)
             {
                 crashPosition = Vector3.zero;
                 crashed = false;
@@ -51,7 +56,7 @@ public class PlayerCollision : MonoBehaviour
     {
         while (true)
         {
-            if (!crashed)
+            if (!crashed && !dangerous)
             {
                 if (savedPosition != null)
                 {
@@ -92,7 +97,7 @@ public class PlayerCollision : MonoBehaviour
         Debug.Log("Crashed");
         movement.crashed = true;
         movement.forwardSpeed = 0;
-
+        if(!IsInvoking("Teleport"))
         Invoke("Teleport", 1f);
 
     }
