@@ -18,6 +18,7 @@ TagManager:
   - Setspeed
   - Sky
   - Ground
+  - Collision
   layers:
   - Default
   - TransparentFX

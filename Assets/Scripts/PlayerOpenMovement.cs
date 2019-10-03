@@ -26,7 +26,7 @@ public class PlayerOpenMovement : MonoBehaviour
     float manobra_z;
     float rotation;
     [SerializeField] bool boost;
-
+    public bool crashed;
     [Header("Referencias")]
     public GameObject cameraHolder;
     public GameObject playerMesh;
@@ -38,105 +38,106 @@ public class PlayerOpenMovement : MonoBehaviour
 
     void Update()
     {
-
+        
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
+        if (!crashed)
         {
-            forwardSpeed -= 0.55f;
-            if (forwardSpeed <= 5f)
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
             {
-                forwardSpeed = 5f;
-            }
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Céu");
+                forwardSpeed -= 0.55f;
+                if (forwardSpeed <= 5f)
+                {
+                    forwardSpeed = 5f;
+                }
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.Log("Céu");
 
-        }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
-        {
-            forwardSpeed += 1.13f;
-            if (forwardSpeed >= 180f)
+            }
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
             {
-                forwardSpeed = 180f;
+                forwardSpeed += 1.13f;
+                if (forwardSpeed >= 180f)
+                {
+                    forwardSpeed = 180f;
+                }
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.Log("Chaum");
             }
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Chaum");
+
+
+
+
+
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
+            float y2 = Input.GetAxis("VerticalDireito");
+
+            if (y2 > 0 && forwardSpeed <= 125)
+            {
+                SetCameraZoom(-6f, .4f);
+                forwardSpeed += 0.45f;
+            }
+
+            if (y2 < 0 && forwardSpeed >= 65)
+            {
+                SetCameraZoom(6f, .4f);
+                forwardSpeed -= 0.45f;
+            }
+            if (y2 == 0)
+            {
+                SetCameraZoom(0f, .4f);
+            }
+
+            if (Input.GetButtonDown("Boost"))
+                boost = true;
+            if (Input.GetButtonUp("Boost"))
+                boost = false;
+            if (Input.GetButtonDown("Back"))
+                cameraHolder.transform.Rotate(0, 180, 0, Space.Self);
+            if (Input.GetButtonUp("Back"))
+                cameraHolder.transform.Rotate(0, 0, 0, Space.Self);
+            if (Input.GetButtonUp("HorizontalDireito"))
+                vectorinput.x = 0;
+
+            anim.SetFloat("xInput", x);
+            anim.SetFloat("yInput", y);
+
+            Movement();
+            if (Input.GetKeyDown(KeyCode.F) && !manobra)
+            {
+                ManobraVoltar();
+            }
+            float tiro = Input.GetAxis("Shoot");
+
+            if (tiro == 0 || Input.GetButtonDown("Shoot"))
+            {
+                audioSource.Stop();
+                shoot2.Play();
+                shoot.Play();
+            }
+            else
+            {
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
+            }
+
+            if (boost == true)
+            {
+                SetSpeed(forwardSpeed + 1);
+                //float currentSpeed = forwardSpeed;
+                //DOVirtual.Float(currentSpeed, 160, 1.5f, SetSpeed).SetEase(Ease.InOutQuad);
+                //Boost(boost);
+
+            }
+            /*
+            if (boost == false)
+            {
+                float currentSpeed = forwardSpeed;
+                SetCameraZoom(0f, .4f);
+                DOVirtual.Float(currentSpeed, 90, 4f, SetSpeed).SetEase(Ease.InOutQuad);
+            }
+            */
         }
-
-
-
-
-
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        float y2 = Input.GetAxis("VerticalDireito");
-
-        if(y2 > 0 && forwardSpeed <= 125)
-        {
-            SetCameraZoom(-6f, .4f);
-            forwardSpeed += 0.45f;
-        }
-
-        if (y2 < 0 && forwardSpeed >= 65)
-        {
-            SetCameraZoom(6f, .4f);
-            forwardSpeed -= 0.45f;
-        }
-        if(y2 == 0)
-        {
-            SetCameraZoom(0f, .4f);
-        }
-
-        if (Input.GetButtonDown("Boost"))
-            boost = true;
-        if (Input.GetButtonUp("Boost"))
-            boost = false;
-        if (Input.GetButtonDown("Back"))
-            cameraHolder.transform.Rotate(0,180,0, Space.Self);
-        if (Input.GetButtonUp("Back"))
-            cameraHolder.transform.Rotate(0, 0, 0, Space.Self);
-        if (Input.GetButtonUp("HorizontalDireito"))
-            vectorinput.x = 0;
-
-        anim.SetFloat("xInput", x);
-        anim.SetFloat("yInput", y);
-
-        Movement();
-        if (Input.GetKeyDown(KeyCode.F) && !manobra)
-        {
-            ManobraVoltar();
-        }
-        float tiro = Input.GetAxis("Shoot");
-
-        if (tiro == 0 || Input.GetButtonDown("Shoot"))
-        {
-            audioSource.Stop();
-            shoot2.Play();
-            shoot.Play();
-        }
-        else
-        {
-            if (!audioSource.isPlaying)
-                audioSource.Play();
-        }
-
-        if(boost == true)
-        {
-            SetSpeed(forwardSpeed + 1);
-            //float currentSpeed = forwardSpeed;
-            //DOVirtual.Float(currentSpeed, 160, 1.5f, SetSpeed).SetEase(Ease.InOutQuad);
-            //Boost(boost);
-
-        }
-        /*
-        if (boost == false)
-        {
-            float currentSpeed = forwardSpeed;
-            SetCameraZoom(0f, .4f);
-            DOVirtual.Float(currentSpeed, 90, 4f, SetSpeed).SetEase(Ease.InOutQuad);
-        }
-        */
-
     }
 
     public void SetSpeed(float x)
