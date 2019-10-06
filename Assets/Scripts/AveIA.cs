@@ -34,6 +34,7 @@ public class AveIA : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Testplayer");
+        if (player == null) player = GameObject.Find("Gameplay 3");
         fakeHealth = maxHealth;
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody>();

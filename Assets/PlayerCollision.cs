@@ -34,9 +34,11 @@ public class PlayerCollision : MonoBehaviour
 
     private void Update()
     {
-        debug_aviao.transform.position = oldPosition;
-        debug_aviao.transform.rotation = oldRotation;
-
+        if (debug_aviao != null)
+        {
+            debug_aviao.transform.position = oldPosition;
+            debug_aviao.transform.rotation = oldRotation;
+        }
 
         if (crashPosition != Vector3.zero)
         {
@@ -76,6 +78,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Collision"))
         {
+            Debug.Log("Crash");
             crashPosition = parent.transform.position;
             Crash();
         }
@@ -85,6 +88,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Collision") && !crashou)
         {
+            Debug.Log("Crash again");
             crashPosition = parent.transform.position;
             Crash();
         } 

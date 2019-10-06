@@ -15,6 +15,8 @@ public class TurretScript : MonoBehaviour
     public ParticleSystem gun1;
     public ParticleSystem gun2;
 
+    public GameObject deathFX;
+
     bool dead;
 
     void Start()
@@ -49,7 +51,7 @@ public class TurretScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.CompareTag("Player") || other.CompareTag("Ally")) && !targetFound)
+        if ((other.CompareTag("Player") || other.CompareTag("Ally")) && !targetFound && !dead)
         {
             TargetDetected();
             target = other.gameObject;
@@ -58,7 +60,7 @@ public class TurretScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(target != null)
+        if(target != null && !dead)
         if (other.name == target.name)
         {
             targetFound = false;
@@ -85,6 +87,11 @@ public class TurretScript : MonoBehaviour
 
     public void Die()
     {
+        Instantiate(deathFX, head.transform.position, transform.rotation);
+        dead = true;
+        target = null;
+        gun1.Stop();
+        gun2.Stop();
         Invoke("Despawn", 3f);
     }
 
