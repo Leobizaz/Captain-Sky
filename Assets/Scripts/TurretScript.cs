@@ -28,7 +28,7 @@ public class TurretScript : MonoBehaviour
 
     void Update()
     {
-        if (targetFound)
+        if (targetFound && !dead)
         {
             head.transform.LookAt(target.transform.position);
         }
