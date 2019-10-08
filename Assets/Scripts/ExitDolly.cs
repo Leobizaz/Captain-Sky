@@ -13,6 +13,7 @@ public class ExitDolly : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.GetComponent<PlayerOpenMovement>().enabled = true;
+            player.GetComponentInChildren<PlayerCollision>().enabled = true;
             player.GetComponent<CinemachineDollyCart>().enabled = false;
             player.GetComponent<CinemachineDollyCart>().m_Path = null;
             player.GetComponentInChildren<PlayerMovement>().enabled = false;

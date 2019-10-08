@@ -62,7 +62,7 @@ public class IntroAto1 : MonoBehaviour
 
     void PlayCantoria()
     {
-        musica.SetActive(true);
+        //musica.SetActive(true);
         musica.GetComponent<AudioSource>().volume = 0.038f;
         audiokinect.SetActive(true);
         dialogoKinect.SetActive(true);

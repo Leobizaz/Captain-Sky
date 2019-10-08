@@ -40,14 +40,14 @@ public class PlayerOpenMovement : MonoBehaviour
 
     void Update()
     {
-        if (yawSpeed <= 0.5f)
+        if (yawSpeed <= 0.15f)
         {
-            yawSpeed = 0.5f;
+            yawSpeed = 0.15f;
         }
 
-        if (yawSpeed >= 2)
+        if (yawSpeed >= 1)
         {
-            yawSpeed = 2;
+            yawSpeed = 1;
         }
 
 
