@@ -10,6 +10,7 @@ public class UnderwaterEffects : MonoBehaviour
     public GameObject vento;
     public GameObject bigsplash;
     public GameObject cameraLayer;
+    public GameObject snowFX;
     public SpriteRenderer helice;
 
     private void OnTriggerEnter(Collider other)
@@ -38,11 +39,13 @@ public class UnderwaterEffects : MonoBehaviour
 
             particleFX.SetActive(true);
             vento.SetActive(false);
+            
         }
 
         if(other.tag == "AllyTrigger" && other.name == "UpdateCamera")
         {
             cameraLayer.SetActive(true);
+            snowFX.SetActive(false);
         }
     }
 }
