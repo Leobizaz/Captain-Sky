@@ -146,7 +146,7 @@ public class BirdBehaviour : MonoBehaviour
             currentHealth = currentHealth - 10f;
         }
 
-        if(other.tag == "Ally" && spawned)
+        if (other.tag == "Ally" && spawned)
         {
             audio.pitch = 0.7f;
             audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
@@ -156,8 +156,17 @@ public class BirdBehaviour : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("LaserPlayer"))
+        {
+            currentHealth = currentHealth - 100f;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("DespawnWall"))
         {
             //Destroy(gameObject);

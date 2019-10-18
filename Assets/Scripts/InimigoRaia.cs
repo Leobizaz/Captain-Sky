@@ -18,6 +18,8 @@ public class InimigoRaia : MonoBehaviour
     public ParticleSystem laserParticles;
     public ParticleSystem laserShockwaveFX;
     public LaserEmitter emitter;
+    public LaserEmitter miraEmitter;
+    public GameObject miraBeam;
 
     public float spawnTime;
     bool spawned;
@@ -66,6 +68,8 @@ public class InimigoRaia : MonoBehaviour
         speed = player.transform.parent.GetComponent<CinemachineDollyCart>().m_Speed;
         dollyCart.m_Speed = speed;
 
+        miraEmitter.receiver.transform.position = playerModel.transform.position;
+
         float sphereSize = 1000 / ((Vector3.Distance(player.transform.position, this.transform.position)) / 10);
         sphereSize = Mathf.Clamp(sphereSize, 25, 75);
         mapSphere.transform.DOScale(sphereSize, 1);
@@ -112,6 +116,7 @@ public class InimigoRaia : MonoBehaviour
 
     void ChargeLaser()
     {
+        miraBeam.SetActive(true);
         chargingLaser = true;
         chargingFX.SetActive(true);
         Invoke("Lag", 4.6f);
@@ -126,6 +131,7 @@ public class InimigoRaia : MonoBehaviour
 
     void FireLaser()
     {
+        miraBeam.SetActive(false);
         laserShockwaveFX.Play();
         laserParticles.Play();
         chargedBallFX.Play();
