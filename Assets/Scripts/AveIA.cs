@@ -13,6 +13,8 @@ public class AveIA : MonoBehaviour
     public float currentHealth;
     public float fakeHealth;
 
+    List<GameObject> avesNearby;
+
     public GameObject explosionFX;
     public GameObject smoke;
     public GameObject model;
@@ -33,6 +35,7 @@ public class AveIA : MonoBehaviour
 
     void Start()
     {
+        avesNearby = new List<GameObject>();
         player = GameObject.Find("Testplayer");
         if (player == null) player = GameObject.Find("Gameplay 3");
         fakeHealth = maxHealth;
@@ -45,8 +48,8 @@ public class AveIA : MonoBehaviour
     void Update()
     {
 
-        float sphereSize = 1000 / ((Vector3.Distance(player.transform.position, this.transform.position)) / 10);
-        sphereSize = Mathf.Clamp(sphereSize, 25, 75);
+        float sphereSize = 1000 / ((Vector3.Distance(player.transform.position, this.transform.position)) / 12);
+        sphereSize = Mathf.Clamp(sphereSize, 25, 150);
         mapSphere.transform.DOScale(sphereSize, 1);
 
 
@@ -65,29 +68,29 @@ public class AveIA : MonoBehaviour
             if (wayfather == null) FlyAround();
             else if (!targetFound)
             {
-                transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime);
-                transform.Translate(Vector3.forward * Time.deltaTime * (speed / 2));
-                if (Vector3.Distance(transform.position, ways[indexway].position) < 2)
-                {
-                    indexway++;
-                    if (indexway == ways.Length) indexway = 0;
-                }
+                Wander();
             }
+
             if (target != null)
                 if (Vector3.Distance(transform.position, target.transform.position) < 25) EscapeManuever();
 
             if (targetFound && !cooldown)
             {
-                Vector3 lookDir = target.transform.position - transform.position;
-                newRot = Quaternion.LookRotation(lookDir);
-                transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime);
-                transform.Translate(Vector3.forward * Time.deltaTime * speed);
+                Chase();
             }
             else if (targetFound && cooldown)
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * speed);
             }
+
+           
+
         }
+    }
+
+    private void LateUpdate()
+    {
+        KeepDistance();
     }
 
     private void OnTriggerStay(Collider other) 
@@ -100,6 +103,64 @@ public class AveIA : MonoBehaviour
                 target = other.gameObject;
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        bool once = false;
+        if(other.tag == "Enemy" && !once)
+        {
+            once = true;
+            avesNearby.Add(other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        bool once = false;
+        if(other.tag == "Enemy" && !once)
+        {
+            once = true;
+            avesNearby.Remove(other.gameObject);
+        }
+    }
+
+    void KeepDistance()
+    {
+        float distance = 10;
+        if (avesNearby.Count > 0)
+        {
+            foreach (GameObject ave in avesNearby)
+            {
+                if (ave != null)
+                {
+                    distance = Vector3.Distance(this.transform.position, ave.transform.position);
+                    if (distance < 100)
+                    {
+                        transform.position = (transform.position - ave.transform.position).normalized * distance + ave.transform.position;
+                    }
+                }
+            }
+        }
+    }
+
+    void Wander()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime);
+        transform.Translate(Vector3.forward * Time.deltaTime * (speed / 2));
+        if (Vector3.Distance(transform.position, ways[indexway].position) < 2)
+        {
+            indexway++;
+            if (indexway == ways.Length) indexway = 0;
+        }
+    }
+
+    void Chase()
+    {
+        Vector3 lookDir = target.transform.position - transform.position;
+        newRot = Quaternion.LookRotation(lookDir);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
     void EscapeManuever()

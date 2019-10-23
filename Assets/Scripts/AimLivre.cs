@@ -7,6 +7,27 @@ public class AimLivre : MonoBehaviour
     public GameObject target;
     public RaycastMira mira;
     public bool targetLocked;
+    public LayerMask layermask;
+
+    private void Update()
+    {
+        if (targetLocked)
+        {
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, (target.transform.position - transform.position), Color.green);
+            if (Physics.Raycast(transform.position, (target.transform.position - transform.position), out hit, Mathf.Infinity, layermask))
+            {
+                if (hit.transform.CompareTag("Enemy"))
+                {
+                    return;
+                }
+                else
+                {
+                    LoseTarget();
+                }
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {

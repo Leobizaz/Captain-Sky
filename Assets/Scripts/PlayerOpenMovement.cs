@@ -56,7 +56,7 @@ public class PlayerOpenMovement : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
             {
-                forwardSpeed -= 0.55f;
+                forwardSpeed -= 0.15f;
                 yawSpeed += 0.0155f;
 
 
