@@ -9,6 +9,8 @@ public class MainMenuController : MonoBehaviour
 {
     public EventSystem eventSys;
     public GameObject fadeOut;
+    public GameObject botao_title;
+    public GameObject background;
 
     public GameObject botao_opções;
     public GameObject botao_extras;
@@ -38,6 +40,7 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject botao_continuar;
     public GameObject botao_seleção;
+    public GameObject botao_inicio;
     public Toggle toggle_inverterControles;
 
     public GameObject lastSelected;
@@ -49,7 +52,7 @@ public class MainMenuController : MonoBehaviour
     void Start()
     {
         toggle_inverterControles.isOn = Pause.controleInvertido;
-        eventSys.SetSelectedGameObject(botao_continuar, null);
+        eventSys.SetSelectedGameObject(botao_title);
         if(selectedProfile == null)
         selectedProfile = profile1;
     }
@@ -113,8 +116,8 @@ public class MainMenuController : MonoBehaviour
                 break;
                 case "Seleção":
                     telaSelecionar.SetActive(false);
-                    telaMenu.SetActive(true);
-                    GoingToMenuFromSeleção();
+                    telaJogar.SetActive(true);
+                    Jogar();
                 break;
                 case "Perfil":
                     telaPerfil.SetActive(false);
@@ -124,7 +127,7 @@ public class MainMenuController : MonoBehaviour
                 case "Jogar":
                     telaJogar.SetActive(false);
                     telaMenu.SetActive(true);
-
+                    background.SetActive(true);
                     break;
             }
         }
@@ -204,7 +207,9 @@ public class MainMenuController : MonoBehaviour
 
     public void Jogar()
     {
+        whichPanel = "Jogar";
         telaJogar.SetActive(true);
+        eventSys.SetSelectedGameObject(botao_inicio);
     }
     public void ButtonContinuar()
     {
