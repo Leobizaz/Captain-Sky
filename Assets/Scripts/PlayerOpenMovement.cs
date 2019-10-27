@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -92,7 +92,8 @@ public class PlayerOpenMovement : MonoBehaviour
             }
 
 
-
+            if (Input.GetButtonUp("HorizontalDireito") || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+                vectorinput.x = 0;
 
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
@@ -124,13 +125,16 @@ public class PlayerOpenMovement : MonoBehaviour
                 cameraHolder.transform.Rotate(0, 180, 0, Space.Self);
             if (Input.GetButtonUp("Back"))
                 cameraHolder.transform.Rotate(0, 0, 0, Space.Self);
-            if (Input.GetButtonUp("HorizontalDireito"))
-                vectorinput.x = 0;
+
 
             anim.SetFloat("xInput", x);
             anim.SetFloat("yInput", y);
 
             Movement();
+
+            if (Input.GetButtonUp("HorizontalDireito") || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+                vectorinput.x = 0;
+
             if (Input.GetKeyDown(KeyCode.F) && !manobra)
             {
                 ManobraVoltar();

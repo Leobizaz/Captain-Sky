@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -17,6 +18,9 @@ public class IntroAto1 : MonoBehaviour
     public GameObject dialogoKinect2;
     public GameObject audiokinect;
     public VideoPlayer videoPlayer;
+    public Image FillCircle;
+    private float speed = 0.4f;
+    bool fill = false;
 
     void Start()
     {
@@ -25,16 +29,28 @@ public class IntroAto1 : MonoBehaviour
         canvas.SetActive(false);
         timeline.SetActive(false);
         musica.SetActive(false);
+
     }
 
     void Update()
     {
+
+
         if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro"))
-            Invoke("SkipIntro", 2f);
+        {
+            fill = true;
+            Invoke("SkipIntro", 5f);
+        }
         if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space))
+        {
+            FillCircle.GetComponent<Image>().fillAmount = 0;
             CancelInvoke("SkipIntro");
+        }
 
-
+        if ( fill == true)
+        {
+            FillCircle.GetComponent<Image>().fillAmount += 0.5f * speed * Time.deltaTime;
+        }
         videoPlayer.loopPointReached += EndReached;
     }
 
