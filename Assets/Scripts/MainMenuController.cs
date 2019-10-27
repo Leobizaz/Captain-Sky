@@ -29,6 +29,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject telaExtras;
     public GameObject telaPerfil;
     public GameObject telaSelecionar;
+    public GameObject Titulo;
+    public GameObject telaJogar;
 
     public GameObject voltarButtonExtras;
 
@@ -116,9 +118,14 @@ public class MainMenuController : MonoBehaviour
                 break;
                 case "Perfil":
                     telaPerfil.SetActive(false);
-                    telaMenu.SetActive(true);
-                    GoingToMenuFromPerfil();
+                    telaJogar.SetActive(true);
+
                 break;
+                case "Jogar":
+                    telaJogar.SetActive(false);
+                    telaMenu.SetActive(true);
+
+                    break;
             }
         }
         
@@ -139,6 +146,7 @@ public class MainMenuController : MonoBehaviour
 
     public void GoingToPerfil()
     {
+        telaPerfil.SetActive(true);
         whichPanel = "Perfil";
         if(selectedProfile != null)
         eventSys.SetSelectedGameObject(selectedProfile);
@@ -194,6 +202,10 @@ public class MainMenuController : MonoBehaviour
         eventSys.SetSelectedGameObject(botao_seleção);
     }
 
+    public void Jogar()
+    {
+        telaJogar.SetActive(true);
+    }
     public void ButtonContinuar()
     {
         fadeOut.SetActive(true);
@@ -214,5 +226,9 @@ public class MainMenuController : MonoBehaviour
     public void Fase3()
     {
         SceneManager.LoadScene(2);
+    }
+    public void DesativaTitulo()
+    {
+        Titulo.SetActive(false);
     }
 }
