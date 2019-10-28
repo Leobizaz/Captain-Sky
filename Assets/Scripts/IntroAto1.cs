@@ -36,18 +36,18 @@ public class IntroAto1 : MonoBehaviour
     {
 
 
-        if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro"))
+        if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro") && FillCircle != null)
         {
             fill = true;
             Invoke("SkipIntro", 5f);
         }
-        if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space) && FillCircle != null)
         {
             FillCircle.GetComponent<Image>().fillAmount = 0;
             CancelInvoke("SkipIntro");
         }
 
-        if ( fill == true)
+        if ( fill == true && FillCircle != null)
         {
             FillCircle.GetComponent<Image>().fillAmount += 0.5f * speed * Time.deltaTime;
         }
@@ -74,6 +74,7 @@ public class IntroAto1 : MonoBehaviour
         maincamera.GetComponent<PostProcessLayer>().enabled = true;
         canvas.SetActive(true);
         Invoke("PlayCantoria", 2f);
+        fill = false;
     }
 
     void PlayCantoria()
