@@ -40,14 +40,26 @@ public class PlayerOpenMovement : MonoBehaviour
 
     void Update()
     {
+        float currentVelocity = 0;
+
         if (yawSpeed <= 0.15f)
         {
             yawSpeed = 0.15f;
         }
 
-        if (yawSpeed >= 1)
+        if (yawSpeed >= 2)
         {
-            yawSpeed = 1;
+            yawSpeed = 2;
+        }
+
+        if(rollSpeed >= 5f)
+        {
+            rollSpeed = 5f;
+        }
+
+        if(rollSpeed <= 2f)
+        {
+            rollSpeed = 2f;
         }
 
 
@@ -57,7 +69,8 @@ public class PlayerOpenMovement : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
             {
                 forwardSpeed -= 0.15f;
-                yawSpeed += 0.0155f;
+                rollSpeed += 0.0355f;
+                yawSpeed += 0.0355f;
 
 
 
@@ -72,7 +85,8 @@ public class PlayerOpenMovement : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
             {
                 forwardSpeed += 1.13f;
-                yawSpeed -= 0.0055f;
+                yawSpeed -= 0.0155f;
+                rollSpeed -= 0.0155f;
 
                 if (forwardSpeed >= 180f)
                 {
@@ -93,7 +107,9 @@ public class PlayerOpenMovement : MonoBehaviour
 
 
             if (Input.GetButtonUp("HorizontalDireito") || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-                vectorinput.x = 0;
+                vectorinput.x = Mathf.SmoothDamp(vectorinput.x, 0, ref currentVelocity, 0.003f);
+
+
 
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
@@ -101,20 +117,22 @@ public class PlayerOpenMovement : MonoBehaviour
 
             if (y2 > 0 && forwardSpeed <= 125)
             {
-                SetCameraZoom(-6f, .4f);
+                SetCameraZoom(-6f, 3.0f);
                 forwardSpeed += 0.45f;
                 yawSpeed -= 0.0055f;
+                rollSpeed -= 0.0055f;
             }
 
             if (y2 < 0 && forwardSpeed >= 65)
             {
-                SetCameraZoom(6f, .4f);
+                SetCameraZoom(6f, 3f);
                 forwardSpeed -= 0.45f;
-                yawSpeed += 0.0075f;
+                yawSpeed += 0.0475f;
+                rollSpeed += 0.0475f;
             }
             if (y2 == 0)
             {
-                SetCameraZoom(0f, .4f);
+                SetCameraZoom(0f, 3f);
             }
 
             if (Input.GetButtonDown("Boost"))
@@ -133,7 +151,10 @@ public class PlayerOpenMovement : MonoBehaviour
             Movement();
 
             if (Input.GetButtonUp("HorizontalDireito") || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-                vectorinput.x = 0;
+            {
+                vectorinput.x = Mathf.SmoothDamp(vectorinput.x, 0, ref currentVelocity, 0.003f);
+                rotation = Mathf.SmoothDamp(rotation, 0, ref currentVelocity, 0.03f);
+            }
 
             if (Input.GetKeyDown(KeyCode.F) && !manobra)
             {

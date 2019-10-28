@@ -52,7 +52,7 @@ public class AveIA : MonoBehaviour
         sphereSize = Mathf.Clamp(sphereSize, 25, 150);
         mapSphere.transform.DOScale(sphereSize, 1);
 
-
+        KeepDistance();
 
         if (!died)
         {
@@ -90,7 +90,7 @@ public class AveIA : MonoBehaviour
 
     private void LateUpdate()
     {
-        KeepDistance();
+
     }
 
     private void OnTriggerStay(Collider other) 
