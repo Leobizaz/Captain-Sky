@@ -13,7 +13,9 @@ public class InstantiateDialogo : MonoBehaviour
     public string nome;
     public string texto;
     public bool italic;
+    public float delay;
     bool tocou;
+    public bool autoplay;
     AudioSource audio;
 
     public static bool dialogoPlaying;
@@ -21,36 +23,42 @@ public class InstantiateDialogo : MonoBehaviour
     private void Start()
     {
         audio = GetComponent<AudioSource>();
+        if (autoplay) PlayDialogo();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !tocou)
+        if (other.CompareTag("Player") && !tocou &&!autoplay)
         {
-            tocou = true;
-            GameObject dialogocfg = Instantiate(dialogo) as GameObject; 
-            dialogocfg.transform.SetParent(canvas.transform, false);
-            dialogocfg.name = "Dialogo";
-            //int index = dialogocfg.transform.GetSiblingIndex();
-            dialogocfg.transform.SetAsFirstSibling();
-            //dialogocfg.transform.SetSiblingIndex(4);
-            
-            if (dialogoPlaying)
-            {
-                RectTransform rt = dialogocfg.GetComponent<RectTransform>();
-                rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 458f, 458f);
-                rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 352f, 352f);
+            PlayDialogo();
+        }
+    }
 
-            }
-            SpawnAnimation cfg = dialogocfg.GetComponent<SpawnAnimation>();
-            cfg.lifeTime = lifeTime;
-            cfg.icone.sprite = icone;
-            cfg.name = nome;
-            cfg.text = texto;
-            cfg.italic = italic;
-            audio.Play();
+    public void PlayDialogo()
+    {
+        tocou = true;
+        GameObject dialogocfg = Instantiate(dialogo) as GameObject;
+        dialogocfg.transform.SetParent(canvas.transform, false);
+        dialogocfg.name = "Dialogo";
+        //int index = dialogocfg.transform.GetSiblingIndex();
+        dialogocfg.transform.SetAsFirstSibling();
+        //dialogocfg.transform.SetSiblingIndex(4);
+
+        if (dialogoPlaying)
+        {
+            RectTransform rt = dialogocfg.GetComponent<RectTransform>();
+            rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 458f, 458f);
+            rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 352f, 352f);
 
         }
+        SpawnAnimation cfg = dialogocfg.GetComponent<SpawnAnimation>();
+        cfg.lifeTime = lifeTime;
+        cfg.icone.sprite = icone;
+        cfg.name = nome;
+        cfg.text = texto;
+        cfg.italic = italic;
+        audio.Play();
+
     }
 
     public void MoveInHierarchy(int delta)
