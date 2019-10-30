@@ -324,9 +324,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void RotationLookFPS(float x, float y)
     {
+        
         aimTarget.transform.localPosition +=( new Vector3(x, 0, 8f) * Time.deltaTime )* 6;
         aimTarget.transform.localPosition +=( new Vector3(0, y, 8f) * Time.deltaTime) * 6;
-        aimTarget.transform.localPosition = new Vector3(Mathf.Clamp(aimTarget.transform.localPosition.x, -4.2f, 4.2f), Mathf.Clamp(aimTarget.transform.localPosition.y, -1f, 3f), 8f);
+        aimTarget.transform.localPosition = new Vector3(Mathf.Clamp(aimTarget.transform.localPosition.x, -0.1f, 0.1f), Mathf.Clamp(aimTarget.transform.localPosition.y, -0.1f, 0.1f), 8f);
+        
     }
 
     void ResetMira()
@@ -362,13 +364,17 @@ public class PlayerMovement : MonoBehaviour
 
     void InclinadaPraCima(Transform target, float eixo, float limite, float lerpTime)
     {
-        Vector3 targetEulerAngles = target.localEulerAngles;
-        if (esquerda == false && direita == false)
-            target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
-        else if (esquerda == true)
-            target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
-        else if (direita == true)
-            target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
+        if (firstPerson == false)
+        {
+            Vector3 targetEulerAngles = target.localEulerAngles;
+            if (esquerda == false && direita == false)
+                target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
+            else if (esquerda == true)
+                target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
+            else if (direita == true)
+                target.localEulerAngles = new Vector3(Mathf.LerpAngle(targetEulerAngles.x, -eixo * limite, lerpTime), targetEulerAngles.y, target.eulerAngles.z);
+        }
+
     }
 
     void SetSpeed(float x)

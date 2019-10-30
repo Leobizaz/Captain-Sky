@@ -20,6 +20,7 @@ TagManager:
   - Ground
   - Collision
   - LaserPlayer
+  - Torre
   layers:
   - Default
   - TransparentFX
