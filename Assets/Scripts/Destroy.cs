@@ -2,9 +2,28 @@
 
 public class Destroy : MonoBehaviour
 {
+    public float maxHealth;
+    public float currentHealth;
+    bool once;
+
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        if(currentHealth <= 0 && !once)
+        {
+            once= true;
+            Ded();
+        }
+    }
+
+
     public void Ded()
     {
-
+        Ato3_Objetivo1.torres_restantes -= 1;
         Destroy(gameObject);
     }
     private void OnParticleCollision(GameObject other)
@@ -12,12 +31,7 @@ public class Destroy : MonoBehaviour
         //Debug.Log("COLIDIU");
         if (other.tag == "Shoot")
         {
-            if (this.gameObject.tag == "Torre")
-            {
-                Destroy(this.gameObject);
-                Ato3_Objetivo1.torres_restantes -= 1;
-            }
-
+            currentHealth = currentHealth - 10;
         }
     }
 }

@@ -145,8 +145,8 @@ public class PlayerOpenMovement : MonoBehaviour
                 cameraHolder.transform.Rotate(0, 0, 0, Space.Self);
 
 
-            anim.SetFloat("xInput", x);
-            anim.SetFloat("yInput", y);
+            //anim.SetFloat("xInput", x);
+            //anim.SetFloat("yInput", y);
 
             Movement();
 

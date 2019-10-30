@@ -21,6 +21,7 @@ TagManager:
   - Collision
   - LaserPlayer
   - Torre
+  - Squadleader
   layers:
   - Default
   - TransparentFX

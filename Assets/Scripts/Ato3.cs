@@ -6,6 +6,7 @@ public class Ato3 : MonoBehaviour
 {
     public static int aveCountAto3;
     bool spawning;
+    public bool startEnemyAI;
     public bool startWithFog;
 
     public GameObject aves_SP1;
@@ -31,15 +32,18 @@ public class Ato3 : MonoBehaviour
 
     void Update()
     {
-        if(aveCountAto3 < 20 && !spawning)
+        if (startEnemyAI)
         {
-            StartCoroutine(Spawner());
-        }
+            if (aveCountAto3 < 20 && !spawning)
+            {
+                StartCoroutine(Spawner());
+            }
 
-        if(aveCountAto3 >= 20)
-        {
-            spawning = false;
-            StopCoroutine(Spawner());
+            if (aveCountAto3 >= 20)
+            {
+                spawning = false;
+                StopCoroutine(Spawner());
+            }
         }
     }
 
@@ -72,7 +76,7 @@ public class Ato3 : MonoBehaviour
             }
 
             GameObject instanced_Ave = Instantiate(ave_prefab, randomSP.transform.position, randomSP.transform.rotation);
-            instanced_Ave.GetComponent<AveIA>().wayfather = randomWM;
+            //instanced_Ave.GetComponent<AveIA>().wayfather = randomWM;
             yield return new WaitForSeconds(3);
 
         }

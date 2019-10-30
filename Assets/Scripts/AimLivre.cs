@@ -11,22 +11,20 @@ public class AimLivre : MonoBehaviour
 
     private void Update()
     {
+        
         if (targetLocked)
         {
             RaycastHit hit;
             Debug.DrawRay(transform.position, (target.transform.position - transform.position), Color.green);
             if (Physics.Raycast(transform.position, (target.transform.position - transform.position), out hit, Mathf.Infinity, layermask))
             {
-                if (hit.transform.CompareTag("Enemy"))
-                {
-                    return;
-                }
-                else
+                if (hit.transform.CompareTag("Terrain"))
                 {
                     LoseTarget();
                 }
             }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
