@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1973,8 +1973,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Skin1: {fileID: 1474924796}
-  Skin2: {fileID: 1442811230}
-  Skin3: {fileID: 1527377652}
+  Skin2: {fileID: 1527377652}
+  Skin3: {fileID: 1442811230}
   Skin4: {fileID: 1600779779}
   Skin5: {fileID: 944223018}
 --- !u!114 &159104309
@@ -3416,11 +3416,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 19.419113
       objectReference: {fileID: 0}
-    - target: {fileID: -8407369089839177658, guid: abac39c0fbdac8e4683460326bf29b96,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6330679729835678134, guid: abac39c0fbdac8e4683460326bf29b96,
         type: 3}
       propertyPath: m_CastShadows
@@ -3452,6 +3447,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3042232062610291539, guid: 070d1e9deb4b4cd439a2bc924c4c500d,
         type: 3}
+    - target: {fileID: -8407369089839177658, guid: abac39c0fbdac8e4683460326bf29b96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abac39c0fbdac8e4683460326bf29b96, type: 3}
 --- !u!1 &234215896
