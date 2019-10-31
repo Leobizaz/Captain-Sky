@@ -23,6 +23,7 @@ public class UnderwaterEffects : MonoBehaviour
 
 
 
+
         if(other.tag == "AllyTrigger" && other.name == "MergulhoTrigger")
         {
             RaycastHit hit;
@@ -46,6 +47,14 @@ public class UnderwaterEffects : MonoBehaviour
         {
             cameraLayer.SetActive(true);
             snowFX.SetActive(false);
+        }
+
+        if (other.tag == "AllyTrigger" && other.name == "SaiuDagua")
+        {
+            helice.DOColor(new Color(255, 255, 255, 100), 3f);
+            cameraLayer.SetActive(false);
+            vento.SetActive(true);
+            particleFX.SetActive(false);
         }
     }
 

@@ -8,6 +8,7 @@ public class Ato3 : MonoBehaviour
     bool spawning;
     public bool startEnemyAI;
     public bool startWithFog;
+    public static int ato3_passagem;
 
     public GameObject aves_SP1;
     public GameObject waymaster_sp1;

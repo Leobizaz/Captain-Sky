@@ -16,12 +16,12 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
-        STAGEPHASE = "PHASE2";
+        STAGEPHASE = "PHASE1";
 
         if(STAGEPHASE == "PHASE0") //começo
         {
             Ato3_Objetivo1.torres_restantes = 3;
-
+            Ato3.ato3_passagem = 0;
             ScoreSystem.currentScore = 0;
             ScoreSystem.enemysKill = 0;
             ScoreSystem.time = 0;
@@ -30,6 +30,7 @@ public class CheckpointSystem : MonoBehaviour
 
         if(STAGEPHASE == "PHASE1") //dentro dos tuneis depois de se separar
         {
+            Ato3.ato3_passagem = 0;
             Ato3_Objetivo1.torres_restantes = 3;
             fog.Trigger();
             ScoreSystem.currentScore = storedScore;

@@ -10,6 +10,7 @@ public class Mina : MonoBehaviour
     public ParticleSystem signalFX;
     public GameObject mesh;
     DoCameraShake cameraShake;
+    public bool unshootable;
     bool once;
     bool once2;
 
@@ -26,7 +27,7 @@ public class Mina : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Player" && !once2)
+        if((other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") && !once2)
         {
             once2 = true;
             Explode();
@@ -34,7 +35,7 @@ public class Mina : MonoBehaviour
     }
 
     private void OnParticleCollision(GameObject other) {
-        if(other.tag == "Shoot" && !once2)
+        if(other.tag == "Shoot" && !once2 && !unshootable)
         {
             once2 = true;
             Explode();

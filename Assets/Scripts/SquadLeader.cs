@@ -71,7 +71,7 @@ public class SquadLeader : MonoBehaviour
 
     void AssignPosition(GameObject member)
     {
-        pos[members.IndexOf(member)] = true;
+        //pos[members.IndexOf(member)] = true;
         member.GetComponent<AveNovaIA>().slot = positions[members.IndexOf(member)];
     }
 

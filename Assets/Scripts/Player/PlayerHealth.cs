@@ -80,6 +80,13 @@ public class PlayerHealth : MonoBehaviour
             UpdateHPSlider();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Mina" && hittable)
+        {
+            GetHit(25);
+        }
+    }
 
 
     private void OnTriggerEnter(Collider other)

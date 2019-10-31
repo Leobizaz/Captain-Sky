@@ -43,6 +43,7 @@ public class InimigoRaia : MonoBehaviour
     public bool firingLaser;
     bool once;
     bool died;
+    bool once2;
 
 
     public GameObject target;
@@ -181,6 +182,15 @@ public class InimigoRaia : MonoBehaviour
     void Despawn()
     {
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Mina" && !once2)
+        {
+            once2 = true;
+            Invoke("Death", 0.4f);
+        }
     }
 
     private void OnParticleCollision(GameObject other)
