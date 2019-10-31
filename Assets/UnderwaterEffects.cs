@@ -48,4 +48,18 @@ public class UnderwaterEffects : MonoBehaviour
             snowFX.SetActive(false);
         }
     }
+
+    public void Enable()
+    {
+        cameraLayer.SetActive(true);
+        particleFX.SetActive(true);
+        vento.SetActive(false);
+    }
+
+    public void Disable()
+    {
+        cameraLayer.SetActive(false);
+        particleFX.SetActive(false);
+        vento.SetActive(true);
+    }
 }
