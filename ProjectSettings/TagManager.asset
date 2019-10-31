@@ -22,6 +22,7 @@ TagManager:
   - LaserPlayer
   - Torre
   - Squadleader
+  - Mina
   layers:
   - Default
   - TransparentFX
