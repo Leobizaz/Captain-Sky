@@ -16,7 +16,7 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
-        STAGEPHASE = "PHASE1";
+        STAGEPHASE = "PHASE2";
 
         if(STAGEPHASE == "PHASE0") //começo
         {

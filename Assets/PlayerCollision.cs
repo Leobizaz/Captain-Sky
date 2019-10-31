@@ -108,6 +108,8 @@ public class PlayerCollision : MonoBehaviour
 
     public void Teleport()
     {
+        GetComponent<DontGoThroughThings>().enabled = false;
+        Invoke("AAA", 1f);
         fade.Play("QuickFadeIn");
         movement.crashed = false;
         if (Vector3.Distance(crashPosition, savedPosition) < 250)
@@ -135,6 +137,10 @@ public class PlayerCollision : MonoBehaviour
             parent.transform.localRotation = newRot;
             */
         }
+    }
+    public void AAA()
+    {
+        GetComponent<DontGoThroughThings>().enabled = true;
     }
 
 }
