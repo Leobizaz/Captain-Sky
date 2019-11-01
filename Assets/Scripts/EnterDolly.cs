@@ -29,6 +29,7 @@ public class EnterDolly : MonoBehaviour
             player.GetComponent<CinemachineDollyCart>().m_Path = dollyTrack;
             player.GetComponent<CinemachineDollyCart>().m_Position = 0;
             player.GetComponentInChildren<PlayerMovement>().enabled = true;
+            player.GetComponentInChildren<PlayerCollision>().enabled = false;
             player.GetComponentInChildren<PlayerMovement>().playerActive = true;
         }
     }

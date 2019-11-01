@@ -16,7 +16,7 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
-        STAGEPHASE = "PHASE1";
+        STAGEPHASE = "PHASE0";
 
         if(STAGEPHASE == "PHASE0") //começo
         {
@@ -46,7 +46,7 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.currentScore = storedScore;
             ScoreSystem.enemysKill = storedKills;
             ScoreSystem.time = storedTime;
-            Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 29500;
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 29000;
 
         }
 

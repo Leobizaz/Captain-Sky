@@ -15,7 +15,6 @@ public class PlayerCollision : MonoBehaviour
 
     float savedSpeed;
     float oldSpeed;
-
     public LayerMask layerMask;
 
     Quaternion savedRotation;

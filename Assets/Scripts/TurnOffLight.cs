@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnOffLight : MonoBehaviour
 {
     public bool on;
+    public bool turnoff;
     bool once;
     Color oldcolor;
     void Start()
@@ -41,6 +42,10 @@ public class TurnOffLight : MonoBehaviour
             RenderSettings.fogEndDistance = 2800;
             //RenderSettings.fog = true;
 
+        }
+        if (turnoff)
+        {
+            RenderSettings.fog = false;
         }
     }
 }
