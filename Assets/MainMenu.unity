@@ -461,7 +461,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 159104305}
-        m_MethodName: GoingToMenuFromOptions
+        m_MethodName: GoingToMenuFromSkins
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3506,6 +3506,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: -8407369089839177658, guid: abac39c0fbdac8e4683460326bf29b96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: abac39c0fbdac8e4683460326bf29b96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3607,11 +3612,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3042232062610291539, guid: 070d1e9deb4b4cd439a2bc924c4c500d,
         type: 3}
-    - target: {fileID: -8407369089839177658, guid: abac39c0fbdac8e4683460326bf29b96,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abac39c0fbdac8e4683460326bf29b96, type: 3}
 --- !u!1 &231912336

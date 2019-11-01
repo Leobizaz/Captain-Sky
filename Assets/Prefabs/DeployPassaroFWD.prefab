@@ -5279,9 +5279,8 @@ MonoBehaviour:
   model: {fileID: 7014895255006285098}
   dontshoot: 0
   audios:
-  - {fileID: 8300000, guid: 1f477c39608c406438d7503cbac16862, type: 3}
-  - {fileID: 8300000, guid: b37296110de8c2643817beab19bd148f, type: 3}
-  - {fileID: 8300000, guid: ccb8104edc7b2f144aee74a2be89bf85, type: 3}
+  - {fileID: 8300000, guid: e20b6cac32535bb469d0b70d28b8e524, type: 3}
+  - {fileID: 8300000, guid: 41e907ef036176e45b3fb70dd10aefa6, type: 3}
   explosionSFX: {fileID: 8300000, guid: b0c27b7d4867bf446aabb8eeb2e038ea, type: 3}
   cantGoDownOrLeftOrRight: 0
   smoke: {fileID: 2378321870501195350}
@@ -10449,11 +10448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7014895255006285099}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: a92bbc6213dd3f74d9d566ecc80ff38c,
-        type: 3}
-      propertyPath: m_Name
-      value: MDL_AveFINAL
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a92bbc6213dd3f74d9d566ecc80ff38c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10524,6 +10518,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a92bbc6213dd3f74d9d566ecc80ff38c,
+        type: 3}
+      propertyPath: m_Name
+      value: MDL_AveFINAL
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: a92bbc6213dd3f74d9d566ecc80ff38c,
         type: 3}
       propertyPath: m_Controller
@@ -10550,11 +10549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7014895255227804383}
     m_Modifications:
-    - target: {fileID: 284348914911537505, guid: 84659c669115dff469846f4aa41a37eb,
-        type: 3}
-      propertyPath: m_Name
-      value: gun
-      objectReference: {fileID: 0}
     - target: {fileID: 284348914911537504, guid: 84659c669115dff469846f4aa41a37eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10609,6 +10603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284348914911537505, guid: 84659c669115dff469846f4aa41a37eb,
+        type: 3}
+      propertyPath: m_Name
+      value: gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84659c669115dff469846f4aa41a37eb, type: 3}

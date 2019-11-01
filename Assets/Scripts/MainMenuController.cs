@@ -51,6 +51,10 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
+        CheckpointSystem.STAGEPHASE = "PHASE0";
+
+
+
         toggle_inverterControles.isOn = Pause.controleInvertido;
         eventSys.SetSelectedGameObject(botao_title);
         if(selectedProfile == null)
@@ -128,7 +132,8 @@ public class MainMenuController : MonoBehaviour
                     telaJogar.SetActive(false);
                     telaMenu.SetActive(true);
                     background.SetActive(true);
-                    break;
+                    GoingToMenuFromSkins();
+                break;
             }
         }
         
@@ -203,6 +208,11 @@ public class MainMenuController : MonoBehaviour
     public void GoingToMenuFromSeleção()
     {
         eventSys.SetSelectedGameObject(botao_seleção);
+    }
+
+    public void GoingToMenuFromSkins()
+    {
+        eventSys.SetSelectedGameObject(botao_continuar);
     }
 
     public void Jogar()

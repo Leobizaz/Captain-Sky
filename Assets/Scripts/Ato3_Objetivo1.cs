@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Ato3_Objetivo1 : MonoBehaviour
 {
     public GameObject objetivoHUD;
+    public GameObject dialogoEntrada;
     Animator objetivoAnim;
     public Text TXT_objetivo;
 
@@ -45,6 +46,7 @@ public class Ato3_Objetivo1 : MonoBehaviour
             once3 = true;
             Invoke("PlayDialogo", 3f);
             objetivoAnim.Play("objetivoGone");
+            dialogoEntrada.SetActive(false);
         }
 
     }
