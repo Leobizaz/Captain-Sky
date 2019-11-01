@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ato 3 - Comes e bebes.unity
     guid: d2cdfd7f14f76f04d8c3e5e02a1351d9
+  - enabled: 1
+    path: Assets/Scripts/Loading/Loading1.unity
+    guid: cf1894afbefe59b43a81e7049b5136f2
   m_configObjects: {}

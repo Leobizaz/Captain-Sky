@@ -229,7 +229,8 @@ public class MainMenuController : MonoBehaviour
 
     void LoadFase()
     {
-        SceneManager.LoadScene("Ato 1 - Cidade");
+        SceneManager.LoadScene("Loading1");
+        Loading.levelIndex = 1;
     }
 
     public void ButtonFase3()
@@ -240,7 +241,8 @@ public class MainMenuController : MonoBehaviour
 
     public void Fase3()
     {
-        SceneManager.LoadScene("Ato 3 - Comes e bebes");
+        SceneManager.LoadScene("Loading1");
+        Loading.levelIndex = 2;
     }
     public void DesativaTitulo()
     {
