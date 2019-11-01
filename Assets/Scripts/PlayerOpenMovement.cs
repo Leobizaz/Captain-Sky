@@ -106,8 +106,10 @@ public class PlayerOpenMovement : MonoBehaviour
             }
 
 
-            if (Input.GetButtonUp("HorizontalDireito") || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+            if (Input.GetButtonUp("HorizontalDireito"))
                 vectorinput.x = Mathf.SmoothDamp(vectorinput.x, 0, ref currentVelocity, 0.003f);
+            else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+                vectorinput.x = 0;
 
 
 
@@ -150,12 +152,16 @@ public class PlayerOpenMovement : MonoBehaviour
 
             Movement();
 
-            if (Input.GetButtonUp("HorizontalDireito") || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+            if (Input.GetButtonUp("HorizontalDireito"))
             {
                 vectorinput.x = Mathf.SmoothDamp(vectorinput.x, 0, ref currentVelocity, 0.003f);
                 rotation = Mathf.SmoothDamp(rotation, 0, ref currentVelocity, 0.03f);
             }
-
+            else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                vectorinput.x = 0;
+                rotation = 0;
+            }
             if (Input.GetKeyDown(KeyCode.F) && !manobra)
             {
                 ManobraVoltar();
@@ -227,14 +233,14 @@ public class PlayerOpenMovement : MonoBehaviour
             CMCamera1.offset = new Vector3(0, 5, -12.68f);
             //anim.SetInteger("State", 0);
         }
-/*
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("HorizontalDireito") > 0)
-            anim.SetInteger("State", 1);
-        if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("HorizontalDireito") < 0)
-            anim.SetInteger("State", 2);
-            */
 
-        
+        if (Input.GetAxis("HorizontalDireito") > 0 && Input.GetKeyDown(KeyCode.RightArrow))
+            vectorinput.x = 1;
+        if ( Input.GetAxis("HorizontalDireito") < 0 && Input.GetKeyDown(KeyCode.LeftArrow))
+            vectorinput.x = -1;
+
+
+
 
         if (Input.GetAxis("Vertical") > 0)
         {

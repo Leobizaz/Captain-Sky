@@ -70,16 +70,7 @@ public class AveNovaIA : MonoBehaviour
             shootingg = true;
             gun1.Play();
             gun2.Play();
-            yield return new WaitForSeconds(0.3f);
-            gun1.Play();
-            gun2.Play();
-            yield return new WaitForSeconds(0.3f);
-            gun1.Play();
-            gun2.Play();
-            yield return new WaitForSeconds(0.3f);
-            gun1.Stop();
-            gun2.Stop();
-            yield return new WaitForSeconds(4f);
+
         }
     }
 

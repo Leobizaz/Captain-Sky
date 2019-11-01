@@ -16,6 +16,7 @@ public class Loading : MonoBehaviour
     private void Start()
     {
         LoadLevel(levelIndex);
+        controlIcon.SetActive(true);
     }
 
     public void LoadLevel(int sceneIndex)
