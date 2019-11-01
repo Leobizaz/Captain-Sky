@@ -43,6 +43,7 @@ public class IntroAto1 : MonoBehaviour
         }
         if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space) && FillCircle != null)
         {
+            fill = false;
             FillCircle.GetComponent<Image>().fillAmount = 0;
             CancelInvoke("SkipIntro");
         }

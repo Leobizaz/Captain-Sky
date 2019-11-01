@@ -125,8 +125,8 @@ public class MainMenuController : MonoBehaviour
                 break;
                 case "Perfil":
                     telaPerfil.SetActive(false);
-                    telaJogar.SetActive(true);
-
+                    telaMenu.SetActive(true);
+                    GoingToMenuFromPerfil();
                 break;
                 case "Jogar":
                     telaJogar.SetActive(false);
@@ -134,6 +134,12 @@ public class MainMenuController : MonoBehaviour
                     background.SetActive(true);
                     GoingToMenuFromSkins();
                 break;
+                case "Menu":
+                    telaMenu.SetActive(true);
+                    telaJogar.SetActive(false);
+                    background.SetActive(true);
+
+                    break;
             }
         }
         
@@ -193,26 +199,31 @@ public class MainMenuController : MonoBehaviour
     public void GoingToMenuFromOptions()
     {
         eventSys.SetSelectedGameObject(botao_opções);
+        whichPanel = "Menu";
     }
 
     public void GoingToMenuFromExtras()
     {
         eventSys.SetSelectedGameObject(botao_extras);
+        whichPanel = "Menu";
     }
 
     public void GoingToMenuFromPerfil()
     {
         eventSys.SetSelectedGameObject(botao_perfil);
+        whichPanel = "Menu";
     }
 
     public void GoingToMenuFromSeleção()
     {
         eventSys.SetSelectedGameObject(botao_seleção);
+        whichPanel = "Menu";
     }
 
     public void GoingToMenuFromSkins()
     {
         eventSys.SetSelectedGameObject(botao_continuar);
+        whichPanel = "Menu";
     }
 
     public void Jogar()

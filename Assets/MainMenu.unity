@@ -2035,7 +2035,7 @@ MonoBehaviour:
   eventSys: {fileID: 252716572}
   fadeOut: {fileID: 984285073}
   botao_title: {fileID: 543188103}
-  background: {fileID: 0}
+  background: {fileID: 491931674}
   "botao_op\xE7\xF5es": {fileID: 1924034109}
   botao_extras: {fileID: 1797065449}
   botao_perfil: {fileID: 576631144}
