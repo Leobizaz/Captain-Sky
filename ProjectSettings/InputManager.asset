@@ -105,8 +105,8 @@ InputManager:
     m_Name: HorizontalDireito
     descriptiveName: Horizontal Direito Controle
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
