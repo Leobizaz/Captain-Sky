@@ -53,6 +53,7 @@ public class Ato3_Objetivo1 : MonoBehaviour
 
     void PlayDialogo()
     {
+        objetivoHUD.SetActive(false);
         sequenciaDialogo.PlayDialogo();
     }
 }
