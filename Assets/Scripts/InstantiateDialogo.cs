@@ -42,7 +42,7 @@ public class InstantiateDialogo : MonoBehaviour
         dialogocfg.name = "Dialogo";
         //int index = dialogocfg.transform.GetSiblingIndex();
         dialogocfg.transform.SetAsFirstSibling();
-        //dialogocfg.transform.SetSiblingIndex(4);
+        //dialogocfg.transform.SetSiblingIndex(8);
 
         if (dialogoPlaying)
         {

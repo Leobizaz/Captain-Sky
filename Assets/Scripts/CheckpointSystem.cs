@@ -10,6 +10,8 @@ public class CheckpointSystem : MonoBehaviour
     public GameObject Gameplay3;
     public TurnOffLight fog;
 
+    public CinemachinePathBase trackEsfera;
+
     public static float storedTime;
     public static int storedKills;
     public static float storedScore;
@@ -21,6 +23,7 @@ public class CheckpointSystem : MonoBehaviour
         if(STAGEPHASE == "PHASE0") //começo
         {
             Ato3_Objetivo1.torres_restantes = 3;
+            Ato3_Objetivo2.geradores_restantes = 4;
             Ato3.ato3_passagem = 0;
             ScoreSystem.currentScore = 0;
             ScoreSystem.enemysKill = 0;
@@ -32,6 +35,7 @@ public class CheckpointSystem : MonoBehaviour
         {
             Ato3.ato3_passagem = 0;
             Ato3_Objetivo1.torres_restantes = 3;
+            Ato3_Objetivo2.geradores_restantes = 4;
             fog.Trigger();
             ScoreSystem.currentScore = storedScore;
             ScoreSystem.enemysKill = storedKills;
@@ -43,11 +47,33 @@ public class CheckpointSystem : MonoBehaviour
         if(STAGEPHASE == "PHASE2") //hora que sai do tunel
         {
             Ato3_Objetivo1.torres_restantes = 3;
+            Ato3_Objetivo2.geradores_restantes = 4;
             ScoreSystem.currentScore = storedScore;
             ScoreSystem.enemysKill = storedKills;
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 29000;
 
+        }
+        if (STAGEPHASE == "PHASE3") //hora que entra na esfera
+        {
+            Ato3_Objetivo1.torres_restantes = 0;
+            Ato3_Objetivo2.geradores_restantes = 4;
+            ScoreSystem.currentScore = storedScore;
+            ScoreSystem.enemysKill = storedKills;
+            ScoreSystem.time = storedTime;
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 300f;
+        }
+
+        if (STAGEPHASE == "PHASE4") //reator e escape
+        {
+            Ato3_Objetivo1.torres_restantes = 0;
+            Ato3_Objetivo2.geradores_restantes = 4;
+            ScoreSystem.currentScore = storedScore;
+            ScoreSystem.enemysKill = storedKills;
+            ScoreSystem.time = storedTime;
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 6200f;
         }
 
 

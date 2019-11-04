@@ -39,7 +39,7 @@ public class Ato3_Objetivo2 : MonoBehaviour
 
         if(geradores_restantes == 2 && !once1)
         {
-            dialogo.PlayDialogo();
+            Invoke("Dialogozin", 2f);
             once1 = true;
             lasers1.SetActive(true);
         }
@@ -56,6 +56,11 @@ public class Ato3_Objetivo2 : MonoBehaviour
             Invoke("PlayDialogo", 2f);
         }
 
+    }
+
+    void Dialogozin()
+    {
+        dialogo.PlayDialogo();
     }
 
     void PlayDialogo()
