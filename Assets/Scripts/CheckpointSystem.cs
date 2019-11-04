@@ -8,6 +8,8 @@ public class CheckpointSystem : MonoBehaviour
     public static string STAGEPHASE;
 
     public GameObject Gameplay3;
+    public GameObject cenarioMontanha;
+    public GameObject cenarioEsfera;
     public TurnOffLight fog;
 
     public CinemachinePathBase trackEsfera;
@@ -18,10 +20,11 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
-        STAGEPHASE = "PHASE0";
+        STAGEPHASE = "PHASE4";
 
         if(STAGEPHASE == "PHASE0") //começo
         {
+            cenarioMontanha.SetActive(false);
             Ato3_Objetivo1.torres_restantes = 3;
             Ato3_Objetivo2.geradores_restantes = 4;
             Ato3.ato3_passagem = 0;
@@ -34,6 +37,8 @@ public class CheckpointSystem : MonoBehaviour
         if(STAGEPHASE == "PHASE1") //dentro dos tuneis depois de se separar
         {
             Ato3.ato3_passagem = 0;
+            cenarioMontanha.SetActive(false);
+            cenarioEsfera.SetActive(false);
             Ato3_Objetivo1.torres_restantes = 3;
             Ato3_Objetivo2.geradores_restantes = 4;
             fog.Trigger();
@@ -46,6 +51,8 @@ public class CheckpointSystem : MonoBehaviour
 
         if(STAGEPHASE == "PHASE2") //hora que sai do tunel
         {
+            cenarioEsfera.SetActive(false);
+            cenarioMontanha.SetActive(true);
             Ato3_Objetivo1.torres_restantes = 3;
             Ato3_Objetivo2.geradores_restantes = 4;
             ScoreSystem.currentScore = storedScore;
@@ -56,6 +63,7 @@ public class CheckpointSystem : MonoBehaviour
         }
         if (STAGEPHASE == "PHASE3") //hora que entra na esfera
         {
+            cenarioMontanha.SetActive(false);
             Ato3_Objetivo1.torres_restantes = 0;
             Ato3_Objetivo2.geradores_restantes = 4;
             ScoreSystem.currentScore = storedScore;
@@ -67,6 +75,7 @@ public class CheckpointSystem : MonoBehaviour
 
         if (STAGEPHASE == "PHASE4") //reator e escape
         {
+            cenarioMontanha.SetActive(false);
             Ato3_Objetivo1.torres_restantes = 0;
             Ato3_Objetivo2.geradores_restantes = 4;
             ScoreSystem.currentScore = storedScore;
