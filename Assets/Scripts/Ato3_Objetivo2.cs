@@ -67,14 +67,16 @@ public class Ato3_Objetivo2 : MonoBehaviour
 
     void PlayDialogo()
     {
-        objetivoHUD.SetActive(false);
+        objetivoHUD.GetComponent<Animator>().Play("objetivoGone");
         sequenciaDialogo.PlayDialogo();
         Invoke("Explosao", 3f);
     }
 
     void Explosao()
     {
+        objetivoHUD.SetActive(false);
         explosao.Play();
+        explosao.gameObject.GetComponent<AudioSource>().Play();
         cameraShake.shakeElapsedTime = 1.0f;
         geradorAnim.Play("SalaGerador_EXplode");
 

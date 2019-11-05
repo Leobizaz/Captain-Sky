@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class Ato3_Objetivo1 : MonoBehaviour
 {
     public GameObject objetivoHUD;
+    public GameObject objetivoHUD2;
     public GameObject dialogoEntrada;
+    public GameObject portao;
     Animator objetivoAnim;
     public Text TXT_objetivo;
 
@@ -55,5 +57,12 @@ public class Ato3_Objetivo1 : MonoBehaviour
     {
         objetivoHUD.SetActive(false);
         sequenciaDialogo.PlayDialogo();
+        Invoke("Objetivo2", 10f);
+    }
+
+    void Objetivo2()
+    {
+        portao.SetActive(false);
+        objetivoHUD2.SetActive(true);
     }
 }

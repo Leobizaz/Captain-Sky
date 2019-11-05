@@ -4,6 +4,9 @@ public class Destroy : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
+    public GameObject destroços;
+    public GameObject intacto;
+    public GameObject particle;
     bool once;
 
     private void Start()
@@ -24,7 +27,9 @@ public class Destroy : MonoBehaviour
     public void Ded()
     {
         Ato3_Objetivo1.torres_restantes -= 1;
-        Destroy(gameObject);
+        Destroy(intacto);
+        destroços.SetActive(true);
+        particle.SetActive(false);
     }
     private void OnParticleCollision(GameObject other)
     {
