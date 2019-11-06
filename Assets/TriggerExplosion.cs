@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerExplosion : MonoBehaviour
 {
     bool once;
+    public float delay;
     public float shakeAmmount;
     public float shakeDuration;
     public ParticleSystem explosionFX;
@@ -14,11 +15,16 @@ public class TriggerExplosion : MonoBehaviour
         if(other.tag == "Player" && !once)
         {
             once = true;
-            explosionFX.Play();
-            explosionFX.gameObject.GetComponent<AudioSource>().Play();
-            shakeScript.ShakeAmplitude = shakeAmmount;
-            shakeScript.shakeElapsedTime = shakeDuration;
+            Explode();
         }
+    }
+
+    public void Explode()
+    {
+        explosionFX.Play();
+        explosionFX.gameObject.GetComponent<AudioSource>().Play();
+        shakeScript.ShakeAmplitude = shakeAmmount;
+        shakeScript.shakeElapsedTime = shakeDuration;
     }
 
 }

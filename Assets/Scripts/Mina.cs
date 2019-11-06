@@ -10,12 +10,16 @@ public class Mina : MonoBehaviour
     public ParticleSystem signalFX;
     public GameObject mesh;
     DoCameraShake cameraShake;
+    AudioSource audio;
+    //public AudioClip arm;
+    public AudioClip explode;
     public bool unshootable;
     bool once;
     bool once2;
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         cameraShake = GameObject.Find("Game Manager").GetComponent<DoCameraShake>();
     }
 
@@ -44,6 +48,7 @@ public class Mina : MonoBehaviour
 
     public void Arm()
     {
+        //audio.PlayOneShot(arm);
         signalFX.Play();
         anim.Play("Mina Aquática");
         Invoke("Despawn", 20f);
@@ -51,6 +56,7 @@ public class Mina : MonoBehaviour
 
     public void Explode()
     {
+        audio.PlayOneShot(explode);
         Destroy(mesh);
         cameraShake.shakeElapsedTime = cameraShake.ShakeDuration;
         Vector3 newPos = this.transform.position;
@@ -58,7 +64,7 @@ public class Mina : MonoBehaviour
         Debug.Log("Cu");
         GameObject istance = Instantiate(explosionFX, newPos, Quaternion.identity);
         istance.SetActive(true);
-        Destroy(gameObject, cameraShake.ShakeDuration);
+        Destroy(gameObject, cameraShake.ShakeDuration + 3);
     }
 
     public void Despawn()

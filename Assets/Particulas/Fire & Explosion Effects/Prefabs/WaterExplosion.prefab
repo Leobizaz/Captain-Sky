@@ -15448,7 +15448,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 100
+        scalar: 200
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -17102,7 +17102,7 @@ ParticleSystem:
     drag:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.17
+      scalar: 0.05
       minScalar: 0
       maxCurve:
         serializedVersion: 2

@@ -111,13 +111,18 @@ public class PlayerOpenMovement : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
                 vectorinput.x = 0;
 
+  
 
 
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
             float y2 = Input.GetAxis("VerticalDireito");
 
-            if (y2 > 0 && forwardSpeed <= 125)
+            if (Input.GetKeyUp(KeyCode.UpArrow) && Input.GetKeyUp(KeyCode.DownArrow))
+                y2 = 0;
+            //if ((y2 > 0 || Input.GetKey(KeyCode.UpArrow) && forwardSpeed <= 125))
+
+            if ((y2 > 0 || Input.GetKey(KeyCode.UpArrow)) && forwardSpeed <= 125)
             {
                 SetCameraZoom(-6f, 3.0f);
                 forwardSpeed += 0.45f;
@@ -125,7 +130,7 @@ public class PlayerOpenMovement : MonoBehaviour
                 rollSpeed -= 0.0055f;
             }
 
-            if (y2 < 0 && forwardSpeed >= 65)
+            if ((y2 < 0 || Input.GetKey(KeyCode.DownArrow)) && forwardSpeed >= 65)
             {
                 SetCameraZoom(6f, 3f);
                 forwardSpeed -= 0.45f;

@@ -20,6 +20,9 @@ public class Ato3_Objetivo2 : MonoBehaviour
     public DoCameraShake cameraShake;
     public InstantiateDialogo dialogo;
     public GameObject trigger;
+    public ExplosionSequence sequence;
+    public GameObject somGerador;
+    public AudioSource reactorDead;
 
     bool once1;
     bool once2;
@@ -74,10 +77,13 @@ public class Ato3_Objetivo2 : MonoBehaviour
 
     void Explosao()
     {
+        somGerador.SetActive(false);
+        sequence.PlayExplosions();
         objetivoHUD.SetActive(false);
         explosao.Play();
+        reactorDead.Play();
         explosao.gameObject.GetComponent<AudioSource>().Play();
-        cameraShake.shakeElapsedTime = 1.0f;
+        cameraShake.shakeElapsedTime = 1.5f;
         geradorAnim.Play("SalaGerador_EXplode");
 
     }

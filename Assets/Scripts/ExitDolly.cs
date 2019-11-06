@@ -14,6 +14,7 @@ public class ExitDolly : MonoBehaviour
         {
             player.GetComponent<PlayerOpenMovement>().enabled = true;
             player.GetComponentInChildren<PlayerCollision>().enabled = true;
+            player.GetComponentInChildren<RaycastMira>().enabled = false;
             player.GetComponent<CinemachineDollyCart>().enabled = false;
             player.GetComponent<CinemachineDollyCart>().m_Path = null;
             player.GetComponentInChildren<PlayerMovement>().enabled = false;
