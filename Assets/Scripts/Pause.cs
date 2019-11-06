@@ -117,5 +117,9 @@ public class Pause : MonoBehaviour
         PlayerHealth.dead = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void LoadAto3()
+    {
+        SceneManager.LoadScene("Ato 3 - Comes e bebes");
+    }
 
 }

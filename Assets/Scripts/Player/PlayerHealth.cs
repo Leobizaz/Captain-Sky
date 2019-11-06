@@ -66,18 +66,23 @@ public class PlayerHealth : MonoBehaviour
 
     public void GetHit(float value)
     {
-        if(hittable && !Pause.victory)
+        if (hittable && !Pause.victory)
+        {
             Debug.Log("Took a hit");
             audio.pitch = 1f;
             Feedback.gameObject.SetActive(true);
-            Feedback.DOColor(Red,0.1f);
+            Feedback.DOColor(Red, 0.1f);
             audio.PlayOneShot(audios[Random.Range(0, audios.Length)]);
             //transform.DOShakePosition(0.27f,1.4f,16,10,false,false);
             transform.DOShakeRotation(0.25f, 1f, 10, 10, false);
             hittable = false;
             Invoke("HitCooldown", invincibilityTime);
-            currentHealth = currentHealth - value;
-            UpdateHPSlider();
+            if (!Cheats.CHEAT_Invencivel)
+            {
+                currentHealth = currentHealth - value;
+                UpdateHPSlider();
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
