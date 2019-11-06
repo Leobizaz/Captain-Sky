@@ -6,7 +6,7 @@ using Cinemachine;
 public class CheckpointSystem : MonoBehaviour
 {
     public static string STAGEPHASE;
-
+    public MusicController music;
     public GameObject Gameplay3;
     public GameObject cenarioMontanha;
     public GameObject cenarioEsfera;
@@ -20,7 +20,7 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
-        STAGEPHASE = "PHASE4";
+        STAGEPHASE = "PHASE0";
 
         if(STAGEPHASE == "PHASE0") //começo
         {
@@ -31,6 +31,7 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.currentScore = 0;
             ScoreSystem.enemysKill = 0;
             ScoreSystem.time = 0;
+            music.ChangeIt(0, 0);
 
         }
 
@@ -47,6 +48,7 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponentInChildren<UnderwaterEffects>().Enable();
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 11000;
+            music.ChangeIt(1, 0);
         }
 
         if(STAGEPHASE == "PHASE2") //hora que sai do tunel
@@ -59,6 +61,7 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.enemysKill = storedKills;
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 29000;
+            music.ChangeIt(2, 0);
 
         }
         if (STAGEPHASE == "PHASE3") //hora que entra na esfera
@@ -71,6 +74,7 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 300f;
+            music.ChangeIt(2, 0);
         }
 
         if (STAGEPHASE == "PHASE4") //reator e escape
@@ -83,6 +87,7 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 6200f;
+            music.ChangeIt(2, 0);
         }
 
 

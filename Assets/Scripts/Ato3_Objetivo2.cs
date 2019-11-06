@@ -6,6 +6,7 @@ using Cinemachine;
 
 public class Ato3_Objetivo2 : MonoBehaviour
 {
+    public MusicController music;
     public static int geradores_restantes = 4;
     public ParticleSystem explosao;
     public GameObject objetivoHUD;
@@ -77,6 +78,7 @@ public class Ato3_Objetivo2 : MonoBehaviour
 
     void Explosao()
     {
+        music.ChangeMusic(3, 4);
         somGerador.SetActive(false);
         sequence.PlayExplosions();
         objetivoHUD.SetActive(false);
