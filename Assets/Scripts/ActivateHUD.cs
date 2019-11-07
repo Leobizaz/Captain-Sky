@@ -7,6 +7,7 @@ public class ActivateHUD : MonoBehaviour
 
     private void Start()
     {
+        if(hudAnimator!=null)
         hudAnimator.speed = 0f;
 
 

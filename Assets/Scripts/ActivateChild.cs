@@ -10,6 +10,7 @@ public class ActivateChild : MonoBehaviour
     {
         if (other.CompareTag("Player") )
         {
+            if(child!=null)
             child.SetActive(true);
         }
     }

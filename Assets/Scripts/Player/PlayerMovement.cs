@@ -411,7 +411,7 @@ public class PlayerMovement : MonoBehaviour
         {
             float speed = other.GetComponent<Boostzone>().Boost_speed;
             isBoosting = true;
-            Debug.Log("Boost ON");
+
             //Boost(false);
             //SetSpeed(progressionSpeed + 75f);
             float currentSpeed = dolly.m_Speed;
@@ -434,7 +434,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.tag == "Boost" && !briefCancel)
         {
             isBoosting = false;
-            Debug.Log("Boost OFF");
+
             //Boost(false);
             //SetSpeed(progressionSpeed);
             float currentSpeed = dolly.m_Speed;
@@ -450,7 +450,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ResetBriefCancel()
     {
-        Debug.Log("Oh fuck it resetted");
+
         briefCancel = false;
     }
 
