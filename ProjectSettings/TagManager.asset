@@ -23,6 +23,7 @@ TagManager:
   - Torre
   - Squadleader
   - Mina
+  - Building
   layers:
   - Default
   - TransparentFX

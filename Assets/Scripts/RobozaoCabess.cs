@@ -46,7 +46,7 @@ public class RobozaoCabess : MonoBehaviour
     void GetKilled()
     {
         died = true;
-        meshAnim.Play("E2_HitCabess 0");
+        meshAnim.Play("Hit");
         spark.SetActive(true);
         light.SetActive(false);
         fumaça.SetActive(true);

@@ -10,7 +10,7 @@ public class RobozaoBrasso : MonoBehaviour
     public RobozaoHealth mainRobo;
     public GameObject fumaça;
     public Material newMaterial;
-    public Renderer rend;
+    //public Renderer rend;
     public GameObject sparkleFX;
     public AudioClip[] audios;
     AudioSource audio;
@@ -44,7 +44,7 @@ public class RobozaoBrasso : MonoBehaviour
     void GetKilled()
     {
         dead = true;
-        meshAnim.Play("E2_Damage 0");
+        meshAnim.Play("Hit");
         sparkleFX.SetActive(true);
         fumaça.SetActive(true);
         if (brassodireito)
@@ -53,6 +53,6 @@ public class RobozaoBrasso : MonoBehaviour
             mainRobo.bracoESQ_destroy = true;
         //playsound destroy
         gameObject.tag = "DeadEnemy";
-        rend.material = newMaterial;
+        //rend.material = newMaterial;
     }
 }

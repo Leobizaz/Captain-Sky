@@ -8,7 +8,7 @@ public class RobozaoHealth : MonoBehaviour
     public bool bracoDIR_destroy;
     public bool cabessa_destroy;
 
-    bool dead;
+    public bool dead;
     void Update()
     {
         if(bracoESQ_destroy && bracoDIR_destroy && cabessa_destroy && !dead)
@@ -17,7 +17,7 @@ public class RobozaoHealth : MonoBehaviour
             ScoreSystem.enemysKill++;
             ScoreSystem.currentScore += 3000f;
             GameObject.Find("Game Manager").GetComponent<ScoreSystem>().UpdateScore();
+            Destroy(gameObject, 10);
         }
     }
-
 }
