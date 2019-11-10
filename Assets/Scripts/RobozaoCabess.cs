@@ -43,7 +43,7 @@ public class RobozaoCabess : MonoBehaviour
         }
     }
 
-    void GetKilled()
+    public void GetKilled()
     {
         died = true;
         meshAnim.Play("Hit");
