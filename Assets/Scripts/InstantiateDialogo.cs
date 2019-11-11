@@ -17,6 +17,7 @@ public class InstantiateDialogo : MonoBehaviour
     bool tocou;
     public bool autoplay;
     AudioSource audio;
+    public GameObject Charlie;
 
     public static bool dialogoPlaying;
 
@@ -31,6 +32,10 @@ public class InstantiateDialogo : MonoBehaviour
         if (other.CompareTag("Player") && !tocou &&!autoplay)
         {
             PlayDialogo();
+            if(Charlie != null)
+            {
+                Invoke("Passa",5.8f);
+            }
         }
     }
 
@@ -65,5 +70,10 @@ public class InstantiateDialogo : MonoBehaviour
     {
         int index = transform.GetSiblingIndex();
         transform.SetSiblingIndex(index + delta);
+    }
+
+    public void Passa()
+    {
+        Charlie.SetActive(true);
     }
 }

@@ -567,7 +567,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403734350006433083}
-  - component: {fileID: 3641330673029141268}
   - component: {fileID: 7714764573308688449}
   m_Layer: 0
   m_Name: PassaroFundo
@@ -585,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 3729265919895488296}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 470.64694, y: 508.17603, z: -1212.0299}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 1802965500809876487}
   - {fileID: 8348998262577582149}
@@ -596,19 +595,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &3641330673029141268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3729265919895488296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6422b09558f183f43a7f7e3f8b44ac1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vel: 5
 --- !u!95 &7714764573308688449
 Animator:
   serializedVersion: 3
