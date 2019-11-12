@@ -11,6 +11,7 @@ public class CheckpointSystem : MonoBehaviour
     public GameObject cenarioMontanha;
     public GameObject cenarioEsfera;
     public TurnOffLight fog;
+    public GameObject water;
 
     public CinemachinePathBase trackEsfera;
 
@@ -20,7 +21,7 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
-        //STAGEPHASE = "PHASE0";
+      //STAGEPHASE = "PHASE2";
 
         if(STAGEPHASE == "PHASE0") //começo
         {
@@ -57,6 +58,8 @@ public class CheckpointSystem : MonoBehaviour
             cenarioMontanha.SetActive(true);
             Ato3_Objetivo1.torres_restantes = 3;
             Ato3_Objetivo2.geradores_restantes = 4;
+            RenderSettings.fog = false;
+            water.SetActive(false);
             ScoreSystem.currentScore = storedScore;
             ScoreSystem.enemysKill = storedKills;
             ScoreSystem.time = storedTime;
@@ -67,9 +70,11 @@ public class CheckpointSystem : MonoBehaviour
         if (STAGEPHASE == "PHASE3") //hora que entra na esfera
         {
             cenarioMontanha.SetActive(false);
+            RenderSettings.fog = false;
             Ato3_Objetivo1.torres_restantes = 0;
             Ato3_Objetivo2.geradores_restantes = 4;
             ScoreSystem.currentScore = storedScore;
+            water.SetActive(false);
             ScoreSystem.enemysKill = storedKills;
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;
@@ -82,7 +87,9 @@ public class CheckpointSystem : MonoBehaviour
             cenarioMontanha.SetActive(false);
             Ato3_Objetivo1.torres_restantes = 0;
             Ato3_Objetivo2.geradores_restantes = 4;
+            RenderSettings.fog = false;
             ScoreSystem.currentScore = storedScore;
+            water.SetActive(false);
             ScoreSystem.enemysKill = storedKills;
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;

@@ -10,6 +10,7 @@ public class PlayerOpenMovement : MonoBehaviour
 
     [Header("Controles")]
     public float forwardSpeed = 10;
+    public float sensibilidade = 0.8f;
     public float rollSpeed = 2;
     public float yawSpeed = 1;
     [Space(5)]
@@ -68,10 +69,10 @@ public class PlayerOpenMovement : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
             {
-                forwardSpeed -= 0.15f;
+                forwardSpeed -= 0.5f;
                 rollSpeed += 0.0355f;
                 yawSpeed += 0.0355f;
-
+                SetCameraZoom(25f, 5f);
 
 
                 if (forwardSpeed <= 5f)
@@ -84,9 +85,10 @@ public class PlayerOpenMovement : MonoBehaviour
             }
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
             {
-                forwardSpeed += 1.13f;
+                forwardSpeed += 1.20f;
                 yawSpeed -= 0.0155f;
                 rollSpeed -= 0.0155f;
+                SetCameraZoom(-25f, 5f);
 
                 if (forwardSpeed >= 180f)
                 {
@@ -226,9 +228,9 @@ public class PlayerOpenMovement : MonoBehaviour
         {
             float currentVelocity = 0;
             //vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
-            vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxis("HorizontalDireito"), ref currentVelocity, 0.03f);
-            vectorinput.y = Mathf.SmoothDamp(vectorinput.y, Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), ref currentVelocity, 0.03f);
-            rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal"), ref currentVelocity, 0.03f);
+            vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxis("HorizontalDireito") * sensibilidade, ref currentVelocity, 0.03f);
+            vectorinput.y = Mathf.SmoothDamp(vectorinput.y, (Input.GetAxis("Vertical") * 1.2f) * sensibilidade, ref currentVelocity, 0.03f);
+            rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal") * sensibilidade, ref currentVelocity, 0.03f);
         }
         else
             vectorinput = new Vector3(manobra_x, manobra_y, manobra_z);
