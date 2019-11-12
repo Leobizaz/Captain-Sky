@@ -12,15 +12,18 @@ public class RobozaoHealth : MonoBehaviour
     public RobozaoBrasso braço2;
     public RobozaoCabess cabeça;
 
+    public ParticleSystem explosion;
+
     int hit;
 
-    bool cooldown;
+    [SerializeField] bool cooldown = false;
 
     public bool dead;
     void Update()
     {
         if(bracoESQ_destroy && bracoDIR_destroy && cabessa_destroy && !dead)
         {
+            explosion.Play();
             dead = true;
             ScoreSystem.enemysKill++;
             ScoreSystem.currentScore += 3000f;
@@ -29,10 +32,11 @@ public class RobozaoHealth : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if(collision.gameObject.tag == "LaserPlayer" && !cooldown)
+        if(other.tag == "LaserPlayer" && !cooldown)
         {
+            Debug.Log("Cuu");
             LaserHit();
         }
     }
@@ -56,7 +60,7 @@ public class RobozaoHealth : MonoBehaviour
             cabeça.GetKilled();
         }
         hit++;
-        Invoke("ResetCooldown", 1f);
+        Invoke("ResetCooldown", 2f);
     }
 
     public void ResetCooldown()

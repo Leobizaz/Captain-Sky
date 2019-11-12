@@ -4100,10 +4100,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: " Desenvolvido por:\n   Alessandra Ogawa - Concepts\n    Arnei Tcheou -
-    Modelagem\n     Felipe Abdala - Modelagem e Anima\xE7\xE3o\n      Guilherme Kfouri
-    - Modelagem\n       Guilhermo Lopez - Programa\xE7\xE3o e Anima\xE7\xE3o\n        Igor
-    Garcia - Concepts\n         Leonardo Villar - Produtor e Programa\xE7\xE3o\n          Pedro
-    Vilas Boas - Concepts"
+    Modelagem\n     Felipe Abdala - Modelagem, Anima\xE7\xE3o e Documenta\xE7\xE3o\n
+    \     Guilherme Kfouri - Modelagem e Texturas\n       Guilhermo Lopez - Programa\xE7\xE3o
+    e Anima\xE7\xE3o\n        Igor Garcia - Dire\xE7\xE3o de arte e Produ\xE7\xE3o\n
+    \        Leonardo Villar - Produ\xE7\xE3o, Programa\xE7\xE3o e Level Design\n
+    \         Pedro Vilas Boas - Concepts, Interfaces e Texturas"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d7e05f4eb58ce54bbe3dbc26a98ed52, type: 2}
   m_sharedMaterial: {fileID: 1934343969561899160, guid: 3d7e05f4eb58ce54bbe3dbc26a98ed52,
