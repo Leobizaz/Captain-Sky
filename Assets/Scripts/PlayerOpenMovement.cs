@@ -38,9 +38,59 @@ public class PlayerOpenMovement : MonoBehaviour
     public ParticleSystem shoot2;
     public AudioSource audioSource;
     public CameraFollow CMCamera1;
+    public Transform cameraParent;
+    public GameObject modelooo;
+    public SpriteRenderer mira;
+    public GameObject radarIMG;
+    public GameObject oculosHUD;
+    public Transform aimTarget;
+    public bool playerActive;
+    public bool canFirstPerson;
+    public GameObject cockpit;
+    public GameObject firstPersonCamera;
+    [SerializeField] public static bool firstPerson;
+    private bool rotate;
 
     void Update()
     {
+
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+        float y2 = Input.GetAxis("VerticalDireito");
+        float x2 = Input.GetAxisRaw("HorizontalDireito");
+
+
+        if (playerActive && Input.GetButtonDown("P.O.V") && canFirstPerson)
+        {
+            firstPerson = !firstPerson;
+
+            if (firstPerson)
+            {
+                aimTarget.transform.localPosition = new Vector3(0f, 0, 8f);
+                oculosHUD.SetActive(true);
+                modelooo.SetActive(false);
+                cockpit.SetActive(true);
+                firstPersonCamera.SetActive(true);
+                radarIMG.SetActive(false);
+                mira.enabled = false;
+
+
+            }
+            else
+            {
+                mira.enabled = true;
+                cockpit.SetActive(false);
+                modelooo.SetActive(true);
+                oculosHUD.SetActive(false);
+                radarIMG.SetActive(true);
+                firstPersonCamera.SetActive(false);
+            }
+        }
+
+
+
+
+
         float currentVelocity = 0;
 
         if (yawSpeed <= 0.15f)
@@ -72,7 +122,7 @@ public class PlayerOpenMovement : MonoBehaviour
                 forwardSpeed -= 0.5f;
                 rollSpeed += 0.0355f;
                 yawSpeed += 0.0355f;
-                SetCameraZoom(25f, 5f);
+                SetCameraZoom(15f, 5f);
 
 
                 if (forwardSpeed <= 5f)
@@ -88,7 +138,7 @@ public class PlayerOpenMovement : MonoBehaviour
                 forwardSpeed += 1.20f;
                 yawSpeed -= 0.0155f;
                 rollSpeed -= 0.0155f;
-                SetCameraZoom(-25f, 5f);
+                SetCameraZoom(-15f, 5f);
 
                 if (forwardSpeed >= 180f)
                 {
@@ -108,17 +158,7 @@ public class PlayerOpenMovement : MonoBehaviour
             }
 
 
-            if (Input.GetButtonUp("HorizontalDireito"))
-                vectorinput.x = 0;
-            if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-                vectorinput.x = 0;
 
-  
-
-
-            float x = Input.GetAxis("Horizontal");
-            float y = Input.GetAxis("Vertical");
-            float y2 = Input.GetAxis("VerticalDireito");
 
             if (Input.GetKeyUp(KeyCode.UpArrow) && Input.GetKeyUp(KeyCode.DownArrow))
                 y2 = 0;
@@ -148,9 +188,9 @@ public class PlayerOpenMovement : MonoBehaviour
                 boost = true;
             if (Input.GetButtonUp("Boost"))
                 boost = false;
-            if (Input.GetButtonDown("Back"))
+            if (Input.GetButtonDown("Break"))
                 cameraHolder.transform.Rotate(0, 180, 0, Space.Self);
-            if (Input.GetButtonUp("Back"))
+            if (Input.GetButtonUp("Break"))
                 cameraHolder.transform.Rotate(0, 0, 0, Space.Self);
 
 
@@ -159,16 +199,6 @@ public class PlayerOpenMovement : MonoBehaviour
 
             Movement();
 
-            if (Input.GetButtonUp("HorizontalDireito"))
-            {
-                vectorinput.x = 0;
-                rotation = 0;
-            }
-            if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                vectorinput.x = 0;
-                rotation = 0;
-            }
             if (Input.GetKeyDown(KeyCode.F) && !manobra)
             {
                 ManobraVoltar();
@@ -228,7 +258,7 @@ public class PlayerOpenMovement : MonoBehaviour
         {
             float currentVelocity = 0;
             //vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
-            vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxis("HorizontalDireito") * sensibilidade, ref currentVelocity, 0.03f);
+            vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxisRaw("HorizontalDireito") * sensibilidade, ref currentVelocity, 0.03f);
             vectorinput.y = Mathf.SmoothDamp(vectorinput.y, (Input.GetAxis("Vertical") * 1.2f) * sensibilidade, ref currentVelocity, 0.03f);
             rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal") * sensibilidade, ref currentVelocity, 0.03f);
         }
