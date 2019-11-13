@@ -153,8 +153,10 @@ public class PlayerHealth : MonoBehaviour
         //colocar o instantiate do tiro em posiçoes aleatórias
         playerMesh.transform.DOLocalRotate(new Vector3(90, 0, 90), 7f, RotateMode.LocalAxisAdd);
         playerMesh.transform.DOLocalMoveY(-45f,3.5f, true);
+        PlayerMovement.ded = 0;
+        PlayerOpenMovement.ded = 0;
         Instantiate(explosionFX, transform.position, transform.localRotation);
-        Invoke("OpenDeathMenu", 3.6f);
+        Invoke("OpenDeathMenu", 3f);
     }
 
     void OpenDeathMenu()

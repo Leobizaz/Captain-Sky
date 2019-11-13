@@ -27,6 +27,7 @@ public class PlayerOpenMovement : MonoBehaviour
     float manobra_y;
     float manobra_z;
     float rotation;
+    public static int ded = 1;
     [SerializeField] bool boost;
     public bool crashed;
     [Header("Referencias")]
@@ -306,7 +307,7 @@ public class PlayerOpenMovement : MonoBehaviour
 
 
 
-        transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed * ded);
         Quaternion rot = Quaternion.Euler(new Vector3(0, rotation, 0));
         Quaternion yawRot = Quaternion.Euler(new Vector3(vectorinput.y * yawSpeed, 0, 0));
         Quaternion rollRot = Quaternion.Euler(new Vector3(0, 0, -vectorinput.x * rollSpeed));

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float sensibilidade;
     public bool canFirstPerson;
     public bool podeAtirar;
+    public static int ded = 1;
 
     [Header("Debug")]
     public float ignora_isso;
@@ -379,7 +380,7 @@ public class PlayerMovement : MonoBehaviour
 
     void SetSpeed(float x)
     {
-        dolly.m_Speed = x;
+        dolly.m_Speed = x * ded;
     }
 
     void SetCameraZoom(float zoom, float duration)
