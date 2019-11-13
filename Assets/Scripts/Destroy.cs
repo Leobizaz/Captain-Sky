@@ -6,6 +6,7 @@ public class Destroy : MonoBehaviour
     public float currentHealth;
     public GameObject destroços;
     public GameObject intacto;
+    public GameObject indicador;
     public GameObject particle;
     bool once;
 
@@ -30,6 +31,7 @@ public class Destroy : MonoBehaviour
         Destroy(intacto);
         destroços.SetActive(true);
         particle.SetActive(false);
+        indicador.SetActive(false);
     }
     private void OnParticleCollision(GameObject other)
     {

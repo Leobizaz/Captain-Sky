@@ -37,6 +37,7 @@ public class TurnOffLight : MonoBehaviour
         else
         {
             //RenderSettings.fog = false;
+            RenderSettings.fog = true;
             RenderSettings.fogColor = oldcolor;
             RenderSettings.fogStartDistance = 1000;
             RenderSettings.fogEndDistance = 2800;

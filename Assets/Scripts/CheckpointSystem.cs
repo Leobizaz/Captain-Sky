@@ -21,6 +21,8 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
+        PlayerMovement.ded = 1;
+        PlayerOpenMovement.ded = 1;
       //STAGEPHASE = "PHASE2";
 
         if(STAGEPHASE == "PHASE0") //começo
@@ -32,7 +34,7 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.currentScore = 0;
             ScoreSystem.enemysKill = 0;
             ScoreSystem.time = 0;
-            music.ChangeIt(0, 0);
+            music.ChangeMusic(0, 0);
 
         }
 
@@ -49,7 +51,8 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponentInChildren<UnderwaterEffects>().Enable();
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 11000;
-            music.ChangeIt(1, 0);
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Speed = 100f;
+            music.ChangeMusic(1, 0);
         }
 
         if(STAGEPHASE == "PHASE2") //hora que sai do tunel
@@ -58,13 +61,15 @@ public class CheckpointSystem : MonoBehaviour
             cenarioMontanha.SetActive(true);
             Ato3_Objetivo1.torres_restantes = 3;
             Ato3_Objetivo2.geradores_restantes = 4;
-            RenderSettings.fog = false;
+            RenderSettings.fog = true;
             water.SetActive(false);
             ScoreSystem.currentScore = storedScore;
             ScoreSystem.enemysKill = storedKills;
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 29000;
-            music.ChangeIt(2, 0);
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Speed = 100f;
+
+            music.ChangeMusic(2, 0);
 
         }
         if (STAGEPHASE == "PHASE3") //hora que entra na esfera
@@ -79,7 +84,9 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 300f;
-            music.ChangeIt(2, 0);
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Speed = 100f;
+
+            music.ChangeMusic(2, 0);
         }
 
         if (STAGEPHASE == "PHASE4") //reator e escape
@@ -94,7 +101,9 @@ public class CheckpointSystem : MonoBehaviour
             ScoreSystem.time = storedTime;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Path = trackEsfera;
             Gameplay3.GetComponent<CinemachineDollyCart>().m_Position = 6200f;
-            music.ChangeIt(2, 0);
+            Gameplay3.GetComponent<CinemachineDollyCart>().m_Speed = 100f;
+
+            music.ChangeMusic(2, 0);
         }
 
 

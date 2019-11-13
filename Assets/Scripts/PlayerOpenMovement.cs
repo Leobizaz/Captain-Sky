@@ -158,8 +158,13 @@ public class PlayerOpenMovement : MonoBehaviour
                 colisao.dangerous = false;
             }
 
-
-
+            if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && Input.GetAxis("Vertical") == 0)
+            {
+                if(forwardSpeed <= 100)
+                    forwardSpeed += 1f;
+                if (rollSpeed >= 2)
+                    rollSpeed -= 0.05f;
+            }
 
             if (Input.GetKeyUp(KeyCode.UpArrow) && Input.GetKeyUp(KeyCode.DownArrow))
                 y2 = 0;
@@ -184,6 +189,15 @@ public class PlayerOpenMovement : MonoBehaviour
             {
                 SetCameraZoom(0f, 3f);
             }
+
+            if ((y2 < 0 || Input.GetKey(KeyCode.DownArrow)) && forwardSpeed >= 65)
+            {
+                SetCameraZoom(6f, 3f);
+                forwardSpeed -= 0.45f;
+                yawSpeed += 0.0475f;
+                rollSpeed += 0.0475f;
+            }
+
 
             if (Input.GetButtonDown("Boost"))
                 boost = true;
@@ -260,7 +274,9 @@ public class PlayerOpenMovement : MonoBehaviour
             float currentVelocity = 0;
             //vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
             vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxisRaw("HorizontalDireito") * sensibilidade, ref currentVelocity, 0.03f);
-            vectorinput.y = Mathf.SmoothDamp(vectorinput.y, (Input.GetAxis("Vertical") * 1.2f) * sensibilidade, ref currentVelocity, 0.03f);
+            if (Pause.controleInvertido)
+                vectorinput.y = Mathf.SmoothDamp(vectorinput.y, -((Input.GetAxis("Vertical") * 1.2f)) * sensibilidade, ref currentVelocity, 0.03f);
+            else vectorinput.y = Mathf.SmoothDamp(vectorinput.y, (Input.GetAxis("Vertical") * 1.2f) * sensibilidade, ref currentVelocity, 0.03f);
             rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal") * sensibilidade, ref currentVelocity, 0.03f);
         }
         else
@@ -270,6 +286,55 @@ public class PlayerOpenMovement : MonoBehaviour
         {
             CMCamera1.offset = new Vector3(0, 5, -12.68f);
             //anim.SetInteger("State", 0);
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            if (Pause.controleInvertido)
+            {
+                if (forwardSpeed >= 65)
+                {
+                    SetCameraZoom(6f, 3f);
+                    forwardSpeed -= 0.45f;
+                    yawSpeed += 0.0475f;
+                    rollSpeed += 0.0475f;
+                }
+            }
+            else
+            {
+                if (forwardSpeed >= 65)
+                {
+                    SetCameraZoom(6f, 3f);
+                    forwardSpeed -= 0.45f;
+                    yawSpeed += 0.0475f;
+                    rollSpeed += 0.0475f;
+                }
+            }
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (Pause.controleInvertido)
+            {
+                if (forwardSpeed >= 65)
+                {
+                    SetCameraZoom(6f, 3f);
+                    forwardSpeed -= 0.45f;
+                    yawSpeed += 0.0475f;
+                    rollSpeed += 0.0475f;
+                }
+            }
+            else
+            {
+                if (forwardSpeed >= 65)
+                {
+                    SetCameraZoom(6f, 3f);
+                    forwardSpeed -= 0.45f;
+                    yawSpeed += 0.0475f;
+                    rollSpeed += 0.0475f;
+                }
+
+            }
         }
 
 
@@ -287,7 +352,7 @@ public class PlayerOpenMovement : MonoBehaviour
             //SetSpeed(forwardSpeed - 1);
             //para cima
             //anim.SetInteger("State", 3);
-            cameraHolder.transform.DOLocalMoveY(10, 4);
+            cameraHolder.transform.DOLocalMoveY(10, 8);
             CMCamera1.offset = new Vector3(0, 7, -12.68f);
         }
         if(Input.GetAxis("Vertical") == 0)

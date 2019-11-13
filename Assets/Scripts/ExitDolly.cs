@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening;
 
 public class ExitDolly : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class ExitDolly : MonoBehaviour
             player.GetComponent<CinemachineDollyCart>().m_Path = null;
             player.GetComponentInChildren<PlayerMovement>().enabled = false;
             player.GetComponentInChildren<PlayerMovement>().playerActive = false;
+            player.GetComponentInChildren<PlayerCollision>().gameObject.transform.DOLocalMove(Vector3.zero, 8f);
         }
     }
 }

@@ -75,7 +75,7 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Collision"))
+        if (other.gameObject.CompareTag("Collision") || other.gameObject.CompareTag("Torre"))
         {
             Debug.Log("Crash");
             crashPosition = parent.transform.position;
@@ -85,7 +85,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if(other.gameObject.CompareTag("Collision") && !crashou)
+        if((other.gameObject.CompareTag("Collision") || other.gameObject.CompareTag("Torre")) && !crashou)
         {
             Debug.Log("Crash again");
             crashPosition = parent.transform.position;

@@ -442,6 +442,7 @@ public class PlayerMovement : MonoBehaviour
             DOVirtual.Float(currentSpeed, progressionSpeed, 2f, SetSpeed);
 
         }
+
         else
         {
             //Debug.Log("Negado");

@@ -22,6 +22,7 @@ public class Ato3_Objetivo2 : MonoBehaviour
     public InstantiateDialogo dialogo;
     public GameObject trigger;
     public ExplosionSequence sequence;
+    public GameObject slowzoneReator;
     public GameObject somGerador;
     public AudioSource reactorDead;
 
@@ -87,6 +88,7 @@ public class Ato3_Objetivo2 : MonoBehaviour
         explosao.gameObject.GetComponent<AudioSource>().Play();
         cameraShake.shakeElapsedTime = 1.5f;
         geradorAnim.Play("SalaGerador_EXplode");
+        slowzoneReator.SetActive(false);
 
     }
 

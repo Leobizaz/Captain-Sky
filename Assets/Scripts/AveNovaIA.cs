@@ -19,6 +19,7 @@ public class AveNovaIA : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(shooting());
         player = GameObject.Find("Gameplay 3");
     }
 
@@ -47,17 +48,6 @@ public class AveNovaIA : MonoBehaviour
             FollowPlayer();
             shoot = true;
         }
-        
-
-        if (shoot && !shootingg)
-        {
-            StartCoroutine(shooting());
-        }
-        else
-        {
-            StopCoroutine(shooting());
-            shootingg = false;
-        }
 
 
 
@@ -67,9 +57,11 @@ public class AveNovaIA : MonoBehaviour
     {
         while (true)
         {
-            shootingg = true;
-            gun1.Play();
-            gun2.Play();
+            if (shoot)
+            {
+                gun1.Play();
+                gun2.Play();
+            }
             yield return new WaitForSeconds(4f);
         }
     }

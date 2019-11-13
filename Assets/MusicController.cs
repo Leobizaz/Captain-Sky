@@ -16,15 +16,16 @@ public class MusicController : MonoBehaviour
 
     public void ChangeMusic(int index, float time)
     {
-        audio.DOFade(0, time);
-        ChangeIt(index, time);
+        StartCoroutine(FadeAudioSource.StartFade(audio, time, 0f));
+        StartCoroutine(ChangeIt(index, time));
     }
 
-    public void ChangeIt(int index, float time)
+    public IEnumerator ChangeIt(int index, float time)
     {
+        yield return new WaitForSeconds(time);
         audio.clip = musics[index];
         audio.Play();
-        audio.DOFade(0.108f, time);
+        StartCoroutine(FadeAudioSource.StartFade(audio, time, 0.108f));
     }
 
 

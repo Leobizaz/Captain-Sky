@@ -91,7 +91,7 @@ public class PlayerHealth : MonoBehaviour
         {
             GetHit(25);
         }
-        if(collision.gameObject.tag == "Collision" && hittable)
+        if((collision.gameObject.tag == "Collision" || collision.gameObject.tag == "Torre") && hittable)
         {
             GetHit(25);
         }
