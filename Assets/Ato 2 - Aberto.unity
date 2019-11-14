@@ -995,7 +995,7 @@ RectTransform:
   m_GameObject: {fileID: 103293351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.69584805, y: 0.69584805, z: 0.69584805}
   m_Children:
   - {fileID: 1993960916}
   m_Father: {fileID: 952015394}
@@ -1003,7 +1003,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15}
+  m_AnchoredPosition: {x: 0, y: -162.11}
   m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103293353
@@ -3154,7 +3154,7 @@ RectTransform:
   m_GameObject: {fileID: 289368406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 368021399}
   - {fileID: 598808800}
@@ -3431,7 +3431,7 @@ RectTransform:
   m_GameObject: {fileID: 340707962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.69584805, y: 0.69584805, z: 0.69584805}
   m_Children:
   - {fileID: 1466299089}
   m_Father: {fileID: 952015394}
@@ -3439,7 +3439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -127}
+  m_AnchoredPosition: {x: 0, y: -240.05}
   m_SizeDelta: {x: 140, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340707964
@@ -5455,7 +5455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794.0001, y: -92.000015}
+  m_AnchoredPosition: {x: 536.00006, y: -190}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492624015
@@ -6360,8 +6360,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Miss\xE3o Fracassada"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3d7e05f4eb58ce54bbe3dbc26a98ed52, type: 2}
-  m_sharedMaterial: {fileID: 1934343969561899160, guid: 3d7e05f4eb58ce54bbe3dbc26a98ed52,
+  m_fontAsset: {fileID: 11400000, guid: e4d41534cf3d0014ea3dafc231669877, type: 2}
+  m_sharedMaterial: {fileID: 5305230651726583685, guid: e4d41534cf3d0014ea3dafc231669877,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8424,7 +8424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794.0001, y: 99.999985}
+  m_AnchoredPosition: {x: 717.00006, y: -186}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &786117184
@@ -9143,14 +9143,14 @@ RectTransform:
   m_GameObject: {fileID: 854756780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2711, y: 2.2711, z: 2.2711}
   m_Children: []
   m_Father: {fileID: 289368407}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794.0001, y: 282.99997}
+  m_AnchoredPosition: {x: 526, y: 89}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &854756782
@@ -10818,7 +10818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794, y: -280}
+  m_AnchoredPosition: {x: 355.00006, y: -188}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021732478
@@ -14511,7 +14511,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: f2ab47d574386fa4f912af4e00a829df,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f2ab47d574386fa4f912af4e00a829df,
         type: 3}
