@@ -255,7 +255,27 @@ public class MainMenuController : MonoBehaviour
         Invoke("Fase3", 3f);
     }
 
+    public void ButtonFase2()
+    {
+        fadeOut.SetActive(true);
+        Invoke("Fase2", 3f);
+    }
+    public void ButtonFase1()
+    {
+        fadeOut.SetActive(true);
+        Invoke("Fase1", 3f);
+    }
     public void Fase3()
+    {
+        SceneManager.LoadScene("Loading1");
+        Loading.levelIndex = 3;
+    }
+    public void Fase2()
+    {
+        SceneManager.LoadScene("Loading1");
+        Loading.levelIndex = 5;
+    }
+    public void Fase1()
     {
         SceneManager.LoadScene("Loading1");
         Loading.levelIndex = 2;

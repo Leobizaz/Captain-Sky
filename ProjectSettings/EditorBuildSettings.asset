@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Loading/Loading1.unity
     guid: cf1894afbefe59b43a81e7049b5136f2
+  - enabled: 1
+    path: Assets/Ato 2 - Aberto.unity
+    guid: 61677ce3f5d477143a9b37466fd268d7
   m_configObjects: {}
