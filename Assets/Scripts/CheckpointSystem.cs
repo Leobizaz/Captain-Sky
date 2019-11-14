@@ -23,7 +23,7 @@ public class CheckpointSystem : MonoBehaviour
     {
         PlayerMovement.ded = 1;
         PlayerOpenMovement.ded = 1;
-      //STAGEPHASE = "PHASE2";
+      STAGEPHASE = "PHASE1";
 
         if(STAGEPHASE == "PHASE0") //começo
         {

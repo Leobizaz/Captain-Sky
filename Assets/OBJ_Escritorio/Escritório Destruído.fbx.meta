@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 1bb436c80f0413a4b8c702cf3eceefa9
+guid: 304413885e7062a41a8854e172eab2ae
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TXT_EscritorioP
+    second: {fileID: 2100000, guid: b85b6ad7b54294a49a1a172da52004bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TXT_EscritorioT
+    second: {fileID: 2100000, guid: 92a9814dfa266964c9640d9cc9f2f35d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 100
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

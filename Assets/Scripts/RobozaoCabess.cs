@@ -55,7 +55,7 @@ public class RobozaoCabess : MonoBehaviour
             //laser.SetActive(false);
         //playsound destroy
         gameObject.tag = "DeadEnemy";
-        rend.material = newMaterial;
+        //rend.material = newMaterial;
     }
 
 }

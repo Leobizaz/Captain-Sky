@@ -22,6 +22,8 @@ public class RobozaoWalk : MonoBehaviour
     public GameObject laserPosition;
     public GameObject alvo;
     RobozaoHealth healthScript;
+    public GameObject laserimpact;
+
 
     public LineRenderer laser;
 
@@ -92,9 +94,12 @@ public class RobozaoWalk : MonoBehaviour
                 laser.SetPosition(0, laserPosition.transform.position);
                 alvo.transform.position = target.transform.position;
                 laser.SetPosition(1, alvo.transform.position);
+                laserimpact.SetActive(true);
+                laserimpact.transform.position = alvo.transform.position;
             }
             else
             {
+                laserimpact.SetActive(false);
                 laser.gameObject.SetActive(false);
             }
         }
@@ -133,7 +138,6 @@ public class RobozaoWalk : MonoBehaviour
 
         }
     }
-
 
 
 

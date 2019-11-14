@@ -13,6 +13,7 @@ public class DestructableBuilding : MonoBehaviour
     public GameObject particles1;
     public GameObject particles2;
     public GameObject explosion;
+    public GameObject mapIndicator;
 
     private void Start()
     {
@@ -41,6 +42,7 @@ public class DestructableBuilding : MonoBehaviour
             //explosion.SetActive(true);
             mesh.SetActive(false);
             destroyedMesh.SetActive(true);
+            mapIndicator.SetActive(false);
         }
 
 

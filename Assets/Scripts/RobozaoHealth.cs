@@ -21,7 +21,7 @@ public class RobozaoHealth : MonoBehaviour
     public bool dead;
     void Update()
     {
-        if(bracoESQ_destroy && bracoDIR_destroy && cabessa_destroy && !dead)
+        if(cabessa_destroy && !dead)
         {
             explosion.Play();
             dead = true;

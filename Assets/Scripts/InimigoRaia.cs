@@ -69,7 +69,7 @@ public class InimigoRaia : MonoBehaviour
         speed = player.transform.parent.GetComponent<CinemachineDollyCart>().m_Speed;
         dollyCart.m_Speed = speed;
 
-        miraEmitter.receiver.transform.position = playerModel.transform.position;
+        miraEmitter.receiver.transform.localPosition = playerModel.transform.position;
 
         float sphereSize = 1000 / ((Vector3.Distance(player.transform.position, this.transform.position)) / 10);
         sphereSize = Mathf.Clamp(sphereSize, 25, 75);

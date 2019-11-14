@@ -21,6 +21,9 @@ public class Pause : MonoBehaviour
     public GameObject pauseScreenContinuar;
     bool onOptions;
 
+    bool teclado;
+    bool controle;
+
     public GameObject menuOpcoes;
     public GameObject menuPause;
     bool liberado;
@@ -35,6 +38,20 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            teclado = true;
+            controle = false;
+        }
+        if(Input.GetAxis("VerticalDireito") != 0 || Input.GetAxis("HorizontalDireito") != 0)
+        {
+            teclado = false;
+            controle = true;
+        }
+
+
+
+
         if (Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Escape))
         {
             liberado = false;

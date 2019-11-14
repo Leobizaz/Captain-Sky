@@ -274,7 +274,7 @@ public class PlayerOpenMovement : MonoBehaviour
             float currentVelocity = 0;
             //vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
             vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxisRaw("HorizontalDireito") * sensibilidade, ref currentVelocity, 0.03f);
-            if (Pause.controleInvertido)
+            if (!Pause.controleInvertido)
                 vectorinput.y = Mathf.SmoothDamp(vectorinput.y, -((Input.GetAxis("Vertical") * 1.2f)) * sensibilidade, ref currentVelocity, 0.03f);
             else vectorinput.y = Mathf.SmoothDamp(vectorinput.y, (Input.GetAxis("Vertical") * 1.2f) * sensibilidade, ref currentVelocity, 0.03f);
             rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal") * sensibilidade, ref currentVelocity, 0.03f);
@@ -338,22 +338,43 @@ public class PlayerOpenMovement : MonoBehaviour
         }
 
 
-
-        if (Input.GetAxis("Vertical") > 0)
+        if (Pause.controleInvertido)
         {
-            //SetSpeed(forwardSpeed + 1);
-            //para baixo
-            //anim.SetInteger("State", 4);
-            cameraHolder.transform.DOLocalMoveY(-10, 4);
-            CMCamera1.offset = new Vector3(0, 5, -12.68f);
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                //SetSpeed(forwardSpeed + 1);
+                //para baixo
+                //anim.SetInteger("State", 4);
+                cameraHolder.transform.DOLocalMoveY(-10, 4);
+                CMCamera1.offset = new Vector3(0, 5, -12.68f);
+            }
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                //SetSpeed(forwardSpeed - 1);
+                //para cima
+                //anim.SetInteger("State", 3);
+                cameraHolder.transform.DOLocalMoveY(10, 8);
+                CMCamera1.offset = new Vector3(0, 7, -12.68f);
+            }
         }
-        if (Input.GetAxis("Vertical") < 0)
+        else
         {
-            //SetSpeed(forwardSpeed - 1);
-            //para cima
-            //anim.SetInteger("State", 3);
-            cameraHolder.transform.DOLocalMoveY(10, 8);
-            CMCamera1.offset = new Vector3(0, 7, -12.68f);
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                //SetSpeed(forwardSpeed + 1);
+                //para baixo
+                //anim.SetInteger("State", 4);
+                cameraHolder.transform.DOLocalMoveY(-10, 4);
+                CMCamera1.offset = new Vector3(0, 5, -12.68f);
+            }
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                //SetSpeed(forwardSpeed - 1);
+                //para cima
+                //anim.SetInteger("State", 3);
+                cameraHolder.transform.DOLocalMoveY(10, 8);
+                CMCamera1.offset = new Vector3(0, 7, -12.68f);
+            }
         }
         if(Input.GetAxis("Vertical") == 0)
         {
