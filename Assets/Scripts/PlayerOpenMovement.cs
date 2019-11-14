@@ -10,7 +10,6 @@ public class PlayerOpenMovement : MonoBehaviour
 
     [Header("Controles")]
     public float forwardSpeed = 10;
-    public float sensibilidade = 0.8f;
     public float rollSpeed = 2;
     public float yawSpeed = 1;
     [Space(5)]
@@ -273,11 +272,11 @@ public class PlayerOpenMovement : MonoBehaviour
         {
             float currentVelocity = 0;
             //vectorinput = new Vector3(Input.GetAxis("HorizontalDireito"), Input.GetAxis("Vertical") + Input.GetAxis("Vertical"), 0);
-            vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxisRaw("HorizontalDireito") * sensibilidade, ref currentVelocity, 0.03f);
+            vectorinput.x = Mathf.SmoothDamp(vectorinput.x, Input.GetAxisRaw("HorizontalDireito") * MainMenuController.sensibilidade, ref currentVelocity, 0.03f);
             if (!Pause.controleInvertido)
-                vectorinput.y = Mathf.SmoothDamp(vectorinput.y, -((Input.GetAxis("Vertical") * 1.2f)) * sensibilidade, ref currentVelocity, 0.03f);
-            else vectorinput.y = Mathf.SmoothDamp(vectorinput.y, (Input.GetAxis("Vertical") * 1.2f) * sensibilidade, ref currentVelocity, 0.03f);
-            rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal") * sensibilidade, ref currentVelocity, 0.03f);
+                vectorinput.y = Mathf.SmoothDamp(vectorinput.y, -((Input.GetAxis("Vertical") * 1.2f)) * MainMenuController.sensibilidade, ref currentVelocity, 0.03f);
+            else vectorinput.y = Mathf.SmoothDamp(vectorinput.y, (Input.GetAxis("Vertical") * 1.2f) * MainMenuController.sensibilidade, ref currentVelocity, 0.03f);
+            rotation = Mathf.SmoothDamp(rotation, Input.GetAxis("Horizontal") * MainMenuController.sensibilidade, ref currentVelocity, 0.03f);
         }
         else
             vectorinput = new Vector3(manobra_x, manobra_y, manobra_z);

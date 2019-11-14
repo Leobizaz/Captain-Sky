@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalSpeed = 7;
     public float progressionSpeed = 6;
     public float lookSpeed = 5f;
-    public float sensibilidade;
     public bool canFirstPerson;
     public bool podeAtirar;
     public static int ded = 1;

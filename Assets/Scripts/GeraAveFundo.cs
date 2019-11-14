@@ -17,6 +17,6 @@ public class GeraAveFundo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0.5f, 0);
+        transform.Rotate(0, 0.4f, 0);
     }
 }

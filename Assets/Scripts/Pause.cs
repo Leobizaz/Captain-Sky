@@ -138,5 +138,9 @@ public class Pause : MonoBehaviour
     {
         SceneManager.LoadScene("Ato 3 - Comes e bebes");
     }
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
 }

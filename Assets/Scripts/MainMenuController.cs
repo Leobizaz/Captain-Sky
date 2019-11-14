@@ -25,6 +25,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject profile3Display;
 
     public static GameObject selectedProfile;
+    public static float sensibilidade = 0.8f;
+    public Slider slider;
 
     public GameObject telaOpções;
     public GameObject telaMenu;
@@ -63,6 +65,9 @@ public class MainMenuController : MonoBehaviour
 
     void Update()
     {
+
+        sensibilidade = slider.value;
+
         Debug.Log(selectedProfile);
         Pause.controleInvertido = toggle_inverterControles.isOn;
         if(eventSys.currentSelectedGameObject != null)
