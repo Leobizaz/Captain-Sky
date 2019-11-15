@@ -11,12 +11,15 @@ public class Loading : MonoBehaviour
     public static int levelIndex;
     public TextMeshProUGUI progressText;
     public Slider slider;
-    public GameObject controlIcon;
+    //public GameObject controlIcon;
+    public AsyncOperation operation;
+    public GameObject pular;
+    public GameObject carregando;
 
     private void Start()
     {
         LoadLevel(levelIndex);
-        controlIcon.SetActive(true);
+        //controlIcon.SetActive(true);
     }
 
     public void LoadLevel(int sceneIndex)
@@ -26,8 +29,8 @@ public class Loading : MonoBehaviour
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
-
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        yield return new WaitForSeconds(1);
+        operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         operation.allowSceneActivation = false;
 
@@ -39,9 +42,12 @@ public class Loading : MonoBehaviour
             progressText.text = progress * 100f + "%";
             if (operation.progress >= 0.9f)
             {
+                slider.gameObject.SetActive(false);
+                carregando.SetActive(false);
+                pular.SetActive(true);
                 //Change the Text to show the Scene is ready
                 progressText.text = "Aperte        /SPACE para continuar";
-                controlIcon.SetActive(true);
+                //controlIcon.SetActive(true);
                 //Wait to you press the space key to activate the Scene
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Break"))
                 {

@@ -43295,15 +43295,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2058280818077411479, guid: 7116309c4d9e012478b4c799c6350707,
-        type: 3}
-      propertyPath: m_MaxParticleSize
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1729060800927840483, guid: 7116309c4d9e012478b4c799c6350707,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058280818077411479, guid: 7116309c4d9e012478b4c799c6350707,
+        type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7116309c4d9e012478b4c799c6350707, type: 3}
