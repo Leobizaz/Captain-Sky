@@ -12,6 +12,8 @@ public class RobozaoHealth : MonoBehaviour
     public RobozaoBrasso braço2;
     public RobozaoCabess cabeça;
 
+    public Animator meshAnim;
+
     public ParticleSystem explosion;
 
     int hit;
@@ -23,6 +25,7 @@ public class RobozaoHealth : MonoBehaviour
     {
         if(cabessa_destroy && !dead)
         {
+            WaveSystem.robosDestroyed++;
             explosion.Play();
             dead = true;
             ScoreSystem.enemysKill++;

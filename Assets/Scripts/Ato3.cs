@@ -20,10 +20,12 @@ public class Ato3 : MonoBehaviour
     public GameObject waymaster_sp4;
 
     public GameObject ave_prefab;
+    bool shouldSpawn;
 
 
     void Start()
     {
+        aveCountAto3 = 0;
         if (startWithFog)
         {
             RenderSettings.fog = true;
@@ -35,14 +37,16 @@ public class Ato3 : MonoBehaviour
     {
         if (startEnemyAI)
         {
-            if (aveCountAto3 < 20 && !spawning)
+            if (aveCountAto3 < 40 && !spawning)
             {
                 StartCoroutine(Spawner());
+                shouldSpawn = true;
             }
 
-            if (aveCountAto3 >= 20)
+            if (aveCountAto3 >= 40)
             {
                 spawning = false;
+                shouldSpawn = false;
                 StopCoroutine(Spawner());
             }
         }
@@ -50,36 +54,39 @@ public class Ato3 : MonoBehaviour
 
     IEnumerator Spawner()
     {
-        spawning = true;
-        while (true)
+        if (shouldSpawn)
         {
-            GameObject randomSP = aves_SP1;
-            GameObject randomWM = waymaster_sp1;
-            int i = Random.Range(0, 3);
-            switch (i)
+            spawning = true;
+            while (true)
             {
-                case 0:
-                    randomSP = aves_SP1;
-                    randomWM = waymaster_sp1;
-                    break;
-                case 1:
-                    randomSP = aves_SP2;
-                    randomWM = waymaster_sp2;
-                    break;
-                case 2:
-                    randomSP = aves_SP3;
-                    randomWM = waymaster_sp3;
-                    break;
-                case 3:
-                    randomSP = aves_SP4;
-                    randomWM = waymaster_sp4;
-                    break;
-            }
+                GameObject randomSP = aves_SP1;
+                GameObject randomWM = waymaster_sp1;
+                int i = Random.Range(0, 3);
+                switch (i)
+                {
+                    case 0:
+                        randomSP = aves_SP1;
+                        randomWM = waymaster_sp1;
+                        break;
+                    case 1:
+                        randomSP = aves_SP2;
+                        randomWM = waymaster_sp2;
+                        break;
+                    case 2:
+                        randomSP = aves_SP3;
+                        randomWM = waymaster_sp3;
+                        break;
+                    case 3:
+                        randomSP = aves_SP4;
+                        randomWM = waymaster_sp4;
+                        break;
+                }
 
-            GameObject instanced_Ave = Instantiate(ave_prefab, randomSP.transform.position, randomSP.transform.rotation);
+                GameObject instanced_Ave = Instantiate(ave_prefab, randomSP.transform.position, randomSP.transform.rotation);
+                aveCountAto3++;
+            }
+        }
             //instanced_Ave.GetComponent<AveIA>().wayfather = randomWM;
             yield return new WaitForSeconds(3);
-
-        }
     }
 }

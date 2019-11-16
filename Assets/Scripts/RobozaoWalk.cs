@@ -15,6 +15,7 @@ public class RobozaoWalk : MonoBehaviour
     public DestructableBuilding building;
     public float damping;
     public float attackRange;
+    bool onceAttack;
     [SerializeField] bool isAttacking;
     bool moving;
     [SerializeField] bool isWithinAttackRange;
@@ -23,18 +24,22 @@ public class RobozaoWalk : MonoBehaviour
     public GameObject alvo;
     RobozaoHealth healthScript;
     public GameObject laserimpact;
-
+    AudioSource audio;
+    bool once;
 
     public LineRenderer laser;
 
     public void Start()
     {
+        audio = GetComponent<AudioSource>();
         healthScript = GetComponent<RobozaoHealth>();
         rb = GetComponent<Rigidbody>();
         laser.SetPosition(0, laserPosition.transform.localPosition);
-        PassoEsq();
+        Invoke("PassoEsq", 3f + Random.Range(0f, 2f));
+        tryingToMove = true;
         StartCoroutine(Attacking());
     }
+
 
     private void Update()
     {
@@ -90,6 +95,17 @@ public class RobozaoWalk : MonoBehaviour
 
             if (isAttacking)
             {
+                CancelInvoke("PassoEsq");
+                CancelInvoke("PassoDir");
+
+                if (!audio.isPlaying)
+                    audio.Play();
+
+                if (!onceAttack)
+                {
+                    onceAttack = true;
+                    meshAnim.Play("LASER");
+                }
                 laser.gameObject.SetActive(true);
                 laser.SetPosition(0, laserPosition.transform.position);
                 alvo.transform.position = target.transform.position;
@@ -99,12 +115,20 @@ public class RobozaoWalk : MonoBehaviour
             }
             else
             {
+                onceAttack = false;
+                audio.Stop();
                 laserimpact.SetActive(false);
                 laser.gameObject.SetActive(false);
             }
         }
         else
         {
+            if (!once)
+            {
+                once = true;
+                meshAnim.Play("MORTO");
+            }
+            audio.Stop();
             isAttacking = false;
             laser.gameObject.SetActive(false);
         }
@@ -143,15 +167,18 @@ public class RobozaoWalk : MonoBehaviour
 
     public void PassoEsq()
     {
-        tryingToMove = true;
-        meshAnim.Play("PassoEsq");
-        //transform.DOLocalMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
-        //rb.DOMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
-        moving = true;
-        Invoke("StopMoving", duration);
+        if (!once)
+        {
+            tryingToMove = true;
+            meshAnim.Play("PassoEsq");
+            //transform.DOLocalMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
+            //rb.DOMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
+            moving = true;
+            Invoke("StopMoving", duration);
 
-        if(!isWithinAttackRange)
-        Invoke("PassoDir", timeForStep);
+            if (!isWithinAttackRange)
+                Invoke("PassoDir", timeForStep);
+        }
     }
 
     public void StopMoving()
@@ -161,14 +188,17 @@ public class RobozaoWalk : MonoBehaviour
 
     public void PassoDir()
     {
-        tryingToMove = true;
-        meshAnim.Play("PassoDir");
-        //transform.DOLocalMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
-        //rb.DOMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
-        moving = true;
-        Invoke("StopMoving", duration);
-        if(!isWithinAttackRange)
-        Invoke("PassoEsq", timeForStep);
+        if (!once)
+        {
+            tryingToMove = true;
+            meshAnim.Play("PassoDir");
+            //transform.DOLocalMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
+            //rb.DOMove(transform.position += (transform.forward * moveAmmount), duration).SetEase(Ease.InOutQuad);
+            moving = true;
+            Invoke("StopMoving", duration);
+            if (!isWithinAttackRange)
+                Invoke("PassoEsq", timeForStep);
+        }
     }
 
     GameObject FindClosestEnemy()

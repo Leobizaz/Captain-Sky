@@ -24,6 +24,7 @@ public class Loading : MonoBehaviour
 
     public void LoadLevel(int sceneIndex)
     {
+        Pause.victory = false;
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 

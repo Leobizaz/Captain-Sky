@@ -30,6 +30,8 @@ public class Pause : MonoBehaviour
 
     void Awake()
     {
+        PlayerHealth.dead = false;
+        victory = false;
         ComunicadorAdam.active = false;
         ComunicadorJack.active = false;
         ComunicadorCharlie.active = false;

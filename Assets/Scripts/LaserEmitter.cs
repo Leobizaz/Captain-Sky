@@ -9,6 +9,7 @@ public class LaserEmitter : MonoBehaviour
     public float laserDistance;
     public GameObject impactParticle;
     public bool isHitting;
+    public LayerMask layerMask;
 
     void Start()
     {
@@ -21,10 +22,8 @@ public class LaserEmitter : MonoBehaviour
         laserbeam.SetPosition(0, gameObject.transform.localPosition);
         laserbeam.SetPosition(1, receiver.transform.localPosition);
 
-        int layermask = 1 << 9;
-        layermask = ~layermask;
         RaycastHit hit;
-        if(Physics.Raycast(transform.localPosition, this.transform.forward, out hit, laserDistance, layermask))
+        if(Physics.Raycast(transform.localPosition, this.transform.forward, out hit, laserDistance, layerMask))
         {
             isHitting = true;
             impactParticle.SetActive(true);

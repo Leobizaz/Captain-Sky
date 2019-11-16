@@ -10050,6 +10050,10 @@ MonoBehaviour:
   laserDistance: 300
   impactParticle: {fileID: 422111563148329294, guid: 7116309c4d9e012478b4c799c6350707,
     type: 3}
+  isHitting: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2227161392148338547
 GameObject:
   m_ObjectHideFlags: 0
@@ -15548,6 +15552,10 @@ MonoBehaviour:
   laserDistance: 300
   impactParticle: {fileID: 422111563148329294, guid: 7116309c4d9e012478b4c799c6350707,
     type: 3}
+  isHitting: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 9217
 --- !u!65 &8938391039737812662
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15578,6 +15586,10 @@ MonoBehaviour:
   laserDistance: 300
   impactParticle: {fileID: 422111563148329294, guid: 7116309c4d9e012478b4c799c6350707,
     type: 3}
+  isHitting: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4770335623582876056
 GameObject:
   m_ObjectHideFlags: 0
@@ -25662,6 +25674,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arraia
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: f52442598e686804f908bc67b7e8b62a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 93940e913dbce1e46a9543584c4645da, type: 2}
     - target: {fileID: -4216859302048453862, guid: f52442598e686804f908bc67b7e8b62a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25732,11 +25749,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.865
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: f52442598e686804f908bc67b7e8b62a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 93940e913dbce1e46a9543584c4645da, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f52442598e686804f908bc67b7e8b62a, type: 3}
 --- !u!23 &4334968628886584680 stripped

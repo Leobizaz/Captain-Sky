@@ -43,7 +43,7 @@ public class AveIAVida : MonoBehaviour
         audio.pitch = Random.Range(0.8f, 1.2f);
         audio.PlayOneShot(explosionSFX);
         gameObject.tag = "DeadEnemy";
-        rb.isKinematic = false;
+        //rb.isKinematic = false;
         smokeFX.SetActive(true);
 
         died = true;
@@ -65,7 +65,7 @@ public class AveIAVida : MonoBehaviour
             gameObject.tag = "DeadEnemy";
             ScoreSystem.enemysKill++;
         }
-        rb.isKinematic = false;
+        //rb.isKinematic = false;
         smokeFX.SetActive(true);
 
         died = true;
@@ -108,6 +108,8 @@ public class AveIAVida : MonoBehaviour
 
     public void Despawn()
     {
+        Ato3.aveCountAto3--;
+        WaveSystem.aveCountAto2--;
         Destroy(this.gameObject);
     }
 

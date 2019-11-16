@@ -13,7 +13,7 @@ public class Briefing : MonoBehaviour
 
     private void Start()
     {
-        Loading.levelIndex = 4;
+        //Loading.levelIndex = 4;
         loading.gameObject.SetActive(true);
         anim = GetComponent<Animator>();
         if (Loading.levelIndex == 3)
