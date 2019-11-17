@@ -15,6 +15,9 @@ public class Loading : MonoBehaviour
     public AsyncOperation operation;
     public GameObject pular;
     public GameObject carregando;
+    private float speed = 0.4f;
+    bool fill = false;
+    public Image FillCircle;
 
     private void Start()
     {
@@ -47,16 +50,32 @@ public class Loading : MonoBehaviour
                 carregando.SetActive(false);
                 pular.SetActive(true);
                 //Change the Text to show the Scene is ready
-                progressText.text = "Aperte        /SPACE para continuar";
+                progressText.text = "Segure        /SPACE para continuar";
                 //controlIcon.SetActive(true);
                 //Wait to you press the space key to activate the Scene
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Break"))
+                if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro") && FillCircle != null)
                 {
-                    operation.allowSceneActivation = true;
+                    fill = true;
+                    Invoke("SkipIntro", 5f);
+                }
+                if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space) && FillCircle != null)
+                {
+                    fill = false;
+                    FillCircle.GetComponent<Image>().fillAmount = 0;
+                    CancelInvoke("SkipIntro");
+                }
+
+                if (fill == true && FillCircle != null)
+                {
+                    FillCircle.GetComponent<Image>().fillAmount += 0.5f * speed * Time.deltaTime;
                 }
             }
             yield return null;
         }
+    }
+    void SkipIntro()
+    {
+        operation.allowSceneActivation = true;
     }
 }
 
