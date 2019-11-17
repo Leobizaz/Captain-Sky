@@ -19,6 +19,9 @@ public class MainMenuController : MonoBehaviour
     public GameObject profile1;
     public GameObject profile2;
     public GameObject profile3;
+    public static bool p1 = false;
+    public static bool p2 = false;
+    public static bool p3 = false;
 
     public GameObject profile1Display;
     public GameObject profile2Display;
@@ -85,6 +88,7 @@ public class MainMenuController : MonoBehaviour
         colorNormal.normalColor = new Color(255,255,255,0);
         if(selectedProfile == profile1)
         {
+            p1 = true;
             profile1Display.SetActive(true);
             profile2Display.SetActive(false);
             profile3Display.SetActive(false);
@@ -93,6 +97,7 @@ public class MainMenuController : MonoBehaviour
             profile3.GetComponent<Button>().colors = colorNormal;
         } if(selectedProfile == profile2)
         {
+            p2 = true;
             profile1Display.SetActive(false);
             profile2Display.SetActive(true);
             profile3Display.SetActive(false);
@@ -101,6 +106,7 @@ public class MainMenuController : MonoBehaviour
             profile3.GetComponent<Button>().colors = colorNormal;
         } if(selectedProfile == profile3)
         {
+            p3 = true;
             profile1Display.SetActive(false);
             profile2Display.SetActive(false);
             profile3Display.SetActive(true);

@@ -48,5 +48,17 @@ public class ScoreSystem : MonoBehaviour
     public void UpdateScore()
     {
         scoreHUDisplay.DOText(displayedScore.ToString(), 1f, true, ScrambleMode.Numerals);
+        if(MainMenuController.p1 == true)
+        {
+            Perfil.N1 += displayedScore;
+        }
+        else if (MainMenuController.p2 == true)
+        {
+            Perfil.N2 += displayedScore;
+        }
+        else if (MainMenuController.p3 == true)
+        {
+            Perfil.N3 += displayedScore;
+        }
     }
 }
