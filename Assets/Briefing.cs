@@ -5,6 +5,7 @@ using UnityEngine;
 public class Briefing : MonoBehaviour
 {
     public Loading loading;
+    public GameObject radio;
     public DialogoBriefing[] dialogos_ato1_2;
     public DialogoBriefing[] dialogos_ato2_3;
     Animator anim;
@@ -13,7 +14,7 @@ public class Briefing : MonoBehaviour
 
     private void Start()
     {
-        //Loading.levelIndex = 4;
+        //Loading.levelIndex = 3;
         loading.gameObject.SetActive(true);
         anim = GetComponent<Animator>();
         if (Loading.levelIndex == 3)
@@ -33,6 +34,7 @@ public class Briefing : MonoBehaviour
 
     public void Gone()
     {
+        radio.SetActive(false);
         anim.Play("BriefingGone");
     }
 
@@ -43,6 +45,7 @@ public class Briefing : MonoBehaviour
 
     public void PlayDialogo_ato1_2()
     {
+        radio.SetActive(true);
         if (index >= dialogos_ato1_2.Length && !once)
         {
             once = true;
@@ -60,6 +63,7 @@ public class Briefing : MonoBehaviour
 
     public void PlayDialogo_ato2_3()
     {
+        radio.SetActive(true);
         if (index >= dialogos_ato2_3.Length && !once)
         {
             once = true;

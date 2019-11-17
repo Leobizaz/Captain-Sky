@@ -44,7 +44,7 @@ public class AveIAVida : MonoBehaviour
         audio.PlayOneShot(explosionSFX);
         gameObject.tag = "DeadEnemy";
         //rb.isKinematic = false;
-        smokeFX.SetActive(true);
+        //smokeFX.SetActive(true);
 
         died = true;
         rb.useGravity = true;
@@ -66,7 +66,7 @@ public class AveIAVida : MonoBehaviour
             ScoreSystem.enemysKill++;
         }
         //rb.isKinematic = false;
-        smokeFX.SetActive(true);
+        //smokeFX.SetActive(true);
 
         died = true;
         rb.useGravity = true;

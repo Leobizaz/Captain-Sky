@@ -25,6 +25,7 @@ public class RobozaoHealth : MonoBehaviour
     {
         if(cabessa_destroy && !dead)
         {
+            this.gameObject.tag = "Untagged";
             WaveSystem.robosDestroyed++;
             explosion.Play();
             dead = true;

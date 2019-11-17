@@ -8,6 +8,7 @@ public class DialogoBriefing : MonoBehaviour
 {
     public Sprite image;
     public string texto;
+    public float tempoqueleva;
     public bool wilburne;
     public bool sameIMG;
     public float textSpeed;
@@ -28,13 +29,15 @@ public class DialogoBriefing : MonoBehaviour
         audio = GetComponent<AudioSource>();
         inactiveColor = new Color32(73, 73, 73, 255);
         activeColor = new Color32(255, 255, 255, 255);
-        text = GameObject.Find("BriefingText").GetComponent<Text>();
+        text = GameObject.Find("Canvas/Briefing/Textbox/BriefingText").GetComponent<Text>();
         wilburneimg = GameObject.Find("Wilburne").GetComponent<Image>();
         squadimg = GameObject.Find("Squad").GetComponent<Image>();
     }
 
     public void PlayDialogo()
     {
+        RadioBriefing.alguemfalando = true;
+        Invoke("ParouDeFalar", tempoqueleva);
         if (!wilburne)
         {
             Sequence changeSprite = DOTween.Sequence();
@@ -60,6 +63,11 @@ public class DialogoBriefing : MonoBehaviour
 
 
 
+    }
+
+    void ParouDeFalar()
+    {
+        RadioBriefing.alguemfalando = false;
     }
 
     IEnumerator Cu()

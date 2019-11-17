@@ -13,6 +13,8 @@ public class InstantiateDialogo : MonoBehaviour
     public string nome;
     public string texto;
     public bool italic;
+    public bool ativaNoFinal;
+    public GameObject objeto;
     public float delay;
     bool tocou;
     public bool autoplay;
@@ -64,6 +66,15 @@ public class InstantiateDialogo : MonoBehaviour
         cfg.italic = italic;
         audio.Play();
 
+        if (ativaNoFinal)
+            Invoke("Ativa", delay);
+
+
+    }
+
+    public void Ativa()
+    {
+        objeto.SetActive(true);
     }
 
     public void MoveInHierarchy(int delta)

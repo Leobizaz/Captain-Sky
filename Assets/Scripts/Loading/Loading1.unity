@@ -152,6 +152,7 @@ RectTransform:
   m_Children:
   - {fileID: 436772130}
   - {fileID: 516307847}
+  - {fileID: 1717360876}
   - {fileID: 2060898476}
   - {fileID: 413759415}
   - {fileID: 256429894}
@@ -239,7 +240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &57589863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 43afd348ff2558246be5be2d24671da9, type: 3}
   texto: 'Charlie: Os geradores de energia? Pra que eles querem isso?'
+  tempoqueleva: 3
   wilburne: 0
   sameIMG: 0
   textSpeed: 1.5
@@ -428,7 +430,7 @@ GameObject:
   - component: {fileID: 85949591}
   - component: {fileID: 85949590}
   m_Layer: 5
-  m_Name: Image
+  m_Name: logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,14 +445,14 @@ RectTransform:
   m_GameObject: {fileID: 85949588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.72457, y: 0.72457, z: 0.72457}
   m_Children: []
   m_Father: {fileID: 436772130}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 237}
+  m_AnchoredPosition: {x: 0, y: 330}
   m_SizeDelta: {x: 348.7, y: 397.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85949590
@@ -633,6 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Usem assim que for necess\xE1rio."
+  tempoqueleva: 2
   wilburne: 1
   sameIMG: 0
   textSpeed: 1
@@ -670,6 +673,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Voc\xEAs afastaram os rob\xF4s, mas eles capturaram os geradores de energia
     da cidade."
+  tempoqueleva: 4
   wilburne: 1
   sameIMG: 1
   textSpeed: 2
@@ -926,6 +930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Precisamos que voc\xEAs v\xE3o at\xE9 l\xE1 para confirmar o caso."
+  tempoqueleva: 3.9
   wilburne: 1
   sameIMG: 0
   textSpeed: 1
@@ -961,7 +966,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 55414398}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1140,6 +1145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 2b425b4738e5f0248b892d0b785045bb, type: 3}
   texto: "Marcus: Como iremos atrair a aten\xE7\xE3o dos rob\xF4s?"
+  tempoqueleva: 3
   wilburne: 0
   sameIMG: 0
   textSpeed: 1.5
@@ -1396,10 +1402,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: Boa sorte, Sky Riders.
+  tempoqueleva: 1
   wilburne: 1
   sameIMG: 0
   textSpeed: 1
   delay: 1
+--- !u!1 &385713734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385713735}
+  - component: {fileID: 385713737}
+  - component: {fileID: 385713736}
+  m_Layer: 5
+  m_Name: borda (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &385713735
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385713734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 436772130}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -575, y: 207}
+  m_SizeDelta: {x: 472.2, y: 472.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &385713736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385713734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 2931166093696269659, guid: 6f1d388483b046f428048afc9c68fa70,
+    type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &385713737
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385713734}
+  m_CullTransparentMesh: 0
 --- !u!1 &413759411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1654,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 55414398}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1609,7 +1692,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1543615082}
   - {fileID: 1024071999}
+  - {fileID: 850651966}
+  - {fileID: 385713735}
   - {fileID: 2138561274}
   - {fileID: 910401838}
   - {fileID: 85949589}
@@ -1634,6 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loading: {fileID: 57589863}
+  radio: {fileID: 1717360875}
   dialogos_ato1_2:
   - {fileID: 651368049}
   - {fileID: 161518238}
@@ -1861,6 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "O laser provou ser bem efetivo contra a armadura dos rob\xF4s grandes."
+  tempoqueleva: 5
   wilburne: 1
   sameIMG: 0
   textSpeed: 3
@@ -2120,6 +2208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Wilburne: Muito bem esquadr\xE3o, a miss\xE3o n\xE3o foi uma derrota total."
+  tempoqueleva: 3
   wilburne: 1
   sameIMG: 0
   textSpeed: 2.5
@@ -2363,6 +2452,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Wilburne: Espalharemos geradores pelo lugar, j\xE1 que est\xE3o atr\xE1s
     disso."
+  tempoqueleva: 3
   wilburne: 1
   sameIMG: 0
   textSpeed: 2
@@ -2449,6 +2539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: f2a080a2d0fd90247b50340eddf9bf4a, type: 3}
   texto: "Adam: Para produzirem mais rob\xF4s."
+  tempoqueleva: 2
   wilburne: 0
   sameIMG: 0
   textSpeed: 1.5
@@ -2563,6 +2654,82 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &850651965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850651966}
+  - component: {fileID: 850651968}
+  - component: {fileID: 850651967}
+  m_Layer: 5
+  m_Name: borda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &850651966
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850651965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 436772130}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 578, y: 207}
+  m_SizeDelta: {x: 472.2, y: 472.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &850651967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850651965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 2931166093696269659, guid: 6f1d388483b046f428048afc9c68fa70,
+    type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &850651968
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850651965}
+  m_CullTransparentMesh: 0
 --- !u!1 &910401837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,7 +2760,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 436772130}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2781,6 +2948,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Os sinais v\xEAm de algum lugar pr\xF3ximo a Nepal, atravessando o oceano
     \xEDndico."
+  tempoqueleva: 4
   wilburne: 1
   sameIMG: 0
   textSpeed: 2
@@ -2907,7 +3075,7 @@ RectTransform:
   m_Children:
   - {fileID: 1885557404}
   m_Father: {fileID: 436772130}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2927,14 +3095,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.40392157}
+  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 2931166093696269659, guid: 6f1d388483b046f428048afc9c68fa70,
+    type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3080,6 +3249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Talvez isso nos ajude a descobrir de onde eles v\xEAm."
+  tempoqueleva: 3
   wilburne: 1
   sameIMG: 0
   textSpeed: 2
@@ -3130,6 +3300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Em um vale pr\xF3ximo daqui estamos montando uma armadilha para eles."
+  tempoqueleva: 4
   wilburne: 1
   sameIMG: 1
   textSpeed: 2
@@ -3387,6 +3558,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Os avi\xF5es de voc\xEAs foram equipados com tecnologia h\xEDbrida, podendo
     ser pilotado embaixo da \xE1gua."
+  tempoqueleva: 6
   wilburne: 1
   sameIMG: 0
   textSpeed: 2
@@ -3519,6 +3691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Assim que eles aparecerem, come\xE7aremos a rastrear seus sinais."
+  tempoqueleva: 2.5
   wilburne: 1
   sameIMG: 0
   textSpeed: 2
@@ -3689,6 +3862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Eles est\xE3o levando os geradores a algum lugar, precisamos saber onde."
+  tempoqueleva: 3
   wilburne: 1
   sameIMG: 1
   textSpeed: 2
@@ -4028,6 +4202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 2b425b4738e5f0248b892d0b785045bb, type: 3}
   texto: 'Marcus: Utilizaremos com cautela. Estamos indo.'
+  tempoqueleva: 3
   wilburne: 0
   sameIMG: 0
   textSpeed: 1
@@ -4174,10 +4349,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 43afd348ff2558246be5be2d24671da9, type: 3}
   texto: 'Charlie: Heheh, sempre quis brincar na neve'
+  tempoqueleva: 2.9
   wilburne: 0
   sameIMG: 0
   textSpeed: 1
   delay: 3
+--- !u!1 &1543615081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543615082}
+  - component: {fileID: 1543615084}
+  - component: {fileID: 1543615083}
+  m_Layer: 5
+  m_Name: radio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1543615082
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543615081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.72457, y: 0.72457, z: 0.72457}
+  m_Children: []
+  m_Father: {fileID: 436772130}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 13.9}
+  m_SizeDelta: {x: 458, y: 246}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1543615083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543615081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 00aeb6c9460902145bb9506089ddd7c6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1543615084
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543615081}
+  m_CullTransparentMesh: 0
 --- !u!1 &1681719873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4321,10 +4572,120 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Wilburne: Bom trabalho Sky Riders. Descobrimos uma pista de onde os rob\xF4s
     est\xE3o vindo."
+  tempoqueleva: 4
   wilburne: 1
   sameIMG: 0
   textSpeed: 2.5
   delay: 5
+--- !u!1 &1717360875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1717360876}
+  - component: {fileID: 1717360880}
+  - component: {fileID: 1717360879}
+  - component: {fileID: 1717360878}
+  - component: {fileID: 1717360877}
+  m_Layer: 5
+  m_Name: radio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1717360876
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717360875}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.72457, y: 0.72457, z: 0.72457}
+  m_Children: []
+  m_Father: {fileID: 55414398}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 9, y: 39}
+  m_SizeDelta: {x: 423.71, y: 238.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1717360877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717360875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806cf9f97f4da3e4aaad48a7e38a7e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1717360878
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717360875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d42fe24e65e32e478272ca05a781cec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1717360879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717360875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 3793701538341899409, guid: c1eb41c3eb123774fa9aeb74e9554780,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1717360880
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717360875}
+  m_CullTransparentMesh: 0
 --- !u!1 &1721122963
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,6 +4828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 2b425b4738e5f0248b892d0b785045bb, type: 3}
   texto: 'Marcus: Vai ser uma longa jornada...'
+  tempoqueleva: 2
   wilburne: 0
   sameIMG: 0
   textSpeed: 1
@@ -4614,6 +4976,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Wilburne: Sim, n\xF3s acreditamos que em algum lugar nessas coordenadas
     \xE9 o local de origem dessas m\xE1quinas."
+  tempoqueleva: 7
   wilburne: 1
   sameIMG: 0
   textSpeed: 2
@@ -4650,6 +5013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: 'Wilburne: Possivelmente.'
+  tempoqueleva: 1
   wilburne: 1
   sameIMG: 0
   textSpeed: 1
@@ -5061,6 +5425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 43afd348ff2558246be5be2d24671da9, type: 3}
   texto: "Charlie: AGORA TEMOS CANH\xD5ES LASER?"
+  tempoqueleva: 3
   wilburne: 0
   sameIMG: 0
   textSpeed: 2
@@ -5099,8 +5464,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -47.629944, y: 0}
-  m_SizeDelta: {x: 129.67, y: 21.29}
+  m_AnchoredPosition: {x: -87.1, y: 0}
+  m_SizeDelta: {x: 208.5, y: 21.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2034007759
 CanvasRenderer:
@@ -5130,7 +5495,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6eeb631c6627103429d3ca7b85c61601, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c329f28eb8249b4290f94463497ad3c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5265,7 +5630,7 @@ RectTransform:
   - {fileID: 683999470}
   - {fileID: 2128746924}
   m_Father: {fileID: 55414398}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5415,6 +5780,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Para ajudar voc\xEAs a combaterem as m\xE1quinas, Dex projetou uma esp\xE9cie
     de laser similar ao dos rob\xF4s para o avi\xE3o de voc\xEAs."
+  tempoqueleva: 8
   wilburne: 1
   sameIMG: 0
   textSpeed: 5
@@ -5561,6 +5927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 607d0684704b9394ea60cda4809e650f, type: 3}
   texto: "Jack: Deixa eu adivinhar, n\xF3s temos que ir at\xE9 l\xE1?"
+  tempoqueleva: 3
   wilburne: 0
   sameIMG: 0
   textSpeed: 1
@@ -5743,6 +6110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
   texto: "Wilburne: Estaremos acompanhando voc\xEAs pelo r\xE1dio"
+  tempoqueleva: 3
   wilburne: 1
   sameIMG: 0
   textSpeed: 1.5
@@ -5777,7 +6145,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 436772130}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

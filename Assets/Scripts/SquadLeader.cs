@@ -59,7 +59,7 @@ public class SquadLeader : MonoBehaviour
 
     public void RemoveMember(GameObject member)
     {
-        pos[members.IndexOf(member)] = false;
+        //pos[members.IndexOf(member)] = false;
         members.Remove(member);
     }
 
@@ -72,7 +72,7 @@ public class SquadLeader : MonoBehaviour
     void AssignPosition(GameObject member)
     {
         //pos[members.IndexOf(member)] = true;
-        member.GetComponent<AveNovaIA>().slot = positions[members.IndexOf(member)];
+        member.GetComponent<AveNovaIA>().slot = positions[members.IndexOf(member)-1];
     }
 
     void Shuffle(Transform[] ways)
