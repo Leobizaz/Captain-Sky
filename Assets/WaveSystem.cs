@@ -51,6 +51,8 @@ public class WaveSystem : MonoBehaviour
 
     void Start()
     {
+        ControleSelect.W2 = true;
+        PlayerPrefs.SetInt("Level", 2);
         probabilidade_IA = 0;
 
         aveCountAto2 = 0;

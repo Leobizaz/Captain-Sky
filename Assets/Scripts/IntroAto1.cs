@@ -24,6 +24,8 @@ public class IntroAto1 : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("Level", 1);
+        ControleSelect.W1 = true;
         maincamera.GetComponent<PostProcessLayer>().enabled = false;
         gameplay.SetActive(false);
         canvas.SetActive(false);

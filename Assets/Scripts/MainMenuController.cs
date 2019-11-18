@@ -52,6 +52,8 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject titulo;
 
+    public Camera cam;
+
     public string whichPanel;
 
     void Start()
@@ -234,6 +236,7 @@ public class MainMenuController : MonoBehaviour
     public void GoingToMenuFromSkins()
     {
         eventSys.SetSelectedGameObject(botao_continuar);
+        cam.transform.position = new Vector3(0f, 0f, 0f);
         whichPanel = "Menu";
     }
 
@@ -241,6 +244,7 @@ public class MainMenuController : MonoBehaviour
     {
         whichPanel = "Jogar";
         telaJogar.SetActive(true);
+        cam.transform.position = new Vector3(909f,811f,-981f);
         eventSys.SetSelectedGameObject(botao_inicio);
     }
     public void ButtonContinuar()

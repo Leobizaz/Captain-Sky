@@ -25,6 +25,8 @@ public class Ato3 : MonoBehaviour
 
     void Start()
     {
+        ControleSelect.W3 = true;
+        PlayerPrefs.SetInt("Level", 3);
         aveCountAto3 = 0;
         if (startWithFog)
         {

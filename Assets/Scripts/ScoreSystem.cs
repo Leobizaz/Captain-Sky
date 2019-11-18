@@ -52,14 +52,17 @@ public class ScoreSystem : MonoBehaviour
         if(MainMenuController.p1 == true)
         {
             Perfil.N1 += displayedScore;
+            PlayerPrefs.SetFloat("Score1", Perfil.N1);
         }
         else if (MainMenuController.p2 == true)
         {
             Perfil.N2 += displayedScore;
+            PlayerPrefs.SetFloat("Score2", Perfil.N2);
         }
         else if (MainMenuController.p3 == true)
         {
             Perfil.N3 += displayedScore;
+            PlayerPrefs.SetFloat("Score3", Perfil.N3);
         }
     }
 }

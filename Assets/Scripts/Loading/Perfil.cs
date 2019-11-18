@@ -41,8 +41,15 @@ public class Perfil : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ///////////////////LIGAR ISSO ANTES DE BUILDAR////////////////////////////////////
+        //Delete();
 
-        if(N1 > 0)
+        N1 = PlayerPrefs.GetFloat("Score1");
+         N2 = PlayerPrefs.GetFloat("Score2");
+        N3 = PlayerPrefs.GetFloat("Score3");
+
+
+        if (N1 > 0)
         {
             Pnew1.SetActive(false);
             P1.SetActive(true);
@@ -161,6 +168,15 @@ public class Perfil : MonoBehaviour
 
     }
 
-   
+    ///////////////Deletar TODOS OS SAVES antes da build////////////////
+    
+
+    public void Delete()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+
+
     
 }
