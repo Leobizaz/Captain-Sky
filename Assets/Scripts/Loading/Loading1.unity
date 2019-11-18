@@ -213,8 +213,8 @@ Canvas:
   m_GameObject: {fileID: 55414397}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1388002692}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -635,11 +635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Usem assim que for necess\xE1rio."
   tempoqueleva: 2
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 1
   delay: 4
 --- !u!1 &161518237
@@ -672,12 +672,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: d1fd218bb336d264cbbb517761dff209, type: 3}
   texto: "Voc\xEAs afastaram os rob\xF4s, mas eles capturaram os geradores de energia
     da cidade."
   tempoqueleva: 4
   wilburne: 1
-  sameIMG: 1
+  sameIMG: 0
   textSpeed: 2
   delay: 3
 --- !u!4 &161518239
@@ -930,11 +930,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Precisamos que voc\xEAs v\xE3o at\xE9 l\xE1 para confirmar o caso."
   tempoqueleva: 3.9
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 1
   delay: 4
 --- !u!1 &256429893
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 2b425b4738e5f0248b892d0b785045bb, type: 3}
+  image: {fileID: 21300000, guid: 48e6e3a024d610641b3d804d42c2da6f, type: 3}
   texto: "Marcus: Como iremos atrair a aten\xE7\xE3o dos rob\xF4s?"
   tempoqueleva: 3
   wilburne: 0
@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: Boa sorte, Sky Riders.
   tempoqueleva: 1
   wilburne: 1
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "O laser provou ser bem efetivo contra a armadura dos rob\xF4s grandes."
   tempoqueleva: 5
   wilburne: 1
@@ -2284,11 +2284,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Wilburne: Muito bem esquadr\xE3o, a miss\xE3o n\xE3o foi uma derrota total."
   tempoqueleva: 3
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2.5
   delay: 4
 --- !u!4 &651368050
@@ -2527,12 +2527,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Wilburne: Espalharemos geradores pelo lugar, j\xE1 que est\xE3o atr\xE1s
     disso."
   tempoqueleva: 3
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2
   delay: 4
 --- !u!4 &681679065
@@ -2834,7 +2834,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910401837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 436772130}
@@ -2842,7 +2842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 578, y: 207}
+  m_AnchoredPosition: {x: 572, y: 207}
   m_SizeDelta: {x: 448, y: 448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910401839
@@ -2857,15 +2857,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
+  m_Material: {fileID: 2100000, guid: 6941a8de2c93f184ba9d7ac97a79a829, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2b425b4738e5f0248b892d0b785045bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 073042e7d631af04a8969b8f26d7ef25, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3023,12 +3023,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Os sinais v\xEAm de algum lugar pr\xF3ximo a Nepal, atravessando o oceano
     \xEDndico."
   tempoqueleva: 4
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2
   delay: 5
 --- !u!1 &964926596
@@ -3325,7 +3325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: d1fd218bb336d264cbbb517761dff209, type: 3}
   texto: "Talvez isso nos ajude a descobrir de onde eles v\xEAm."
   tempoqueleva: 3
   wilburne: 1
@@ -3376,11 +3376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Em um vale pr\xF3ximo daqui estamos montando uma armadilha para eles."
   tempoqueleva: 4
   wilburne: 1
-  sameIMG: 1
+  sameIMG: 0
   textSpeed: 2
   delay: 6
 --- !u!4 &1248180364
@@ -3633,12 +3633,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Os avi\xF5es de voc\xEAs foram equipados com tecnologia h\xEDbrida, podendo
     ser pilotado embaixo da \xE1gua."
   tempoqueleva: 6
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2
   delay: 8
 --- !u!1 &1312137640
@@ -3767,11 +3767,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Assim que eles aparecerem, come\xE7aremos a rastrear seus sinais."
   tempoqueleva: 2.5
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2
   delay: 3
 --- !u!4 &1312137643
@@ -3938,11 +3938,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Eles est\xE3o levando os geradores a algum lugar, precisamos saber onde."
   tempoqueleva: 3
   wilburne: 1
-  sameIMG: 1
+  sameIMG: 0
   textSpeed: 2
   delay: 4
 --- !u!4 &1385346900
@@ -4278,7 +4278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 2b425b4738e5f0248b892d0b785045bb, type: 3}
+  image: {fileID: 21300000, guid: cdab3c63a4120e64081a56602b13916c, type: 3}
   texto: 'Marcus: Utilizaremos com cautela. Estamos indo.'
   tempoqueleva: 3
   wilburne: 0
@@ -4722,12 +4722,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Wilburne: Bom trabalho Sky Riders. Descobrimos uma pista de onde os rob\xF4s
     est\xE3o vindo."
   tempoqueleva: 4
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2.5
   delay: 5
 --- !u!1 &1717360875
@@ -4979,7 +4979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 2b425b4738e5f0248b892d0b785045bb, type: 3}
+  image: {fileID: 21300000, guid: 48e6e3a024d610641b3d804d42c2da6f, type: 3}
   texto: 'Marcus: Vai ser uma longa jornada...'
   tempoqueleva: 2
   wilburne: 0
@@ -5126,12 +5126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Wilburne: Sim, n\xF3s acreditamos que em algum lugar nessas coordenadas
     \xE9 o local de origem dessas m\xE1quinas."
   tempoqueleva: 7
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2
   delay: 10
 --- !u!1 &1753691088
@@ -5164,7 +5164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: d1fd218bb336d264cbbb517761dff209, type: 3}
   texto: 'Wilburne: Possivelmente.'
   tempoqueleva: 1
   wilburne: 1
@@ -5617,7 +5617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -87.1, y: 0}
+  m_AnchoredPosition: {x: -87.10004, y: 0}
   m_SizeDelta: {x: 208.5, y: 21.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2034007759
@@ -5930,7 +5930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Para ajudar voc\xEAs a combaterem as m\xE1quinas, Dex projetou uma esp\xE9cie
     de laser similar ao dos rob\xF4s para o avi\xE3o de voc\xEAs."
   tempoqueleva: 8
@@ -6261,7 +6261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  image: {fileID: 21300000, guid: d1fd218bb336d264cbbb517761dff209, type: 3}
   texto: "Wilburne: Estaremos acompanhando voc\xEAs pelo r\xE1dio"
   tempoqueleva: 3
   wilburne: 1
@@ -6294,7 +6294,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138561273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 436772130}
@@ -6302,7 +6302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -575, y: 207}
+  m_AnchoredPosition: {x: -570, y: 207}
   m_SizeDelta: {x: 448, y: 448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138561275
@@ -6317,7 +6317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 6941a8de2c93f184ba9d7ac97a79a829, type: 2}
   m_Color: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -6325,7 +6325,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9082ad21491e75541a429bbe40edadc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

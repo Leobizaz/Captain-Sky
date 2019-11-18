@@ -9,9 +9,16 @@ public class PlayerLaser : MonoBehaviour
     public ParticleSystem chargeFX;
     public ParticleSystem fireFX;
     public GameObject laserBeam;
+    public LayerMask layerMask;
+    DoCameraShake cameraShake;
+    bool isHitting;
+    public GameObject impactParticle;
+    public GameObject receiver;
+    public GameObject model;
 
     private void Start()
     {
+        cameraShake = GameObject.Find("Game Manager").GetComponent<DoCameraShake>();
         laserReady = true;
     }
 
@@ -33,13 +40,34 @@ public class PlayerLaser : MonoBehaviour
 
     public void FireLaser()
     {
+        cameraShake.ShakeAmplitude = 2f;
+        cameraShake.shakeElapsedTime = 4.5f;
         fireFX.Play();
         laserBeam.SetActive(true);
         Invoke("ResetLaser", 4.5f);
+
+        RaycastHit hit;
+        if (Physics.Raycast(model.transform.position, this.transform.forward, out hit, 1000f, layerMask))
+        {
+            isHitting = true;
+            impactParticle.SetActive(true);
+            impactParticle.transform.position = hit.point;
+            receiver.transform.LookAt(gameObject.transform);
+            receiver.transform.localPosition = hit.point;
+            Debug.Log(hit.collider.gameObject.name + " por " + gameObject.name);
+        }
+        else
+        {
+            impactParticle.SetActive(false);
+        }
+
+
+
     }
 
     public void ResetLaser()
     {
+        impactParticle.SetActive(false);
         laserBeam.SetActive(false);
         laserReady = true;
     }
