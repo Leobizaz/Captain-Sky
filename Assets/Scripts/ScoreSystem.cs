@@ -12,6 +12,7 @@ public class ScoreSystem : MonoBehaviour
     public Text Tempo;
 
     public static float time;
+    public static int playerdeaths;
 
     public static float currentScore;
     public static int enemysKill;

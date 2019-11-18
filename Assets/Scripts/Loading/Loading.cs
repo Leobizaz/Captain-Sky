@@ -15,12 +15,13 @@ public class Loading : MonoBehaviour
     public AsyncOperation operation;
     public GameObject pular;
     public GameObject carregando;
-    private float speed = 0.4f;
+    private float speed = 0.7f;
     bool fill = false;
     public Image FillCircle;
 
     private void Start()
     {
+        ScoreSystem.playerdeaths = 0;
         LoadLevel(levelIndex);
         //controlIcon.SetActive(true);
     }
@@ -56,7 +57,7 @@ public class Loading : MonoBehaviour
                 if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro") && FillCircle != null)
                 {
                     fill = true;
-                    Invoke("SkipIntro", 5f);
+                    Invoke("SkipIntro", 3f);
                 }
                 if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space) && FillCircle != null)
                 {

@@ -29,10 +29,12 @@ public class AveNovaIA : MonoBehaviour
         {
             if (foundSlot)
             {
+                gameObject.tag = "Enemy";
                 FollowSquad();
             }
             else
             {
+                gameObject.tag = "Untagged";
                 //Wander();
             }
             shoot = false;
@@ -40,11 +42,13 @@ public class AveNovaIA : MonoBehaviour
         
         if(Vector3.Distance(this.gameObject.transform.position, player.transform.position) < 45)
         {
+            gameObject.tag = "Enemy";
             EscapeManuever();
             shoot = false;
         }
         else if(Vector3.Distance(this.gameObject.transform.position, player.transform.position) < 160)
         {
+            gameObject.tag = "Enemy";
             FollowPlayer();
             shoot = true;
         }

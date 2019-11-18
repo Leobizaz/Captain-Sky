@@ -5,10 +5,13 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
+
 public class VictoryScreenController : MonoBehaviour
 {
     //public Text missaoconcluida;
     //public Text scoreDisplay;
+    public PlayerMovement playerMovement;
+    public PlayerOpenMovement playerMovementAberto;
     public Text inimigosDisplay;
     public Text tempoDisplay;
     public Text scoreFinalDisplay;
@@ -20,6 +23,8 @@ public class VictoryScreenController : MonoBehaviour
 
     void Start()
     {
+        playerMovement.playerActive = false;
+        playerMovementAberto.playerActive = false;
         aud.Play();
         //missaoconcluida.DOText("Missão Concluída", 3.5f, true, ScrambleMode.Uppercase);
         //Invoke("UpdateScore", 6f);

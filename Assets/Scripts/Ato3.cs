@@ -54,6 +54,7 @@ public class Ato3 : MonoBehaviour
 
     IEnumerator Spawner()
     {
+        yield return new WaitForSeconds(0.1f);
         if (shouldSpawn)
         {
             spawning = true;
@@ -84,8 +85,10 @@ public class Ato3 : MonoBehaviour
 
                 GameObject instanced_Ave = Instantiate(ave_prefab, randomSP.transform.position, randomSP.transform.rotation);
                 aveCountAto3++;
+                yield return new WaitForSeconds(3);
+                }
             }
-        }
+            
             //instanced_Ave.GetComponent<AveIA>().wayfather = randomWM;
             yield return new WaitForSeconds(3);
     }

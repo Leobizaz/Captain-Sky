@@ -50,7 +50,7 @@ public class PlayerOpenMovement : MonoBehaviour
     public GameObject firstPersonCamera;
     [SerializeField] public static bool firstPerson;
     private bool rotate;
-
+    bool subindo;
     void Update()
     {
 
@@ -131,7 +131,12 @@ public class PlayerOpenMovement : MonoBehaviour
                 }
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 Debug.Log("Céu");
+                subindo = true;
 
+            }
+            else
+            {
+                subindo = false;
             }
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
             {
@@ -157,9 +162,9 @@ public class PlayerOpenMovement : MonoBehaviour
                 colisao.dangerous = false;
             }
 
-            if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && Input.GetAxis("Vertical") == 0)
+            if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && Input.GetAxis("Vertical") == 0 && Input.GetAxis("VerticalDireito") == 0 && !subindo)
             {
-                if(forwardSpeed <= 100)
+                if(forwardSpeed <= 120)
                     forwardSpeed += 1f;
                 if (rollSpeed >= 2)
                     rollSpeed -= 0.05f;
@@ -346,6 +351,9 @@ public class PlayerOpenMovement : MonoBehaviour
                 //anim.SetInteger("State", 4);
                 cameraHolder.transform.DOLocalMoveY(-10, 4);
                 CMCamera1.offset = new Vector3(0, 5, -12.68f);
+                forwardSpeed -= 0.2f;
+                rollSpeed += 0.0155f;
+                yawSpeed += 0.0155f;
             }
             if (Input.GetAxis("Vertical") < 0)
             {
@@ -354,6 +362,9 @@ public class PlayerOpenMovement : MonoBehaviour
                 //anim.SetInteger("State", 3);
                 cameraHolder.transform.DOLocalMoveY(10, 8);
                 CMCamera1.offset = new Vector3(0, 7, -12.68f);
+                forwardSpeed -= 0.2f;
+                rollSpeed += 0.0155f;
+                yawSpeed += 0.0155f;
             }
         }
         else
@@ -365,6 +376,9 @@ public class PlayerOpenMovement : MonoBehaviour
                 //anim.SetInteger("State", 4);
                 cameraHolder.transform.DOLocalMoveY(-10, 4);
                 CMCamera1.offset = new Vector3(0, 5, -12.68f);
+                forwardSpeed -= 0.2f;
+                rollSpeed += 0.0155f;
+                yawSpeed += 0.0155f;
             }
             if (Input.GetAxis("Vertical") > 0)
             {
@@ -373,6 +387,9 @@ public class PlayerOpenMovement : MonoBehaviour
                 //anim.SetInteger("State", 3);
                 cameraHolder.transform.DOLocalMoveY(10, 8);
                 CMCamera1.offset = new Vector3(0, 7, -12.68f);
+                forwardSpeed -= 0.2f;
+                rollSpeed += 0.0155f;
+                yawSpeed += 0.0155f;
             }
         }
         if(Input.GetAxis("Vertical") == 0)

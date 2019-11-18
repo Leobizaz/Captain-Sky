@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaveSystem : MonoBehaviour
 {
+    public static float probabilidade_IA;
     public static int aveCountAto2;
     public static float missaoRadio;
     public static int robosDestroyed;
@@ -12,6 +13,7 @@ public class WaveSystem : MonoBehaviour
     public SignalMission missao;
 
     public GameObject Robozão;
+    public GameObject victoryScreen;
     public GameObject robozãoRadio;
     bool missaoComplete;
 
@@ -23,11 +25,15 @@ public class WaveSystem : MonoBehaviour
     public DialogoSequence wave2_dialogos;
     public DialogoSequence waveRadio_dialogos;
     public DialogoSequence ggRadio_dialogos;
+    public DialogoSequence dialogoWaveFinal;
+    public DialogoSequence dialogoCabo;
 
     public float test;
     bool once1;
     bool once2;
     bool once3;
+    bool waveFinal;
+    bool cabo;
     bool roboSpawned;
 
 
@@ -45,6 +51,8 @@ public class WaveSystem : MonoBehaviour
 
     void Start()
     {
+        probabilidade_IA = 0;
+
         aveCountAto2 = 0;
         missaoRadio = 0;
         robosDestroyed = 0;
@@ -54,6 +62,9 @@ public class WaveSystem : MonoBehaviour
     void Update()
     {
         test = missaoRadio;
+
+        //probabilidade_IA = ((ScoreSystem.enemysKill * 5)/100) ;
+
 
         if (started)
         {
@@ -80,7 +91,7 @@ public class WaveSystem : MonoBehaviour
             StartCoroutine(WaveRadio());
         }
 
-        if(missaoRadio >= 30 && !once3)
+        if(missaoRadio >= 15 && !once3)
         {
             once3 = true;
             willburneQuasela.PlayDialogo();
@@ -88,13 +99,23 @@ public class WaveSystem : MonoBehaviour
         }
 
 
-        if (missaoRadio >= 59 && !missaoComplete)
+        if (missaoRadio >= 29 && !missaoComplete)
         {
             objetivo2.GetComponent<Animator>().Play("objetivoGone");
             missaoComplete = true;
             missao.Deactivate();
             missao.enabled = false;
             ggRadio_dialogos.PlayDialogo();
+        }
+        if(robosDestroyed == 4 && missaoComplete && !waveFinal)
+        {
+            waveFinal = true;
+            StartCoroutine(WaveFinal());
+        }
+        if(robosDestroyed == 8 && missaoComplete && !cabo)
+        {
+            cabo = true;
+            StartCoroutine(Cabo());
         }
 
 
@@ -106,6 +127,28 @@ public class WaveSystem : MonoBehaviour
         roboSpawned = true;
         wave1_dialogos.PlayDialogo();
         Instantiate(Robozão, spawnpoint2.transform.position, spawnpoint2.transform.rotation);
+    }
+
+    public IEnumerator Cabo()
+    {
+        dialogoCabo.PlayDialogo();
+        yield return new WaitForSeconds(8);
+        victoryScreen.SetActive(true);
+    }
+
+    public IEnumerator WaveFinal()
+    {
+        yield return new WaitForSeconds(6);
+        dialogoWaveFinal.PlayDialogo();
+        yield return new WaitForSeconds(6);
+        Instantiate(Robozão, spawnpoint1.transform.position, spawnpoint1.transform.rotation);
+        yield return new WaitForSeconds(0.4f);
+        Instantiate(Robozão, spawnpoint2.transform.position, spawnpoint2.transform.rotation);
+        yield return new WaitForSeconds(0.1f);
+        Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
+        yield return new WaitForSeconds(0.8f);
+        Instantiate(Robozão, spawnpoint4.transform.position, spawnpoint4.transform.rotation);
+        yield return new WaitForSeconds(1);
     }
 
     public IEnumerator Wave2()

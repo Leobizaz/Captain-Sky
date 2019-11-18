@@ -4860,6 +4860,7 @@ GameObject:
   - component: {fileID: 8317284677599892781}
   - component: {fileID: 2816966786975338911}
   - component: {fileID: 9205170210188513739}
+  - component: {fileID: 3711555420900418405}
   m_Layer: 10
   m_Name: AveInimiga(IA)
   m_TagString: Enemy
@@ -5064,6 +5065,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &3711555420900418405
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215154171513626168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6319992453177651967
 GameObject:
   m_ObjectHideFlags: 0

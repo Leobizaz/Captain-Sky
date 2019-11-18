@@ -81,10 +81,10 @@ public class SignalMission : MonoBehaviour
 
     IEnumerator repeatWilburneDica()
     {
-        while (WaveSystem.missaoRadio < 59f)
+        while (WaveSystem.missaoRadio < 29f)
         {
             yield return new WaitForSeconds(80f);
-            if(WaveSystem.missaoRadio < 59)
+            if(WaveSystem.missaoRadio < 29)
                 wilburneDica.PlayDialogo();
         }
     }

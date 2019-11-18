@@ -15,14 +15,14 @@ public class RaycastMira : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetAxis("Mira") > 0)
         {
             if (!livre)
             {
                 RaycastHit hit;
 
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000f, Color.green);
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1000f, layermask))
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1000f, layermask, QueryTriggerInteraction.Ignore))
                 {
                     if (hit.transform.CompareTag("Enemy"))
                     {

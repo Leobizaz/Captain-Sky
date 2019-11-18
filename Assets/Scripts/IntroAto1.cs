@@ -19,7 +19,7 @@ public class IntroAto1 : MonoBehaviour
     public GameObject audiokinect;
     public VideoPlayer videoPlayer;
     public Image FillCircle;
-    private float speed = 0.4f;
+    private float speed = 0.7f;
     bool fill = false;
 
     void Start()
@@ -39,7 +39,7 @@ public class IntroAto1 : MonoBehaviour
         if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro") && FillCircle != null)
         {
             fill = true;
-            Invoke("SkipIntro", 5f);
+            Invoke("SkipIntro", 3f);
         }
         if (Input.GetButtonUp("Break") || Input.GetKeyUp(KeyCode.Space) && FillCircle != null)
         {
