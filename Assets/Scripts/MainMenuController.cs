@@ -294,4 +294,9 @@ public class MainMenuController : MonoBehaviour
     {
         Titulo.SetActive(false);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
