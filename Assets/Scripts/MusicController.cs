@@ -20,6 +20,11 @@ public class MusicController : MonoBehaviour
         StartCoroutine(ChangeIt(index, time));
     }
 
+    public void FadeOut()
+    {
+        StartCoroutine(FadeAudioSource.StartFade(audio, 5, 0f));
+    }
+
     public IEnumerator ChangeIt(int index, float time)
     {
         yield return new WaitForSeconds(time);

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3788870573417552868}
   - component: {fileID: 2592583397108976060}
-  m_Layer: 0
-  m_Name: New Sprite
+  m_Layer: 12
+  m_Name: map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

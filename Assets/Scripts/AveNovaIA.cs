@@ -16,9 +16,16 @@ public class AveNovaIA : MonoBehaviour
     public float speed;
     public bool foundSlot;
     bool shoot;
+    bool special;
 
     private void Start()
     {
+        float num = Random.Range(0, 1);
+        if(num >= WaveSystem.probabilidade_IA)
+        {
+            special = true;
+        }
+
         StartCoroutine(shooting());
         player = GameObject.Find("Gameplay 3");
     }
@@ -46,7 +53,13 @@ public class AveNovaIA : MonoBehaviour
             EscapeManuever();
             shoot = false;
         }
-        else if(Vector3.Distance(this.gameObject.transform.position, player.transform.position) < 160)
+        else if(Vector3.Distance(this.gameObject.transform.position, player.transform.position) < 360 && special)
+        {
+            gameObject.tag = "Enemy";
+            FollowPlayer();
+            shoot = true;
+        }
+        else if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) < 160)
         {
             gameObject.tag = "Enemy";
             FollowPlayer();

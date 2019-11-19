@@ -146,7 +146,7 @@ public class PlayerHealth : MonoBehaviour
         HPBar.DOFillAmount((currentHealth / 100), 1.0f);
     }
 
-    void Death()
+    public void Death()
     {
         Debug.Log("Player has been killed");
         dead = true;

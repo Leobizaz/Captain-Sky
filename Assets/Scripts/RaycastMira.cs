@@ -39,6 +39,7 @@ public class RaycastMira : MonoBehaviour
 
                 if (marked != null)
                 {
+                    crosshair.SetActive(true);
                     alvo.transform.position = marked.transform.position;
                     emissor.mira = marked;
                 }
@@ -64,6 +65,7 @@ public class RaycastMira : MonoBehaviour
         }
         else
         {
+
             Unmark();
             emissor.mira = miraprecisa;
         }
@@ -71,6 +73,7 @@ public class RaycastMira : MonoBehaviour
 
     public void Unmark()
     {
+        crosshair.SetActive(false);
         marked = null;
     }
 }

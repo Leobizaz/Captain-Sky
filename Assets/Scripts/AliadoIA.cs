@@ -120,7 +120,7 @@ public class AliadoIA : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy" && target == null)
+        if (other.tag == "Enemy" && target == null && other.gameObject.name != "Cabeça")
         {
             target = other.gameObject;
             FollowPlayer();

@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class CheckpointSystem : MonoBehaviour
 {
-    public static string STAGEPHASE;
+    public static string STAGEPHASE = "PHASE0";
     public MusicController music;
     public GameObject Gameplay3;
     public GameObject cenarioMontanha;
@@ -21,12 +21,14 @@ public class CheckpointSystem : MonoBehaviour
 
     private void Start()
     {
+        PlayerHealth.dead = false;
         PlayerMovement.ded = 1;
         PlayerOpenMovement.ded = 1;
       //STAGEPHASE = "PHASE1";
 
         if(STAGEPHASE == "PHASE0") //começo
         {
+            cenarioEsfera.SetActive(false);
             cenarioMontanha.SetActive(false);
             Ato3_Objetivo1.torres_restantes = 3;
             Ato3_Objetivo2.geradores_restantes = 4;

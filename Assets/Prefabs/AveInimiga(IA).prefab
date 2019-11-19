@@ -4764,7 +4764,6 @@ GameObject:
   - component: {fileID: 7543404949394648998}
   - component: {fileID: 3328395299665026601}
   - component: {fileID: 6976356513643513514}
-  - component: {fileID: 5080932577388473325}
   m_Layer: 12
   m_Name: mapSphere
   m_TagString: Untagged
@@ -4832,19 +4831,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &5080932577388473325
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826496401128948005}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6215154171513626168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4916,7 +4902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2322a3e24bdfc5945a3789830e645fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 60
+  maxHealth: 120
   currentHealth: 0
   fakeHealth: 0
   explosionFX: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,

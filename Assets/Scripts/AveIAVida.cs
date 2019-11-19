@@ -98,6 +98,14 @@ public class AveIAVida : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("LaserPlayer"))
+        {
+            currentHealth = currentHealth - 100f;
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("LaserPlayer"))

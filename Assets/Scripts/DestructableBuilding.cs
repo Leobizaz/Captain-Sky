@@ -14,6 +14,7 @@ public class DestructableBuilding : MonoBehaviour
     public GameObject particles2;
     public GameObject explosion;
     public GameObject mapIndicator;
+    bool once;
 
     private void Start()
     {
@@ -36,8 +37,10 @@ public class DestructableBuilding : MonoBehaviour
             particles2.SetActive(true);
         }
 
-        if (dead)
+        if (dead && !once)
         {
+            once = true;
+            WaveSystem.buildingsDestroyed++;
             gameObject.tag = "Untagged";
             //explosion.SetActive(true);
             mesh.SetActive(false);

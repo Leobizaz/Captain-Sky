@@ -18,14 +18,18 @@ public class VictoryScreenController : MonoBehaviour
     //public Text BonusDisplay;
     public GameObject obrigado;
     public AudioSource aud;
+    public int indexToLoad;
+    MusicController music;
 
     public ScoreSystem scoreSys;
 
     void Start()
     {
+        music = GameObject.Find("Music").GetComponent<MusicController>();
         playerMovement.playerActive = false;
         playerMovementAberto.playerActive = false;
         aud.Play();
+        music.FadeOut();
         //missaoconcluida.DOText("Missão Concluída", 3.5f, true, ScrambleMode.Uppercase);
         //Invoke("UpdateScore", 6f);
         Invoke("UpdateInimigos", 8f);
@@ -42,12 +46,13 @@ public class VictoryScreenController : MonoBehaviour
 
     void UpdateScore()
     {
+        
         //scoreDisplay.DOText(ScoreSystem.currentScore.ToString(), 1.5f, true, ScrambleMode.Numerals);
     }
 
     void UpdateInimigos()
     {
-        inimigosDisplay.DOText(ScoreSystem.enemysKill.ToString() + "/33", 1.5f, true, ScrambleMode.Numerals);
+        inimigosDisplay.DOText(ScoreSystem.enemysKill.ToString(), 1.5f, true, ScrambleMode.Numerals);
     }
 
     void UpdateTempo()
@@ -65,8 +70,9 @@ public class VictoryScreenController : MonoBehaviour
     }
     void Obrigado()
     {
+
         //obrigado.SetActive(true);
-        Loading.levelIndex = 3;
+        Loading.levelIndex = indexToLoad;
         SceneManager.LoadScene(5);
     }
 }

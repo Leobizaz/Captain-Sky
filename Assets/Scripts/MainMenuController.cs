@@ -278,12 +278,12 @@ public class MainMenuController : MonoBehaviour
     public void Fase3()
     {
         SceneManager.LoadScene("Loading1");
-        Loading.levelIndex = 3;
+        Loading.levelIndex = 4;
     }
     public void Fase2()
     {
         SceneManager.LoadScene("Loading1");
-        Loading.levelIndex = 5;
+        Loading.levelIndex = 3;
     }
     public void Fase1()
     {

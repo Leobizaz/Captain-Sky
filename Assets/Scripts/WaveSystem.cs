@@ -7,10 +7,12 @@ public class WaveSystem : MonoBehaviour
     public static float probabilidade_IA;
     public static int aveCountAto2;
     public static float missaoRadio;
+    public static int buildingsDestroyed;
     public static int robosDestroyed;
     bool started;
 
     public SignalMission missao;
+    public PlayerHealth playerHealth;
 
     public GameObject Robozão;
     public GameObject victoryScreen;
@@ -27,6 +29,13 @@ public class WaveSystem : MonoBehaviour
     public DialogoSequence ggRadio_dialogos;
     public DialogoSequence dialogoWaveFinal;
     public DialogoSequence dialogoCabo;
+    public DialogoSequence deuRuimRadio;
+   
+
+    public InstantiateDialogo destruindo_base1;
+    public InstantiateDialogo destruindo_base2;
+    public DialogoSequence destruindo_base3;
+    public DialogoSequence destruiram_base;
 
     public float test;
     bool once1;
@@ -35,6 +44,10 @@ public class WaveSystem : MonoBehaviour
     bool waveFinal;
     bool cabo;
     bool roboSpawned;
+
+    bool dialogo1;
+    bool dialogo2;
+    bool dialogo3;
 
 
     public WaveSpawner spawner1;
@@ -46,14 +59,17 @@ public class WaveSystem : MonoBehaviour
     public GameObject spawnpoint3;
     public GameObject spawnpoint4;
 
+    bool deuRUIM;
     public GameObject objetivo;
     public GameObject objetivo2;
 
     void Start()
     {
+        buildingsDestroyed = 0;
         ControleSelect.W2 = true;
         PlayerPrefs.SetInt("Level", 2);
         probabilidade_IA = 0;
+
 
         aveCountAto2 = 0;
         missaoRadio = 0;
@@ -65,7 +81,32 @@ public class WaveSystem : MonoBehaviour
     {
         test = missaoRadio;
 
-        //probabilidade_IA = ((ScoreSystem.enemysKill * 5)/100) ;
+        probabilidade_IA = ((ScoreSystem.enemysKill * 5)/100) / 2 + ScoreSystem.playerdeaths;
+
+        if(buildingsDestroyed >= 7 && !deuRUIM)
+        {
+            deuRUIM = true;
+            StartCoroutine(BaseDestruida());
+        }
+
+        if(buildingsDestroyed == 1 && !dialogo1)
+        {
+            dialogo1 = true;
+            destruindo_base1.PlayDialogo();
+        }
+
+        if(buildingsDestroyed == 2 && !dialogo2)
+        {
+            dialogo2 = true;
+            destruindo_base2.PlayDialogo();
+        }
+
+        if(buildingsDestroyed == 5 && !dialogo3)
+        {
+            dialogo3 = true;
+            destruindo_base3.PlayDialogo();
+        }
+
 
 
         if (started)
@@ -100,6 +141,12 @@ public class WaveSystem : MonoBehaviour
 
         }
 
+        if(robosDestroyed == 4 && !missaoComplete && !deuRUIM)
+        {
+            deuRUIM = true;
+            StartCoroutine(DeuRuim());
+        }
+
 
         if (missaoRadio >= 29 && !missaoComplete)
         {
@@ -123,8 +170,23 @@ public class WaveSystem : MonoBehaviour
 
     }
 
+    public IEnumerator DeuRuim()
+    {
+        deuRuimRadio.PlayDialogo();
+        yield return new WaitForSeconds(8f);
+        playerHealth.Death();
+
+    }
+    public IEnumerator BaseDestruida()
+    {
+        destruiram_base.PlayDialogo();
+        yield return new WaitForSeconds(10f);
+        playerHealth.Death();
+    }
+
     public void Wave1()
     {
+        objetivo.GetComponent<Animator>().Play("objetivoGone");
         StartCoroutine(MarcusDica());
         roboSpawned = true;
         wave1_dialogos.PlayDialogo();
@@ -134,7 +196,7 @@ public class WaveSystem : MonoBehaviour
     public IEnumerator Cabo()
     {
         dialogoCabo.PlayDialogo();
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(18f);
         victoryScreen.SetActive(true);
     }
 

@@ -39,13 +39,13 @@ public class Ato3 : MonoBehaviour
     {
         if (startEnemyAI)
         {
-            if (aveCountAto3 < 40 && !spawning)
+            if (aveCountAto3 < 20 && !spawning)
             {
                 StartCoroutine(Spawner());
                 shouldSpawn = true;
             }
 
-            if (aveCountAto3 >= 40)
+            if (aveCountAto3 >= 20)
             {
                 spawning = false;
                 shouldSpawn = false;

@@ -51,6 +51,11 @@ public class PlayerOpenMovement : MonoBehaviour
     [SerializeField] public static bool firstPerson;
     private bool rotate;
     bool subindo;
+    private void Start()
+    {
+        playerActive = true;
+    }
+
     void Update()
     {
 
@@ -87,8 +92,8 @@ public class PlayerOpenMovement : MonoBehaviour
             }
         }
 
-
-
+        if (playerActive)
+        {
 
 
         float currentVelocity = 0;
@@ -115,54 +120,55 @@ public class PlayerOpenMovement : MonoBehaviour
 
 
         RaycastHit hit;
-        if (!crashed)
-        {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
+            if (!crashed)
             {
-                forwardSpeed -= 0.5f;
-                rollSpeed += 0.0355f;
-                yawSpeed += 0.0355f;
-                SetCameraZoom(15f, 5f);
-
-
-                if (forwardSpeed <= 5f)
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Sky"))
                 {
-                    forwardSpeed = 5f;
+                    forwardSpeed -= 0.5f;
+                    rollSpeed += 0.0355f;
+                    yawSpeed += 0.0355f;
+                    SetCameraZoom(15f, 5f);
+
+
+                    if (forwardSpeed <= 5f)
+                    {
+                        forwardSpeed = 5f;
+                    }
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                    Debug.Log("Céu");
+                    subindo = true;
+
                 }
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Céu");
-                subindo = true;
-
-            }
-            else
-            {
-                subindo = false;
-            }
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
-            {
-                forwardSpeed += 1.20f;
-                yawSpeed -= 0.0155f;
-                rollSpeed -= 0.0155f;
-                SetCameraZoom(-15f, 5f);
-
-                if (forwardSpeed >= 180f)
+                else
                 {
-                    forwardSpeed = 180f;
+                    subindo = false;
                 }
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Chaum");
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask) && hit.collider.gameObject.CompareTag("Ground"))
+                {
+                    forwardSpeed += 1.20f;
+                    yawSpeed -= 0.0155f;
+                    rollSpeed -= 0.0155f;
+                    SetCameraZoom(-15f, 5f);
+
+                    if (forwardSpeed >= 180f)
+                    {
+                        forwardSpeed = 180f;
+                    }
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                    Debug.Log("Chaum");
+                }
+
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200f, layerMask2) || Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 25f, layerMask2))
+                {
+                    colisao.dangerous = true;
+                }
+                else
+                {
+                    colisao.dangerous = false;
+                }
             }
 
-            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200f, layerMask2) || Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 25f, layerMask2))
-            {
-                colisao.dangerous = true;
-            }
-            else
-            {
-                colisao.dangerous = false;
-            }
-
-            if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && Input.GetAxis("Vertical") == 0 && Input.GetAxis("VerticalDireito") == 0 && !subindo)
+            if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("VerticalDireito") == 0 && !subindo)
             {
                 if(forwardSpeed <= 120)
                     forwardSpeed += 1f;
@@ -252,6 +258,8 @@ public class PlayerOpenMovement : MonoBehaviour
                 DOVirtual.Float(currentSpeed, 90, 4f, SetSpeed).SetEase(Ease.InOutQuad);
             }
             */
+            
+            
         }
     }
 
