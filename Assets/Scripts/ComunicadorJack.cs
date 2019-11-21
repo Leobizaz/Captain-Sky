@@ -2,20 +2,29 @@
 public class ComunicadorJack : MonoBehaviour
 {
     SpriteRenderer rend;
+    ParticleSystem particle;
 
     public static bool active;
 
     private void Start()
     {
+        
         rend = GetComponent<SpriteRenderer>();
+        rend.enabled = false;
+        particle = GetComponent<ParticleSystem>();
     }
 
     private void Update()
     {
         if (active)
-            rend.enabled = true;
+        {
+            if(!particle.isPlaying)
+                particle.Play();
+        }
         else
-            rend.enabled = false;
+        {
+            particle.Stop();
+        }
     }
 }
 

@@ -28,6 +28,7 @@ public class Briefing : MonoBehaviour
         else
         {
             anim.gameObject.SetActive(false);
+            Invoke("LoadNextLevel", 2f);
         }
 
     }
