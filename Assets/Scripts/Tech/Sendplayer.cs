@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class Sendplayer : MonoBehaviour
 {
+    public static bool bossFightended;
     public float storedPos;
     bool once;
     public CinemachineDollyCart playerDolly;
@@ -21,7 +22,7 @@ public class Sendplayer : MonoBehaviour
 
     private void OnTriggerExit(Collider other) 
     {
-        if (other.CompareTag("GameController") && Ato3.ato3_passagem < 1)
+        if (other.CompareTag("GameController") && Ato3.ato3_passagem < 1 && !bossFightended)
         {
             playerDolly.m_Position = storedPos;
             Ato3.ato3_passagem++;

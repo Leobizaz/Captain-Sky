@@ -11,6 +11,7 @@ public class CheckpointSystem : MonoBehaviour
     public GameObject cenarioMontanha;
     public GameObject cenarioEsfera;
     public TurnOffLight fog;
+    public Ato3 ato3;
     public GameObject water;
 
     public CinemachinePathBase trackEsfera;
@@ -24,7 +25,7 @@ public class CheckpointSystem : MonoBehaviour
         PlayerHealth.dead = false;
         PlayerMovement.ded = 1;
         PlayerOpenMovement.ded = 1;
-      //STAGEPHASE = "PHASE1";
+      STAGEPHASE = "PHASE1";
 
         if(STAGEPHASE == "PHASE0") //começo
         {
@@ -64,6 +65,7 @@ public class CheckpointSystem : MonoBehaviour
             Ato3_Objetivo1.torres_restantes = 3;
             Ato3_Objetivo2.geradores_restantes = 4;
             RenderSettings.fog = true;
+            ato3.startEnemyAI = true;
             water.SetActive(false);
             ScoreSystem.currentScore = storedScore;
             ScoreSystem.enemysKill = storedKills;

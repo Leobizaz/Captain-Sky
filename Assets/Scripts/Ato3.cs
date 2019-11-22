@@ -25,6 +25,7 @@ public class Ato3 : MonoBehaviour
 
     void Start()
     {
+        ato3_passagem = 0;
         ControleSelect.W3 = true;
         PlayerPrefs.SetInt("Level", 3);
         aveCountAto3 = 0;
