@@ -8,7 +8,6 @@ public class WaveEndless : MonoBehaviour
     public static int aveCountAto2;
     public static float missaoRadio;
     public static int buildingsDestroyed;
-    public static int robosDestroyed;
     bool started;
 
     public SignalMission missao;
@@ -28,6 +27,12 @@ public class WaveEndless : MonoBehaviour
     bool once1;
     bool once2;
     bool once3;
+    bool once4;
+    bool once5;
+    bool once6;
+    bool once7;
+    bool once8;
+    bool once9;
     bool waveFinal;
     bool cabo;
     bool roboSpawned;
@@ -56,7 +61,7 @@ public class WaveEndless : MonoBehaviour
 
         aveCountAto2 = 0;
         missaoRadio = 0;
-        robosDestroyed = 0;
+        WaveSystem.robosDestroyed = 0;
 
         Invoke("StartWaves", 46f);
     }
@@ -92,7 +97,7 @@ public class WaveEndless : MonoBehaviour
 
         if (started)
         {
-            if (aveCountAto2 <= 20)
+            if (aveCountAto2 <= 45)
             {
                 spawner1.Spawn(1);
                 spawner2.Spawn(1);
@@ -101,50 +106,55 @@ public class WaveEndless : MonoBehaviour
             }
         }
 
-        if(robosDestroyed == 1 && !once1)
+        if(WaveSystem.robosDestroyed == 1 && !once1)
         {
-            if(!DialogoSequence.isPlayingSequence)
             once1 = true;
             StartCoroutine(Wave2());
         }
 
-        if(robosDestroyed == 3 && !once2)
+        if(WaveSystem.robosDestroyed == 3 && !once2)
         {
             once2 = true;
             StartCoroutine(Wave3());
         }
 
-        if(robosDestroyed == 6 && !once3)
+        if(WaveSystem.robosDestroyed == 7 && !once3)
         {
             once3 = true;
             StartCoroutine(Wave4());
         }
 
-        if(robosDestroyed == 10)
+        if(WaveSystem.robosDestroyed == 10 && !once4)
         {
+            once4 = true;
             StartCoroutine(Wave5());
         }
 
-                if(robosDestroyed == 14)
+        if(WaveSystem.robosDestroyed == 16 && !once5)
         {
+            once5 = true;
             StartCoroutine(Wave6());
         }
-                if(robosDestroyed == 18)
+        if(WaveSystem.robosDestroyed == 18 && !once6)
         {
+            once6 = true;
             StartCoroutine(Wave7());
         }
 
-                if(robosDestroyed == 22)
+        if(WaveSystem.robosDestroyed == 23 && !once7)
         {
+            once7 = true;
             StartCoroutine(Wave8());
         }
-             if(robosDestroyed == 26)
+        if(WaveSystem.robosDestroyed == 29 && !once8)
         {
+            once8 = true;
             StartCoroutine(Wave9());
         }
 
-       if(robosDestroyed == 30)
+       if(WaveSystem.robosDestroyed == 32 && !once9)
         {
+            once9 = true;
             StartCoroutine(Wave10());
         }
 
@@ -155,12 +165,12 @@ public class WaveEndless : MonoBehaviour
             missao.Deactivate();
             missao.enabled = false;
         }
-        if(robosDestroyed == 4 && missaoComplete && !waveFinal)
+        if(WaveSystem.robosDestroyed == 4 && missaoComplete && !waveFinal)
         {
             waveFinal = true;
             StartCoroutine(WaveFinal());
         }
-        if(robosDestroyed == 8 && missaoComplete && !cabo)
+        if(WaveSystem.robosDestroyed == 8 && missaoComplete && !cabo)
         {
             cabo = true;
             StartCoroutine(Cabo());
@@ -211,7 +221,7 @@ public class WaveEndless : MonoBehaviour
 
     public IEnumerator Wave2()
     {
-        yield return new WaitForSeconds(14f);
+        yield return new WaitForSeconds(10f);
         Instantiate(Robozão, spawnpoint1.transform.position, spawnpoint1.transform.rotation);
         yield return new WaitForSeconds(2);
         Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
@@ -292,6 +302,7 @@ public class WaveEndless : MonoBehaviour
         Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
                         yield return new WaitForSeconds(4);
         Instantiate(Robozão, spawnpoint4.transform.position, spawnpoint3.transform.rotation);
+        
 
     }
                 public IEnumerator Wave8()

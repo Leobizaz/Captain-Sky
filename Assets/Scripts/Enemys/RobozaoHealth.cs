@@ -40,7 +40,7 @@ public class RobozaoHealth : MonoBehaviour
     {
         if(other.tag == "LaserPlayer" && !cooldown)
         {
-            Debug.Log("Cuu");
+           // Debug.Log("Cuu");
             LaserHit();
         }
     }
