@@ -290,6 +290,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Loading1");
         Loading.levelIndex = 2;
     }
+    public void Arcade()
+    {
+        SceneManager.LoadScene("Loading1");
+        Loading.levelIndex = 6;
+    }
     public void DesativaTitulo()
     {
         Titulo.SetActive(false);
