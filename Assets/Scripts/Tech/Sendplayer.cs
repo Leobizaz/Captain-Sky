@@ -9,6 +9,24 @@ public class Sendplayer : MonoBehaviour
     public float storedPos;
     bool once;
     public CinemachineDollyCart playerDolly;
+    bool once2;
+
+    public GameObject boss;
+
+    private void Start()
+    {
+        bossFightended = false;
+        Ato3.ato3_passagem = 2;
+    }
+
+    private void Update()
+    {
+        if (!once2 && Ato3.ato3_passagem > 1)
+        {
+            once2 = true;
+            boss.SetActive(true);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +40,7 @@ public class Sendplayer : MonoBehaviour
 
     private void OnTriggerExit(Collider other) 
     {
-        if (other.CompareTag("GameController") && Ato3.ato3_passagem < 1 && !bossFightended)
+        if (other.CompareTag("GameController") && !bossFightended)
         {
             playerDolly.m_Position = storedPos;
             Ato3.ato3_passagem++;

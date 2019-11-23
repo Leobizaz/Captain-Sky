@@ -276,9 +276,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3496
-        width: 600
-        height: 600
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,7 +286,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3474d5d8677a4404fb90c2e68f4ce336
+      spriteID: 14ce5e6f7cca73d4a894d794f807add7
       internalID: 4931115254017243922
       vertices: []
       indices: 
@@ -296,10 +296,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_1
       rect:
         serializedVersion: 2
-        x: 600
-        y: 3496
-        width: 600
-        height: 600
+        x: 500
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,7 +307,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1c615032add34a41aaa6209d91fb003
+      spriteID: e90a9eb3ec8638342b6f0d61d37e51e8
       internalID: -1556369569161872197
       vertices: []
       indices: 
@@ -317,10 +317,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_2
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 3496
-        width: 600
-        height: 600
+        x: 1000
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,7 +328,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1baf955808dbaec46b76cfccf67be8a0
+      spriteID: 57dde15e7aa5d4c4d8e05f9071a151e4
       internalID: 2646360562157376913
       vertices: []
       indices: 
@@ -338,10 +338,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_3
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 3496
-        width: 600
-        height: 600
+        x: 1500
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,7 +349,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ae7f63a14d6e0b42a9665c978f07190
+      spriteID: 9a0c60862c3f13543901cd89f5ac86f1
       internalID: 7289022025639736145
       vertices: []
       indices: 
@@ -359,10 +359,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_4
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 3496
-        width: 600
-        height: 600
+        x: 2000
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,7 +370,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66c315d81ea095448a32031db2233d7a
+      spriteID: 8039db3bbbfa9d44d83ef9660267ed9e
       internalID: 8692997812931150790
       vertices: []
       indices: 
@@ -380,10 +380,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_5
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 3496
-        width: 600
-        height: 600
+        x: 2500
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,7 +391,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361203019cea97a439b1a8b1922bebf3
+      spriteID: a7e7f542de8b19c4792008e4c45859ae
       internalID: -2949641147494578622
       vertices: []
       indices: 
@@ -401,10 +401,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_6
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 3496
-        width: 600
-        height: 600
+        x: 3000
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,7 +412,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6fa8294a1d017448b4ecb0cce0234f6
+      spriteID: 90d9851ccc8778e4db8397304cfda8e2
       internalID: -7790897898045787250
       vertices: []
       indices: 
@@ -422,10 +422,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_7
       rect:
         serializedVersion: 2
-        x: 4200
-        y: 3496
-        width: 600
-        height: 600
+        x: 3500
+        y: 3500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,7 +433,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56e58646b2d2de04fb6ae6bf55861e2d
+      spriteID: a7cd6add5e4375745b4cb063cb1befe6
       internalID: 4676496785396708855
       vertices: []
       indices: 
@@ -443,10 +443,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_8
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 3496
-        width: 600
-        height: 600
+        x: 0
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,7 +454,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b14012af48d5a8b458584fc638e81437
+      spriteID: cbbde662c112c554e91c878e13941e2b
       internalID: 1857078479909457929
       vertices: []
       indices: 
@@ -464,10 +464,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_9
       rect:
         serializedVersion: 2
-        x: 5400
-        y: 3496
-        width: 600
-        height: 600
+        x: 500
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,7 +475,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5f3276f20f641945a51503e4e52389d
+      spriteID: c31580e3c85c5ab4d89d79a3845fe339
       internalID: -8238445784173316843
       vertices: []
       indices: 
@@ -485,10 +485,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_10
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 3496
-        width: 600
-        height: 600
+        x: 1000
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,7 +496,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f3d91bbb4436f04c8c2716dad1a0a0e
+      spriteID: f2e303e8e2cff1845b6d4adedff3ac75
       internalID: 4333556822830838621
       vertices: []
       indices: 
@@ -506,10 +506,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_11
       rect:
         serializedVersion: 2
-        x: 6600
-        y: 3496
-        width: 600
-        height: 600
+        x: 1500
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,7 +517,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8922588baf6de70408d1d26e4e659ce7
+      spriteID: a71c94a4fc7cba14ea1fae64e16140bb
       internalID: 8973898976906218866
       vertices: []
       indices: 
@@ -527,10 +527,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_12
       rect:
         serializedVersion: 2
-        x: 7200
-        y: 3496
-        width: 600
-        height: 600
+        x: 2000
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,7 +538,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f836b3b4e1a485946a78f09ef4be5bf1
+      spriteID: 06bb4730d47254b4e98af9e49bdcb06b
       internalID: -4028597569211551087
       vertices: []
       indices: 
@@ -548,10 +548,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2896
-        width: 600
-        height: 600
+        x: 2500
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,7 +559,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d815da7d7d5942a4cab9a1542130e3e7
+      spriteID: 03e32b2148387c740b6e50729f256b67
       internalID: 7539370269627189607
       vertices: []
       indices: 
@@ -569,10 +569,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_14
       rect:
         serializedVersion: 2
-        x: 600
-        y: 2896
-        width: 600
-        height: 600
+        x: 3000
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,7 +580,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea7697fdad65f8f4f9c4fcc2fa29d90f
+      spriteID: c46d7a74b92f779499dc5805ce8f3c32
       internalID: -4749061205886866911
       vertices: []
       indices: 
@@ -590,10 +590,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_15
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 2896
-        width: 600
-        height: 600
+        x: 3500
+        y: 3000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,7 +601,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6090172dd66328e42b16cd2b17957c0b
+      spriteID: b600e84204d1adb42b8465aa933d5015
       internalID: 3688530456444995385
       vertices: []
       indices: 
@@ -611,10 +611,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_16
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 2896
-        width: 600
-        height: 600
+        x: 0
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,7 +622,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3f4a23d2ac25f149b5b564b2dcdcc1f
+      spriteID: 580f20700a42a384ab0a92e8a7257dd3
       internalID: -3631091052316753933
       vertices: []
       indices: 
@@ -632,10 +632,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_17
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 2896
-        width: 600
-        height: 600
+        x: 500
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,7 +643,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fa07ffcdc1c274db972b0c46864a3d
+      spriteID: 60f4b2b022118b64e9ba294661f1fbaa
       internalID: 2552970781734128668
       vertices: []
       indices: 
@@ -653,10 +653,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_18
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 2896
-        width: 600
-        height: 600
+        x: 1000
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,7 +664,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1cba2b7e3e029d4c945f7604f16e809
+      spriteID: 9c002c1151aa174478adc1d7592496e8
       internalID: 8546893137321518963
       vertices: []
       indices: 
@@ -674,10 +674,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_19
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 2896
-        width: 600
-        height: 600
+        x: 1500
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -685,7 +685,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c3f1d189ef8a5b4bb935e628bd1f99b
+      spriteID: 717f95f6bd0ac2044b764d92690ebac3
       internalID: -1064866668076774595
       vertices: []
       indices: 
@@ -695,10 +695,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_20
       rect:
         serializedVersion: 2
-        x: 4200
-        y: 2896
-        width: 600
-        height: 600
+        x: 2000
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -706,7 +706,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 241d915f2ae073a469c3fa7c9de0ab8d
+      spriteID: 02b139101440d5642a6ab14022f990d7
       internalID: 8871459569109118858
       vertices: []
       indices: 
@@ -716,10 +716,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_21
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 2896
-        width: 600
-        height: 600
+        x: 2500
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -727,7 +727,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3046c3c5d89bb0419199833bd313504
+      spriteID: 341b4bdf9b1f23b4f8fdc1edfca00ae4
       internalID: 2988569412983365455
       vertices: []
       indices: 
@@ -737,10 +737,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_22
       rect:
         serializedVersion: 2
-        x: 5400
-        y: 2896
-        width: 600
-        height: 600
+        x: 3000
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,7 +748,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a7352f893dcb8d47809c2595fcbe1dc
+      spriteID: df856d8e1b570dd46a19fc94c8f50c48
       internalID: 5213126426652516034
       vertices: []
       indices: 
@@ -758,10 +758,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_23
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 2896
-        width: 600
-        height: 600
+        x: 3500
+        y: 2500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -769,7 +769,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 154db31748daead4cbb83d7ef963ff38
+      spriteID: 4215711ea3caf5348b4f11070544839d
       internalID: -2116991839916551154
       vertices: []
       indices: 
@@ -779,10 +779,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_24
       rect:
         serializedVersion: 2
-        x: 6600
-        y: 2896
-        width: 600
-        height: 600
+        x: 0
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -790,7 +790,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9690821ad73c7f4ca26414b65f288b7
+      spriteID: 9602c5bf2e78cba4383cfc029525eeec
       internalID: -5135354363570853542
       vertices: []
       indices: 
@@ -800,10 +800,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_25
       rect:
         serializedVersion: 2
-        x: 7200
-        y: 2896
-        width: 600
-        height: 600
+        x: 500
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -811,7 +811,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f7913c16e7af0c4187ff78faf38ec8f
+      spriteID: 7343b78eddcbb724790d129442ed1d28
       internalID: 2097099391904658135
       vertices: []
       indices: 
@@ -821,10 +821,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_26
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2296
-        width: 600
-        height: 600
+        x: 1000
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -832,7 +832,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc004abfb79f69147ad2a707d4dd8ab2
+      spriteID: 5d4ea8972690e7d4eb2009c03a6dfbd6
       internalID: 7258308640034045710
       vertices: []
       indices: 
@@ -842,10 +842,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_27
       rect:
         serializedVersion: 2
-        x: 600
-        y: 2296
-        width: 600
-        height: 600
+        x: 1500
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -853,7 +853,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c9618e6d3a9aab43a56c8af8061a15f
+      spriteID: 6e989747573dff44c92d21edc7bdff59
       internalID: -7900160676835203218
       vertices: []
       indices: 
@@ -863,10 +863,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_28
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 2296
-        width: 600
-        height: 600
+        x: 2000
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -874,7 +874,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b27f5f1cea6838547a2788ec93f7b6ae
+      spriteID: 171f70da027d4174abbd1a4f2953040f
       internalID: -6931448514656134454
       vertices: []
       indices: 
@@ -884,10 +884,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_29
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 2296
-        width: 600
-        height: 600
+        x: 2500
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -895,7 +895,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5be72d2abf15e684b95361b38a7f6fcb
+      spriteID: 820be8ce97d4d004799a1033d8191742
       internalID: 1590610422582049237
       vertices: []
       indices: 
@@ -905,10 +905,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_30
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 2296
-        width: 600
-        height: 600
+        x: 3000
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -916,7 +916,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79928e457b7e64949b28a6e3d9faa1c2
+      spriteID: b43999abf53191c488318cad37e1934c
       internalID: -2595585272318867381
       vertices: []
       indices: 
@@ -926,10 +926,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_31
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 2296
-        width: 600
-        height: 600
+        x: 3500
+        y: 2000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -937,7 +937,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9010fa2c306ad742a70f257a9da1d9f
+      spriteID: 6372591d52ddb6d498757eb3c812c415
       internalID: 2439329054700985293
       vertices: []
       indices: 
@@ -947,10 +947,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_32
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 2296
-        width: 600
-        height: 600
+        x: 0
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -958,7 +958,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6afa5b681e8e9c409ec489e5855a54a
+      spriteID: bf2da7ebd0395f146a0846816d226f04
       internalID: -3862200433281032235
       vertices: []
       indices: 
@@ -968,10 +968,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_33
       rect:
         serializedVersion: 2
-        x: 4200
-        y: 2296
-        width: 600
-        height: 600
+        x: 500
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -979,7 +979,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cb4ec82bde361e4985848d58862070a
+      spriteID: ad8ed7124f1256e4e9babadc4ad467e2
       internalID: 4839063453290555238
       vertices: []
       indices: 
@@ -989,10 +989,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_34
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 2296
-        width: 600
-        height: 600
+        x: 1000
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1000,7 +1000,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc1a3519cb02c214d95d0f80e0e420de
+      spriteID: cdb539e80d8381f4d9378ebc4c54c980
       internalID: -8491986007079188553
       vertices: []
       indices: 
@@ -1010,10 +1010,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_35
       rect:
         serializedVersion: 2
-        x: 5400
-        y: 2296
-        width: 600
-        height: 600
+        x: 1500
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1021,7 +1021,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97505e3850bdb5b4bbf4b93141ef52cd
+      spriteID: 22672f5322705044a9635ec8d7fb40f9
       internalID: 6754121308582356797
       vertices: []
       indices: 
@@ -1031,10 +1031,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_36
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 2296
-        width: 600
-        height: 600
+        x: 2000
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1042,7 +1042,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e5495b0b87d2e949a01cc6b818de24f
+      spriteID: 2266c5c305978974e8b1752dfb0367c9
       internalID: -4714888844960060101
       vertices: []
       indices: 
@@ -1052,10 +1052,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_37
       rect:
         serializedVersion: 2
-        x: 6600
-        y: 2296
-        width: 600
-        height: 600
+        x: 2500
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1063,7 +1063,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 365a54ee9bb0ac649b5eb2490333126a
+      spriteID: 7b87a88a4ee3c664bbe151263d026a4a
       internalID: -5120581174528026952
       vertices: []
       indices: 
@@ -1073,10 +1073,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_38
       rect:
         serializedVersion: 2
-        x: 7200
-        y: 2296
-        width: 600
-        height: 600
+        x: 3000
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1084,7 +1084,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f6137874acadbe4fb7a2678278bbcdd
+      spriteID: 59eac05507274a04cbe356c9abe40fd4
       internalID: -5246012428987429951
       vertices: []
       indices: 
@@ -1094,10 +1094,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_39
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1696
-        width: 600
-        height: 600
+        x: 3500
+        y: 1500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1105,7 +1105,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee09fefeb79b7dc43a1d8ec18ccc7c7a
+      spriteID: 66160f8cf6da4c145a06dfb8d858f074
       internalID: 3842678650032548452
       vertices: []
       indices: 
@@ -1115,10 +1115,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_40
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1696
-        width: 600
-        height: 600
+        x: 0
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1126,7 +1126,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6366908f27c5052439c97b1dd20517d8
+      spriteID: 0e71bf0ceeffe414dad146418b58a1cb
       internalID: 4701987246872638737
       vertices: []
       indices: 
@@ -1136,10 +1136,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_41
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1696
-        width: 600
-        height: 600
+        x: 500
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1147,7 +1147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 222a072f586c1f84f8b1879175a324a3
+      spriteID: fbb61cdd5c5a41b4997fbb88f2df8f97
       internalID: -3826503905662491454
       vertices: []
       indices: 
@@ -1157,10 +1157,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_42
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1696
-        width: 600
-        height: 600
+        x: 1000
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1168,7 +1168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89c418313c7690f41a99b26c3d5cb8ee
+      spriteID: 8a9f5a92aba8e8a4ea8f13f054f89688
       internalID: 6695899632196214871
       vertices: []
       indices: 
@@ -1178,10 +1178,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_43
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1696
-        width: 600
-        height: 600
+        x: 1500
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1189,7 +1189,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06f8e0c6892b453499969ed1a1899c6a
+      spriteID: d94173b8e1544c4419703bdb77e6deaa
       internalID: 4069302881434144924
       vertices: []
       indices: 
@@ -1199,10 +1199,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_44
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 1696
-        width: 600
-        height: 600
+        x: 2000
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1210,7 +1210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3479487808725cb40b4a0dd21690da13
+      spriteID: a74c1244f8634d143b9990304f0890d9
       internalID: 247489069031520429
       vertices: []
       indices: 
@@ -1220,10 +1220,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_45
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 1696
-        width: 600
-        height: 600
+        x: 2500
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1231,7 +1231,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8068fd592c2ff9b47bffb5d79f3affe1
+      spriteID: 9fcd6b50c77309e4091a7a5de77a8533
       internalID: 1984090868303297214
       vertices: []
       indices: 
@@ -1241,10 +1241,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_46
       rect:
         serializedVersion: 2
-        x: 4200
-        y: 1696
-        width: 600
-        height: 600
+        x: 3000
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1252,7 +1252,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23396acadf70ac7438d43e6d1fb427f6
+      spriteID: 01feffbdd0fd89d469b3dcc2dc6f46d7
       internalID: -2495832226729541609
       vertices: []
       indices: 
@@ -1262,10 +1262,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_47
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 1696
-        width: 600
-        height: 600
+        x: 3500
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1273,7 +1273,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c7acb7ec2191e945bf409ca5104d482
+      spriteID: c074c0b108dac2b41bd17923ec72fbc5
       internalID: 5145913991969071458
       vertices: []
       indices: 
@@ -1283,10 +1283,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_48
       rect:
         serializedVersion: 2
-        x: 5400
-        y: 1696
-        width: 600
-        height: 600
+        x: 0
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1294,7 +1294,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 938f9a9bb69e992479e011fe2b9da87e
+      spriteID: ff6661660f59dd34f929060d42385018
       internalID: -8006944521522043333
       vertices: []
       indices: 
@@ -1304,10 +1304,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_49
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 1696
-        width: 600
-        height: 600
+        x: 500
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1315,7 +1315,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0ce1b3d5577fcf4ab1d07c387152ab2
+      spriteID: 4b1cd0c6c160e954c9b1f318c10b3ff5
       internalID: 195999742042478500
       vertices: []
       indices: 
@@ -1325,10 +1325,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_50
       rect:
         serializedVersion: 2
-        x: 6600
-        y: 1696
-        width: 600
-        height: 600
+        x: 1000
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1336,7 +1336,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bedd2c62a0c46b542bb9a77e23e436b8
+      spriteID: 204754a6d1648cc4ea432bacba819aee
       internalID: 5057416220355362903
       vertices: []
       indices: 
@@ -1346,10 +1346,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_51
       rect:
         serializedVersion: 2
-        x: 7200
-        y: 1696
-        width: 600
-        height: 600
+        x: 1500
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1357,7 +1357,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d76fd27622122a0489f4f1966acb5adc
+      spriteID: 39143c557f474b448aea25ff67df0271
       internalID: -2832583844886980600
       vertices: []
       indices: 
@@ -1367,10 +1367,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_52
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1096
-        width: 600
-        height: 600
+        x: 2000
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1378,7 +1378,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3a3987646f314f41ac178c9a9c00961
+      spriteID: 2bcdf41af5705a44faebba48bbc45084
       internalID: 9087698714386686892
       vertices: []
       indices: 
@@ -1388,10 +1388,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_53
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1096
-        width: 600
-        height: 600
+        x: 2500
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1399,7 +1399,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 093ef36a3b6439b44b7e1363021c8f5d
+      spriteID: c1b22ca99c1fbeb49a6be57064b6794a
       internalID: 766144411949706853
       vertices: []
       indices: 
@@ -1409,10 +1409,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_54
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1096
-        width: 600
-        height: 600
+        x: 3000
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1420,7 +1420,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cf1428896ee709468f991094093e5b6
+      spriteID: 81300649f2edce046ab10c4746b3b2cd
       internalID: 7877543214266533279
       vertices: []
       indices: 
@@ -1430,10 +1430,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_55
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1096
-        width: 600
-        height: 600
+        x: 3500
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1441,7 +1441,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82226fed511caf34f80d7c72366e046a
+      spriteID: e2125fa18f311db40ba3cdd31bd41374
       internalID: -4707266108858394808
       vertices: []
       indices: 
@@ -1451,10 +1451,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_56
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1096
-        width: 600
-        height: 600
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1462,7 +1462,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0170fb88fb9e2d4781189a70f56add4
+      spriteID: 094433e9abe59cc40ba7b21999311ff6
       internalID: 5617436534059509547
       vertices: []
       indices: 
@@ -1472,10 +1472,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_57
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 1096
-        width: 600
-        height: 600
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1483,7 +1483,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75d786182c952654bb135761003def39
+      spriteID: 753fcfd51d3f78743a6fb33fdf65b620
       internalID: 2019300605700961844
       vertices: []
       indices: 
@@ -1493,10 +1493,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_58
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 1096
-        width: 600
-        height: 600
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1504,7 +1504,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72fd0009b01c14340879bde3c645f168
+      spriteID: 4bd6327ad7ba3b543aa4661c756b49ba
       internalID: -5324114490919906437
       vertices: []
       indices: 
@@ -1514,10 +1514,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_59
       rect:
         serializedVersion: 2
-        x: 4200
-        y: 1096
-        width: 600
-        height: 600
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1525,7 +1525,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 197454ba2d6a50941ae84bd80b643888
+      spriteID: 906c78c0be7ac884fb6ed464ab8e56ac
       internalID: -2421739590295436742
       vertices: []
       indices: 
@@ -1535,10 +1535,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_60
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 1096
-        width: 600
-        height: 600
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1546,7 +1546,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74b13f981a9cd1546bf39bb0ba879ddd
+      spriteID: cb594438c8e8cd649814521b2183ddbe
       internalID: 4131560043640586020
       vertices: []
       indices: 
@@ -1556,10 +1556,10 @@ TextureImporter:
       name: DERROTA01-Sheet-export_61
       rect:
         serializedVersion: 2
-        x: 5400
-        y: 1096
-        width: 600
-        height: 600
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1567,7 +1567,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 880c6e6a2fb06954d80cae078360682b
+      spriteID: 3bad5c7ef17ac584a84c5f6cb0acf11f
       internalID: -947522749171083907
       vertices: []
       indices: 

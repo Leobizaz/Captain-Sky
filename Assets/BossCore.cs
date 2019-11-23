@@ -18,13 +18,19 @@ public class BossCore : MonoBehaviour
     public BossGun gun3;
     public BossGun gun4;
 
+    public GameObject eye;
+    public GameObject target;
+    bool aiming;
+
     public GameObject laserbeam;
+    public ParticleSystem laserBall;
     public GameObject charging;
 
     DoCameraShake cameraShake;
     Coroutine fireLaser;
 
     bool once;
+    bool gunsDestroyed;
     bool onceGuns;
 
     public BossWeakpoint olhoPrincipal;
@@ -39,6 +45,17 @@ public class BossCore : MonoBehaviour
     private void Update()
     {
         bossDolly.m_Position = playerDolly.m_Position + 200f;
+
+        if (aiming)
+        {
+            eye.transform.LookAt(target.transform.position);
+        }
+
+        if(gun1.destroyed && gun2.destroyed && gun3.destroyed && gun4.destroyed && !gunsDestroyed)
+        {
+            gunsDestroyed = true;
+            LaserPhase();
+        }
 
 
 
@@ -74,19 +91,24 @@ public class BossCore : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(2);
             if (once)
             {
                 yield break;
             }
             eyelidsAnimator.Play("EyelidOpen");
             charging.SetActive(true);
+            aiming = true;
             olhoPrincipal.vulnerable = true;
+
             yield return new WaitForSeconds(5);
             if (once)
             {
                 yield break;
             }
+            aiming = false;
+            yield return new WaitForSeconds(1);
+            laserBall.Play();
             charging.SetActive(false);
             cameraShake.ShakeAmplitude = 5;
             cameraShake.shakeElapsedTime = 4f;
@@ -110,6 +132,7 @@ public class BossCore : MonoBehaviour
 
     public void CancelLaser()
     {
+        gunsAnimator.Play("LaserDestroyed");
         eyelidsAnimator.Play("EyelidClose");
         StopCoroutine(fireLaser);
     }

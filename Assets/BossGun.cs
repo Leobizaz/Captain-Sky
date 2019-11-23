@@ -9,13 +9,14 @@ public class BossGun : MonoBehaviour
     public bool vulnerable;
     public bool destroyed;
     public ParticleSystem particleFX;
-    Animator anim;
+    public Animator anim;
     bool cooldown;
+    DoCameraShake cameraShake;
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
         health = maxHealth;
+        cameraShake = GameObject.Find("Game Manager").GetComponent<DoCameraShake>();
     }
 
     private void Update()
@@ -38,7 +39,10 @@ public class BossGun : MonoBehaviour
 
     public void Death()
     {
+        cameraShake.ShakeAmplitude = 1;
+        cameraShake.shakeElapsedTime = 1;
         anim.Play("GunIn");
+        anim.gameObject.SetActive(false);
         particleFX.Play();
         vulnerable = false;
         destroyed = true;
