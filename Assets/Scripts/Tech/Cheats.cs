@@ -43,5 +43,20 @@ public class Cheats : MonoBehaviour
             else
                 CHEAT_Invencivel = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.F7))
+        {
+
+            ControleSelect.W1 = true;
+            ControleSelect.W2 = true;
+            ControleSelect.W3 = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F8))
+        {
+
+            SceneManager.LoadScene("MainMenu");
+        }
+
     }
 }

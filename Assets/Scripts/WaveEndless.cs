@@ -118,41 +118,41 @@ public class WaveEndless : MonoBehaviour
             StartCoroutine(Wave3());
         }
 
-        if(WaveSystem.robosDestroyed == 7 && !once3)
+        if(WaveSystem.robosDestroyed == 6 && !once3)
         {
             once3 = true;
             StartCoroutine(Wave4());
         }
 
-        if(WaveSystem.robosDestroyed == 10 && !once4)
+        if(WaveSystem.robosDestroyed == 9 && !once4)
         {
             once4 = true;
             StartCoroutine(Wave5());
         }
 
-        if(WaveSystem.robosDestroyed == 16 && !once5)
+        if(WaveSystem.robosDestroyed == 11 && !once5)
         {
             once5 = true;
             StartCoroutine(Wave6());
         }
-        if(WaveSystem.robosDestroyed == 18 && !once6)
+        if(WaveSystem.robosDestroyed == 13 && !once6)
         {
             once6 = true;
             StartCoroutine(Wave7());
         }
 
-        if(WaveSystem.robosDestroyed == 23 && !once7)
+        if(WaveSystem.robosDestroyed == 17 && !once7)
         {
             once7 = true;
             StartCoroutine(Wave8());
         }
-        if(WaveSystem.robosDestroyed == 29 && !once8)
+        if(WaveSystem.robosDestroyed == 19 && !once8)
         {
             once8 = true;
             StartCoroutine(Wave9());
         }
 
-       if(WaveSystem.robosDestroyed == 32 && !once9)
+       if(WaveSystem.robosDestroyed == 22 && !once9)
         {
             once9 = true;
             StartCoroutine(Wave10());
@@ -207,7 +207,7 @@ public class WaveEndless : MonoBehaviour
 
     public IEnumerator WaveFinal()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(40);
         Instantiate(Robozão, spawnpoint1.transform.position, spawnpoint1.transform.rotation);
         yield return new WaitForSeconds(0.4f);
         Instantiate(Robozão, spawnpoint2.transform.position, spawnpoint2.transform.rotation);
@@ -254,8 +254,7 @@ public class WaveEndless : MonoBehaviour
         Instantiate(Robozão, spawnpoint2.transform.position, spawnpoint3.transform.rotation);
                 yield return new WaitForSeconds(2);
         Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
-                yield return new WaitForSeconds(2);
-        Instantiate(Robozão, spawnpoint4.transform.position, spawnpoint3.transform.rotation);
+
     }
 
             public IEnumerator Wave4()
@@ -273,14 +272,7 @@ public class WaveEndless : MonoBehaviour
         Instantiate(Robozão, spawnpoint2.transform.position, spawnpoint1.transform.rotation);
         yield return new WaitForSeconds(2);
         Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
-                yield return new WaitForSeconds(2);
-        Instantiate(Robozão, spawnpoint1.transform.position, spawnpoint3.transform.rotation);
-                yield return new WaitForSeconds(2);
-        Instantiate(Robozão, spawnpoint4.transform.position, spawnpoint3.transform.rotation);
-                        yield return new WaitForSeconds(4);
-        Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
-                yield return new WaitForSeconds(4);
-        Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
+
     }
                 public IEnumerator Wave6()
     {
@@ -299,9 +291,8 @@ public class WaveEndless : MonoBehaviour
                 yield return new WaitForSeconds(2);
         Instantiate(Robozão, spawnpoint2.transform.position, spawnpoint3.transform.rotation);
                 yield return new WaitForSeconds(2);
-        Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
-                        yield return new WaitForSeconds(4);
-        Instantiate(Robozão, spawnpoint4.transform.position, spawnpoint3.transform.rotation);
+        Instantiate(Robozão, spawnpoint4.transform.position, spawnpoint4.transform.rotation);
+
         
 
     }
@@ -311,14 +302,7 @@ public class WaveEndless : MonoBehaviour
         Instantiate(Robozão, spawnpoint1.transform.position, spawnpoint1.transform.rotation);
         yield return new WaitForSeconds(2);
         Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
-                yield return new WaitForSeconds(2);
-        Instantiate(Robozão, spawnpoint2.transform.position, spawnpoint3.transform.rotation);
-                yield return new WaitForSeconds(2);
-        Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
-                        yield return new WaitForSeconds(4);
-        Instantiate(Robozão, spawnpoint4.transform.position, spawnpoint3.transform.rotation);
-                yield return new WaitForSeconds(4);
-        Instantiate(Robozão, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
+
     }
                 public IEnumerator Wave9()
     {
