@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 43afd348ff2558246be5be2d24671da9, type: 3}
+  image: {fileID: 21300000, guid: 60912148cf7712b44b1f7afab536dd63, type: 3}
   texto: 'Charlie: Os geradores de energia? Pra que eles querem isso?'
   tempoqueleva: 3
   wilburne: 0
@@ -2680,7 +2680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: f2a080a2d0fd90247b50340eddf9bf4a, type: 3}
+  image: {fileID: 21300000, guid: 2c29b039275c93a4c904e46b0f6fc528, type: 3}
   texto: "Adam: Para produzirem mais rob\xF4s."
   tempoqueleva: 2
   wilburne: 0
@@ -3222,7 +3222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -205.99998}
+  m_AnchoredPosition: {x: 0, y: -206}
   m_SizeDelta: {x: -310.3, y: -798.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024072000
@@ -4343,7 +4343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: cdab3c63a4120e64081a56602b13916c, type: 3}
+  image: {fileID: 21300000, guid: 48e6e3a024d610641b3d804d42c2da6f, type: 3}
   texto: 'Marcus: Utilizaremos com cautela. Estamos indo.'
   tempoqueleva: 3
   wilburne: 0
@@ -4490,7 +4490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 43afd348ff2558246be5be2d24671da9, type: 3}
+  image: {fileID: 21300000, guid: 5f2fba7c3fc41e14b99b492a0ac92cfe, type: 3}
   texto: 'Charlie: Heheh, sempre quis brincar na neve'
   tempoqueleva: 2.9
   wilburne: 0
@@ -5641,7 +5641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 43afd348ff2558246be5be2d24671da9, type: 3}
+  image: {fileID: 21300000, guid: 10dec8a8c63931240b04351c3dce8b77, type: 3}
   texto: "Charlie: AGORA TEMOS CANH\xD5ES LASER?"
   tempoqueleva: 3
   wilburne: 0
@@ -6143,7 +6143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dff8ef35f2f9499bb7c907eef8902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 607d0684704b9394ea60cda4809e650f, type: 3}
+  image: {fileID: 21300000, guid: edbc6ac4c4dcf804bbaed0de638feea4, type: 3}
   texto: "Jack: Deixa eu adivinhar, n\xF3s temos que ir at\xE9 l\xE1?"
   tempoqueleva: 3
   wilburne: 0
