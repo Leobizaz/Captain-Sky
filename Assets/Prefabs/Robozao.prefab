@@ -6462,7 +6462,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7705938998348552431, guid: 784b58cdaadb98e4fb693dbeff1d96fd, type: 3}
+  - {fileID: 2100000, guid: b997647ae742cdd4fa3985939be52c2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7606,7 +7606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokeTrail: {fileID: 1192712542247270164}
   sparks: {fileID: 8062760842186704641}
-  meshAnim: {fileID: 8481044077519626805}
+  meshAnim: {fileID: 5153145325489550627}
 --- !u!114 &6047056003548583929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7619,6 +7619,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e93d5ed741aa6b45a72d0dd24e66aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bracoESQ_destroy: 0
+  bracoDIR_destroy: 0
+  cabessa_destroy: 0
+  "bra\xE7o1": {fileID: 0}
+  "bra\xE7o2": {fileID: 0}
+  "cabe\xE7a": {fileID: 0}
+  meshAnim: {fileID: 0}
+  explosion: {fileID: 0}
+  cooldown: 0
+  dead: 0
 --- !u!1 &5715677824612810833
 GameObject:
   m_ObjectHideFlags: 0
@@ -24481,11 +24491,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5.553043
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 52cae73f8ec33cf49a64d10f5ccb306e,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 124fc7cc9a6b71d4e9ce34e47903dee3, type: 2}
     - target: {fileID: 6477928156513277983, guid: 52cae73f8ec33cf49a64d10f5ccb306e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24556,6 +24561,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 52cae73f8ec33cf49a64d10f5ccb306e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 124fc7cc9a6b71d4e9ce34e47903dee3, type: 2}
     - target: {fileID: -6337588336784452582, guid: 52cae73f8ec33cf49a64d10f5ccb306e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

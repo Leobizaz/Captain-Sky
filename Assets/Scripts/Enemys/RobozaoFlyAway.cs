@@ -10,11 +10,17 @@ public class RobozaoFlyAway : MonoBehaviour
     public GameObject sparks;
     public Animator meshAnim;
 
+    void Start()
+    {
+       // Invoke("Esq", 2f);
+    }
+
     private void Update()
     {
         if (Prepare && !Begone)
         {
-            meshAnim.Play("E2_Flight");
+            meshAnim.SetInteger("State", 3);
+            meshAnim.Play("TPose_voar");
             sparks.SetActive(true);
         }
 
@@ -24,6 +30,24 @@ public class RobozaoFlyAway : MonoBehaviour
             sparks.SetActive(false);
             smokeTrail.SetActive(true);
             transform.DOLocalMoveY(1000, 50f);
+        }
+    }
+
+    public void Esq()
+    {
+        if (meshAnim.GetInteger("State") != 3)
+        {
+            meshAnim.SetInteger("State", 1);
+            Invoke("Dir", 4f);
+        }
+    }
+
+    public void Dir()
+    {
+        if (meshAnim.GetInteger("State") != 3)
+        {
+            meshAnim.SetInteger("State", 0);
+            Invoke("Esq", 4f);
         }
     }
 }
