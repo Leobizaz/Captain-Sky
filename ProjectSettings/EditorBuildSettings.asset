@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ato 2 - Aberto.unity
     guid: 61677ce3f5d477143a9b37466fd268d7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Ato 3 - Comes e bebes.unity
     guid: d2cdfd7f14f76f04d8c3e5e02a1351d9
   - enabled: 1
     path: Assets/Scenes/Loading1.unity
     guid: cf1894afbefe59b43a81e7049b5136f2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Arcade.unity
     guid: 1a62111881587514cb0141dcb9c32148
   m_configObjects: {}

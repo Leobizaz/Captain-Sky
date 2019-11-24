@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -259,6 +259,9 @@ MonoBehaviour:
   slider: {fileID: 2060898475}
   pular: {fileID: 256429893}
   carregando: {fileID: 413759411}
+  briefing: {fileID: 436772129}
+  Ato12: {fileID: 1335324192}
+  Ato23: {fileID: 2046307149}
   FillCircle: {fileID: 1552248692}
 --- !u!4 &57589864
 Transform:
@@ -1759,7 +1762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &436772130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4057,7 +4060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1335324193
 Transform:
   m_ObjectHideFlags: 0

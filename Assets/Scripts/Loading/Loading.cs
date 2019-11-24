@@ -15,6 +15,9 @@ public class Loading : MonoBehaviour
     public AsyncOperation operation;
     public GameObject pular;
     public GameObject carregando;
+    public GameObject briefing;
+    public GameObject Ato12;
+    public GameObject Ato23;
     private float speed = 0.7f;
     bool fill = false;
     public Image FillCircle;
@@ -24,6 +27,24 @@ public class Loading : MonoBehaviour
         ScoreSystem.playerdeaths = 0;
         LoadLevel(levelIndex);
         //controlIcon.SetActive(true);
+        if (levelIndex == 2 || levelIndex == 6)
+        {
+            briefing.SetActive(false);
+            Ato12.SetActive(false);
+            Ato23.SetActive(false);
+        }
+        if (levelIndex == 3)
+        {
+            briefing.SetActive(true);
+            Ato12.SetActive(true);
+            Ato23.SetActive(false);
+        }
+        if (levelIndex == 4)
+        {
+            briefing.SetActive(true);
+            Ato12.SetActive(false);
+            Ato23.SetActive(true);
+        }
     }
 
     public void LoadLevel(int sceneIndex)
