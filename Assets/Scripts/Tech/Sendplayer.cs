@@ -15,13 +15,13 @@ public class Sendplayer : MonoBehaviour
 
     private void Start()
     {
-        bossFightended = false;
+        bossFightended = true;
         Ato3.ato3_passagem = 2;
     }
 
     private void Update()
     {
-        if (!once2 && Ato3.ato3_passagem > 1)
+        if (!once2 && Ato3.ato3_passagem > 1 && !bossFightended)
         {
             once2 = true;
             boss.SetActive(true);

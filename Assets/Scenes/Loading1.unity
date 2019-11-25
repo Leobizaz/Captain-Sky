@@ -313,7 +313,7 @@ MonoBehaviour:
   wilburne: 0
   sameIMG: 0
   textSpeed: 1.5
-  delay: 5
+  delay: 3.4
 --- !u!4 &65394076
 Transform:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 12853632782ce23489400f276160ee83, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -543,7 +543,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -710,7 +710,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -838,7 +838,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -936,11 +936,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Precisamos que voc\xEAs v\xE3o at\xE9 l\xE1 para confirmar o caso."
-  tempoqueleva: 3.9
+  tempoqueleva: 3
   wilburne: 1
   sameIMG: 1
   textSpeed: 1
-  delay: 4
+  delay: 3
 --- !u!1 &256429893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   wilburne: 0
   sameIMG: 0
   textSpeed: 1.5
-  delay: 4
+  delay: 3.4
 --- !u!4 &296206902
 Transform:
   m_ObjectHideFlags: 0
@@ -1183,7 +1183,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 55e7eb7935088f54bb85aae2b4be8a60, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1311,7 +1311,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1932,7 +1932,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2029,12 +2029,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
-  texto: "O laser provou ser bem efetivo contra a armadura dos rob\xF4s grandes."
+  texto: "O laser provou ser bem efetivo contra a armadura dos rob\xF4s gigantes."
   tempoqueleva: 5
   wilburne: 1
   sameIMG: 0
   textSpeed: 3
-  delay: 8
+  delay: 5.2
 --- !u!1 &516307846
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,7 +2499,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 83fa35d22573c794ba09ce606048b9b8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2613,7 +2613,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1e9bee20c6c17774eac9f53e60c04aba, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2830,7 +2830,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 943b51e1e86fedc44a1a607d6308d27f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3109,7 +3109,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a98af92f20696764499f78aa21ffaa74, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3411,7 +3411,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3562,9 +3562,9 @@ MonoBehaviour:
   texto: "Em um vale pr\xF3ximo daqui estamos montando uma armadilha para eles."
   tempoqueleva: 4
   wilburne: 1
-  sameIMG: 0
+  sameIMG: 1
   textSpeed: 2
-  delay: 6
+  delay: 4.6
 --- !u!4 &1248180364
 Transform:
   m_ObjectHideFlags: 0
@@ -3591,7 +3591,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3719,7 +3719,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3818,11 +3818,11 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Os avi\xF5es de voc\xEAs foram equipados com tecnologia h\xEDbrida, podendo
     ser pilotado embaixo da \xE1gua."
-  tempoqueleva: 6
+  tempoqueleva: 4
   wilburne: 1
   sameIMG: 1
   textSpeed: 2
-  delay: 8
+  delay: 4
 --- !u!1 &1312137640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,7 +3853,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4060,7 +4060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1335324193
 Transform:
   m_ObjectHideFlags: 0
@@ -4198,7 +4198,7 @@ MonoBehaviour:
   wilburne: 1
   sameIMG: 0
   textSpeed: 2
-  delay: 4
+  delay: 3.4
 --- !u!4 &1385346900
 Transform:
   m_ObjectHideFlags: 0
@@ -4225,7 +4225,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4436,7 +4436,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1b6aa62d9f5bb5845a09203816479d1f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4538,7 +4538,7 @@ MonoBehaviour:
   wilburne: 0
   sameIMG: 0
   textSpeed: 1
-  delay: 4
+  delay: 3
 --- !u!1 &1461195549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,7 +4583,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c769c5dec7ca1754192e88bdff96c0f7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4880,7 +4880,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 48a39d30d465962488029cf7254f6fe6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5137,7 +5137,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cbf4267d5656e0c488592f4255882fed, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5239,7 +5239,7 @@ MonoBehaviour:
   wilburne: 0
   sameIMG: 0
   textSpeed: 1
-  delay: 4
+  delay: 3
 --- !u!1 &1744951344
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,7 +5284,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 49438fc95a4613c4ebd3573cfa8428c4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5383,11 +5383,11 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Wilburne: Sim, n\xF3s acreditamos que em algum lugar nessas coordenadas
     \xE9 o local de origem dessas m\xE1quinas."
-  tempoqueleva: 7
+  tempoqueleva: 5.5
   wilburne: 1
   sameIMG: 1
   textSpeed: 2
-  delay: 10
+  delay: 5.5
 --- !u!1 &1753691088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,7 +5451,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 866de144b3cd3954289603b2992099bf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5734,7 +5734,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da295dd5abd197842b83a0d28df1e13b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6088,7 +6088,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a7a1646be44fdbd43b6cdeb86308ac16, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6186,12 +6186,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: b1106ad7b0bb2f648be39b7e3244615f, type: 3}
   texto: "Para ajudar voc\xEAs a combaterem as m\xE1quinas, Dex projetou uma esp\xE9cie
-    de laser similar ao dos rob\xF4s para o avi\xE3o de voc\xEAs."
+    de laser similar ao dos rob\xF4s para os avi\xF5es de voc\xEAs."
   tempoqueleva: 8
   wilburne: 1
   sameIMG: 0
   textSpeed: 5
-  delay: 12
+  delay: 8.4
 --- !u!1 &2100092271
 GameObject:
   m_ObjectHideFlags: 0
@@ -6236,7 +6236,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 817a059875e8c414e8ffeb31d39ef5af, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6419,7 +6419,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b3d7976205d2be041a929c73795ae419, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6521,7 +6521,7 @@ MonoBehaviour:
   wilburne: 1
   sameIMG: 0
   textSpeed: 1.5
-  delay: 4
+  delay: 2
 --- !u!1 &2138561273
 GameObject:
   m_ObjectHideFlags: 0

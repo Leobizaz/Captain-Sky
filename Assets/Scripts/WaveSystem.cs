@@ -198,6 +198,7 @@ public class WaveSystem : MonoBehaviour
         dialogoCabo.PlayDialogo();
         yield return new WaitForSeconds(18f);
         victoryScreen.SetActive(true);
+        GameObject.Find("Music").GetComponent<MusicController>().FadeOut();
     }
 
     public IEnumerator WaveFinal()
