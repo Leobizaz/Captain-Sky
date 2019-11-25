@@ -173,10 +173,8 @@ public class PlayerMovement : MonoBehaviour
 
             MovimentoLocal(x, y, horizontalSpeed);
             
-            if (!firstPerson)
-            RotationLook(x, y);
-            else
-            RotationLookFPS(x2, y2);
+            
+            //RotationLook(x, y);
 
             //Inclinada(modelo.transform, x, 25, Time.deltaTime * 3f);
             //InclinadaPraCima(modelo.transform, y, 25, Time.deltaTime * 2f);
