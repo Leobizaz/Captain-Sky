@@ -31,7 +31,7 @@ public class Mina : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if((other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") && !once2)
+        if((other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy" || other.gameObject.tag == "PlayerLaser") && !once2)
         {
             once2 = true;
             Explode();

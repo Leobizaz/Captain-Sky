@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class BossWeakpoint : MonoBehaviour
 {
+    public GameObject bossbody;
     public float maxHealth;
     public float health;
     public bool vulnerable;
     public bool destroyed;
     public ParticleSystem particleFX;
     bool cooldown;
+    bool hitcooldown;
 
     public BossCore bossCore;
 
@@ -39,6 +41,7 @@ public class BossWeakpoint : MonoBehaviour
 
     public void Death()
     {
+        Sendplayer.bossFightended = true;
         particleFX.Play();
         vulnerable = false;
         destroyed = true;
@@ -47,8 +50,14 @@ public class BossWeakpoint : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.tag == "Shoot" && vulnerable)
+        if (other.tag == "Shoot" && vulnerable && !destroyed)
         {
+            if (!hitcooldown)
+            {
+                hitcooldown = true;
+                bossbody.transform.DOShakePosition(0.3f, 2);
+                Invoke("ResetHitCooldown", 0.3f);
+            }
             health = health - 10f;
         }
     }
@@ -60,6 +69,11 @@ public class BossWeakpoint : MonoBehaviour
             // Debug.Log("Cuu");
             LaserHit();
         }
+    }
+
+    public void ResetHitCooldown()
+    {
+        hitcooldown = false;
     }
 
     public void LaserHit()

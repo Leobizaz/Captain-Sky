@@ -166,6 +166,7 @@ public class InimigoRaia : MonoBehaviour
 
     void Death()
     {
+        gameObject.tag = "Untagged";
         died = true;
         Instantiate(explosionFX, model.transform.position, model.transform.localRotation);
         audio.pitch = Random.Range(0.8f, 1.2f);
@@ -175,7 +176,7 @@ public class InimigoRaia : MonoBehaviour
         laserbeamFX.SetActive(false);
         chargingFX.SetActive(false);
         olho.SetActive(false);
-        transform.DOMoveY(50, 3);
+        transform.DOMoveY(-50, 6);
         Invoke("Despawn", 3f);
     }
 

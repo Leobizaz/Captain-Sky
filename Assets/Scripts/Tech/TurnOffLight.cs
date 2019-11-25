@@ -8,6 +8,7 @@ public class TurnOffLight : MonoBehaviour
     public bool turnoff;
     bool once;
     Color oldcolor;
+    public Color color;
     void Start()
     {
         oldcolor = RenderSettings.fogColor;
@@ -38,7 +39,7 @@ public class TurnOffLight : MonoBehaviour
         {
             //RenderSettings.fog = false;
             RenderSettings.fog = true;
-            RenderSettings.fogColor = oldcolor;
+            RenderSettings.fogColor = color;
             RenderSettings.fogStartDistance = 1000;
             RenderSettings.fogEndDistance = 2800;
             //RenderSettings.fog = true;

@@ -21,13 +21,14 @@ public class BossCore : MonoBehaviour
     public GameObject eye;
     public GameObject target;
     bool aiming;
-
+    bool dead;
     public GameObject laserbeam;
     public ParticleSystem laserBall;
     public GameObject charging;
 
     DoCameraShake cameraShake;
     Coroutine fireLaser;
+    AudioSource audio;
 
     bool once;
     bool gunsDestroyed;
@@ -38,13 +39,17 @@ public class BossCore : MonoBehaviour
 
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
+        bossAnimator = GetComponent<Animator>();
         cameraShake = GameObject.Find("Game Manager").GetComponent<DoCameraShake>();
         Invoke("GunsPhase", 12f);
+        GameObject.Find("Music").GetComponent<MusicController>().ChangeMusic(5, 5);
     }
 
     private void Update()
     {
-        bossDolly.m_Position = playerDolly.m_Position + 200f;
+        if(!dead)
+            bossDolly.m_Position = playerDolly.m_Position + 200f;
 
         if (aiming)
         {
@@ -62,7 +67,7 @@ public class BossCore : MonoBehaviour
         if(olhoPrincipal.destroyed && !once)
         {
             once = true;
-            CancelLaser();
+            Death();
         }
     }
 
@@ -130,12 +135,26 @@ public class BossCore : MonoBehaviour
         }
     }
 
-    public void CancelLaser()
+    public void Death()
     {
+        charging.SetActive(false);
+        laserbeam.SetActive(false);
+        bossAnimator.Play("Death");
+        GameObject.Find("Music").GetComponent<MusicController>().ChangeMusic(1, 5);
         gunsAnimator.Play("LaserDestroyed");
         eyelidsAnimator.Play("EyelidClose");
         StopCoroutine(fireLaser);
     }
+
+    public void HitGround()
+    {
+        audio.Play();
+        cameraShake.ShakeAmplitude = 5;
+        cameraShake.shakeElapsedTime = 2;
+        dead = true;
+    }
+
+
 
 
 }

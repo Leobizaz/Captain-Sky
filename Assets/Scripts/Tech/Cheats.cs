@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class Cheats : MonoBehaviour
 {
     public static bool CHEAT_Invencivel;
+    public static bool CHEAT_BaseIndestrutivel;
     bool onoff;
-
+    bool onoff2;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
@@ -43,8 +44,16 @@ public class Cheats : MonoBehaviour
             else
                 CHEAT_Invencivel = false;
         }
-
         if (Input.GetKeyDown(KeyCode.F7))
+        {
+            onoff2 = !onoff2;
+            if (onoff2)
+                CHEAT_BaseIndestrutivel = true;
+            else
+                CHEAT_BaseIndestrutivel = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F8))
         {
 
             ControleSelect.W1 = true;
@@ -52,7 +61,7 @@ public class Cheats : MonoBehaviour
             ControleSelect.W3 = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.F8))
+        if (Input.GetKeyDown(KeyCode.F9))
         {
 
             SceneManager.LoadScene("MainMenu");

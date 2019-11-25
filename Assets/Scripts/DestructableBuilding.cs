@@ -47,15 +47,12 @@ public class DestructableBuilding : MonoBehaviour
             destroyedMesh.SetActive(true);
             mapIndicator.SetActive(false);
         }
-
-
-
     }
-
 
     public void GetHit()
     {
-        health = health - 20;
+        if(!Cheats.CHEAT_BaseIndestrutivel)
+            health = health - 20;
     }
 
 

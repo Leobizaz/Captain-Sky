@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BossGun : MonoBehaviour
 {
@@ -10,23 +11,29 @@ public class BossGun : MonoBehaviour
     public bool destroyed;
     public ParticleSystem particleFX;
     public Animator anim;
+    bool shoot;
     bool cooldown;
+    public GameObject bossMesh;
     DoCameraShake cameraShake;
+    public ParticleSystem gun;
 
     private void Start()
     {
         health = maxHealth;
         cameraShake = GameObject.Find("Game Manager").GetComponent<DoCameraShake>();
+        StartCoroutine(Shooter());
     }
 
     private void Update()
     {
         if (vulnerable)
         {
+            shoot = true;
             gameObject.tag = "Enemy";
         }
         else
         {
+            shoot = false;
             gameObject.tag = "Untagged";
         }
 
@@ -37,8 +44,21 @@ public class BossGun : MonoBehaviour
         }
     }
 
+    IEnumerator Shooter()
+    {
+        while (true)
+        {
+            if (shoot)
+            {
+                gun.Play();
+            }
+            yield return new WaitForSeconds(Random.Range(3,6));
+        }
+    }
+
     public void Death()
     {
+        //bossMesh.transform.DOShakePosition(1, 10, 10, 90);
         cameraShake.ShakeAmplitude = 1;
         cameraShake.shakeElapsedTime = 1;
         anim.Play("GunIn");

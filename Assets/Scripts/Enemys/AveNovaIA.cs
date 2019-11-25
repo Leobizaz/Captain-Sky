@@ -9,7 +9,6 @@ public class AveNovaIA : MonoBehaviour
     public ParticleSystem gun1;
     public ParticleSystem gun2;
     bool shootingg;
-
     [SerializeField] string currentStatus;
 
     Quaternion newRot;
@@ -41,6 +40,7 @@ public class AveNovaIA : MonoBehaviour
             }
             else
             {
+                
                 gameObject.tag = "Untagged";
                 //Wander();
             }

@@ -32,6 +32,14 @@ public class CaixaPorta : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "PlayerLaser")
+        {
+            Destroy();
+        }
+    }
+
     void Destroy()
     {
         this.gameObject.tag = "Untagged";

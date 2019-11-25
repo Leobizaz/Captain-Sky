@@ -25,7 +25,7 @@ public class CheckpointSystem : MonoBehaviour
         PlayerHealth.dead = false;
         PlayerMovement.ded = 1;
         PlayerOpenMovement.ded = 1;
-      STAGEPHASE = "PHASE1";
+      //STAGEPHASE = "PHASE4";
 
         if(STAGEPHASE == "PHASE0") //começo
         {

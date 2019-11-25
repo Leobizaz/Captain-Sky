@@ -43,6 +43,7 @@ public class Ato3 : MonoBehaviour
             if (aveCountAto3 < 20 && !spawning)
             {
                 StartCoroutine(Spawner());
+                spawning = true;
                 shouldSpawn = true;
             }
 
@@ -57,12 +58,12 @@ public class Ato3 : MonoBehaviour
 
     IEnumerator Spawner()
     {
-        yield return new WaitForSeconds(0.1f);
-        if (shouldSpawn)
+        while (true)
         {
-            spawning = true;
-            while (true)
+            yield return new WaitForSeconds(0.1f);
+            if (shouldSpawn)
             {
+                spawning = true;
                 GameObject randomSP = aves_SP1;
                 GameObject randomWM = waymaster_sp1;
                 int i = Random.Range(0, 3);
@@ -85,14 +86,16 @@ public class Ato3 : MonoBehaviour
                         randomWM = waymaster_sp4;
                         break;
                 }
-
-                GameObject instanced_Ave = Instantiate(ave_prefab, randomSP.transform.position, randomSP.transform.rotation);
+                if (shouldSpawn)
+                {
+                    GameObject instanced_Ave = Instantiate(ave_prefab, randomSP.transform.position, randomSP.transform.rotation);
+                    instanced_Ave.name = "AveIA";
+                }
                 aveCountAto3++;
                 yield return new WaitForSeconds(3);
-                }
             }
-            
             //instanced_Ave.GetComponent<AveIA>().wayfather = randomWM;
             yield return new WaitForSeconds(3);
+        }
     }
 }

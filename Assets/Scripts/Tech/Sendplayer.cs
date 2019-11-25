@@ -9,30 +9,41 @@ public class Sendplayer : MonoBehaviour
     public float storedPos;
     bool once;
     public CinemachineDollyCart playerDolly;
+    bool entrou;
     bool once2;
+
+    public DialogoSequence sequenciaBOSS;
 
     public GameObject boss;
 
     private void Start()
     {
-        bossFightended = true;
-        Ato3.ato3_passagem = 2;
+        bossFightended = false;
+        //Ato3.ato3_passagem = 2;
     }
 
     private void Update()
     {
-        if (!once2 && Ato3.ato3_passagem > 1 && !bossFightended)
+        if (!once2 && Ato3.ato3_passagem > 1 && !bossFightended && entrou)
         {
             once2 = true;
             boss.SetActive(true);
+            Invoke("PlaySequence", 3f);
         }
+    }
+
+    void PlaySequence()
+    {
+        sequenciaBOSS.PlayDialogo();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
         if(!once)
         if (other.CompareTag("GameController"))
         {
+            entrou = true;
             once = true;
             storedPos = other.GetComponent<CinemachineDollyCart>().m_Position;
         }

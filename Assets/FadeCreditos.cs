@@ -14,14 +14,26 @@ public class FadeCreditos : MonoBehaviour
     private float speed = 0.7f;
     bool fill = false;
     public GameObject textin;
+    public GameObject videoCanvas;
+    public GameObject mask;
+    Image imagem;
+    public GameObject hud;
+    public PlayerMovement player;
 
     private void Start()
     {
+        imagem = GetComponent<Image>();
         mainCamera = Camera.main;
+        Invoke("CreditsVideo", 9f);
     }
 
-    void CreditsVideo()
+    public void CreditsVideo()
     {
+        hud.SetActive(false);
+        player.playerActive = false;
+        imagem.enabled = false;
+        mask.SetActive(false);
+        videoCanvas.SetActive(true);
         GameObject.Find("Music").GetComponent<MusicController>().ChangeMusic(4, 3);
         textin.SetActive(true);
         videoPlayer.gameObject.SetActive(true);
