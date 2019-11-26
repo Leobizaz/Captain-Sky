@@ -65,82 +65,82 @@ public class Perfil : MonoBehaviour
             P3.SetActive(true);
         }
 
-        if (N1 >= 0 && N1 < 1000)
+        if (N1 >= 0 && N1 < 50000)
         {
             RankP1Menu = "F";
         }
 
-        if (N1 > 1000 && N1 < 3000)
+        if (N1 > 50000 && N1 < 100000)
         {
             RankP1Menu = "D";
         }
-        if (N1 > 3000 && N1 < 6000)
+        if (N1 > 100000 && N1 < 200000)
         {
             RankP1Menu = "C";
         }
-        if (N1 > 6000 && N1 < 10000)
+        if (N1 > 200000 && N1 < 300000)
         {
             RankP1Menu = "B";
         }
-        if (N1 > 10000 && N1 < 15000)
+        if (N1 > 300000 && N1 < 560000)
         {
             RankP1Menu = "A";
         }
-        if (N1 > 15000)
+        if (N1 > 560000)
         {
             RankP1Menu = "S";
         }
 
 
-        if (N2 >= 0 && N2 < 1000)
+        if (N2 >= 0 && N2 < 50000)
         {
             RankP2Menu = "F";
         }
 
-        if (N2 > 1000 && N2 < 3000)
+        if (N2 > 50000 && N2 < 100000)
         {
             RankP2Menu = "D";
         }
-        if (N2 > 3000 && N2 < 6000)
+        if (N2 > 100000 && N2 < 200000)
         {
             RankP2Menu = "C";
         }
-        if (N2 > 6000 && N2 < 10000)
+        if (N2 > 200000 && N2 < 300000)
         {
             RankP2Menu = "B";
         }
-        if (N2 > 10000 && N2 < 15000)
+        if (N2 > 300000 && N2 < 560000)
         {
             RankP2Menu = "A";
         }
-        if (N2 > 15000)
+        if (N2 > 560000)
         {
             RankP2Menu = "S";
         }
 
 
-        if (N3 >= 0 && N3 < 1000)
+        if (N3 >= 0 && N3 < 50000)
         {
             RankP3Menu = "F";
         }
 
-        if (N3 > 1000 && N3 < 3000)
+        if (N3 > 50000 && N3 < 100000)
         {
             RankP3Menu = "D";
         }
-        if (N3 > 3000 && N3 < 6000)
+        if (N3 > 100000 && N3 < 200000)
         {
             RankP3Menu = "C";
         }
-        if (N3 > 6000 && N3 < 10000)
+        if (N3 > 200000 && N3 < 300000)
         {
             RankP3Menu = "B";
         }
-        if (N3 > 10000 && N3 < 15000)
+        if (N3 > 300000 && N3 < 560000)
         {
             RankP3Menu = "A";
         }
-        if (N3 > 15000)
+        if (N3 > 560000)
         {
             RankP3Menu = "S";
         }
