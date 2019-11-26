@@ -23,12 +23,13 @@ public class RobozaoHealth : MonoBehaviour
     public bool dead;
     void Update()
     {
-        if(cabessa_destroy && !dead)
+        if (cabessa_destroy && !dead)
         {
             this.gameObject.tag = "Untagged";
             WaveSystem.robosDestroyed++;
             explosion.Play();
             dead = true;
+            meshAnim.Play("MORTO");
             ScoreSystem.enemysKill++;
             ScoreSystem.currentScore += 3000f;
             GameObject.Find("Game Manager").GetComponent<ScoreSystem>().UpdateScore();

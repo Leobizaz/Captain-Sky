@@ -93,7 +93,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if((collision.gameObject.tag == "Collision" || collision.gameObject.tag == "Torre") && hittable)
         {
-            GetHit(25);
+            GetHit(10);
         }
     }
 
