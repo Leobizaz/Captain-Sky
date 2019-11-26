@@ -11,7 +11,7 @@ public class Cheats : MonoBehaviour
     bool onoff2;
     void Update()
     {
-        
+        /*   
         if (Input.GetKeyDown(KeyCode.F1))
         {
             CheckpointSystem.STAGEPHASE = "PHASE0";
@@ -68,6 +68,7 @@ public class Cheats : MonoBehaviour
 
             SceneManager.LoadScene("MainMenu");
         }
+        */
         
     }
     
