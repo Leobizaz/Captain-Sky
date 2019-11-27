@@ -53,6 +53,14 @@ public class Loading : MonoBehaviour
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
+    void Update()
+    {
+        if ( levelIndex == 2)
+        {
+            operation.allowSceneActivation = true;
+        }
+    }
+
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
         yield return new WaitForSeconds(1);
@@ -75,6 +83,7 @@ public class Loading : MonoBehaviour
                 progressText.text = "Segure        /SPACE para continuar";
                 //controlIcon.SetActive(true);
                 //Wait to you press the space key to activate the Scene
+
                 if ((Input.GetButtonDown("Break") || Input.GetKeyDown(KeyCode.Space)) && !IsInvoking("SkipIntro") && FillCircle != null)
                 {
                     fill = true;

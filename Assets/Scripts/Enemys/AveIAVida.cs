@@ -17,11 +17,11 @@ public class AveIAVida : MonoBehaviour
     public AudioClip[] audios;
     public AudioClip explosionSFX;
     AudioSource audio;
-    Rigidbody rb;
+   // Rigidbody rb;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+      //  rb = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         fakeHealth = maxHealth;
@@ -47,7 +47,7 @@ public class AveIAVida : MonoBehaviour
         //smokeFX.SetActive(true);
 
         died = true;
-        rb.useGravity = true;
+      //  rb.useGravity = true;
         GetComponent<AveNovaIA>().enabled = false;
         model.transform.DOLocalRotate(new Vector3(360, 0, 0), 10f, RotateMode.LocalAxisAdd);
         Invoke("Despawn", 10f);
@@ -69,10 +69,10 @@ public class AveIAVida : MonoBehaviour
         //smokeFX.SetActive(true);
 
         died = true;
-        rb.useGravity = true;
+      //  rb.useGravity = true;
         GetComponent<AveNovaIA>().enabled = false;
         model.transform.DOLocalRotate(new Vector3(360, 0, 0), 10f, RotateMode.LocalAxisAdd);
-        Invoke("Despawn", 3f);
+        Invoke("Despawn", 1f);
     }
 
     private void OnParticleCollision(GameObject other)

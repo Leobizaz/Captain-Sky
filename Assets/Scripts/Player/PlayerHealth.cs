@@ -47,10 +47,6 @@ public class PlayerHealth : MonoBehaviour
             Death();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Death();
-        }
 
         //UpdateHPSlider();
     }

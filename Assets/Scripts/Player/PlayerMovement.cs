@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject firstPersonCamera;
     public Camera boundaryCamera;
     public CinemachineBrain cinemachineBrain;
+    public static bool on;
 
 
     AudioSource audioSource;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        on = true;
         playerActive = true;
         podeAtirar = true;
         mySequence = DOTween.Sequence();
@@ -75,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         if (!Pause.paused && !Pause.victory)
         {
             float x;

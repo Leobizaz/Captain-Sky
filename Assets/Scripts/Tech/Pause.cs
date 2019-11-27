@@ -40,6 +40,7 @@ public class Pause : MonoBehaviour
 
     public void Start()
     {
+        ToggleControleInvertido.isOn = controleInvertido;
         PlayerOpenMovement.ded = 1;
         PlayerMovement.ded = 1;
         DialogoSequence.isPlayingSequence = false;

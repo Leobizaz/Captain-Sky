@@ -10,6 +10,7 @@ public class SelectSkin : MonoBehaviour
     public GameObject Skin4;
     public static int SkinSelect;
     public GameObject Skin5;
+    public static bool tremOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,17 +25,22 @@ public class SelectSkin : MonoBehaviour
 
     public void Direita()
     {
-        if(Skin5.activeSelf == true)
+        if (tremOn)
         {
-            Skin5.SetActive(false);
-            Skin1.SetActive(true);
-            SkinSelect = 1;
+            if (Skin5.activeSelf == true)
+            {
+                Skin5.SetActive(false);
+                Skin1.SetActive(true);
+                SkinSelect = 1;
+            }
         }
-        else if(Skin1.activeSelf == true)
-        {
-            Skin2.SetActive(true);
-            Skin1.SetActive(false);
-            SkinSelect = 2;
+        else {
+            if (Skin1.activeSelf == true)
+            {
+                Skin2.SetActive(true);
+                Skin1.SetActive(false);
+                SkinSelect = 2;
+            }
         }
         else if (Skin2.activeSelf == true)
         {
@@ -48,29 +54,46 @@ public class SelectSkin : MonoBehaviour
             Skin3.SetActive(false);
             SkinSelect = 4;
         }
-        else if (Skin4.activeSelf == true)
+        if (tremOn)
         {
-            Skin5.SetActive(true);
-            Skin4.SetActive(false);
-            SkinSelect = 5;
+            if (Skin4.activeSelf == true)
+            {
+                Skin5.SetActive(true);
+                Skin4.SetActive(false);
+                SkinSelect = 5;
+            }
+        }
+        else {
+            if (Skin4.activeSelf == true)
+            {
+                Skin1.SetActive(true);
+                Skin4.SetActive(false);
+                SkinSelect = 1;
+            }
         }
     }
 
     public void Esquerda()
     {
-        if (Skin1.activeSelf == true)
+        if (tremOn)
         {
-            Skin5.SetActive(true);
-            Skin1.SetActive(false);
-            SkinSelect = 5;
+            if (Skin1.activeSelf == true)
+            {
+                Skin5.SetActive(true);
+                Skin1.SetActive(false);
+                SkinSelect = 5;
+            }
         }
-        else if (Skin5.activeSelf == true)
+        else
         {
-            Skin5.SetActive(false);
-            Skin4.SetActive(true);
-            SkinSelect = 4;
+            if (Skin1.activeSelf == true)
+            {
+                Skin4.SetActive(true);
+                Skin1.SetActive(false);
+                SkinSelect = 4;
+            }
         }
-        else if (Skin4.activeSelf == true)
+        if (Skin4.activeSelf == true)
         {
             Skin4.SetActive(false);
             Skin3.SetActive(true);
@@ -82,11 +105,13 @@ public class SelectSkin : MonoBehaviour
             Skin2.SetActive(true);
             SkinSelect = 2;
         }
+        
         else if (Skin2.activeSelf == true)
         {
             Skin2.SetActive(false);
             Skin1.SetActive(true);
             SkinSelect = 1;
         }
+        
     }
 }

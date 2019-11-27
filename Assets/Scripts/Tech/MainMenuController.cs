@@ -47,6 +47,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject botao_seleção;
     public GameObject botao_inicio;
     public Toggle toggle_inverterControles;
+    public static bool toggleTrue;
 
     public GameObject lastSelected;
 

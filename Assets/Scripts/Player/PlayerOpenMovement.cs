@@ -130,9 +130,9 @@ public class PlayerOpenMovement : MonoBehaviour
                     SetCameraZoom(15f, 5f);
 
 
-                    if (forwardSpeed <= 5f)
+                    if (forwardSpeed <= 20f)
                     {
-                        forwardSpeed = 5f;
+                        forwardSpeed = 20f;
                     }
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     Debug.Log("Céu");
@@ -182,7 +182,7 @@ public class PlayerOpenMovement : MonoBehaviour
 
             if ((y2 > 0 || Input.GetKey(KeyCode.UpArrow)) && forwardSpeed <= 125)
             {
-                SetCameraZoom(-6f, 3.0f);
+                SetCameraZoom(-3f, 3.0f);
                 forwardSpeed += 0.45f;
                 yawSpeed -= 0.0055f;
                 rollSpeed -= 0.0055f;
@@ -190,7 +190,7 @@ public class PlayerOpenMovement : MonoBehaviour
 
             if ((y2 < 0 || Input.GetKey(KeyCode.DownArrow)) && forwardSpeed >= 65)
             {
-                SetCameraZoom(6f, 3f);
+                SetCameraZoom(3f, 3f);
                 forwardSpeed -= 0.45f;
                 yawSpeed += 0.0475f;
                 rollSpeed += 0.0475f;
@@ -202,7 +202,7 @@ public class PlayerOpenMovement : MonoBehaviour
 
             if ((y2 < 0 || Input.GetKey(KeyCode.DownArrow)) && forwardSpeed >= 65)
             {
-                SetCameraZoom(6f, 3f);
+                SetCameraZoom(3f, 3f);
                 forwardSpeed -= 0.45f;
                 yawSpeed += 0.0475f;
                 rollSpeed += 0.0475f;

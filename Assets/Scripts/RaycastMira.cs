@@ -13,9 +13,10 @@ public class RaycastMira : MonoBehaviour
     public GameObject miraprecisa;
     public bool livre;
 
+
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetAxis("Mira") > 0)
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetAxis("Mira") > 0) || PlayerMovement.on == true )
         {
             if (!livre)
             {
