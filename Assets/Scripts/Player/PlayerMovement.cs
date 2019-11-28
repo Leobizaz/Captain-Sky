@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (PlayerHealth.dead == true)
                 playerActive = false;
-
+            /*
             if (playerActive && Input.GetButtonDown("P.O.V") && canFirstPerson)
             {
                 firstPerson = !firstPerson;
@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
                     firstPersonCamera.SetActive(false);
                 }
             }
-
+            */
 
             if (playerActive && !PlayerHealth.dead)
             {

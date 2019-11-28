@@ -38,10 +38,10 @@ public class WaveSystem : MonoBehaviour
     public DialogoSequence destruiram_base;
 
     public float test;
-    bool once1;
-    bool once2;
-    bool once3;
-    bool waveFinal;
+    bool once1 = false;
+    bool once2 = false;
+    bool once3 = false;
+    bool waveFinal = false;
     bool cabo;
     bool roboSpawned;
 

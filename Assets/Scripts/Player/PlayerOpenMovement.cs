@@ -64,7 +64,7 @@ public class PlayerOpenMovement : MonoBehaviour
         float y2 = Input.GetAxis("VerticalDireito");
         float x2 = Input.GetAxisRaw("HorizontalDireito");
 
-
+        /*
         if (playerActive && Input.GetButtonDown("P.O.V") && canFirstPerson)
         {
             firstPerson = !firstPerson;
@@ -91,12 +91,13 @@ public class PlayerOpenMovement : MonoBehaviour
                 firstPersonCamera.SetActive(false);
             }
         }
+        */
 
         if (playerActive)
         {
 
 
-        float currentVelocity = 0;
+        
 
         if (yawSpeed <= 0.15f)
         {

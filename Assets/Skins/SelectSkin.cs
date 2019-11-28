@@ -42,7 +42,7 @@ public class SelectSkin : MonoBehaviour
                 SkinSelect = 2;
             }
         }
-        else if (Skin2.activeSelf == true)
+        if (Skin2.activeSelf == true)
         {
             Skin3.SetActive(true);
             Skin2.SetActive(false);
